@@ -1,0 +1,152 @@
+\documentclass[]{article}
+
+% i link non sono nativi di latex quindi
+% c'è bisogno di importarlo come se fosse
+% una libreria, quella per i link in questo caso è hyperref
+\usepackage{hyperref}
+
+% il seguente pacchetto è fondamentale per la matematica in latex
+\usepackage{amsmath}
+
+\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
+\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
+
+% pacchetto che serve per importare gli ambienti di programmazione 
+\usepackage{listings}
+\lstdefinelanguage{JavaScript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
+
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+
+\begin{document}
+    % testo normale
+    Ciao 
+    % testo in bold
+    \textbf{Testo in grassetto}
+    % testo in italic
+    \textit{Testo in grassetto}
+
+    % utilizzo della libreria hyperref per creare un link all'interno del foglio
+    \href{www.google.it}{Link a google}
+
+    % il comando \tableofcontents è fondamentale durante la creazione
+    % di un indice, latex infatti è in grado di raggruppare insieme
+    % tutte le sezioni e sottosezioni in un unico indice numerato
+    \tableofcontents
+
+    % \newpage come da nome fa in modo di creare una nuova pagina
+    \newpage
+    
+    % comandi importanti per la formattazione della pagina
+    % \section --> da vedere come una sorta di titolo per il capitolo
+    \section{Introduzione a LaTeX}
+    % \subsection --> sotto capitolo della section principale
+    % il conteggio della sezione viene fatto ovviamenter in automatico
+    \subsection{Le liste puntate}
+
+    % \subsubsection --> sotto-sotto capitolo della subsection
+    \subsubsection{\textit{itemize} ed \textbf{enumerate}}
+
+    %LISTE PUNTATE
+    % ne esiston due tipi principali
+    % pallini (itemize)
+    % numeri (enumerate)
+    % essi sono comunque customizzabili in diversi modi
+    % label è un'etichetta che possiamo assegnare ad un elemento del nostro test
+    \begin{itemize} \label{sec:itemize} % sec:{nome} è una convenzione, si può scrivere qualsiasi nome
+        % \item è appunto il nostro elemento della lista puntata
+        \item itemize 1
+        \item itemize 2
+    \end{itemize}
+
+    \begin{enumerate}
+        \item enumerate 1
+        \item enumerate 2
+    \end{enumerate}
+
+    % è possibile anche creare delle nested list
+    % come ad esempio negli indici dove 
+    %sono scritti i sottocapitoli
+    \begin{itemize}
+        \item capitolo 1
+        \begin{itemize}
+            \item capitolo 1.1
+            % è possibile inserire ovunque anche le note a piè di pagina
+            % nel pdf poi queste note saranno cliccabili e riconduceranno alla note alla fine della pagina
+            \item capitolo 1.2 \footnote{nota a piè di pagina}
+        \end{itemize}
+        \item capitolo 2
+    \end{itemize}
+
+    % il comando \paragraph ci permette di creare dei paragradi
+    % come ad esempio nel libro di statistica dove ci sono scritti
+    % i vari esempi / enunciati / definzioni ecc
+    \paragraph[Enunciato]{Prova del paragrafo} 
+    \ref{sec:itemize} % \ref è il comando per indicare che ci stiamo riferendo ad una determinata label (anche questo collegamento è cliccabile)
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut purus a sem pellentesque fermentum vel tempor ligula. Vivamus quis tortor non est lacinia accumsan et et sapien. Nunc luctus, sapien non maximus laoreet, diam ipsum tristique lectus, ac rhoncus lectus ex congue sapien. Aenean tincidunt dui sed libero fringilla, sit amet luctus mauris pharetra. Donec interdum, ante id imperdiet congue, nisl dolor gravida sapien, ac iaculis diam mauris viverra lectus.
+
+    \section{La matematica in LaTeX}
+    Come per gli altri blocchi le equazioni di qualsiasi tipologia hanno bisogno di un blocco
+    In questo caso per le equazioni si usa il  \textbf{\\begin\{equation\}} (con relativo end\{equation\})
+
+    \begin{equation}
+        % frac come da nome è il comanod per creare delle frazioni
+        % dove la prima graffa indica il numeratore e la seconda il denominatore
+        x= \frac{1}{2}
+    \end{equation}
+    
+    % un altro modo per mostrare delle formule è tramite l'uso del dollar sign
+    % questo infatti ci permette di scrivere un equazione di una singola riga
+    % in questo caso abbiamo scritto che 9 è uguale a 3 alla seconda
+    % alla si indica semplicemente tramite il simbolo ^
+    $9 = 3^2$
+
+    % se abbiamo bisogno di elevare un numero ad un altro numero con più di una cifra
+    % utilizziamo sempre il simbolo della potenza ma tra graffe (vediamo le graffe come una sorta di raggruppatore di cose)
+    $x = 5^{20}$
+
+    % per indicare ad esempio un Fy ci basta semplicemente usare il simbolo dell'underline
+    $F_y = 1$
+
+    % se abbiamo più di un carattere applichiamo il ragionamento di prima quindi ci andiamo a mettere delle graffe
+    $F_{dy} = 1$
+
+    \paragraph{Esempio più complesso che unisce varie formule}
+    \begin{equation}
+        % \cdots è una formula che inserisce 3 puntini --> cdots = central dots
+        % \sum_{min}^{max} è la formula per la sommatoria dove nella prima graffa
+        % mettiamo il minimo e nella seconda invece il massimo
+        S_n = \frac{X_1 + X_2 + \cdots + X_n}{n} = \frac{1}{n} \sum_{i}^{n} X_i
+    \end{equation}
+
+    \section{Le tabelle}
+    Esempio di tabella
+    Si può usare un qualsiasi generatore di tabelle online come ad esempio \href{https://www.tablesgenerator.com/}{Table generator}
+    
+    % le tabelle sono abbastanza complesse, prima di tutto bisogna usare il classico begin{table}
+    % l'opzione [h] ci permette di posizionare dove abbiamo scritto la tabella
+    % questo per colpa della gestione di determinate variabili su latex
+    \begin{table}[h]
+    % come dice il nome serve ad assegnare una descrizione della tabella
+    \caption{La nostra descrizione della tabella sopra}
+    % comanodo che allinea al centro del foglio la nostra tabella
+    \centering 
+        % tabular crea effettivamente la nostra tabella, nelle graffe andiamo a scrivere {l|r} rispettivamente left|right
+        \begin{tabular}{l|r} 
+        % la prima linea che andiamo a scrivere in tabular saranno i nostri Header -> NOMI COLONNE
+        Item & Quantity \\\hline %il comando \hline crea una linea che separa gli header dagli altri campi
+        Widgets & 42 \\ % is usa il \\ ogni qualvolta bisogna andare a capo
+        Gadgets & 13
+        \end{tabular}
+        \caption{La nostra descrizione della tabella sotto} % come dice il nome serve ad assegnare una descrizione della tabella
+    \end{table}
+
+    \section{}
+\end{document}
