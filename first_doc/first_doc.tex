@@ -1,5 +1,10 @@
 \documentclass[]{article}
 
+\usepackage{pgfplots, tikz}
+\pgfmathdeclarefunction{poiss}{1}{%
+  \pgfmathparse{(#1^x)*exp(-#1)/(x!)}%
+}
+
 % i link non sono nativi di latex quindi
 % c'è bisogno di importarlo come se fosse
 % una libreria, quella per i link in questo caso è hyperref
@@ -148,5 +153,7 @@
         \caption{La nostra descrizione della tabella sotto} % come dice il nome serve ad assegnare una descrizione della tabella
     \end{table}
 
-    \section{}
+    \section{I grafici}
+    $ P\left( x \right) = \frac{e^{-\lambda } \lambda^x }{{x!}} $
+
 \end{document}

@@ -1,13 +1,646 @@
 \documentclass[]{article}
-\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
-\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
+%\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
+%\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{xcolor}
+\usepackage{sectsty}
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+\definecolor{grey}{rgb}{0.25, 0.25, 0.28}
+\subsectionfont{\color{grey}}
+\subsubsectionfont{\color{grey}}
+\sectionfont{\color{bittersweet}}
+
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault} 
+
+\usepackage{bm}
+
+\newcommand{\ev}{\mathbb{E}[X]}
+\renewcommand{\ev}[1]{\mathbb{E}[#1]}
+
+\newcommand{\definizione}{\paragraph{Definizione:}}
+\newcommand{\formula}{\paragraph{Formula generica:}}
 
 \begin{document}
-    \section{TODO - NAME}
-    \subsection{Media Campionaria}
-    \paragraph[short]{Definizione} La media campionaria è la \textbf{media} degli elementi di un campione.
-    \centering \[ \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i \]
+    \tableofcontents
+    \newpage
+    \section{Introduzione alla probabilità}    
+    \subsection{Glossario}
+    \begin{itemize}
+        \item Sistemi non deterministici $\rightarrow$ \textit{conoscendo i dati iniziali non possiamo determinare i dati finali}
+        \item Incertezza degli eventi $\rightarrow$ \textit{la varianza degli eventi che possono succede}
+        \item Rumore $\rightarrow$ \textit{possiamo misurare un evento solo approssimatamente}
+        \item Probabilità $\rightarrow$ \textit{la materia che studia i sistemi non deterministici}
+        \begin{itemize}
+            \item Frequestista $\rightarrow $ \textit{probabilità assegnata sulla base di più esperimenti ripetuti nella stessa condizioni}
+            \item Soggettivista $\rightarrow $ \textit{non esiste un valore oggettivo ma ci si basa sulla fiducia e sull'incertezza che l'individuo ha riguardo l'occorrenza di un certo evento}
+        \end{itemize}
+        \item Varianza $\rightarrow$ \textit{dispersione dei dati attorno al valore centrale / media / valore}
+        \item Confidenza $\rightarrow$ \textit{intervallo che rappresenta una stima dei valori medi}
+        \item Frequenza
+        \begin{itemize}
+            \item Frequenza assoluta $\rightarrow$ Numero di volte che si verifica un evento
+            \item Frequenza relativa $\rightarrow$ Rapporto tra frequenza assoluta e il numero di prove/dati
+        \end{itemize}
+        \item Dataset $\rightarrow$ numero di dati a disposizione $\boldsymbol{D_n = \{ x_1 \cdots x_n \}} $
+        \item Principio di enumerazione $\rightarrow$ Passare solo una volta da ogni elemento della raccolta
+        \item Spazio esiti (s o $\Omega$) $\rightarrow$ Tutti i possibili esiti di un evento $\rightarrow$ $\boldsymbol{Dado=\{1 \cdots 6\}}$
+        \item Spazio eventi (e) $\rightarrow$ Tutti i possibili risultati di un esperimento $\rightarrow$ $\boldsymbol{Dado=\{1||2\}} \leftarrow$ che esca \textbf{1} oppure \textbf{2}
+        \item Assioma $\rightarrow$ Tre assiomi fondamentali su cui si poggia la teoria del calcolo delle probabilità
+        \begin{itemize}
+            \item 1' Assioma $\rightarrow$ La probabilità di E è un numero reale \textbf{non negativo} $\mathbb{P}(E) \in \mathbb{R}, \mathbb{P}(E) \geq 0$ $ \forall E \subseteq \Omega $ \space \textbf{|} \space $0 \leq P(E) \leq 1$
+            \item 2' Assioma $\rightarrow$ Allo spazio degli esiti è sempre associato ad \textbf{1} \\ $\mathbb{P}(s) = 1$
+            \item 3' Assioma $\rightarrow$ Per ogni coppia di eventi incompatibili $E_1, E_2 \subseteq \Omega$ \\ la probabilità di $E_1 \cup E_2$ è uguale alla \textbf{somma della loro probabilità} \\ $\mathbb{P}(E_1 \cup E_2) = \mathbb{P}(E_1) + \mathbb{P}(E_2)$
+        \end{itemize} 
+    \end{itemize}
+    \newpage 
 
+    \subsection{Moda e Mediana}
+    \subsubsection{Moda}
+    \definizione La moda è il valore che presenta la \textbf{massima frequenza} all'interno del dataset
+    \formula
+    \begin{equation*}
+        Moda \rightarrow v_i : f_i = max f_i
+        \begin{cases}
+            \text{un solo valore} & \textbf{Moda} \\
+            \text{più di un valore} & \textbf{Valori modali}
+        \end{cases}
+    \end{equation*}
+
+    \subsubsection{Mediana}
+    \definizione La mediana è il \textbf{valore centrale} all'interno del dataset (dati ordinati in ordine crescente/decresente)
+    \formula
+    \begin{equation*}
+        Mediana =
+        \begin{cases}
+            \text{n pari} &  \frac{x_\frac{n}{2} + x_{\frac{n}{2}+ 1}}{2} \\
+            \text{n dispari} & x \cdot [\frac{n+1}{2}] \leftarrow \text{Intero superiore (Ceil)}
+        \end{cases}
+    \end{equation*}
+    \subsection{Media e Varianza Campionaria}
+    \subsubsection{Media Campionaria}
+    \definizione La media campionaria è la \textbf{media} degli elementi di un campione.
+    \formula  \[ \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i \]
+
+    \subsubsection{Varianza Campionaria}
+    \definizione La varianza campionaria è la \textbf{dispersione} degli elementi di un campione.
+    \formula \[ S^2 = \frac{\sum_{i = 1}^{n} (x_i - \overline{x})^2}{n-1} \]
+
+    \paragraph{Esempio:} $D_n = \textbf{\{ 3, 4, 6, 7, 10 \}} \leftarrow$ \textit{Il dataset preso in esempio} \\
+    \linebreak[2]
+ 
+    \text{Media del campione:} $ \overline{X} = \boldsymbol{\frac{( 3 + 4 + 6 + 7 + 10)}{5}} = \frac{30}{5} = 6 $ \\
+
+    \text{Varianza campionaria:} $ s^2 = \boldsymbol{\frac{[ (-3)^2 + (-2)^2 + 0^2 + 1^2 + 4^2 ]}{4}} = 7.5 $ 
+
+    \subsection{Percentile}
+    \definizione Il percentile è un indicatore che serve ad \textbf{indicare il valore minimo} sotto al quade ricade una \textbf{determinata percentuale} degli altri elementi sotto osservazione.
+    \\ FARE ESEMPIO
+    \begin{equation*}
+        Valore
+        \begin{cases}
+            \geq & \text{k \% dati} \\
+            \leq & \text{100 - k \% dati}
+        \end{cases}
+    \end{equation*}
+
+    \subsection{Permutazioni, Combinazioni e Disposizioni}
+    \subsubsection{Permutazioni}
+    \definizione Modi possibili per sistemare \textbf{n} oggetti (\textbf{0! = 1})
+    \[ n! = n \cdot (n-1) \cdots (n \cdot (n-1)) \]
+    \paragraph{Esempio:} Fattoriale di 6
+    \[ 6! = 6 \cdot (6-1) \cdot (6-2) \cdots (6-5) = 720 \]
+
+    \subsubsection{Combinazioni}
+    \definizione Modi di disporre \textbf{k} elementi scelti da \textbf{n} elementi (l'ordine \textbf{non conta})
+    \[ \frac{n!}{k! \cdot (n-k)!} = \binom{n}{k} \]
+
+    \paragraph{Esempio:} in una classe di \textbf{26} alunni si devono eleggere \textbf{2} rappresentanti
+    \[ C_{n,k} = \frac{n!}{k! \cdot (n-k)!} \]
+    \text{Sostituiamo \textbf{n} con \textit{26} (numero di alunni) e \textbf{k} con \textit{2} (numeri di rappresentanti)}
+    \[ C_{26,2} = \frac{26!}{2! \cdot (26-2)!} = \frac{26!}{2! \cdot 24!} = \frac{25 \cdot 26}{2} = \textbf{325} \]
+    \begin{center} 
+        \text{è possibile anche semplificare i fattoriali come in questo caso}
+    \end{center}
+
+    \subsubsection{Disposizioni}
+    \definizione Modi di disporre \textbf{k} elementi scelti da \textbf{n} elementi (l'ordine \textbf{conta})
+    \[ \frac{n!}{(n-k)!}\]
+    \paragraph{Esempio:} Quante parole is possono ottenere usando 4 \textbf{diverse} lettere da \textit{youmath} 
+    \text{In questo caso dobbiamo contare le \textbf{disposizioni} senza ripetizione di \textbf{classe 4 di 7}}
+    \[ D_{7,4} = \frac{7!}{(7-4)!} = \frac{7!}{3!} = \frac{5040}{6} = \textbf{840} \]
+
+
+
+    \subsection{Probabilità condizionata}
+    \definizione è la probabilità che succeda un evento \textbf{E} dato un evento \textbf{F}
+    \[ P(E | F) = \frac{P(E | F)}{P(F)}\]
+
+    \subsubsection{Teorema di Bayes}
+    \formula \[ P(F_j | E) = \frac{P(F_j \cap E)}{P(E)} = \frac{P(E | F_j) \cdot P(F_j)}{\sum_{i = 1}^{p} P(E | F_i) \cdot P(F_i)} \]
+    \begin{center} 
+        \text{Probablità di \textbf{$F_j$} sapendo che si sia verificato l'evento \textbf{E}}
+    \end{center}
+
+    \section{Variabile aleatorie}
+    \definizione La variabile aleatoria è una variabile che può assumere \textbf{valori diversi} \\ 
+    in dipendenza da \textit{qualche esperimento casuale}.
+    \[
+        X
+        \begin{cases}
+            Discrete & \text{Solo \textbf{valori finiti}} \\
+            Continue & \text{Possono assumere \textbf{range illimitati}}
+        \end{cases}
+    \]
+    \subsection{Funzione di ripartizione}
+    \definizione
+    \text{La Probabilità che la variabile aleatoria \textbf{X} assuma un valore minore o uguale ad x}
+    \[ P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F(b) - F(a)\]
+    \formula $ F(x) = P(X \leq x) $
+    \begin{itemize}
+        \item F = funzione di ripartizione
+        \item X = variabile aleatoria
+        \item x = variabile normale
+    \end{itemize}
+    
+    \paragraph{Esempio:}
+    $ P(a < X \leq b) $ \\
+    $ P(X \leq b) = P(X \leq a) + P(a < X \leq b) $ \\
+    $ P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F(b) - F(a) $
+    
+  
+    \subsection{Funzione di massa (Variabili discrete)}
+    \definizione
+    $p(a) = P(X = a) $
+
+    se si ha la funzione di ripartizione è possibile ottenere la funzione di massa perche:
+    \[ X \leq a = \cup X_i \]
+    \formula \[ F(x) = P(X \leq a) = \sum_{x \leq a}^{} p(x_i) \]
+
+    TODO- GRAFICO
+
+    \subsection{Funzione della densità di probabilità (Variabili continue)}
+    \definizione
+    \[ P(X \in B) = \int_{B}^{} f(x) \,dx \]
+    \[ P(X \in (-\infty, +\infty)) = \int_{-\infty}^{+\infty} f(x) \,dx=1 \]
+    integrando $-\infty \text{ a} +\infty$ la probabilità che avvenga x è per forza 1 perche andiamo ad includere tutti i valori di $\mathbb{R}$
+
+    \begin{center}
+        \text{Se abbiamo che \textbf{B = [a, b]}} $\longrightarrow P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx $
+        \\
+        \text{Se abbiamo che \textbf{B = [a]}} $\longrightarrow P(X = a) = \int_{a}^{a} f(x) \, dx = 0 $
+    \end{center}
+   
+
+    Relazione che lega la funzione di ripartizione \textbf{F} alla densità \textbf{f}:
+    \[ F(x) = P(X \leq x) = \int_{-\infty}^{x} f(x )\, dx \]
+
+    Derivando entrambi i membri otteniamo che:
+    \[ \frac{d}{da} F(a) = f(a)  \]
+    
+
+    \newpage
+    \section{Funzioni a due variabili}
+
+    \subsection{Funzione di ripartizione congiunta}
+    \definizione Funzione di ripartizione a due variabili aleatorie X e Y
+    \formula \[ F(x, y) = P(X \leq x, Y \leq y) \]
+    \text{Se vogliamo trovare solamente la funzione di ripartizione di una singola variabile aleatoria:}
+    \begin{equation*}
+    \begin{split}
+        F_x(x) & = P(X \leq x) \\
+        & = P(X \leq x, Y \leq \infty) \\
+        & = F(x, \infty) \\
+    \end{split}
+    \end{equation*}
+    Applicabile anche alla $F_y(y)$
+    \[ F_y(y) = F(\infty, y) \]
+
+    \subsection{Funzione di massa congiunta}
+    \definizione Probabilita che accadano due eventi (\textbf{X} e \textbf{Y}) nello stesso istante.
+    \formula $ p(x_i, y_j) = P(X=x_i, Y=y_j) $ \\
+
+    \text{Se vogliamo trovare solamente la funzione di massa di una singola variabile aleatoria:}
+    \begin{equation*}
+        \begin{split}
+            p_X(x_i) & := P(X = x_i) \\ 
+            & = P(\underset{j}{\cup} \{ X=x_i, Y=y_j \}) \\
+            & = \sum_{j}^{} P(X=x_i, Y=y_j) \\ 
+            & = \sum_{j}^{} p(x_i, y_j) \\
+        \end{split}
+    \end{equation*}
+    Applicabile anche alla $p_Y$
+    \[ p_Y(y_j) = \sum_{i}^{} p(x_i, y_j) \]
+    TODO FARE ESEMPIO DI equation* SOPRA
+
+
+    \subsection{Funzione densità congiunta}
+    page 128
+    \[ P((X,Y) \in b) = \int_{a}^{} \int_{b}^{} f(x,y) \, dx \, dy \]
+    \begin{equation*}
+        \begin{split}
+            f(a,b) & = P(X \leq a, Y \leq b) \\
+            & = P(X \in a, Y \in b) \\
+            & = \int_{-\infty}^{a} \int_{-\infty}^{b} f(x,y) \, dx \, dy \\
+        \end{split}
+    \end{equation*}
+
+
+    \subsection{X, Y continue congiunte}
+    \paragraph{Esempio:}
+    \begin{equation*}
+        f(x,y) =
+        \begin{cases}
+            2 & e^{-x} e^{-2y} \\
+            0 & altrimenti
+        \end{cases}
+    \end{equation*}
+
+    DA FINIRE SOTTO
+    \begin{equation*}
+        \begin{split}
+            \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f(x,y) \, dx \, dy & = \int_{0}^{+\infty}\int_{0}^{+\infty} 2e^{-x}e^{-2y} \, dx \, dy \\
+            & = \int_{0}^{+\infty} 2 e^{-2y}
+        \end{split}
+    \end{equation*}
+
+    \paragraph{Esempio da vedere meglio}
+    \begin{equation*}
+        \begin{split}
+            P(X > 1, Y < 1) & = \int_{1}^{\infty} \int_{-\infty}^{1} f(x,y) \, dx \, dy \\
+            & = \int_{1}^{\infty} \int_{0}^{1} 2e^{-x} e^{-2y} \, dx \, dy \\
+            & = \int_{1}^{\infty} e^{-x} \int_{0}^{1} 2e^{-2y} \, dy \, dx \\
+            & = (2 - e^{-2}) \int_{1}^{\infty} e^{-x} \, dx \\
+            & = e^{-1}(1 - e^{-2})
+        \end{split}
+        % FINIRE NACHE QUESTO
+        % PORCAMADONNA ONETO AMMAZZATI TE E I TUOI APPUNTI DI MERDA
+    \end{equation*}
+
+    \subsection{Variabili aleatorie indipendenti}
+    \subsubsection{X,Y indipendenti}
+    \definizione
+    \text{Un evento su una variabile non influenza l'altra.}
+    \[ P(X \in A, Y \in B) = P(X \in A) P(Y \in B)\]
+
+    \[ P(X \leq a, Y \leq b) = P(X \leq a) P(Y \leq b)\]
+
+    \[ F(a,b) = F_X(a) F_Y(b)\]
+
+    \textbf{Funzione di massa:}
+    \[ p(a,b) = p_X(a) p_Y(b) \]
+    \[ P(X=a, Y=b) = P(X=a) P(Y=b)\]
+
+    \textbf{Funzione di densità:}
+    \[ f(x, y) = f(x) f(y)\]
+    
+    \paragraph{Esempio con variabili indipendenti continue:}
+    \begin{equation*}
+        f_X(q) = f_Y(x) =
+        \begin{cases}
+            e^{-q} & q > 0 \\
+            0 & altrimenti
+        \end{cases}
+    \end{equation*}
+
+    \paragraph[short]{ssadasd}
+    \begin{equation*}
+    \begin{split}
+        F_Z(a) & = P(Z \leq a) = P(\frac{X}{Y} \leq a) \\
+        & = \int_{}^{} \int_{\frac{x}{y} \leq a}^{} f(x,y) \, dx \, dy = \int_{\frac{x}{y} \leq a}^{}\int_{}^{} f(x) f(y) \, dx \, dy \\ 
+        & = \int_{0}^{\infty} \int_{0}^{ay} e^{-x} e^{-y} \, dx \, dy = \int_{0}^{\infty} e^{-y} \int_{0}^{ay} e^{-x} \, dx \, dy \\ 
+        & = \int_{0}^{\infty} e^{-y}(1-e^{-ay}) \, dy \\
+        & = \int_{0}^{\infty} e^{-y} -e^{-(a+1)y} \, dy \\ 
+        & = -e^{-y} + \frac{e^{-(a+1)y}}{(a+1)} \bigg\rvert_{0}^{\infty} \\ 
+        & = + 1 - \frac{1}{a+1} = \frac{a}{a+1} \\
+        & = F_Z(a) = F_\frac{X}{Y}(a)
+    \end{split}
+    \end{equation*}
+    ---------------------
+    \begin{equation*}
+    \begin{split}
+        F_Z(a) = F_{\frac{X}{Y}}(a) = \frac{d}{da} F_Z(a) & = \frac{d}{da} \cdot \frac{a}{a+1} \\ 
+        & = \frac{(a+1) - a}{(a+1)^2} = \frac{1}{(a+1)^2} 
+    \end{split}
+    \end{equation*}
+
+    \subsection{Distribuzioni condizionate}
+    \formula $P(E|F) = \frac{P(E \cap F)}{P(F)}$
+
+    \subsection{funzione di massa condizionata (Discrete)}
+    \formula
+    \begin{equation*}
+        \begin{split}
+            p_{X|Y} = (X | Y) & = P (X=x, Y=y) \\
+            & = \frac{P(X=x, Y=y)}{P(Y=y)} \\
+            & = \frac{p(X,Y)}{p_Y(x, y) > 0} 
+        \end{split}
+    \end{equation*}
+
+    \subsection{funzione di densità condizionata (Continue)}
+    \formula
+    \[ f_{X|Y}(x | y) = \frac{f(x, y)}{f_Y(y)}\]
+    \[ P(X \in a | Y = y) := \int_{a}^{} f_{X|Y}(X | Y) \, dx \]
+
+    \subsection{X, Y continue congiunte}
+    \paragraph{Esempio:}
+    \begin{equation*}
+        f(x,y) =
+        \begin{cases}
+            \frac{12}{5} x^{(2-x-y)} & 0 < x < 1, 0 < y < 1 \\
+            0 & altrimenti
+        \end{cases}
+    \end{equation*}
+
+    $ f_{X|Y}(x,y) = \frac{f(x,y)}{f_Y(y)} $
+
+    \begin{equation*}
+        \begin{split}
+            f_Y(y) & = \int_{0}^{\infty} f(x,y) \, dx \\
+            & = \int_{0}^{1} \frac{12}{5} x(2-x-y) \, dx \\
+            & = \frac{12}{5} \int_{0}^{1} (2x - x^2 - xy) \, dx \\
+            & = \frac{12}{5} (x^2 - \frac{x^3}{3} - \frac{x^2y}{2} \bigg\rvert_{0}^{1} )  \, dx \\
+            & = \frac{12}{5} (2 - \frac{1}{3} - \frac{y}{2}) \\
+            & = \frac{12}{5} (\frac{2}{3} - \frac{y}{2})
+        \end{split}
+    \end{equation*}
+    ---------------------
+
+    \begin{equation*}
+        f_{X|Y}(x,y) = \frac{f(x,y)}{f_Y(y)} = \frac{\frac{12}{5} x(2-x-y)}{\frac{12}{5}(\frac{2}{3} - \frac{y}{2})}
+    \end{equation*}
+    
+    \begin{equation*}
+    =
+    \begin{cases}
+        \frac{x(2-x-y)}{\frac{2}{3} - \frac{y}{2}} & 0 < x < 1, 0 < y < 1 \\
+        0 & altrimenti
+    \end{cases}
+    \end{equation*}
+
+    \section{Valore atteso}
+    \definizione Rappresenta la media pesata dei valori di una variabile aleatoria
+
+    \subsection{Funzione di massa (Discrete)}
+    \[ \ev{X} = \sum_{i}^{} x_i P(X = x_i) \]
+
+    \paragraph{Esempio dado fair 6 facce $P(x_i = i) = \frac{1}{6}$}
+    \[ \ev{X} = \sum_{i=1}^{6} i \frac{1}{6} = \frac{1}{6} \sum_{i=1}^{6} i = \frac{21}{6} = \frac{7}{2} = 3.5 \]
+    \text{dove il risultato è la media dei valori che X può assumere}
+
+    \begin{center}
+        \text{Se N è molto grande allora \textbf{$N_i \approx N_p(x_i)$}}
+        \[ \sum_{i}^{n} x_i p(x_i) \approx \sum_{i}^{n} x_i \frac{n_i}{n}\]
+    \end{center}
+    
+    
+    \subsection{Funzione di densità (Continue)}
+    \formula \[ \ev{X} = \int_{-\infty}^{+\infty} x f(x) \, dx \]
+    \paragraph{Esempio:} \hfill \\
+    \begin{minipage}{0.45\textwidth}
+        \begin{equation*}
+            f(x) =
+            \begin{cases}
+                \frac{1}{2} & 0 \leq x \leq 2 \\
+                0 & altrimenti
+            \end{cases}
+        \end{equation*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \begin{equation*}
+            \begin{split}
+                \ev{X} & = \int_{-\infty}^{+\infty} f(x) \, dx \\
+                & = \int_{0}^{2} x \frac{1}{2} dx \\
+                & = \int_{0}^{2} \frac{x}{2} dx \\
+                & = \frac{x^2}{4} \bigg\rvert_{0}^{2} = \frac{4}{4} = 1
+            \end{split}
+        \end{equation*}
+    \end{minipage}
+
+
+    \subsection{Valore atteso di una funzione}
+
+    \begin{center}
+        $ X \rightarrow g(X) - g: \mathbb{R} \rightarrow \mathbb{R} $ \hfill \\
+    \end{center}
+    
+
+    \begin{minipage}{0.45\textwidth}
+        \text{Variabile discreta:}
+        \begin{equation*}
+            \ev{g(X)} = \sum_{i}^{} g(x_i) p(x_i)
+        \end{equation*}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \text{Variabile Continua:}
+        \begin{equation*}
+            \ev{g(x)} = \int_{-\infty}^{+\infty} g(x) f(x) \, dx
+        \end{equation*}
+    \end{minipage}
+
+
+
+    \subsection{Costanti reali nel valore atteso}
+    
+    \text{Sia per discreto che per continuo:}
+    \[ \ev{aX+b} = a \ev{X} + b \]
+    \[ \ev{b} = b \]
+    \[ \ev{aX} = a \ev{X} \]
+
+    \subsection{Momenti N-esimi nel valore atteso}
+    \begin{equation*}
+        \ev{X^n} =
+        \begin{cases}
+            \sum_{x}^{} x^n p(x) & \text{se X è discreta} \\
+            \int_{-\infty}^{+\infty} x^n f(x) \, dx & \text{se X è continua}
+        \end{cases}
+    \end{equation*}
+
+    \subsection{Valore atteso di una funzione a due variabili}
+    \[ X, Y -> g(X,Y) - \boldsymbol{g: \mathbb{R}^2 \rightarrow \mathbb{R}} \]
+
+    \begin{equation*}
+        \ev{g(X,Y)} =
+        \begin{cases}
+            \sum_{x}^{} \sum_{y}^{} g(x,y) p(x,y) & \text{Discreto} \\
+            \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(x,y) f(x,y) \, dx \, dy & \text{Continuo}
+        \end{cases}
+    \end{equation*}
+    \hfill 
+
+    \begin{center}
+        \text{se $g(X,Y)$ come $\boldsymbol{g = X + Y}$ allora}
+        \[ \ev{X + Y} = \ev{X} + \ev{Y} \]
+    \end{center}
+    
+    
+
+    \paragraph{Esempio: 2 dadi a 6 facce}
+    \begin{equation*}
+      \begin{split}
+        \ev{X + Y} & = \ev{X} + \ev{Y} \\
+        & = \sum_{i = 1}^{6} x_i p(x_i) + \sum_{i = 1}^{6} y_i p(y_i) \\
+        & = \sum_{i = 1}^{6} x_i \frac{1}{6} + \sum_{i = 1}^{6} y_i \frac{1}{6} \\
+        & = \frac{7}{2} + \frac{7}{2} = 7 
+      \end{split}  
+    \end{equation*}
+    
+    \begin{center}
+        \text{Dove \textbf{7} è il valore atteso della somma dei due dadi.} 
+        \hfill
+        \text{Se vogliamo predire il valore di X possiamo scegliere un numero che sarà ugual ad X.}
+        \text{L'errore che commeteremo sarà di \boldsymbol{$(X - c)^2$}}
+    \end{center}
+
+    
+    Se \boldsymbol{$c = \ev{X}$} l'errore sarà minimizzato $\boldsymbol{\mu := \ev{X}}$
+    
+
+    \[ \ev{(X - c)^2} \geq \ev{(X - \mu)^2}\]
+
+    \section{Varianza}
+    \definizione Indica di quanto i dati si discostano dalla media al quadrato
+    \formula \[ Var(X) = \ev{X^2} - \ev{X}^2\]
+    
+    \[ \mu = \ev{X} \leftarrow \text{Primo momento}\]
+    \[ \ev{X^2} \leftarrow \text{Momento secondo}\]
+
+    \paragraph{Generalizzazione:}
+    \begin{equation*}
+        \begin{split}
+            Var(X) & = \ev{(X - \mu)^2} \\
+            & = \ev{X^2 - 2 \mu \cdot X + \mu^2} \\
+            & = \ev{X^2} - 2 \mu \cdot \ev{X} + \mu^2 \\
+            & = \ev{X^2} - \mu^2 \longrightarrow \ev{X^2} - \ev{X}^2
+        \end{split}
+    \end{equation*}
+    
+    \paragraph{Esempio: Varianza di un dado}
+    \begin{equation*}
+        \begin{split}
+            \ev{X^2} & = \sum_{1}^{6} i^2 P(X = i) \\
+            & = 1^2 \cdot \frac{1}{6} + 2^2 \cdot \frac{1}{6} + 3^2 \cdot \frac{1}{6} + 4^2 \cdot \frac{1}{6} + 5^2 \cdot \frac{1}{6} + 6^2 \cdot \frac{1}{6} \\
+            & = \frac{91}{6}
+        \end{split}
+    \end{equation*}
+
+    \[ Var(X) = \frac{91}{6} - (\frac{7}{2})^2 \]
+
+    \subsection{Costanti reali nella varianza}
+    \[ Var(aX + b) = a^2 \cdot Var(X) \]
+    SE $a = 0 \longrightarrow Var(b) = 0$ \\
+    SE $b = 0 \longrightarrow Var(aX) = a^2 \cdot Var(X)$ \\
+    SE $a = 1 \longrightarrow Var(X + b) = Var(X) + {Var(b)} = Var(X)$ \\
+
+    \section{Deviazione Standard}
+    \definizione Indica di quanto dei dati si \textbf{discotastano dalla media} (non al quadrato)
+    \[ S = \sqrt{Var(X)} \]
+    \[ Var(X + X) = Var(2 \cdot X) = 4 \cdot Var(X) \]
+    \linebreak[1]
+    \textbf{Se X è indipendente allora:}
+    \[ Var(X) + Var(X) = Var(X + X) \]
+
+    \section{Covarianza}
+    \definizione Misura la \textbf{variazione} tra due variabili aleatorie associate tra di loro
+    \formula \[ \boldsymbol{Cov(X,Y) := \ev{(X - \mu_x) (Y - \mu_y)}} = \ev{XY} - \ev{X} \ev{Y} \]
+    \textbf{Dove:} \\
+    $ \mu_x = \ev{X} $ \\
+    $ \mu_y = \ev{Y} $
+
+    \begin{center} 
+        \textit{La covarianza può essere negativa, positiva o nulla } 
+    \end{center}
+    \text{\textbf{Positivo} $\longrightarrow$ Le due variabili crescono o decrescono insieme} \\
+    \text{\textbf{Negativo} $\longrightarrow$ Quando una variabile cresce l'altra decresce} \\
+    \text{\textbf{Nullo} $\longrightarrow$ Le due variabili sono indipendenti} \\
+
+    \subsection{Proprietà della covarianza}
+    \begin{multline*}
+        Cov(X, Y) = Cov(Y, X) \longleftarrow \text{Commutativo} \\
+        Cov(X, Y) = \ev{XY} - \ev{X} \ev{Y} \\
+        Cov(X, X) = Var(X) \\
+        Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) \\
+        Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) \\
+        Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)
+    \end{multline*}
+
+    \centerline{- Se $X_1 \cdots X_n$ e $Y_1 \cdots Y_n$ sono variabili aleatorie qualsiasi allora:}
+    \[ Cov(\sum_{i = 1}^{n}x_i, \sum_{j = 1}^{m} y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \]
+    \linebreak[10]
+    \centerline{Se X e Y sono \textbf{indipendenti}}
+    \[ \ev{XY} = \ev{X} \ev{Y} \]
+    \[ Cov(X, Y) = 0 \longrightarrow \text{se sono indipenti}\]
+
+    
+    \subsection{Coefficiente di correlazione lineare}
+    \definizione numero puro che tiene conto della deviazione standard di X e Y
+    \formula
+    \begin{equation*}
+        Corr(X,Y) := \frac{Cov(X,Y)}{\sqrt{Var(X) \cdot Var(Y)}}
+    \end{equation*}
+
+    \begin{center}
+        La correlazione può assumere valori compresi tra \textbf{-1} e \textbf{1}
+    \end{center}
+    \text{\textbf{-1} $\longrightarrow$ Le due variabili sono inversamente proporizionali} \\
+    \text{\textbf{0} $\longrightarrow$ Le due variabili sono indipendenti} \\
+    \text{\textbf{1} $\longrightarrow$ Le due variabili sono crescono o decrescono con lo stesso rapporto} \\
+
+    \newpage
+    \section{Funzione generatrice dei momenti}
+    \definizione Funzione che ci permette di calcolare i momenti della distribuzione.
+    \formula \[ \phi(t) = \ev{e^{tX}}\]
+    \begin{center}
+        Dove X è una variabile aleatoria e t è un parametro reale
+    \end{center}
+
+    \begin{equation*}
+        \phi(t) = \ev{e^{tX}} 
+        \begin{cases}
+            \sum_{x}^{} e^{tX}p(x) & \text{se X discreta} \\
+            \int_{-\infty}^{+\infty} e^{tX} f(x) \, dx & \text{se X continua}
+        \end{cases}
+    \end{equation*}
+    \linebreak[10]
+    \centerline{Derivando la funzione si ottengono i momenti:}
+    \[ \phi'(t) = \frac{d}{dt} \ev{e^{tX}} = \ev{\frac{d}{dt} e^{tX}} = \ev{Xe^{tX} \longrightarrow \phi'(0) = \ev{X}}\]
+
+    \paragraph{Generalizzando:}
+    \[ \phi^{n}(0) = \ev{X^n} \]
+    \linebreak[2]
+
+    \begin{minipage}{0.45\linewidth}
+        Media:
+        \[\mu_x = \phi'(0)\]
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\linewidth}
+        Varianza:
+        \[ \sigma^{2}_x = \phi''(0) = \{\phi(0)'\}' \]
+    \end{minipage}
+    \subsection{Disugaglianza di Markov}
+    \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi
+    \definizione Serve per calcolare che una variabile aleatoria assuma un minimo di "a" $\longrightarrow a \in \mathbb{R}$
+    \paragraph{Solo per variabili positive:} $X \in (0, +\infty) $
+    \formula \[ P(X \geq a) \leq \frac{\ev{X}}{a}\]
+
+    \paragraph{Generalizzazione:}
+    \begin{equation*}
+        \begin{split}
+            \ev{X} & = \int_{0}^{+\infty} xf(x) \, dx \\
+            & = \int_{0}^{a} x f(x) \, dx + \int_{a}^{+\infty} x f(x) \, dx \geq \int_{a}^{+\infty} x f(x) \, dx \geq \int_{a}^{+\infty} a f(x) \, dx \\
+            & = a \int_{a}^{+\infty} f(x) \, dx \\ 
+            & = \boldsymbol{aP(X \geq a)}
+        \end{split}
+    \end{equation*}
+    
+    \subsection{Disugaglianza di Chebyshev}
+
+    \section{Legge debole dei grandi numeri}
 
 \end{document}

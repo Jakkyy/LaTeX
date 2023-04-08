@@ -5,4 +5,4 @@
 \contentsline {section}{\numberline {2}La matematica in LaTeX}{3}{section.2}%
 \contentsline {paragraph}{Esempio più complesso che unisce varie formule}{4}{section*.3}%
 \contentsline {section}{\numberline {3}Le tabelle}{4}{section.3}%
-\contentsline {section}{\numberline {4}}{4}{section.4}%
+\contentsline {section}{\numberline {4}I grafici}{4}{section.4}%
