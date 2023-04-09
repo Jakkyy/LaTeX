@@ -77,9 +77,18 @@
         Mediana =
         \begin{cases}
             \text{n pari} &  \frac{x_\frac{n}{2} + x_{\frac{n}{2}+ 1}}{2} \\
-            \text{n dispari} & x \cdot [\frac{n+1}{2}] \leftarrow \text{Intero superiore (Ceil)}
+            \text{n dispari} & x_{[\frac{n+1}{2}]} \leftarrow \text{Intero superiore (Ceil)}
         \end{cases}
     \end{equation*}
+    \paragraph{Esempio:} \[ D_n = \textbf{\{ 28, 34, 51, 19, 62, 43, 29, 38, 45, 26, 49, 33 \}} \]
+    \paragraph{Per la mediana è necessario ordinare i dati in ordine crescente:} \[ D_n = \textbf{\{ 19, 26, 28, 29, 33, 34, 38, 43, 45, 49, 51, 62 \}} \]
+
+    \[ \frac{x_{\frac{12}{2}} + x_{\frac{12}{2} + 1}}{2} = \frac{x_6 + x_7}{2} = \frac{34 + 38}{2} = \frac{72}{2} = \textbf{36} \]
+
+    \paragraph{Nota:} quando si trova ad esempio $x_6$ bisogna andare a sostituire il valore con la posizione di x
+
+
+
     \subsection{Media e Varianza Campionaria}
     \subsubsection{Media Campionaria}
     \definizione La media campionaria è la \textbf{media} degli elementi di un campione.
@@ -89,16 +98,24 @@
     \definizione La varianza campionaria è la \textbf{dispersione} degli elementi di un campione.
     \formula \[ S^2 = \frac{\sum_{i = 1}^{n} (x_i - \overline{x})^2}{n-1} \]
 
-    \paragraph{Esempio:} $D_n = \textbf{\{ 3, 4, 6, 7, 10 \}} \leftarrow$ \textit{Il dataset preso in esempio} \\
+    \paragraph{Esempio: (Varianza e Media)} $D_n = \textbf{\{ 3, 4, 6, 7, 10 \}}$ \\
     \linebreak[2]
  
     \text{Media del campione:} $ \overline{X} = \boldsymbol{\frac{( 3 + 4 + 6 + 7 + 10)}{5}} = \frac{30}{5} = 6 $ \\
 
     \text{Varianza campionaria:} $ s^2 = \boldsymbol{\frac{[ (-3)^2 + (-2)^2 + 0^2 + 1^2 + 4^2 ]}{4}} = 7.5 $ 
 
+    \subsection{Disugaglianza di Chebyshev}
+    \definizione Dice quanti dati di un campione cadono all'interno di un intervallo con centro la \textbf{media}
+
+    \[ \forall k \geq 1 : k \in \mathbb{R} \]
+    \[ (\overline{x} - k_s, \overline{x} + k_s) \longrightarrow \boldsymbol{S_k : [i : 1 \leq i \leq n, |x_i - \overline{x} < k_s|]} \]
+    \paragraph{Generalizzando:}
+    \[ |x - \overline{x}| < 5 \longrightarrow 68\% \]
+    \[ |x - \overline{x}| < 25 \longrightarrow 95\% \]
+    \[ |x - \overline{x}| < 35 \longrightarrow 99.7\% \]
     \subsection{Percentile}
     \definizione Il percentile è un indicatore che serve ad \textbf{indicare il valore minimo} sotto al quade ricade una \textbf{determinata percentuale} degli altri elementi sotto osservazione.
-    \\ FARE ESEMPIO
     \begin{equation*}
         Valore
         \begin{cases}
@@ -106,7 +123,21 @@
             \leq & \text{100 - k \% dati}
         \end{cases}
     \end{equation*}
+    \text{Prima cosa da fare è ordinare i valori in ordine crescente} \\
+    \linebreak[3]
+    \text{Dove il secondo quartile è sempre uguale alla \textbf{mediana}}
+    \paragraph{Esempio:} $D_n = \textbf{\{ 0, 1, 2, 3, 4, 5, 6, 7, 8 \}}$
 
+    \subsection{Insieme di dati Bivariati}
+    \definizione è lo studio della relazione di due variabili.
+    \formula \[ D_n : \{(X_1, Y_1) (X_2, Y_2) \cdots (X_n, Y_n)\}\]
+
+    \subsubsection{Coefficiente di correlazione campionario}
+    \definizione utilizzato per capire se esiste un legame \textbf{lineare} tra due serie di dati.
+    \formula 
+    \begin{equation*}
+        r = \frac{\sum_{i = 1}^{n}(x_i - \overline{x}) (y_i - \overline{y})}{(n-1) s_x s_y} = \frac{\sum_{i = 1}^{n} (x_i - \overline{x}) (y_i - \overleftarrow{y})}{\sqrt{\sum_{i = 1}^{n} (x_i - \overline{x})^2 \sum_{i = 1}^{n} (y_i - \overline{y})^2}}
+    \end{equation*}
     \subsection{Permutazioni, Combinazioni e Disposizioni}
     \subsubsection{Permutazioni}
     \definizione Modi possibili per sistemare \textbf{n} oggetti (\textbf{0! = 1})
@@ -138,12 +169,36 @@
     \subsection{Probabilità condizionata}
     \definizione è la probabilità che succeda un evento \textbf{E} dato un evento \textbf{F}
     \[ P(E | F) = \frac{P(E | F)}{P(F)}\]
+    \paragraph{Esempio:} \textbf{3} \text{scatole con contenuto nascosto dove in una è presente il premio} \\
+    \[ P(Vincita) = \frac{1}{3}\]
+    \[ P(Vincita | \text{1' pacco contiene un gatto}) = \frac{1}{2}\]
+    \[ P(Vincita | \text{1' pacco \textbf{NON} contiene un gatto}) = 0\]
+
+
 
     \subsubsection{Teorema di Bayes}
     \formula \[ P(F_j | E) = \frac{P(F_j \cap E)}{P(E)} = \frac{P(E | F_j) \cdot P(F_j)}{\sum_{i = 1}^{p} P(E | F_i) \cdot P(F_i)} \]
     \begin{center} 
         \text{Probablità di \textbf{$F_j$} sapendo che si sia verificato l'evento \textbf{E}}
     \end{center}
+
+    \subsection{Operazioni e proprietà tra eventi}
+    \definizione Prendiamo come esempio \textbf{E} ed \textbf{F} come eventi
+    \begin{itemize}
+        \item E $\cup$ F $\longleftarrow$ Unione
+        \item E $\cap$ F $\longleftarrow$ Intersezione
+        \item E $\subset$ F | E $ \subseteq $ F $\longleftarrow$ Contenuto 
+        \item E $\supset $ F | E $ \supseteq $ F $\longleftarrow$ Contiene
+        \item $E^c$ $\longleftarrow$ Complemento
+    \end{itemize}
+    \paragraph{Le seguenti operazioni possono essere combinate tra di loro:} formando cosi le proprietà che seguono:
+    \begin{itemize}
+        \item $ E \cup (F \cup G) = (E \cup F) \cup G \longrightarrow$ Associativa unione
+        \item $ (E \cup F) \cap G = (E \cap G) \cup (F \cup G) \longrightarrow$ Distributiva intersezione
+        \item $ E \cap (F \cap G) = (E \cap F) \cap G \longrightarrow$ Associativa intersezione
+        \item $ (E \cap F) \cup G = (E \cup G) \cap (F \cup G) \longrightarrow$ Distributiva unione
+        \item $ (E \cup F)^c = \frac{E^c \cap F^c}{(E \cap F)^c} = E^c \cup F^c $
+    \end{itemize}
 
     \section{Variabile aleatorie}
     \definizione La variabile aleatoria è una variabile che può assumere \textbf{valori diversi} \\ 
@@ -155,10 +210,9 @@
             Continue & \text{Possono assumere \textbf{range illimitati}}
         \end{cases}
     \]
-    \subsection{Funzione di ripartizione}
+    \subsection{Funzione di ripartizione (Tutte le variabili)}
     \definizione
     \text{La Probabilità che la variabile aleatoria \textbf{X} assuma un valore minore o uguale ad x}
-    \[ P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F(b) - F(a)\]
     \formula $ F(x) = P(X \leq x) $
     \begin{itemize}
         \item F = funzione di ripartizione
@@ -166,24 +220,43 @@
         \item x = variabile normale
     \end{itemize}
     
-    \paragraph{Esempio:}
+    \paragraph{Esempio}:  \\
+    \linebreak[4]
     $ P(a < X \leq b) $ \\
+    \linebreak[4]
     $ P(X \leq b) = P(X \leq a) + P(a < X \leq b) $ \\
+    \linebreak[4]
     $ P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F(b) - F(a) $
     
   
     \subsection{Funzione di massa (Variabili discrete)}
-    \definizione
-    $p(a) = P(X = a) $
-
-    se si ha la funzione di ripartizione è possibile ottenere la funzione di massa perche:
+    \formula $p(a) = P(X = a) $ \\
+    \linebreak[4]
+    \text{se si ha la funzione di ripartizione è possibile ottenere la funzione di massa perche:}
     \[ X \leq a = \cup X_i \]
     \formula \[ F(x) = P(X \leq a) = \sum_{x \leq a}^{} p(x_i) \]
-
     TODO- GRAFICO
+    \paragraph{Esempio:} \text{variabile aleatoria X che può assumere valori \textbf{1}, \textbf{2} o \textbf{3}} \\
+    \text{Dato che p(1) + p(2) + p(3) = \textbf{1}}
+    \paragraph{Se:}
+    \[ p(1) = \frac{1}{2} \]
+    \[ p(2) = \frac{1}{3} \]
+    \paragraph{Allora:}
+    \[ p(3) = \frac{1}{6}\]
+
+    \text{La funzione di ripartizione F di X è data da:}
+    \begin{equation*}
+        F(a) = \\
+        \begin{cases}
+            0 & a < 1 \\
+            \frac{1}{2} & 1 \leq a < 2 \\
+            \frac{5}{6} & 2 \leq a < 3 \\
+            1 & 3 \leq a
+        \end{cases}
+    \end{equation*}
 
     \subsection{Funzione della densità di probabilità (Variabili continue)}
-    \definizione
+    \formula
     \[ P(X \in B) = \int_{B}^{} f(x) \,dx \]
     \[ P(X \in (-\infty, +\infty)) = \int_{-\infty}^{+\infty} f(x) \,dx=1 \]
     integrando $-\infty \text{ a} +\infty$ la probabilità che avvenga x è per forza 1 perche andiamo ad includere tutti i valori di $\mathbb{R}$
@@ -195,14 +268,34 @@
     \end{center}
    
 
-    Relazione che lega la funzione di ripartizione \textbf{F} alla densità \textbf{f}:
+    \text{Relazione che lega la funzione di ripartizione \textbf{F} alla densità \textbf{f}:}
     \[ F(x) = P(X \leq x) = \int_{-\infty}^{x} f(x )\, dx \]
 
-    Derivando entrambi i membri otteniamo che:
+    \text{Derivando entrambi i membri otteniamo che:}
     \[ \frac{d}{da} F(a) = f(a)  \]
-    
-
+    \paragraph{Esempio:} Sia assegnata una variabile aleatoria X con densità data da:
+    \begin{equation*}
+        f(x) = \\
+        \begin{cases}
+            C(4x - 2x^2) & 0 < x < 2 \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    \text{\textbf{(a)} quanto vale C? \textbf{(b)} quanto vale P(X > 1)? } \\
+    \linebreak[4]
+    \text{\textbf{(a)} siccome f è una densita allora:}
+    \begin{equation*}
+        \begin{split}
+            1 & = C \int_{0}^{2} (4x - 2x^2) \, dx\\
+            & = C[2x^2 - \frac{2x^3}{3}] \bigg\rvert_{x=0}^{x=2} = C \cdot \frac{8}{3} \\
+            & = C = \frac{3}{8}
+        \end{split}
+    \end{equation*} \\
+    \linebreak[4]
+    \text{\textbf{(b)} conoscendo ora la densità f possiamo trovare la P(X > 1):}
+    \[ P(X > 1) = \int_{1}^{\infty} f(x) \, dx = \frac{3}{8} \int_{1}^{2}(4x - 2x^2) \, dx = \frac{1}{2} \]
     \newpage
+    
     \section{Funzioni a due variabili}
 
     \subsection{Funzione di ripartizione congiunta}
@@ -560,19 +653,18 @@
     \text{\textbf{Nullo} $\longrightarrow$ Le due variabili sono indipendenti} \\
 
     \subsection{Proprietà della covarianza}
-    \begin{multline*}
-        Cov(X, Y) = Cov(Y, X) \longleftarrow \text{Commutativo} \\
-        Cov(X, Y) = \ev{XY} - \ev{X} \ev{Y} \\
-        Cov(X, X) = Var(X) \\
-        Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) \\
-        Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) \\
-        Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y)
-    \end{multline*}
-
+    
+    $ Cov(X, Y) = Cov(Y, X) \longleftarrow \text{Commutativo} $ \\
+    $ Cov(X, Y) = \ev{XY} - \ev{X} \ev{Y} $ \\ 
+    $ Cov(X, X) = Var(X) $ \\
+    $ Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) $ \\
+    $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\
+    $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\
+    
     \centerline{- Se $X_1 \cdots X_n$ e $Y_1 \cdots Y_n$ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}x_i, \sum_{j = 1}^{m} y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \]
     \linebreak[10]
-    \centerline{Se X e Y sono \textbf{indipendenti}}
+    \centerline{Se X e Y sono \textbf{indipendenti:}}
     \[ \ev{XY} = \ev{X} \ev{Y} \]
     \[ Cov(X, Y) = 0 \longrightarrow \text{se sono indipenti}\]
 
@@ -640,7 +732,52 @@
     \end{equation*}
     
     \subsection{Disugaglianza di Chebyshev}
+    \definizione Ci permette di sapere la probabilità che una variabile si discosti dalla media per più di un certo numero di deviazioni standard.
+    \begin{equation*}
+        X \text{var aleatoria}
+        \begin{cases}
+            \mu & \text{Media} \\
+            \sigma^2 & \text{Varianza}
+        \end{cases}
+    \end{equation*}
 
+    \centerline{Per ogni \textbf{r > 0} $\longrightarrow$ valore che indica il discostamento dalla media}
+    \formula 
+    \[ P(|X - \mu| \geq r) \leq \frac{\sigma^2}{r^2} \]
+    \centerline{Serve per ottenere le stime di probabilità di eventi rari di variabili} \\
+    \centerline{cui conosciamo solo la \textbf{media} e la \textbf{varianza}}
     \section{Legge debole dei grandi numeri}
+    \definizione Dice che la probabilità che la differenza tra la media campionaria e il valore atteso superi una determinata soglia diventa sempre più piccola all'aumentare del numero di osservazioni
+
+    \newpage
+    \section{Modelli di variabili aleatorie}
+
+    \subsection{Bernoulli}
+
+    \subsection{Binomiali}
+    \subsubsection{Valore atteso e varianza di Binomiali}
+    \subsubsection{Funzione di massa e di ripartizione di Binomiali}
+
+    \subsection{Poisson}
+
+    \subsection{Ipergeometriche}
+
+    \subsection{Uniformi}
+
+    \subsection{Normali o Gaussiane}
+
+    \subsection{Esponenziali}
+
+    \subsection{Processi stocastici (Poisson)}
+
+    \subsection{Gamma}
+
+    \subsection{Chi-quadro}
+
+    \subsection{Distribuzione T}
+
+    \subsection{Distribuzione F}
+
+    \subsection{Distribuzione logistica}
 
 \end{document}
