@@ -295,26 +295,27 @@
     \text{\textbf{(b)} conoscendo ora la densità f possiamo trovare la P(X > 1):}
     \[ P(X > 1) = \int_{1}^{\infty} f(x) \, dx = \frac{3}{8} \int_{1}^{2}(4x - 2x^2) \, dx = \frac{1}{2} \]
     \newpage
-    
-    \section{Funzioni a due variabili}
 
+    \section{Funzioni a due variabili}
+    Questo tipo di funzioni ci sono utili quando l'utilizzo di una sola variabile è impossibile poichè 
+    \textit{l'oggetto in questione è basato sulla relazione di due variabili aleatorie}
     \subsection{Funzione di ripartizione congiunta}
     \definizione Funzione di ripartizione a due variabili aleatorie X e Y
     \formula \[ F(x, y) = P(X \leq x, Y \leq y) \]
     \text{Se vogliamo trovare solamente la funzione di ripartizione di una singola variabile aleatoria:}
     \begin{equation*}
     \begin{split}
-        F_x(x) & = P(X \leq x) \\
+        F_X(x) & = P(X \leq x) \\
         & = P(X \leq x, Y \leq \infty) \\
         & = F(x, \infty) \\
     \end{split}
     \end{equation*}
     Applicabile anche alla $F_y(y)$
-    \[ F_y(y) = F(\infty, y) \]
+    \[ F_Y(y) = F(\infty, y) \]
 
     \subsection{Funzione di massa congiunta}
     \definizione Probabilita che accadano due eventi (\textbf{X} e \textbf{Y}) nello stesso istante.
-    \formula $ p(x_i, y_j) = P(X=x_i, Y=y_j) $ \\
+    \formula $ p(x_i, y_j) = P(X=x_i, Y=y_j) $
 
     \text{Se vogliamo trovare solamente la funzione di massa di una singola variabile aleatoria:}
     \begin{equation*}
@@ -327,200 +328,232 @@
     \end{equation*}
     Applicabile anche alla $p_Y$
     \[ p_Y(y_j) = \sum_{i}^{} p(x_i, y_j) \]
-    TODO FARE ESEMPIO DI equation* SOPRA
+    \linebreak[4]
+    \[ \sum_{x}^{} \sum_{y}^{} p(x, y) = 1 \]
 
-
+    \newpage
     \subsection{Funzione densità congiunta}
-    page 128
-    \[ P((X,Y) \in b) = \int_{a}^{} \int_{b}^{} f(x,y) \, dx \, dy \]
+    \definizione Due variabili aleatorie X e Y sono \textit{congiuntamente continue} se esiste un funzione non negativa f(x,y)
+    definita per tutti gli x e gli y
+    \formula
+    \[ P((X,Y) \in C) = \int_{}^{} \int_{(x,y) \in C}^{} f(x,y) \, dx \, dy \] \\
+
+    \text{se A e B sono sottoinsiemi qualsiasi di $\mathbb{R}$ e C:= A x B}
+    \[ C:= {(x,y) \in \mathbb{R}^2 : x \in A, y \in B}\]
+    \text{Possiamo riscrivere la funzione di ripartizione congiunta di X e Y come segue:}
     \begin{equation*}
         \begin{split}
-            f(a,b) & = P(X \leq a, Y \leq b) \\
+            F(a,b) & = P(X \leq a, Y \leq b) \\
             & = P(X \in a, Y \in b) \\
+            & = \int_{B}^{} \int_{A}^{} f(x,y) \, dx \, dy \\
             & = \int_{-\infty}^{a} \int_{-\infty}^{b} f(x,y) \, dx \, dy \\
         \end{split}
     \end{equation*}
-
-
-    \subsection{X, Y continue congiunte}
-    \paragraph{Esempio:}
+    \paragraph{Esempio:} Siano X e Y due variabili aleatorie congiuntamente continue con densità
+    di probabilità data da:
     \begin{equation*}
         f(x,y) =
         \begin{cases}
-            2 & e^{-x} e^{-2y} \\
+            2e^{-x} e^{-2y} & x > 0, y > 0 \\
             0 & altrimenti
         \end{cases}
     \end{equation*}
-
-    DA FINIRE SOTTO
+    Si calcolino \textbf{(a)} P(X > 1, Y < 1)
     \begin{equation*}
         \begin{split}
-            \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} f(x,y) \, dx \, dy & = \int_{0}^{+\infty}\int_{0}^{+\infty} 2e^{-x}e^{-2y} \, dx \, dy \\
-            & = \int_{0}^{+\infty} 2 e^{-2y}
-        \end{split}
-    \end{equation*}
-
-    \paragraph{Esempio da vedere meglio}
-    \begin{equation*}
-        \begin{split}
-            P(X > 1, Y < 1) & = \int_{1}^{\infty} \int_{-\infty}^{1} f(x,y) \, dx \, dy \\
-            & = \int_{1}^{\infty} \int_{0}^{1} 2e^{-x} e^{-2y} \, dx \, dy \\
-            & = \int_{1}^{\infty} e^{-x} \int_{0}^{1} 2e^{-2y} \, dy \, dx \\
-            & = (2 - e^{-2}) \int_{1}^{\infty} e^{-x} \, dx \\
+            P(X > 1, Y < 1) & = \int_{0}^{1} \int_{1}^{\infty} 2e^{-x} e^{-2y} \, dx \, dy \\
+            & = \int_{0}^{1} 2e^{-2y} (\int_{1}^{\infty} e^{-x} \, dx) \, dy \\
+            & = \int_{0}^{1} 2e^{-2y}\{ -e^{-x}\} \rvert_{x=1}^{\infty} \, dy \\
+            & = e^{-1} \int_{0}^{1} 2e^{-2y} \, dy \\
             & = e^{-1}(1 - e^{-2})
         \end{split}
-        % FINIRE NACHE QUESTO
-        % PORCAMADONNA ONETO AMMAZZATI TE E I TUOI APPUNTI DI MERDA
     \end{equation*}
+    \centerline{In questo caso si è integrato prima in una variabile e poi nell'altra}
 
     \subsection{Variabili aleatorie indipendenti}
     \subsubsection{X,Y indipendenti}
     \definizione
     \text{Un evento su una variabile non influenza l'altra.}
+    \formula Se soddisfano questa richiesta le variabili si dicono \textit{indipendenti} 
     \[ P(X \in A, Y \in B) = P(X \in A) P(Y \in B)\]
 
+    Usando gli assiomi della probabilità è possibile dimostrare che la definizione di sopra è equivalente a:
     \[ P(X \leq a, Y \leq b) = P(X \leq a) P(Y \leq b)\]
+    \[ \forall a,b \in \mathbb{R} \]
+    \linebreak[3]
 
+    Ovvero che la funzione di ripartizione congiunta sia il prodotto delle marginali:
     \[ F(a,b) = F_X(a) F_Y(b)\]
 
     \textbf{Funzione di massa:}
     \[ p(a,b) = p_X(a) p_Y(b) \]
     \[ P(X=a, Y=b) = P(X=a) P(Y=b)\]
-
-    \textbf{Funzione di densità:}
-    \[ f(x, y) = f(x) f(y)\]
-    
-    \paragraph{Esempio con variabili indipendenti continue:}
+    \paragraph{Dimostrazione:}
     \begin{equation*}
-        f_X(q) = f_Y(x) =
+        \begin{split}
+            P(X \in A, Y \in B) & = \sum_{x \in A}^{} \sum_{y \in B}^{} p(x, y) \\
+            & = \sum_{x \in A}^{} \sum_{y \in B}^{} p_X(x) p_Y(y) \\
+            & = \sum_{x \in A}^{} p_X(x) \sum_{y \in B}^{} p_Y(y) \\
+            & = P(X \in A) P(Y \in B)
+        \end{split}
+    \end{equation*}
+
+    \paragraph{Funzione di densità:}
+    \[ f(x, y) = f_X(x) f_Y(y)\]
+    \[ \forall x,y \in \mathbb{R} \]
+    
+    \paragraph{Esempio con variabili indipendenti continue e con stessa funzione di densità:}
+    \begin{equation*}
+        f_X(t) = f_Y(t) =
         \begin{cases}
-            e^{-q} & q > 0 \\
+            e^{-t} & t > 0 \\
             0 & altrimenti
         \end{cases}
     \end{equation*}
-
-    \paragraph[short]{ssadasd}
+    Quale è la densità di probabilità della variabile aleatoria data dal rapporto X/Y
     \begin{equation*}
     \begin{split}
-        F_Z(a) & = P(Z \leq a) = P(\frac{X}{Y} \leq a) \\
-        & = \int_{}^{} \int_{\frac{x}{y} \leq a}^{} f(x,y) \, dx \, dy = \int_{\frac{x}{y} \leq a}^{}\int_{}^{} f(x) f(y) \, dx \, dy \\ 
-        & = \int_{0}^{\infty} \int_{0}^{ay} e^{-x} e^{-y} \, dx \, dy = \int_{0}^{\infty} e^{-y} \int_{0}^{ay} e^{-x} \, dx \, dy \\ 
-        & = \int_{0}^{\infty} e^{-y}(1-e^{-ay}) \, dy \\
-        & = \int_{0}^{\infty} e^{-y} -e^{-(a+1)y} \, dy \\ 
-        & = -e^{-y} + \frac{e^{-(a+1)y}}{(a+1)} \bigg\rvert_{0}^{\infty} \\ 
-        & = + 1 - \frac{1}{a+1} = \frac{a}{a+1} \\
-        & = F_Z(a) = F_\frac{X}{Y}(a)
+        F_{X|Y}(a) & = P(X | Y \leq a) \\
+        & = \int_{(x,y)}^{}\int_{x \leq ay}^{} f(x, y) \, dx \, dy \\ 
+        & = \int_{(x,y)}^{}\int_{x \leq ay}^{} f(x) f(y) \, dx \, dy \\ 
+        & = \int_{0}^{\infty} \int_{0}^{ay} e^{-x} f(x) f(y)\, dx \, dy \\ 
+        & = \int_{0}^{\infty} e^{-y}(\int_{0}^{ay} e^{-x}) \, dy \\
+        & = \int_{0}^{\infty} e^{-y} (1-e^{-ay}) \, dy \\ 
+        & = [-e^{-y} + \frac{e^{-(a+1)y}}{(a+1)}] \bigg\rvert_{0}^{\infty} \\ 
+        & =  1 - \frac{1}{a+1} 
     \end{split}
     \end{equation*}
-    ---------------------
-    \begin{equation*}
-    \begin{split}
-        F_Z(a) = F_{\frac{X}{Y}}(a) = \frac{d}{da} F_Z(a) & = \frac{d}{da} \cdot \frac{a}{a+1} \\ 
-        & = \frac{(a+1) - a}{(a+1)^2} = \frac{1}{(a+1)^2} 
-    \end{split}
-    \end{equation*}
+    La funzione di densità si ricava infine \textbf{derivando} la funzione di ripartizione
+    \[f_{X|Y}(a) = \frac{d}{da}(1- \frac{1}{a + 1}) = \frac{1}{(a + 1)^2} a > 0 \]
 
+    \newpage
     \subsection{Distribuzioni condizionate}
+    \definizione La distribuzione condizionata di Y dato X è la probabilità di X quando è conosciuto il valore assunto da X. \\
+    A ogni distribuzione condizionata è associato un valore atteso condizionato e una varianza condizionata
     \formula $P(E|F) = \frac{P(E \cap F)}{P(F)}$
 
     \subsection{funzione di massa condizionata (Discrete)}
     \formula
     \begin{equation*}
         \begin{split}
-            p_{X|Y} = (X | Y) & = P (X=x, Y=y) \\
+            p_{X|Y}(X | Y) & = P (X=x, Y=y) \\
             & = \frac{P(X=x, Y=y)}{P(Y=y)} \\
             & = \frac{p(X,Y)}{p_Y(x, y) > 0} 
         \end{split}
     \end{equation*}
+    \[ \forall x, \forall y \text{ con } p_Y(y) > 0\]
+    \linebreak[4]
+    \text{Se y non è un valore possibile di Y, ovvero se P(Y = y) = 0, la quantità $p_{X|Y}(x|y)$ non è definita }
+    
+    \paragraph{Esempio:} Siano X e Y due variabili aleatorie discrete con funzione di massa congiunta p dato che: 
+    \begin{center}
+        \begin{minipage}{0.2\textwidth}
+            $p(0,0) = 0.4$
+        \end{minipage}
+        \begin{minipage}{0.2\textwidth}
+            $p(0,1) = 0.2$
+        \end{minipage}
+        \begin{minipage}{0.2\textwidth}
+            $p(1,0) = 0.1$
+        \end{minipage}
+        \begin{minipage}{0.2\textwidth}
+            $p(1,1) = 0.3$
+        \end{minipage}
+    \end{center}
+    Calcolare la massa di X condizionata da Y = 1
+    \[ P(Y = 1) = \sum_{x}^{} p(x, 1) = p(0,1) + p(1,1) = 0.5 \]
+    \paragraph{Quindi:}
+    \[ P(X = 0 | Y = 1) = \frac{p(0,1)}{P(Y = 1)} = \frac{2}{5} \]
+    \[ P(X = 1 | Y = 1) = \frac{p(1,1)}{P(Y = 1)} = \frac{3}{5} \]
+    Se X e Y sono variabili congiuntamente continue, non è possibile utilizzare la
+    definizione di distribuzione condizionata valida per quelle discrete, infatti sappiamo
+    che P(Y = y) = 0 per tutti i valori di y
+
 
     \subsection{funzione di densità condizionata (Continue)}
     \formula
     \[ f_{X|Y}(x | y) = \frac{f(x, y)}{f_Y(y)}\]
-    \[ P(X \in a | Y = y) := \int_{a}^{} f_{X|Y}(X | Y) \, dx \]
+    Se X e Y sono congiuntamente continue e A è un sottoinsieme di numeri reali per ogni y si può definire:
+    \[ P(X \in A | Y = y) := \int_{A}^{} f_{X|Y}(x | y) \, dx \]
 
-    \subsection{X, Y continue congiunte}
-    \paragraph{Esempio:}
+    Notiamo che X e Y sono indipendenti allora:
+    \begin{center}
+        \begin{minipage}{0.45 \textwidth}
+            $ f_{X|Y}(x,y) = f_X(x) $
+        \end{minipage}
+        \begin{minipage}{0.45 \textwidth}
+            $ P(X \in A | Y = y) = P(X \in A) $
+        \end{minipage}
+    \end{center}
+
+
+    \paragraph{Esempio:} è data la seguente densità congiunta di X e Y
+
+
+
     \begin{equation*}
         f(x,y) =
         \begin{cases}
-            \frac{12}{5} x^{(2-x-y)} & 0 < x < 1, 0 < y < 1 \\
+            \frac{12}{5} x(2-x-y) & 0 < x < 1, 0 < y < 1 \\
             0 & altrimenti
         \end{cases}
-    \end{equation*}
-
-    $ f_{X|Y}(x,y) = \frac{f(x,y)}{f_Y(y)} $
+    \end{equation*} \\
+    \linebreak[2]
+    Si calcoli la densità condizionata di X rispetto a Y = y per 0 < y < 1. \\
+    Se questi due numeri sono compresi tra 0 e 1 abbiamo che:
 
     \begin{equation*}
         \begin{split}
-            f_Y(y) & = \int_{0}^{\infty} f(x,y) \, dx \\
-            & = \int_{0}^{1} \frac{12}{5} x(2-x-y) \, dx \\
-            & = \frac{12}{5} \int_{0}^{1} (2x - x^2 - xy) \, dx \\
-            & = \frac{12}{5} (x^2 - \frac{x^3}{3} - \frac{x^2y}{2} \bigg\rvert_{0}^{1} )  \, dx \\
-            & = \frac{12}{5} (2 - \frac{1}{3} - \frac{y}{2}) \\
-            & = \frac{12}{5} (\frac{2}{3} - \frac{y}{2})
+            f_{X|Y}(x,y):&= \frac{f(x,y)}{f_Y(y)} \\
+            & = \frac{f(x, y)}{\int_{-\infty}^{\infty} f(x', y) \, dx'} \\
+            & = \frac{x(2-x-y)}{\int_{0}^{1} x'(2-x'-y) \, dx'} \\
+            & = \frac{x(2-x-y)}{\frac{2}{3} - \frac{y}{2}} \\
+            & = \frac{6x(2-x-y)}{4-3y}
         \end{split}
     \end{equation*}
-    ---------------------
 
-    \begin{equation*}
-        f_{X|Y}(x,y) = \frac{f(x,y)}{f_Y(y)} = \frac{\frac{12}{5} x(2-x-y)}{\frac{12}{5}(\frac{2}{3} - \frac{y}{2})}
-    \end{equation*}
-    
-    \begin{equation*}
-    =
-    \begin{cases}
-        \frac{x(2-x-y)}{\frac{2}{3} - \frac{y}{2}} & 0 < x < 1, 0 < y < 1 \\
-        0 & altrimenti
-    \end{cases}
-    \end{equation*}
 
+    \newpage
     \section{Valore atteso}
     \definizione Rappresenta la media pesata dei valori di una variabile aleatoria
 
     \subsection{Funzione di massa (Discrete)}
-    \[ \ev{X} = \sum_{i}^{} x_i P(X = x_i) \]
+    \[ \ev{X} := \sum_{i}^{} x_i P(X = x_i) \]
+    Si può dire quindi che il valore atteso è anche detto \textit{media} di X oppure \textit{aspettazione}
+
+    \paragraph{Esempio semplice:} Se X è una variabile aleatoria con funzione di massa
+    \[ p(0) = \frac{1}{2} = p(1) \]
+    Allora:
+    \[ \ev{X} = 0 \cdot \frac{1}{2} + 1 \cdot \frac{1}{2} = \frac{0+1}{2} = \frac{1}{2}\]
 
     \paragraph{Esempio dado fair 6 facce $P(x_i = i) = \frac{1}{6}$}
     \[ \ev{X} = \sum_{i=1}^{6} i \frac{1}{6} = \frac{1}{6} \sum_{i=1}^{6} i = \frac{21}{6} = \frac{7}{2} = 3.5 \]
+    Oppure:
+    \[ \ev{X} := 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{6} + 3 \cdot \frac{1}{6} + 4 \cdot \frac{1}{6} + 5 \cdot \frac{1}{6} + 6 \cdot \frac{1}{6} = \frac{7}{2} = 3.5 \]
     \text{dove il risultato è la media dei valori che X può assumere}
 
-    \begin{center}
-        \text{Se N è molto grande allora \textbf{$N_i \approx N_p(x_i)$}}
-        \[ \sum_{i}^{n} x_i p(x_i) \approx \sum_{i}^{n} x_i \frac{n_i}{n}\]
-    \end{center}
+    \paragraph{Se N è molto grande} allora \textbf{$N_i \approx N_p(x_i)$}
+    \[ \sum_{i}^{n} x_i p(x_i) \approx \sum_{i}^{n} x_i \frac{n_i}{n}\]
     
     
     \subsection{Funzione di densità (Continue)}
-    \formula \[ \ev{X} = \int_{-\infty}^{+\infty} x f(x) \, dx \]
-    \paragraph{Esempio:} \hfill \\
-    \begin{minipage}{0.45\textwidth}
-        \begin{equation*}
-            f(x) =
-            \begin{cases}
-                \frac{1}{2} & 0 \leq x \leq 2 \\
-                0 & altrimenti
-            \end{cases}
-        \end{equation*}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.45\textwidth}
-        \begin{equation*}
-            \begin{split}
-                \ev{X} & = \int_{-\infty}^{+\infty} f(x) \, dx \\
-                & = \int_{0}^{2} x \frac{1}{2} dx \\
-                & = \int_{0}^{2} \frac{x}{2} dx \\
-                & = \frac{x^2}{4} \bigg\rvert_{0}^{2} = \frac{4}{4} = 1
-            \end{split}
-        \end{equation*}
-    \end{minipage}
-
+    \formula \[ \ev{X} := \int_{-\infty}^{+\infty} x f(x) \, dx \]
+    \paragraph{Esempio:} Siamo in attesa di una comunicazione che deve arrivare dopo le ore 17. \\
+    a partire dalle 17 è una variabile aleatoria con funzione di densità data da:
+    \begin{equation*}
+        f(x) = \\
+        \begin{cases}
+            \frac{1}{1.5} & \text{se 0 < x < 1.5} \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    Il valore atteso del tempo che trascorre tra le 17 e il momento di arrivo della comunicazione è quindi:
+    \[ \ev{X} = \int_{0}^{1.5} \frac{x}{1.5} \, dx = 0.75\]
 
     \subsection{Valore atteso di una funzione}
-
-    \begin{center}
-        $ X \rightarrow g(X) - g: \mathbb{R} \rightarrow \mathbb{R} $ \hfill \\
-    \end{center}
-    
+    \definizione è possibile calcolare il valore atteso di una funzione g(X) notando che essa stessa è una variabile aleatoria \\
+    quindi si applicano le stesse proprietà, come segue: \\
+    \linebreak[4]
 
     \begin{minipage}{0.45\textwidth}
         \text{Variabile discreta:}
@@ -536,16 +569,73 @@
         \end{equation*}
     \end{minipage}
 
+    \paragraph{Esempio (discrete):} quanto vale il valore atteso del quadrato di una variabile X con le seguenti funzioni di massa?
+    \begin{equation*}
+        \begin{minipage}{0.3\textwidth}
+            p(0) = 0.2
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            p(1) = 0.5
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            p(2) = 0.3
+        \end{minipage}
+    \end{equation*} \\
+    Se poniamo $Y := X^2$ questa diventa una variabile che può assumere i valori $0^2$, $1^2$, $2^2$
+    \[ p_Y(0) := P(Y = 0^2) = 0.2 \]
+    \[ p_Y(1) := P(Y = 1^2) = 0.5 \]
+    \[ p_Y(4) := P(Y = 2^2) = 0.3 \]
+    Quindi:
+    \[ \ev{X^2} = \ev{Y} = 0 \cdot 0.2 + 1 \cdot 0.5 + 4 \cdot 0.3 = 1.7 \]
+    Oppure (utilizzando la proposizione delle variabili discrete)
+    \[ \ev{X^2} = 0^2 \cdot 0.2 + 1^2 \cdot 0.5 + 2^2 \cdot 0.3 = 1.7\]
 
+    \paragraph{Esempio (continue):} Il tempo – in ore – necessario per localizzare un guasto nell’impianto
+    elettrico di una fabbrica è una variabile aleatoria X con funzione di densità
+    \begin{equation*}
+        f(x) =
+        \begin{cases}
+            1 & 0 < x < 1 \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    Se il danno economico provocato da una interruzione di x ore è $x^3$, qual è il valore
+    atteso di questo costo? \\
+    \paragraph{Applicando la proposizione della variabile continua} possiamo ottenere quanto segue:
+    \[ \ev{X^3} = \int_{0}^{1} x^3 \, dx = \frac{1}{4} \]
 
-    \subsection{Costanti reali nel valore atteso}
-    
-    \text{Sia per discreto che per continuo:}
+    \subsection{Dimostrazioni}
+    \text{Sia per discreto che per continuo si applicano le seguenti proprietà:}
     \[ \ev{aX+b} = a \ev{X} + b \]
+    Se proviamo a ponere a = 0 scopriamo che:
     \[ \ev{b} = b \]
+    Se proviamo a ponere b = 0 scopriamo che:
     \[ \ev{aX} = a \ev{X} \]
+    Ovvero, il valore atteso di un fattore costante moltiplicato per una variabile aleatoria,
+    è pari alla costante per il valore atteso della variabile aleatoria.
+
+    \paragraph{Per caso discreto:}
+    \begin{equation*}
+        \begin{split}
+            \ev{aX + b} & = \sum_{x}^{} (ax + b) p(x) \\
+            & = a \sum_{x}^{} xp(x) + b \sum_{x}^{} p(x) \\
+            & = a\ev{X} + b
+        \end{split}
+    \end{equation*}
+
+    \paragraph{Per caso continuo:}
+    \begin{equation*}
+        \begin{split}
+            \ev{aX + b} & = \int_{-\infty}^{+\infty} (ax + b) f(x) \, dx \\
+            & = a \int_{-\infty}^{+\infty} xf(x) \,dx + b \int_{-\infty}^{+\infty} f(x) \, dx \\
+            & = a\ev{X} + b
+        \end{split}
+    \end{equation*}
 
     \subsection{Momenti N-esimi nel valore atteso}
+    \definizione se n = 1,2 ... n, la quantità $\ev{X^n}$ se esiste viene detta \textit{momento n-esimo} della variabile aleatoria X. \\
+    \linebreak[4]
+    \centerline{è possibile applicare le formule di prima, come segue:}
     \begin{equation*}
         \ev{X^n} =
         \begin{cases}
@@ -554,24 +644,54 @@
         \end{cases}
     \end{equation*}
 
-    \subsection{Valore atteso di una funzione a due variabili}
-    \[ X, Y -> g(X,Y) - \boldsymbol{g: \mathbb{R}^2 \rightarrow \mathbb{R}} \]
-
+    \subsection{Valore atteso della somma di due variabili}
+    \definizione è possibile applicare le formule viste sopra anche quando abbiamo due variabili aleatorie \\
+    \linebreak[4]
+    se in questo caso $\boldsymbol{\ev{g(X,Y)}}$ esiste allora: \\
     \begin{equation*}
         \ev{g(X,Y)} =
         \begin{cases}
-            \sum_{x}^{} \sum_{y}^{} g(x,y) p(x,y) & \text{Discreto} \\
-            \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(x,y) f(x,y) \, dx \, dy & \text{Continuo}
+            \sum_{x}^{} \sum_{y}^{} g(x,y) p(x,y) & \text{Se discreto} \\
+            \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(x,y) f(x,y) \, dx \, dy & \text{Se continuo}
         \end{cases}
     \end{equation*}
-    \hfill 
+    \linebreak[4]
+    % \[ X, Y -> g(X,Y) - \boldsymbol{g: \mathbb{R}^2 \rightarrow \mathbb{R}} \]
+    \text{se $g(X,Y)$ come $\boldsymbol{g = X + Y}$ allora}
+    \[ \ev{X + Y} = \ev{X} + \ev{Y} \]
 
-    \begin{center}
-        \text{se $g(X,Y)$ come $\boldsymbol{g = X + Y}$ allora}
-        \[ \ev{X + Y} = \ev{X} + \ev{Y} \]
-    \end{center}
-    
-    
+    \paragraph{Dimostrazione caso discreto:}
+    \begin{equation*}
+        \begin{split}
+            \ev{X + Y} &= \sum_{x}^{} \sum_{y}^{} (x + y) p(x, y) \\
+            & = \sum_{x}^{} x \cdot [\sum_{j}^{} p(x_i, y_j)] + \sum_{x}^{} y \cdot [\sum_{i}^{} p(x_i, y_j)] \\
+            & = \sum_{x}^{} xp_X(x) + \sum_{y}^{} yp_Y(y) \\
+            & = \ev{X} + \ev{Y}
+        \end{split}
+    \end{equation*}
+
+    \paragraph{Dimostrazione caso continuo:}
+    \begin{equation*}
+        \begin{split}
+            \ev{X + Y} &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} (x + y) f(x, y) \, dx \, dy \\
+            & = \int_{-\infty}^{\infty} x [\int_{-\infty}^{\infty} f(x,y) \, dy] \, dx + \int_{-\infty}^{+\infty} y [ \int_{-\infty}^{+\infty} f(x,y) \, dx ] \, dy \\
+            & = \int_{-\infty}^{\infty} x f_X(x) \, dx + \int_{-\infty}^{\infty} yf_Y(y) \, dy \\
+            & = \ev{X} + \ev{Y}
+        \end{split}
+    \end{equation*}
+
+    \paragraph{è possibile applicare la ricorsione per il numero di variabili aleatori}
+    \begin{equation*}
+        \begin{split}
+            \ev{X + Y + Z} &= \ev{(X + Y) + Z} \\
+            & = \ev{X + Y} + \ev{Z} \\
+            & = \ev{X} + \ev{Y} + \ev{Z}
+        \end{split}
+    \end{equation*}
+
+    \paragraph{In generale per ogni n}
+    \[ \ev{X_1 + X_2 + \cdots + X_n} = \ev{X_1} + \ev{X_2} + \cdots \ev{X_n} \]
+
 
     \paragraph{Esempio: 2 dadi a 6 facce}
     \begin{equation*}
@@ -583,25 +703,23 @@
       \end{split}  
     \end{equation*}
     
-    \begin{center}
-        \text{Dove \textbf{7} è il valore atteso della somma dei due dadi.} 
-        \hfill
-        \text{Se vogliamo predire il valore di X possiamo scegliere un numero che sarà ugual ad X.}
-        \text{L'errore che commeteremo sarà di \boldsymbol{$(X - c)^2$}}
-    \end{center}
+    \centerline{Dove \textbf{7} è il valore atteso della somma dei due dadi.}
+    Se vogliamo predire il valore di X possiamo scegliere un numero che sarà ugual ad X.
+    L'errore che commeteremo sarà di $\boldsymbol{(X - c)^2}$ \\
 
-    
     Se \boldsymbol{$c = \ev{X}$} l'errore sarà minimizzato $\boldsymbol{\mu := \ev{X}}$
-    
-
     \[ \ev{(X - c)^2} \geq \ev{(X - \mu)^2}\]
 
     \section{Varianza}
-    \definizione Indica di quanto i dati si discostano dalla media al quadrato
-    \formula \[ Var(X) = \ev{X^2} - \ev{X}^2\]
-    
-    \[ \mu = \ev{X} \leftarrow \text{Primo momento}\]
-    \[ \ev{X^2} \leftarrow \text{Momento secondo}\]
+    \definizione Indica di quanto i dati si discostano dalla media al quadrato \\
+    \begin{minipage}{0.45\textwidth}
+        \[ \mu = \ev{X} \leftarrow \text{Primo momento}\]
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \[ \ev{X^2} \leftarrow \text{Momento secondo}\]
+    \end{minipage}
+
+    \formula \[ Var(X) := \ev{(X - \mu)^2} \]
 
     \paragraph{Generalizzazione:}
     \begin{equation*}
@@ -620,19 +738,38 @@
             & = 1^2 \cdot \frac{1}{6} + 2^2 \cdot \frac{1}{6} + 3^2 \cdot \frac{1}{6} + 4^2 \cdot \frac{1}{6} + 5^2 \cdot \frac{1}{6} + 6^2 \cdot \frac{1}{6} \\
             & = \frac{91}{6}
         \end{split}
-    \end{equation*}
+    \end{equation*} \\
 
-    \[ Var(X) = \frac{91}{6} - (\frac{7}{2})^2 \]
+    Sapendo che $\ev{X} = \frac{7}{2}$
+    \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{91}{6} - (\frac{7}{2})^2 = \frac{35}{12} \]
 
     \subsection{Costanti reali nella varianza}
-    \[ Var(aX + b) = a^2 \cdot Var(X) \]
-    SE $a = 0 \longrightarrow Var(b) = 0$ \\
-    SE $b = 0 \longrightarrow Var(aX) = a^2 \cdot Var(X)$ \\
-    SE $a = 1 \longrightarrow Var(X + b) = Var(X) + {Var(b)} = Var(X)$ \\
+    Una utile identità che riguarda la varianza è la seguente (per ogni coppia di costanti reali a e b)
+    \[ Var(aX + b) = a^2 \cdot Var(X) \] \\
 
+    Per dimostrare ciò ricordiamoci sempre di $\boldsymbol{\mu := \ev{X}}$
+    \paragraph{Dimostrazione:}
+    \begin{equation*}
+        \begin{split}
+            Var(aX + b) :&= \ev{(aX + b - \ev{aX + b})^2} \\
+            & = \ev{(aX + b -a\mu - b)^2} \\
+            & = \ev{a^2(X-\mu)^2} \\
+            & = a^2 \ev{(X - \mu)^2} \\
+            & = a^2 Var(X)
+        \end{split}
+    \end{equation*}
+    Se sostituiamo i valori di \textbf{a} e \textbf{b} troviamo che: \\
+    SE $a = 0 \longrightarrow Var(b) = 0 \longrightarrow \text{le costanti hanno varianza \textbf{nulla}}$ \\
+    SE $a = 1 \longrightarrow Var(X + b) = Var(X) \longrightarrow \text{sommando una const. non cambia la varianza}$ \\
+    SE $b = 0 \longrightarrow Var(aX) = a^2 \cdot Var(X)$ \\
+    
+
+    \newpage
     \section{Deviazione Standard}
     \definizione Indica di quanto dei dati si \textbf{discotastano dalla media} (non al quadrato)
-    \[ S = \sqrt{Var(X)} \]
+
+    \formula \[ S = \sqrt{Var(X)} \]
+
     \[ Var(X + X) = Var(2 \cdot X) = 4 \cdot Var(X) \]
     \linebreak[1]
     \textbf{Se X è indipendente allora:}
