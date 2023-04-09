@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  9 APR 2023 20:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  9 APR 2023 23:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -356,44 +356,109 @@ Underfull \hbox (badness 10000) in paragraph at lines 760--765
 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 788--791
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 781--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 794--800
+Underfull \hbox (badness 10000) in paragraph at lines 781--790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 802--805
+Underfull \hbox (badness 10000) in paragraph at lines 804--809
 
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 819--822
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--809
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--809
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--809
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--809
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--809
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 837--840
+Underfull \hbox (badness 10000) in paragraph at lines 814--817
 
  []
 
-[25] [26] [27] (probabilità.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 841--844
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 858--861
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 861--864
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 930--941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 947--949
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 947--949
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 955--960
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 955--960
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 976--985
+
+ []
+
+[29] [30] (probabilità.aux) ) 
 Here is how much of TeX's memory you used:
- 3179 strings out of 476334
- 44828 string characters out of 5787972
+ 3182 strings out of 476334
+ 44864 string characters out of 5787972
  1864382 words of memory out of 5000000
- 23591 multiletter control sequences out of 15000+600000
- 526333 words of font info for 62 fonts, out of 8000000 for 9000
+ 23593 multiletter control sequences out of 15000+600000
+ 527961 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,19n,62p,376b,240s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probabilità.pdf (27 pages, 330202 bytes).
+Output written on probabilità.pdf (30 pages, 341604 bytes).
 PDF statistics:
- 473 PDF objects out of 1000 (max. 8388607)
+ 492 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

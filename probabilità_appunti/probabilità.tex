@@ -775,36 +775,58 @@
     \textbf{Se X è indipendente allora:}
     \[ Var(X) + Var(X) = Var(X + X) \]
 
+    \newpage
     \section{Covarianza}
     \definizione Misura la \textbf{variazione} tra due variabili aleatorie associate tra di loro
-    \formula \[ \boldsymbol{Cov(X,Y) := \ev{(X - \mu_x) (Y - \mu_y)}} = \ev{XY} - \ev{X} \ev{Y} \]
+    \formula \[ \boldsymbol{Cov(X,Y) := \ev{(X - \mu_X) (Y - \mu_Y)}} \]
     \textbf{Dove:} \\
     $ \mu_x = \ev{X} $ \\
-    $ \mu_y = \ev{Y} $
-
-    \begin{center} 
-        \textit{La covarianza può essere negativa, positiva o nulla } 
-    \end{center}
+    $ \mu_y = \ev{Y} $ \\
+    \linebreak[4]
+    \centerline{\textit{La covarianza può essere negativa, positiva o nulla } }
     \text{\textbf{Positivo} $\longrightarrow$ Le due variabili crescono o decrescono insieme} \\
     \text{\textbf{Negativo} $\longrightarrow$ Quando una variabile cresce l'altra decresce} \\
     \text{\textbf{Nullo} $\longrightarrow$ Le due variabili sono indipendenti} \\
 
-    \subsection{Proprietà della covarianza}
-    
-    $ Cov(X, Y) = Cov(Y, X) \longleftarrow \text{Commutativo} $ \\
-    $ Cov(X, Y) = \ev{XY} - \ev{X} \ev{Y} $ \\ 
-    $ Cov(X, X) = Var(X) $ \\
-    $ Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) $ \\
-    $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\
-    $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\
-    
-    \centerline{- Se $X_1 \cdots X_n$ e $Y_1 \cdots Y_n$ sono variabili aleatorie qualsiasi allora:}
-    \[ Cov(\sum_{i = 1}^{n}x_i, \sum_{j = 1}^{m} y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \]
-    \linebreak[10]
-    \centerline{Se X e Y sono \textbf{indipendenti:}}
-    \[ \ev{XY} = \ev{X} \ev{Y} \]
-    \[ Cov(X, Y) = 0 \longrightarrow \text{se sono indipenti}\]
+    è presente una formula alternativa \textbf{più semplice} \textit{(si trova espandendo il prodotto al secondo membro)}
 
+    \begin{equation*}
+        \begin{split} 
+            Cov(X, Y) &= \ev{XY - \mu_XY - \mu_YX + \mu_X \mu_Y} \\
+            & = \ev{XY} - \mu_X \ev{Y} - \mu_Y \ev{X} + \mu_X \mu_Y \\ 
+            & = \ev{XY} - \mu_X \mu_Y - \mu_X \mu_Y  + \mu_X \mu_Y  \\
+            & = \ev{XY} - \ev{X} \ev{Y}
+        \end{split}
+    \end{equation*}
+
+
+    \subsection{Proprietà della covarianza}
+    $ Cov(X, Y) = Cov(Y, X) \longleftarrow \text{Simmetria} $ \\ \\
+    $ Cov(X, X) = Var(X) \longleftarrow \text{Generalizzazione della varianza} $ \\ \\
+    $ Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) $ \\ \\
+    $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\ \\
+    $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\ \\
+    
+    \centerline{- Se $X_1 \cdots X_n$ e $Y $ sono variabili aleatorie qualsiasi allora:}
+    \[ Cov(\sum_{i = 1}^{n}X_i, Y) = \sum_{i = 1}^{n} Cov(X_i, Y) \]
+
+    \centerline{- Se $X_1 \cdots X_n$ e $Y_1 \cdots Y_m$ sono variabili aleatorie qualsiasi allora:}
+    \[ Cov(\sum_{i = 1}^{n}X_i, \sum_{j = 1}^{m} Y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \] \\
+    \linebreak[10]
+    \centerline{Se X e Y sono variabili aleatorie \textbf{indipendenti:}}
+    \[ \ev{XY} = \ev{X} \ev{Y} \]
+    Questo implica che:
+    \[ Cov(X, Y) = 0 \]
+
+    \paragraph{Esempio:} varianza della somma di 10 lanci indipendenti di un dado \\
+    Denotiamo con \textbf{$X_i$} il punteggio del dado \textit{i-esimo}, sappiamo che:
+    \begin{equation*}
+        \begin{split}
+            Var(\sum_{i = 1}^{10} X_i) &= \sum_{i = 1}^{10} Var(X_i) \\
+            & = 10 \cdot \frac{35}{12} \\
+            & = \frac{175}{6}
+        \end{split}
+    \end{equation*}
     
     \subsection{Coefficiente di correlazione lineare}
     \definizione numero puro che tiene conto della deviazione standard di X e Y
@@ -816,7 +838,7 @@
     \begin{center}
         La correlazione può assumere valori compresi tra \textbf{-1} e \textbf{1}
     \end{center}
-    \text{\textbf{-1} $\longrightarrow$ Le due variabili sono inversamente proporizionali} \\
+    \text{\textbf{-1} $\longrightarrow$ Le due variabili sono inversamente proporzionali} \\
     \text{\textbf{0} $\longrightarrow$ Le due variabili sono indipendenti} \\
     \text{\textbf{1} $\longrightarrow$ Le due variabili sono crescono o decrescono con lo stesso rapporto} \\
 
@@ -824,45 +846,67 @@
     \section{Funzione generatrice dei momenti}
     \definizione Funzione che ci permette di calcolare i momenti della distribuzione.
     \formula \[ \phi(t) = \ev{e^{tX}}\]
-    \begin{center}
-        Dove X è una variabile aleatoria e t è un parametro reale
-    \end{center}
+
+    \centerline{Dove X è una variabile aleatoria e t è un parametro reale}
 
     \begin{equation*}
-        \phi(t) = \ev{e^{tX}} 
+        \phi(t) := \ev{e^{tX}} = 
         \begin{cases}
-            \sum_{x}^{} e^{tX}p(x) & \text{se X discreta} \\
-            \int_{-\infty}^{+\infty} e^{tX} f(x) \, dx & \text{se X continua}
+            \sum_{x}^{} e^{tx}p(x) & \text{se X discreta} \\
+            \int_{-\infty}^{+\infty} e^{tx} f(x) \, dx & \text{se X continua}
         \end{cases}
     \end{equation*}
     \linebreak[10]
-    \centerline{Derivando la funzione si ottengono i momenti:}
+    Derivando la funzione si ottengono i momenti:
     \[ \phi'(t) = \frac{d}{dt} \ev{e^{tX}} = \ev{\frac{d}{dt} e^{tX}} = \ev{Xe^{tX} \longrightarrow \phi'(0) = \ev{X}}\]
+    \linebreak[10]
+    Analogamente:
+    \[ \phi''(t) = \frac{d^2}{dt^2} \ev{e^{tX}} = \ev{\frac{d^2}{dt^2} e^{tX}} = \ev{X^2e^{tX} \longrightarrow \phi''(0) = \ev{X^2}}\]
+
 
     \paragraph{Generalizzando:}
-    \[ \phi^{n}(0) = \ev{X^n} \]
+    \[ \phi^{(n)}(0) = \ev{X^n} \]
     \linebreak[2]
 
     \begin{minipage}{0.45\linewidth}
         Media:
         \[\mu_x = \phi'(0)\]
     \end{minipage}
-    \hfill
     \begin{minipage}{0.45\linewidth}
         Varianza:
         \[ \sigma^{2}_x = \phi''(0) = \{\phi(0)'\}' \]
     \end{minipage}
+
+    \paragraph{Ipotizziamo:} se X e Y sono indipendenti con $\phi_X$ e $\phi_Y$ e se $\phi_{X + Y}$ \\
+    è la funzione generatrice dei momenti di X + Y allora:
+    \[ \phi_{X + Y}(t) = \phi_X(t) \phi_Y(t) \]
+
+    \text{Concludiamo che:}
+    \begin{equation*}
+        \begin{split}
+            \phi_{X + Y}(t) :&= \ev{e^{t(X + Y)}} \\
+            & = \ev{e^{tX} e^{tY}} \\
+            & = \ev{e^{tX}} \ev{e^{tY}} \\
+            & = \phi_X(t) \phi_Y(t)
+        \end{split}
+    \end{equation*}
+    
+
+
     \subsection{Disugaglianza di Markov}
-    \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi
-    \definizione Serve per calcolare che una variabile aleatoria assuma un minimo di "a" $\longrightarrow a \in \mathbb{R}$
+    \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi \\
+    Serve per calcolare che una variabile aleatoria assuma un minimo di "a" $\longrightarrow a \in \mathbb{R}$
+
     \paragraph{Solo per variabili positive:} $X \in (0, +\infty) $
     \formula \[ P(X \geq a) \leq \frac{\ev{X}}{a}\]
 
-    \paragraph{Generalizzazione:}
+    \paragraph{Dimostrazione:}
     \begin{equation*}
         \begin{split}
-            \ev{X} & = \int_{0}^{+\infty} xf(x) \, dx \\
-            & = \int_{0}^{a} x f(x) \, dx + \int_{a}^{+\infty} x f(x) \, dx \geq \int_{a}^{+\infty} x f(x) \, dx \geq \int_{a}^{+\infty} a f(x) \, dx \\
+            \ev{X} & := \int_{0}^{+\infty} xf(x) \, dx \\
+            & = \int_{0}^{a} x f(x) \, dx + \int_{a}^{+\infty} x f(x) \, dx \\ 
+            & \geq \int_{a}^{+\infty} x f(x) \, dx \\ 
+            & \geq \int_{a}^{+\infty} a f(x) \, dx \\
             & = a \int_{a}^{+\infty} f(x) \, dx \\ 
             & = \boldsymbol{aP(X \geq a)}
         \end{split}
@@ -870,8 +914,9 @@
     
     \subsection{Disugaglianza di Chebyshev}
     \definizione Ci permette di sapere la probabilità che una variabile si discosti dalla media per più di un certo numero di deviazioni standard.
+    
     \begin{equation*}
-        X \text{var aleatoria}
+        \text{Se} X \text{var aleatoria}
         \begin{cases}
             \mu & \text{Media} \\
             \sigma^2 & \text{Varianza}
@@ -881,10 +926,83 @@
     \centerline{Per ogni \textbf{r > 0} $\longrightarrow$ valore che indica il discostamento dalla media}
     \formula 
     \[ P(|X - \mu| \geq r) \leq \frac{\sigma^2}{r^2} \]
-    \centerline{Serve per ottenere le stime di probabilità di eventi rari di variabili} \\
-    \centerline{cui conosciamo solo la \textbf{media} e la \textbf{varianza}}
+
+    \paragraph{Dimostrazione:} Dimostriamo che: \\
+    \begin{minipage}{0.45\linewidth}
+        \[ \{ |X - \mu | \geq r \} \]
+    \end{minipage}
+    \begin{minipage}{0.45\linewidth}
+        \[ \{ ( X - \mu )^2 \geq r^2 \} \]
+    \end{minipage} \\
+    \linebreak[4]
+    Questi due eventi coincidono e quindi sono \textbf{equiprobabili} \\
+    Sapendo per certo che \boldsymbol{$(X - \mu)^2$} è \textit{non negativa} \\
+    Possiamo applicare \textbf{Markov} con $a = r^2$ ottenendo:
+
+    \begin{equation*}
+        \begin{split}
+            P(|X - \mu | \geq r) & = P((X - \mu)^2 \geq r^2) \\
+            & \leq \frac{\ev{(X - \mu)^2}}{r^2} = \frac{\sigma^2}{r^2}
+        \end{split}
+    \end{equation*}
+    \linebreak
+ 
+    La disuguaglianza di \textbf{Markov} e di \textbf{Chebyshev} servono per ottenere le stime di probabilità di eventi rari di variabili
+    cui conosciamo solo la \textbf{media} e la \textbf{varianza}.
+
+    \paragraph{Postilla:} in caso di \textit{distribuzione nota} non c'è bisogno di utilizzare una di queste disuguaglianze.
+
+    \paragraph{Esempio:} I numeri di pezzi prodotti in una settimana è una X di \textbf{50} \\
+    \textbf{(a)} Cosa si può dire sulla probabilità che la produzione superi i 75 pezzi (\textit{a})? \\ \\
+    \textbf{(b)} Se è nota anche la varianza pari a \textbf{25} cosa si può dire sulla probabilità che la produzione sia compresa tra i \textit{40} e i \textit{60} pezzi? \\
+    \linebreak[4]
+    \textbf{(a)} per la disuglianza di \textit{Markov}
+    \[ P(X \geq 75) \leq \frac{\ev{X}}{75} = \frac{50}{75} = \frac{2}{3}\]
+
+    \textbf{(b)} Applicando la disuguaglianza di \textit{Chebyshev}
+    \[ P(|X - 50| \geq 10) \leq \frac{25}{10^2} = \frac{1}{4}\]
+    Quindi:
+    \[ P(40 \leq X \leq 60) = P(|X - 50| \leq 10) \geq 1 - \frac{1}{4} = \frac{3}{4}\]
+
+    Perciò la probabilità che la produzione sia compresa tra \textit{40} e i \textit{60} pezzi è almeno del \textbf{75\%}
+    \newpage
     \section{Legge debole dei grandi numeri}
     \definizione Dice che la probabilità che la differenza tra la media campionaria e il valore atteso superi una determinata soglia diventa sempre più piccola all'aumentare del numero di osservazioni
+    \definizione Sia $X_1, X_2 \cdots X_n$ una successione di variabili aleatorie tutte con la media \boldsymbol{$\ev{X_i} =: \mu$} allora per ogni $\epsilon > 0$ 
+    \formula
+    \[ P(|\frac{X_1 + \cdots + X_n}{n} - \mu | > \epsilon) \longrightarrow 0 \] 
+    \[ \text{quando n} \longrightarrow \infty \]
+
+    \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\ 
+    \begin{minipage}{0.45\textwidth}
+        \[ \ev{\frac{X_1 + \cdots + X_n}{n}} = \mu \]
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \[ Var(\frac{X_1 + \cdots + X_n}{n}) = \frac{\sigma^2}{n}\]
+    \end{minipage} \\
+    \linebreak[4]
+    La seconda si può trovare in questo modo:
+    \begin{equation*}
+        \begin{split}
+            Var(\frac{X_1 + \cdots + X_n}{n}) & = \frac{1}{n^2} Var(X_1 + \cdots + X_n) \\
+            & = \frac{Var(X_1) + \cdots + Var(X_n)}{n^2} \\
+            & = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}
+        \end{split}
+    \end{equation*}
+    Segue allora dalla disuguaglianza di \textit{Chebyshev} applicata alla variabile aleatoria $(X_1 + \cdots + X_n)/n$ che:
+    \[ P(| \frac{X_1 + \cdots + X_n}{n} - \mu | > \epsilon) \leq \frac{\sigma^2}{n\epsilon^2}\]
+    \paragraph{Esempio:} Supponiamo di ripetere in successione \textit{molte copie indipendenti} di un esperimento ponendo:
+    \begin{equation*}
+        X_i :=
+        \begin{cases}
+            1 & \text{se E si realizza nell'esperimento \textit{i-esimo}} \\
+            0 & \text{se E \textbf{non} si realizza nell'esperimento \textit{i-esimo}}
+        \end{cases}
+    \end{equation*}
+    La sommatoria $X_1 + X_2 + \cdots + X_n$ rappresenta il numero di prove \textit{tra le prime n} poichè:
+    \[ \ev{X_i} = P(X_i = 1) = P(E) \]
+    si deduce che la frazione delle n prove nelle quali si realizza E, tende (nel senso della
+    legge debole dei grandi numeri) alla probabilità $P(E)$.
 
     \newpage
     \section{Modelli di variabili aleatorie}
