@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  9 APR 2023 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  10 APR 2023 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -136,7 +136,7 @@ Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 27.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 31.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -146,20 +146,20 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 ) (probabilità.aux)
 \openout1 = `probabilità.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count272
@@ -188,277 +188,337 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `probabilità.toc'.
 
  [2]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 33.
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 37.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-Overfull \hbox (1.51268pt too wide) in paragraph at lines 38--39
+Overfull \hbox (1.51268pt too wide) in paragraph at lines 42--43
 []\T1/cmss/m/n/10 Frequestista $\OMS/cmsy/m/n/10 !$ \T1/cmss/m/it/10 prob-a-bil-it� as-seg-nata sulla base di pi� es-per-i-menti ripetuti
  []
 
 [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
 [5]
-Overfull \hbox (0.74057pt too wide) in paragraph at lines 163--165
+Overfull \hbox (0.74057pt too wide) in paragraph at lines 167--169
 [] 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
 [7]
-Overfull \hbox (58.85971pt too wide) in paragraph at lines 215--216
+Overfull \hbox (58.85971pt too wide) in paragraph at lines 219--220
  \T1/cmss/bx/n/10 Definizione:[] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--230
+Underfull \hbox (badness 10000) in paragraph at lines 227--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--230
+Underfull \hbox (badness 10000) in paragraph at lines 227--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--230
+Underfull \hbox (badness 10000) in paragraph at lines 227--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
 
  []
 
 
-Overfull \hbox (0.12405pt too wide) in paragraph at lines 233--236
+Overfull \hbox (0.12405pt too wide) in paragraph at lines 237--240
 [] 
  []
 
-[8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 283--287
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 292--296
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--296
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 302--305
 
  []
 
 [10]
-Overfull \hbox (32.04681pt too wide) in paragraph at lines 304--306
+Overfull \hbox (32.04681pt too wide) in paragraph at lines 313--315
 [] 
  []
 
 
-Overfull \hbox (26.01028pt too wide) in paragraph at lines 320--321
+Overfull \hbox (26.01028pt too wide) in paragraph at lines 329--330
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--332
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--332
+Underfull \hbox (badness 10000) in paragraph at lines 339--341
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
 [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 444--447
+Underfull \hbox (badness 10000) in paragraph at lines 453--456
 
  []
 
 
-Overfull \hbox (68.98428pt too wide) in paragraph at lines 444--447
+Overfull \hbox (68.98428pt too wide) in paragraph at lines 453--456
 [] 
  []
 
 [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 554--557
+Underfull \hbox (badness 10000) in paragraph at lines 563--566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 554--557
+Underfull \hbox (badness 10000) in paragraph at lines 563--566
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--604
+Underfull \hbox (badness 10000) in paragraph at lines 610--613
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 636--639
+Underfull \hbox (badness 10000) in paragraph at lines 645--648
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 648--651
+Underfull \hbox (badness 10000) in paragraph at lines 657--660
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--651
+Underfull \hbox (badness 10000) in paragraph at lines 657--660
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 657--661
+Underfull \hbox (badness 10000) in paragraph at lines 666--670
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 707--709
+Underfull \hbox (badness 10000) in paragraph at lines 716--718
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
 
-Overfull \hbox (23.10698pt too wide) in paragraph at lines 760--765
+Overfull \hbox (23.10698pt too wide) in paragraph at lines 769--774
 \T1/cmss/m/n/10 SE $\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 = 1 [][]\OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) [][]\OMS/cmsy/m/n/10 ! []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--765
+Underfull \hbox (badness 10000) in paragraph at lines 769--774
 
  []
 
 [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 781--790
+Underfull \hbox (badness 10000) in paragraph at lines 790--799
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 781--790
+Underfull \hbox (badness 10000) in paragraph at lines 790--799
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 813--818
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 814--817
+Underfull \hbox (badness 10000) in paragraph at lines 823--826
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 841--844
+Underfull \hbox (badness 10000) in paragraph at lines 850--853
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 858--861
+Underfull \hbox (badness 10000) in paragraph at lines 868--871
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 861--864
+Underfull \hbox (badness 10000) in paragraph at lines 871--874
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 930--941
+Underfull \hbox (badness 10000) in paragraph at lines 940--951
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 947--949
+Underfull \hbox (badness 10000) in paragraph at lines 957--959
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 947--949
+Underfull \hbox (badness 10000) in paragraph at lines 957--959
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 955--960
+Underfull \hbox (badness 10000) in paragraph at lines 965--970
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--960
+Underfull \hbox (badness 10000) in paragraph at lines 965--970
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 976--985
+Underfull \hbox (badness 10000) in paragraph at lines 986--995
 
  []
 
-[29] [30] (probabilità.aux) ) 
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1032--1037
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1045
+
+ []
+
+
+Overfull \hbox (23.88145pt too wide) in paragraph at lines 1046--1080
+[]$[]$ $[]$ $[]$ $[]$ $[]$
+ []
+
+
+Overfull \hbox (8.88145pt too wide) in paragraph at lines 1046--1080
+[]$ $[]$ $[]$ $[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1080
+
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1087
+
+ []
+
+[31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1156
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1180--1183
+
+ []
+
+[34] [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 1299--1303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1299--1303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1299--1303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1304--1321
+
+ []
+
+[37] [38] [39] [40] (probabilità.aux) ) 
 Here is how much of TeX's memory you used:
- 3182 strings out of 476334
- 44864 string characters out of 5787972
+ 3183 strings out of 476334
+ 44873 string characters out of 5787972
  1864382 words of memory out of 5000000
- 23593 multiletter control sequences out of 15000+600000
+ 23594 multiletter control sequences out of 15000+600000
  527961 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,19n,62p,376b,240s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probabilità.pdf (30 pages, 341604 bytes).
+ <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on probabilità.pdf (40 pages, 391522 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
+ 544 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,6 +1,8 @@
 \documentclass[]{article}
+
 %\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
 %\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
+
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -23,6 +25,8 @@
 
 \newcommand{\definizione}{\paragraph{Definizione:}}
 \newcommand{\formula}{\paragraph{Formula generica:}}
+
+\newcommand{\highlight}[1]{\colorbox{yellow}{$\displaystyle #1$}}
 
 \begin{document}
     \tableofcontents
@@ -239,8 +243,13 @@
     \paragraph{Esempio:} \text{variabile aleatoria X che può assumere valori \textbf{1}, \textbf{2} o \textbf{3}} \\
     \text{Dato che p(1) + p(2) + p(3) = \textbf{1}}
     \paragraph{Se:}
-    \[ p(1) = \frac{1}{2} \]
-    \[ p(2) = \frac{1}{3} \]
+    \begin{minipage}{0.45\textwidth}
+        \[ p(1) = \frac{1}{2} \]
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \[ p(2) = \frac{1}{3} \]
+    \end{minipage}
+    
     \paragraph{Allora:}
     \[ p(3) = \frac{1}{6}\]
 
@@ -851,9 +860,10 @@
 
     \begin{equation*}
         \phi(t) := \ev{e^{tX}} = 
+        \displaystyle
         \begin{cases}
-            \sum_{x}^{} e^{tx}p(x) & \text{se X discreta} \\
-            \int_{-\infty}^{+\infty} e^{tx} f(x) \, dx & \text{se X continua}
+            \displaystyle \sum_{x}^{} e^{tx}p(x) & \text{se X discreta} \\
+            \displaystyle \int_{-\infty}^{+\infty} e^{tx} f(x) \, dx & \text{se X continua}
         \end{cases}
     \end{equation*}
     \linebreak[10]
@@ -1006,21 +1016,388 @@
 
     \newpage
     \section{Modelli di variabili aleatorie}
-
+    \definizione Quelle che studieremo ora (porca madonna) sono dei modelli di variabili aleatorie caratterizzate 
+    dal fatto che vengono utilizzati da una vasta generalità dei campi applicativi nei quali compaiono e soprattutto usate in natura.
     \subsection{Bernoulli}
+    \definizione Una variabile X si dice \textit{bernoulliana} se può essere solo \textbf{0} e \textbf{1}
+    \formula 
+    \[ P(X = 0) = 1 - p \]
+    \[ P(X = 1) = p \]
+    Dove con $p$ intendiamo un valore che dovrà essere $\boldsymbol{0 \leq p \leq 1}$ \\
+    Il suo valore atteso è dato da:
+    \[ \ev{X} := 1 \cdot P(X = 1) + 0 \cdot P(X = 0) = p \]
+
 
     \subsection{Binomiali}
+    \definizione Ipotizziamo che dobbiamo realizzare $n$ ripetizioni di un esperimento \\
+    Se X è il numero totale di successi e \textit{n} il numero di ripetizioni di un esperimento \\
+    si dice che abbiamo una
+    \textit{variabile aleatoria binomiale} di parametri (n, p). \\ \\
+    La sua funzione di massa è data da:
+    \[ P(X = i) = \binom{n}{i}p^i (1-p)^{n-1}  \]
+    \[ i = 0,1 \cdots, n \]
+    Dove (ricordiamo) che il coefficiente binomiale è:
+    \[ \binom{n}{i} := \frac{n!}{i!(n-1)!} \] 
+    \paragraph{Spiegazione:} Per spiegare le equazioni di sopra dobbiamo fissare una \textit{sequenza di esiti} con $i$ successi e $n - 1$ fallimenti. \\
+    La probabilità che si verichi questa sequenza è appunto $\boldsymbol{p^i(1-p)^{n-1}}$ \\
+    Si continua quindi con il contare le sequenze di esiti con questa caratteristica $\binom{n}{i}$ \\ 
+    Ad esempio, concludendo, per $n = 5$ e $i = 2$ ci sono $\binom{5}{2} = 10$ scelte possibili. \\
+
+    \begin{minipage}{0.2\textwidth}
+        (s, s, f, f, f)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (s, f, s, f, f)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (s, f, f, s, f)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (s, f, f, f, s)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (f, s, s, f, f)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (f, s, f, s, f)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (f, s, f, f, s)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (f, f, s, s, f)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (f, f, s, f, s)
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        (f, f, f, s, s)
+    \end{minipage} \\
+    \linebreak
+    Se prendiamo in esempio l'esito $(f, s, f, s, f)$ vediamo che i \textbf{successi} 
+    si sono verificati nelle prove numero \textit{2} e numero \textit{4}. \\
+    Ricordiamoci che la \textit{somma delle probabilità} è pari a \textbf{1} tramite questa dimostrazione:
+    \paragraph{Dimostrazione:}
+    \[ \sum_{i}^{} P(X = i) = \sum_{i = 0}^{n} \binom{n}{i} p^i (1-p)^{n-1} = [p + (1 - p)^n] = 1 \]
+
+
+    \paragraph{Esempio:} Se X è il numero di pezzi difettosi in 10 dischetti con X di parametri (10, 0.1) quanto è
+    la probabilità che ne vengano ritornati esattamente \textbf{una} se ne vengono comprate \textbf{3}? \\ \\
+    La probabilità che una scatola sia ritornata è pari a:
+    \begin{equation*}
+        \begin{split}
+            P(X > 1) &= 1 - P(X = 0) - P(X = 1) \\
+            & = 1 - \binom{10}{0} \cdot 0.01^0 \cdot 0.99^{10} - \binom{10}{1} \cdot 0.01^1 \cdot 0.99^9 \approx 0.0043
+        \end{split}
+    \end{equation*}
+    \paragraph{Continuo:} Ogni scatola viene resa con probabilità \textit{0.43\%} \\
+    Acquistandone quindi 3 scatole otteniamo una variabile di parametri (3, 0.0043) quindi:
+    \[ \binom{3}{1} \cdot 0.0043^1 \cdot 0.9957^2 \approx 0.013 \]
+
     \subsubsection{Valore atteso e varianza di Binomiali}
+    \definizione La varianza di variabili aleatorie binomiali può essere vista come \textit{somma di bernoulliane}. \\
+    Quindi se X è binomiale di parametri (n, p) si può scrivere nel seguente modo:
+    \[ X = \sum_{i = 1}^{n} X_i \]
+    Dove $X_i$ è una funzione indicatrice del successo dell'\textit{i-esimo} esperimento:
+    \begin{equation*}
+        X_i :=
+        \begin{cases}
+            1 & \text{se la prova \textit{i-esima} ha successo} \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    Per X tramite le proprietà di \textit{media} e \textit{varianza} otteniamo che:
+    \[ \ev{X} = \sum_{i = 1}^{n} \ev{X_i} = np \]
+    \[ Var(X) = \sum_{i = 1}^{n} Var(X_i) = np(1 - p) \]
+
+
     \subsubsection{Funzione di massa e di ripartizione di Binomiali}
-
+    \definizione Supponiamo che  X sia binomiale sempre di parametri \textit{(n, p)} possiamo calcolare la sua \textbf{funzione di ripartizione}
+    \[ P(X \leq i) = \sum_{k = 0}^{i} \binom{n}{k} p^k (1-p)^{n-k} = \sum_{k = 0}^{i} P(X = k) \]
+    \[ i = 0,1 \cdots n \]
+    e la sua funzione di massa:
+    \[ P(X = i) = \binom{n}{i} p^i (1-p)^{n-i} \]
+    è presente una relazione tra $\boldsymbol{P(X = k + 1)}$ e $\boldsymbol{P(K = k)}$:
+    \begin{equation*}
+        \begin{split}
+            P(X = k + 1) &= \frac{p}{1 - p} \frac{n - k}{k + 1} P(X = k) \\
+            & = \frac{p}{1 - p} \frac{n - k}{k + 1} \\ 
+            & = \frac{n!}{(n-k)! k!} P^{k+1} (1-p)^{n-(k+1)} \\
+            & = \binom{n}{k + 1} P^{k+1} (1-p)^{n-(k+1)}
+        \end{split}
+    \end{equation*}
+    \paragraph{Esempio:} Sia X una variabile aleatoria di parametri $n = 6$ e $p = 0.4$ \\
+    Iniziando da $P(X = 0) = 0.6^6$ e applicando una ricorsione troviamo che:
+    \[ P(X = 0) = 0.06^6 \approx 0.0467 \]
+    \[ P(X = 1) = \frac{4}{6} \cdot \frac{6}{1} \cdot P(X = 0) \approx 0.1866 \]
+    \[ P(X = 2) = \frac{4}{6} \cdot \frac{5}{2} \cdot P(X = 1) \approx 0.3110 \]
+    \[ P(X = 3) = \frac{4}{6} \cdot \frac{4}{3} \cdot P(X = 2) \approx 0.2765 \]
+    \[ P(X = 4) = \frac{4}{6} \cdot \frac{3}{4} \cdot P(X = 3) \approx 0.1382 \]
+    \[ P(X = 5) = \frac{4}{6} \cdot \frac{2}{5} \cdot P(X = 4) \approx 0.0369 \]
+    \[ P(X = 6) = \frac{4}{6} \cdot \frac{1}{6} \cdot P(X = 5) \approx 0.0041 \]
     \subsection{Poisson}
+    \definizione Una variabile aleatoria X che assume valori $\boldsymbol{X \in \{1,2, \cdots n\}}$ viene detta \textit{poissoniana} di parametro $\boldsymbol{\lambda > 0}$ \\
+    Se la sua \textit{funzione di massa} è data da:
+    \[ P(X = i) = \frac{\lambda^i}{i!} e^{-\lambda} \]
+    \[ i = 0,1,2,n \]
+    La funzione sopra è chiaro che rappresenta una funzione di massa accettabile, difatti:
+    \[ \sum_{i = 0}^{\infty} P(X = i) = e^{-\lambda} \sum_{i = 0}^{\infty} \frac{\lambda^i}{i!} = e^{-\lambda} e^\lambda = 1 \leftarrow \text{sviluppo in serie} \] \\ 
+    Per determinare la \textbf{media} e la \textbf{varianza} dobbiamo prima calcolare la sua \textit{funzione generatrice dei momenti}:
+    \begin{equation*}
+        \begin{split}
+            \phi (t) : & = \ev{e^{tX}} \\ 
+            & = \sum_{i = 0}^{\infty} e^{ti} P(X = i) \\
+            & = e^{-\lambda} \sum_{i = 0}^{\infty} e^{ti} \frac{\lambda^i}{i!} \\
+            & = e^{-\lambda} e^{\lambda e^t} = exp\{\lambda(e^t - 1)\}
+        \end{split}
+    \end{equation*}
+    Derivando troviamo che:
+    \[ \phi'(t) = \lambda e^t exp\{\lambda(e^t - 1) \} \] \\
+    \[ \phi''(t) = (\lambda e^t)^2 exp\{\lambda(e^t - 1)\} + \lambda e^t exp\{\lambda(e^t - 1)\} \]
+    Se valutiamo le due funzioni con il parametro t = 0 ottieniamo che il $\ev{X}$ e la $Var(X)$ \textbf{coincidono}:
+    \[ \ev{X} = \phi'(0) = \lambda \]
+    \[ Var(X) = \phi''(0) - \ev{X}^2 = \lambda^2 + \lambda - \lambda^2 = \lambda \]
 
+    \paragraph{La Poissoniana può essere usata come approsimazione di una binomiale} di parametri (n, p) quando \textit{n} è molto \textbf{grande} 
+    e \textit{p} è molto \textbf{piccolo}. \\
+    Per la dimostrazione poniamo $\lambda = np$:
+    \begin{equation*}
+        \begin{split}
+            P(X = i) &= \frac{n!}{(n-i)! i!} p^i (1-p)^{n-i} \\
+            & = \frac{n(n-1) \cdots (n-i+1)}{i!} \binom{\lambda}{n}^i (1 - \frac{\lambda}{n})^{n-1} \\
+            & = \frac{n(n-1) \cdots (n-i+1)}{n^i} \cdot \frac{\lambda^i}{i!} \cdot \frac{(1 - \lambda / n)^n}{(1 - \lambda/n)^i} \\
+            & = P(X = i) \approx \frac{\lambda^i}{i!} e^{-\lambda}
+        \end{split}
+    \end{equation*}
+
+    \paragraph{Possiamo dire che l'approssimazione di poisson si può usare per:}
+    \begin{itemize}
+        \item Il numero di persone all'interno di una categoria di persone, che superano i \textbf{100} anni di età.
+        \item La quantità di numeri di telefono errati che vengono composti in una giornata.
+        \item Il numero di clienti che entrano in un ufficio postale in un giorno.
+    \end{itemize}
+
+    \paragraph{Esempio:} Se il numero medio di incidenti in un autostrada sia pari a \textbf{3}, quanto è la probabilità
+    che la prossima settimana ci sia almeno un incidente? \\ \\
+    (se denotiamo il numero di incidenti con X il numero di questi sarà \textit{approsimativamente} distribuito con Poisson di media 3):
+    
+    \begin{equation*}
+        \begin{split}
+            P(X \geq 1) &= 1 - P(X = 0)\\
+            & = 1 - \frac{3^0}{0!} e^{-3} \\
+            & = 1 - e^{-3} \approx 0.9502
+        \end{split}
+    \end{equation*}
+    La distribuzione di Poisson è \textit{riproducibile}, quindi la somma di due poissoniane è sempre una poissoniana. \\
+    Dimostrabile assegnando ai parametri $X_1$ e $X_2$ con parametri $\lambda_1$ $\lambda_2$ \\
+    e calcolandone la \textbf{funzione generatrice dei momenti} della loro somma:
+    \paragraph{Dimostrazione:}
+    \begin{equation*}
+        \begin{split}
+            \phi_{X_1 + X_2} (t) & = \phi_{X_1}(t) \phi_{X_2}(t) \\
+            & = exp\{\lambda_1 (e^t - 1)\} exp\{\lambda_2 (e^t - 1)\} \\
+            & = exp\{(\lambda_1 \lambda_2) (e^t - 1)\}
+        \end{split}
+    \end{equation*}
+    Consideriamo N eventi in modo che $N = N_1 + N_2$ con probabilità $p$ e $1 - p$ rispettivamente \\
+    Si può calcolare la \textit{funzione di massa} di $N_1$ e $N_2$
+    \begin{equation*}
+        \begin{split}
+            P(N_1 = n, N_2 = m) &= P(N_1 = n, N = n+m) \\
+            & = P(N_1 = n | N = n + m) P(N = n+m) \\
+            & = \highlight{P(N_1 = n | N = n + m) \frac{\lambda^{n+m}}{(n+m)!} e^{-\lambda}}
+        \end{split}
+    \end{equation*}
+    Condizionando al fatto che $n + m$ eventi ciascuno ha probabilità p \\
+    si scopre che ci siano esattamente \textit{n} eventi di tipo \textit{1}, quindi una binomiale di parametri (n + m,p) \\
+    Quindi otteniamo che:
+    \begin{equation*}
+        \begin{split}
+            P(N_1 = n, N_2 = m) &= \binom{n + m}{n} p^n (1-p)^m \frac{\lambda^{n+m}}{(n+m)!} e^{-\lambda} \\
+            & = \frac{(n+m)!}{n! m!} p^n (1-p)^m \frac{\lambda^{n+m}}{(n+m)!} e^{-\lambda} \\
+            & = \frac{(\lambda p)^n}{n!} e^{-\lambda p} \frac{(\lambda (1-p))^m}{m!} e^{-\lambda (1-p)}
+        \end{split}
+    \end{equation*}
+
+    è possibile ora calcolare le \textbf{distribuzioni marginali} di $N_1$ e $N_2$:
+    \begin{equation*}
+        \begin{split}
+            P(N_1 = n) &= \sum_{m = 0}^{\infty} P(N_1 = n, N_2 = m) \\
+            & = \frac{(\lambda p)^n}{n!} e^{-\lambda p} \sum_{m = 0}^{\infty} \frac{(\lambda (1 - p))^m}{m!} e^{-\lambda(1-p)} \\
+            & = \frac{(\lambda p)^n}{n!} e^{-\lambda p}
+        \end{split}
+    \end{equation*}
+    e analogamente:
+    \[ P(N_2 = m) = \sum_{n = 0}^{\infty} P(N_1 =n, N_2 = m) = \frac{(\lambda (1-p))^m}{m!} e^{-\lambda (1-p)} \]
+    Da queste equazioni segue che $N_1$ e $N_2$ sono variabili con distribuzione di Poisson di media $\lambda p$ e $\lambda (1-p)$ rispettivamente.
+
+    \definizione Se N eventi sono classificati in 1,2, ..., r con probabilità $p_1$,$p_2$,...$p_r$ (con la loro somma = 1) \\
+    allora la quantità totale di eventi sono \textit{variabili di Poisson indipendenti} di medie $\lambda p_1$,$\lambda p_2$,...,$\lambda p_r$
+    \subsubsection{Calcolo esplicito della distribuzione di Poisson}
+    \definizione Se X è una variabile aleatoria di Poisson di media $\lambda$ allora:
+    \[ \frac{P(X = i + 1)}{P(X = i)} = \frac{\lambda^{i+1} e^{-\lambda}}{(i+1)!} \frac{i!}{\lambda^i e^{-\lambda}} = \frac{\lambda}{i + 1} \]
+    Tramite questa formula possiamo ottenere anche:
+    \[ P(X = i + 1) = \frac{\lambda}{i + 1} P(X = i) \]
     \subsection{Ipergeometriche}
+    \definizione Una variabile aleatoria X che ha come \textit{massa di probabilità} si dice \textit{ipergeometrica} di parametri N, M e n.
+    \paragraph{Introduzione:}
+    Una scatola contiene N batterie \textit{accettabili} e M \textit{difettose}. se si estraggono senza rimessa \\
+    e in maniera casuale \textit{n} batterie, con \textbf{pari probabilità} a ciascuno degli $\binom{N + M}{n}$ sottoinsiemi.
+    \formula
+    \[  P(X = i) = \frac{\binom{N}{i} \binom{M}{n - i}}{\binom{N + M}{n}} \]
+    \[ i = 0,1 \cdots n \]
+    \paragraph{Esempio:} prendiamo a caso \textit{6} componenti da una cassa di \textit{20}. un sistema funziona solamente se tra i 6 componenti
+    non ci siano più di 2 componenti guasti. \\
+    Se nella cassa ci sono \textbf{15} componenti buoni e \textbf{5} guasti, quanto è la probabilità che il sistema funzioni? \\
+    - Se indichiamo con X il numero di componenti funzionanti tra i 6 estratti, \textit{X è ipergeometrica} di parametri \textit{15, 5 e 6}, quindi:
+    \begin{equation*}
+        \begin{split}
+            P(X \geq 4) &= \sum_{i = 4}^{6} P(X = i) \\
+            & = \frac{\binom{15}{4} \binom{5}{2} + \binom{15}{5} \binom{5}{1} + \binom{15}{6} \binom{5}{0}}{\binom{20}{6}} \approx 0.8687
+        \end{split}
+    \end{equation*}
+
+    \subsubsection{Media e varianza delle ipergeometriche}
+    \paragraph{Per determinare la media e la varianza} Estrazione solo una volta:
+    \begin{equation*}
+        X_i :=
+        \begin{cases}
+            1 & \text{se la \textit{i-esima} batteria estratta è accettabile} \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    Quindi:
+    \[ P(X_i = 1) = \frac{N}{N + M} \]
+    \paragraph{Dimostrazione:} 
+    \begin{equation*}
+        \begin{split}
+            P(X_i = 1, X_j = 1) &= P(X_j = 1 | X_i = 1) P(X_i = 1) \\
+            & = \frac{N - 1}{N + M - 1} \cdot \frac{N}{N + M}
+        \end{split}
+    \end{equation*}
+    \paragraph{Ciascuna delle $X_i$ è una bernoulliana} quindi:
+    \[\ev{X_i} = P(X_i = 1) = \frac{N}{N + M}\]
+    Utilizziamo il fatto che la X è la somme delle $X_i$ per ottenere la \textbf{media}
+    \[ \ev{X} = \ev{\sum_{i = 1}^{n} X_i} = \sum_{i = 1}^{n} \ev{X_i} = n \frac{N}{N + M+}\]
+    Riprendendo il discorso di prima la formula della \textbf{varianza} è la seguente:
+    \[ Var(X_i) = P(X_i = 1) P(X_i = 0) = \frac{N M}{(N + M)^2}\]
+    Utilizziamo la formula per il calcolo della varianza della somma di variabili aleatorie:
+    \[ Var(X) = \sum_{i = 1}^{n} Var(X_i) + 2 \sum_{j = 2}^{n} \sum_{i < j}^{} Cov(X_i, X_j) \]  
+
+    \[ Var(X) = np(1-p)[1 - \frac{n - 1}{N + M - 1}]\]
+
+    \subsubsection{Relazioni tra Binomiali ed Ipergeometriche}
+    \definizione per $N, M \longrightarrow \infty$ binomiale = ipergeometrica
+    \begin{equation*}
+        \text{Se}
+        \begin{cases}
+            N, M & \text{Grande} \\
+            n & \text{Piccolo}
+        \end{cases}
+    \end{equation*}
+    \centerline{Binomiale $\approx$ Ipergeometrica}
+    \paragraph{Differenze} la differenza principale tra i due modelli di variabili sta nel caso in esame \\
+    se l'estrazione o l'evento \textbf{non influenza} la probabilità dell'evento successivo (quindi quando la \textit{probabilità} è uguale per ogni esperimento) allora si usa la \textbf{binomiale}. \\ \\
+    Se però la probabilità \textbf{cambia} dopo ogni esperimento allora si usa una \textbf{ipergeometrica} \\ \\
+    Nei casi però in cui gli \textit{elementi estratti} sono pochi rispetto \textit{all'insieme totale} una ipergeometrica si può \textbf{approssimare} con una binomiale. \\
+
+    \begin{minipage}{0.30\textwidth}
+        \textbf{Binomiale} \\
+        Se lanciamo 10 volte \\
+        una \textit{moneta} la binomiale rappresenta \textit{il numero di volte che esce testa}
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+        \textbf{Ipergeometrica} \\
+        Se abbiamo 10 biglie \\
+        \textit{6} rosse \textit{4} nere \\
+        Estrarre 3 biglie e contare quelle rosse.
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+        \textbf{Entrambe} \\
+        Estrarre 10 biglietti vincenti
+        da 100 \\
+        (20 vincenti e 80 perdenti)
+    \end{minipage} \\
+
+    \centerline{Nel caso di entrambe si può approssimare la ipergeometrica}
+    \centerline{con una binomiale con prob. \textbf{0.2} e \textbf{10} estrazioni totali} 
 
     \subsection{Uniformi}
+    \subsubsection{Continue}
+    \definizione Una variabile aleatoria continua si dice \textit{uniforme} sull'intervallo $\boldsymbol{[\alpha, \beta]}$ se ha la seguente funzione di densità:
+    \begin{equation*}
+        f(x) =
+        \begin{cases}
+            \frac{1}{\beta - \alpha} & \text{se } \alpha \leq x \leq \beta \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    Si nota che il grafico di una densità soddisfa le condizioni per essere una \textit{densità di probabilità}:
+    \[ \int_{-\infty}^{\infty} f(x) \, dx = \frac{1}{\beta - \alpha} \int_{\alpha}^{\beta} \, dx = 1 \]
+    Se $\boldsymbol{[a, b] \subseteq [\alpha, \beta]}$ possiamo ricavare la sua \textit{funzione di ripartizione}:
+    \[ P(a < X < b) = \frac{1}{\beta - \alpha} \int_{a}^{b} \, dx = \frac{b - a}{\beta - \alpha}\]
+    è possibile anche ricavare la \textit{media di una variabile aleatoria X} su $[\alpha, \beta]$
+    \begin{equation*}
+        \begin{split}
+            \ev{X} :&= \int_{\alpha}^{\beta} \frac{x \,dx}{\beta - \alpha} \\
+            & = \frac{\beta^2 - \alpha^2}{2(\beta - \alpha)} \\
+            & = \frac{(\beta - \alpha) (\beta + \alpha)}{2(\beta - \alpha)} = \frac{\alpha + \beta}{2}
+        \end{split}
+    \end{equation*}
+    e la varianza (se abbiamo il \textbf{momento secondo}):
+    \begin{equation*}
+        \begin{split}
+            Var(X) &= \frac{\alpha^2 + \alpha \beta + \beta^2}{3} - (\frac{\alpha + \beta}{2})^2 \\
+            & = \frac{\alpha^2 - 2\alpha \beta + \beta^2}{12} \\
+            & = \frac{(\beta - \alpha)^2}{12}
+        \end{split}
+    \end{equation*}
+
+    \subsubsection{Discrete}
+    \definizione se p:
+    \begin{equation*}
+        p(x) =
+        \begin{cases}
+            \frac{1}{\beta - \alpha + 1} & \text{se } \alpha \leq x \leq \beta \text{ \space} n = \beta - \alpha + 1 \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    Possiamo ricavare anche il \textbf{valore atteso}:
+    \[ \ev{X} = \frac{\beta + \alpha}{2}\]
+    E la sua \textbf{varianza}:
+    \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{(\beta - \alpha + 1)^2 - 1}{12} = \frac{n^2 - 1}{12}\]
 
     \subsection{Normali o Gaussiane}
+    \definizione Una variabile aleatoria X si dice \textit{normale} o \textit{gaussiana} \\ 
+    Di parametri $\mu$ e $\sigma^2$. \\
+    Se X ha funzione di densità data da:
+    \[ f(x) = \frac{1}{\sqrt{2 \pi} \sigma} exp\{- \frac{(x - \mu)^2}{2 \sigma^2}\} \]
+    \[ \forall x \in \mathbb{R} \]
+    La \textit{funzione generatrice dei momenti} di una gaussiana (parametri $\mu, \sigma^2$) si può dedurre da questa equazione:
+    \begin{equation*}
+        \begin{split}
+            \phi(t) :&= \ev{e^{tX}} \\
+            & = \frac{1}{\sqrt{2\pi} \sigma} \int_{-\infty}^{\infty} e^{tX} exp\{ - \frac{(x - \mu)^2}{2 \sigma^2}\} \, dx \\
+            & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{t(\sigma y + \mu)} e^{\frac{-y^2}{2}} \, dy \\
+            & = \frac{e^{\mu t}}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} exp \{ \frac{2 \sigma ty - y^2}{2}\} \, dy \\
+            & = exp\{ \mu t + \frac{\sigma^2 t^2}{2}\} \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} exp \{ - \frac{(y - \sigma t)^2}{2}\} \, dy \\
+            & = exp \{ \mu t + \frac{\sigma^2 t^2}{2}\}
+        \end{split}
+    \end{equation*}
+    Se deriviamo tutto sto mappazzone otteniamo le seguenti derivate:
+    \begin{equation}
+        \begin{aligned}
+        \phi^{\prime}(t) & =\left(\mu+\sigma^2 t\right) \exp \left\{\mu t+\frac{\sigma^2 t^2}{2}\right\} \\
+        \phi^{\prime \prime}(t) & =\left[\sigma^2+\left(\mu+\sigma^2 t\right)^2\right] \exp \left\{\mu t+\frac{\sigma^2 t^2}{2}\right\}
+        \end{aligned}
+    \end{equation}
+    Come ci ricordiamo dalle seguenti funzione generatrici di momenti possiamo ricavarci il \textit{valore atteso} e la \textit{varianza} (in questo caso) di una gaussiana 
+    \[ \ev{X} = \phi'(0) = \mu \]
+    \[ \ev{X^2} = \phi''(0) = \sigma^2 \mu^2 \]
+    \[ Var(X) = \ev{X^2} - \ev{X}^2 = \sigma^2 \]
+    \centerline{Cosi sappiamo che $\mu$ $\sigma^2$ rappresentano rispettivamente la \textit{media} e la \textit{varianza}}
 
+    \paragraph{La trasformazione lineare di X (val. al. normale)} è a sua volta una \textbf{gaussiana}:
     \subsection{Esponenziali}
 
     \subsection{Processi stocastici (Poisson)}

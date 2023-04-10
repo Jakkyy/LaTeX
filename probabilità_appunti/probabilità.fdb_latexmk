@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1681075116 "c:/Users/jacop/Desktop/programming/LaTeX/probabilità_appunti/probabilità.tex" "probabilità.pdf" "probabilità" 1681075116 0
+["pdflatex"] 1681144198 "c:/Users/jacop/Desktop/programming/LaTeX/probabilità_appunti/probabilità.tex" "probabilità.pdf" "probabilità" 1681144198 0
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1680946438 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecsi1000.pk" 1680949172 24544 3347d0558675e0d580ce062dfe34efbc ""
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk" 1680949175 19932 a61cc99fae2bc77954158e9080d68a6b ""
@@ -49,6 +49,7 @@
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247596667 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1247596666 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb" 1247596671 30068 eae4ba75635647d82fb0b7d7bccc4748 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb" 1247596670 39386 0d30f65251ad09eae5335149fa8e6f76 ""
@@ -75,10 +76,10 @@
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/sectsty/sectsty.sty" 1469029225 23038 d476012cd03f82f9475ad54ba6cd3267 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1667245866 13231 b52297489a0e9d929aae403417d92a02 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/jacop/Desktop/programming/LaTeX/probabilità_appunti/probabilità.tex" 1681075115 46404 fb26feb526bd50a10c87848f799d0980 ""
-  "probabilità.aux" 1681075116 17844 e5dff7598afa721972541029b812bb4a "pdflatex"
-  "probabilità.tex" 1681075115 46404 fb26feb526bd50a10c87848f799d0980 ""
-  "probabilità.toc" 1681075116 10635 87079abef94b005c17874b24b364c436 "pdflatex"
+  "c:/Users/jacop/Desktop/programming/LaTeX/probabilità_appunti/probabilità.tex" 1681144197 67591 980d8a20177c9b844e53edbabfce7577 ""
+  "probabilità.aux" 1681144198 21413 f56cdac197c39e666c6103c0255a0b29 "pdflatex"
+  "probabilità.tex" 1681144197 67591 980d8a20177c9b844e53edbabfce7577 ""
+  "probabilità.toc" 1681144198 12728 e920c1f44322c97dd4fcef6b865c6bcd "pdflatex"
   (generated)
   "probabilità.aux"
   "probabilità.log"

@@ -158,18 +158,54 @@
 \contentsline {paragraph}{Dimostrazione:}{29}{}%
 \contentsline {paragraph}{Esempio:}{29}{}%
 \contentsline {section}{\numberline {10}Modelli di variabili aleatorie}{30}{}%
+\contentsline {paragraph}{Definizione:}{30}{}%
 \contentsline {subsection}{\numberline {10.1}Bernoulli}{30}{}%
+\contentsline {paragraph}{Definizione:}{30}{}%
+\contentsline {paragraph}{Formula generica:}{30}{}%
 \contentsline {subsection}{\numberline {10.2}Binomiali}{30}{}%
-\contentsline {subsubsection}{\numberline {10.2.1}Valore atteso e varianza di Binomiali}{30}{}%
-\contentsline {subsubsection}{\numberline {10.2.2}Funzione di massa e di ripartizione di Binomiali}{30}{}%
-\contentsline {subsection}{\numberline {10.3}Poisson}{30}{}%
-\contentsline {subsection}{\numberline {10.4}Ipergeometriche}{30}{}%
-\contentsline {subsection}{\numberline {10.5}Uniformi}{30}{}%
-\contentsline {subsection}{\numberline {10.6}Normali o Gaussiane}{30}{}%
-\contentsline {subsection}{\numberline {10.7}Esponenziali}{30}{}%
-\contentsline {subsection}{\numberline {10.8}Processi stocastici (Poisson)}{30}{}%
-\contentsline {subsection}{\numberline {10.9}Gamma}{30}{}%
-\contentsline {subsection}{\numberline {10.10}Chi-quadro}{30}{}%
-\contentsline {subsection}{\numberline {10.11}Distribuzione T}{30}{}%
-\contentsline {subsection}{\numberline {10.12}Distribuzione F}{30}{}%
-\contentsline {subsection}{\numberline {10.13}Distribuzione logistica}{30}{}%
+\contentsline {paragraph}{Definizione:}{30}{}%
+\contentsline {paragraph}{Spiegazione:}{30}{}%
+\contentsline {paragraph}{Dimostrazione:}{31}{}%
+\contentsline {paragraph}{Esempio:}{31}{}%
+\contentsline {paragraph}{Continuo:}{31}{}%
+\contentsline {subsubsection}{\numberline {10.2.1}Valore atteso e varianza di Binomiali}{31}{}%
+\contentsline {paragraph}{Definizione:}{31}{}%
+\contentsline {subsubsection}{\numberline {10.2.2}Funzione di massa e di ripartizione di Binomiali}{32}{}%
+\contentsline {paragraph}{Definizione:}{32}{}%
+\contentsline {paragraph}{Esempio:}{32}{}%
+\contentsline {subsection}{\numberline {10.3}Poisson}{33}{}%
+\contentsline {paragraph}{Definizione:}{33}{}%
+\contentsline {paragraph}{La Poissoniana può essere usata come approsimazione di una binomiale}{33}{}%
+\contentsline {paragraph}{Possiamo dire che l'approssimazione di poisson si può usare per:}{34}{}%
+\contentsline {paragraph}{Esempio:}{34}{}%
+\contentsline {paragraph}{Dimostrazione:}{34}{}%
+\contentsline {paragraph}{Definizione:}{35}{}%
+\contentsline {subsubsection}{\numberline {10.3.1}Calcolo esplicito della distribuzione di Poisson}{35}{}%
+\contentsline {paragraph}{Definizione:}{35}{}%
+\contentsline {subsection}{\numberline {10.4}Ipergeometriche}{36}{}%
+\contentsline {paragraph}{Definizione:}{36}{}%
+\contentsline {paragraph}{Introduzione:}{36}{}%
+\contentsline {paragraph}{Formula generica:}{36}{}%
+\contentsline {paragraph}{Esempio:}{36}{}%
+\contentsline {subsubsection}{\numberline {10.4.1}Media e varianza delle ipergeometriche}{36}{}%
+\contentsline {paragraph}{Per determinare la media e la varianza}{36}{}%
+\contentsline {paragraph}{Dimostrazione:}{37}{}%
+\contentsline {paragraph}{Ciascuna delle $X_i$ è una bernoulliana}{37}{}%
+\contentsline {subsubsection}{\numberline {10.4.2}Relazioni tra Binomiali ed Ipergeometriche}{37}{}%
+\contentsline {paragraph}{Definizione:}{37}{}%
+\contentsline {paragraph}{Differenze}{37}{}%
+\contentsline {subsection}{\numberline {10.5}Uniformi}{38}{}%
+\contentsline {subsubsection}{\numberline {10.5.1}Continue}{38}{}%
+\contentsline {paragraph}{Definizione:}{38}{}%
+\contentsline {subsubsection}{\numberline {10.5.2}Discrete}{39}{}%
+\contentsline {paragraph}{Definizione:}{39}{}%
+\contentsline {subsection}{\numberline {10.6}Normali o Gaussiane}{39}{}%
+\contentsline {paragraph}{Definizione:}{39}{}%
+\contentsline {paragraph}{La trasformazione lineare di X (val. al. normale)}{40}{}%
+\contentsline {subsection}{\numberline {10.7}Esponenziali}{40}{}%
+\contentsline {subsection}{\numberline {10.8}Processi stocastici (Poisson)}{40}{}%
+\contentsline {subsection}{\numberline {10.9}Gamma}{40}{}%
+\contentsline {subsection}{\numberline {10.10}Chi-quadro}{40}{}%
+\contentsline {subsection}{\numberline {10.11}Distribuzione T}{40}{}%
+\contentsline {subsection}{\numberline {10.12}Distribuzione F}{40}{}%
+\contentsline {subsection}{\numberline {10.13}Distribuzione logistica}{40}{}%
