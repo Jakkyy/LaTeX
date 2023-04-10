@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  10 APR 2023 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  11 APR 2023 00:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -22,6 +22,61 @@ File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count193
+\Gm@cntv=\count194
+\c@Gm@tempcnt=\count195
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks17
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count196
+)) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count197
+\float@exts=\toks18
+\float@box=\box51
+\@float@everytoks=\toks19
+\@floatcapt=\box52
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip50
@@ -31,59 +86,59 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen141
+\@emptytoks=\toks20
+\ex@=\dimen151
 )) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen142
+\pmbraise@=\dimen152
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count193
+\inf@bad=\count198
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count194
-\leftroot@=\count195
+\uproot@=\count199
+\leftroot@=\count266
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count196
-\DOTSCASE@=\count197
+\classnum@=\count267
+\DOTSCASE@=\count268
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box51
-\strutbox@=\box52
+\Mathstrutbox@=\box53
+\strutbox@=\box54
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen143
+\big@size=\dimen153
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count198
+\macc@depth=\count269
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count199
+\c@MaxMatrixCols=\count270
 \dotsspace@=\muskip16
-\c@parentequation=\count266
-\dspbrk@lvl=\count267
-\tag@help=\toks17
-\row@=\count268
-\column@=\count269
-\maxfields@=\count270
-\andhelp@=\toks18
-\eqnshift@=\dimen144
-\alignsep@=\dimen145
-\tagshift@=\dimen146
-\tagwidth@=\dimen147
-\totwidth@=\dimen148
-\lineht@=\dimen149
-\@envbody=\toks19
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
+\tag@help=\toks21
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
+\andhelp@=\toks22
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
+\@envbody=\toks23
 \multlinegap=\skip51
 \multlinetaggap=\skip52
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
@@ -101,9 +156,7 @@ Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
- (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -136,44 +189,84 @@ Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 31.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 35.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count271
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count276
+\l__pdf_internal_box=\box55
 ) (probabilit√†.aux)
 \openout1 = `probabilit√†.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
- (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(28.45276pt, 341.43306pt, 28.45276pt)
+* v-part:(T,H,B)=(61.45856pt, 358.50314pt, 92.1879pt)
+* \paperwidth=398.33858pt
+* \paperheight=512.1496pt
+* \textwidth=341.43306pt
+* \textheight=358.50314pt
+* \oddsidemargin=-43.81723pt
+* \evensidemargin=-43.81723pt
+* \topmargin=-47.81143pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count272
-\scratchdimen=\dimen150
-\scratchbox=\box54
-\nofMPsegments=\count273
-\nofMParguments=\count274
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count275
-\MPscratchDim=\dimen151
-\MPnumerator=\count276
-\makeMPintoPDFobject=\count277
-\everyMPtoPDFconversion=\toks22
-) (probabilit√†.toc
+\scratchcounter=\count277
+\scratchdimen=\dimen160
+\scratchbox=\box56
+\nofMPsegments=\count278
+\nofMParguments=\count279
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count280
+\MPscratchDim=\dimen161
+\MPnumerator=\count281
+\makeMPintoPDFobject=\count282
+\everyMPtoPDFconversion=\toks26
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+)) (probabilit√†.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -183,342 +276,461 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
+{C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2])
 \tf@toc=\write3
 \openout3 = `probabilit√†.toc'.
 
- [2]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 37.
+ [3]
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 41.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-Overfull \hbox (1.51268pt too wide) in paragraph at lines 42--43
+Overfull \hbox (5.07962pt too wide) in paragraph at lines 46--47
 []\T1/cmss/m/n/10 Frequestista $\OMS/cmsy/m/n/10 !$ \T1/cmss/m/it/10 prob-a-bil-it‡ as-seg-nata sulla base di pi˘ es-per-i-menti ripetuti
  []
 
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
+[4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
-
- []
-
-[5]
-Overfull \hbox (0.74057pt too wide) in paragraph at lines 167--169
-[] 
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
-
- []
-
-[7]
-Overfull \hbox (58.85971pt too wide) in paragraph at lines 219--220
- \T1/cmss/bx/n/10 Definizione:[] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--240
-
- []
-
-
-Overfull \hbox (0.12405pt too wide) in paragraph at lines 237--240
-[] 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 292--296
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 302--305
-
- []
-
-[10]
-Overfull \hbox (32.04681pt too wide) in paragraph at lines 313--315
+[9] [10] [11]
+Overfull \hbox (4.30751pt too wide) in paragraph at lines 171--173
 [] 
  []
 
 
-Overfull \hbox (26.01028pt too wide) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
+[12] [13]
+Overfull \hbox (62.42665pt too wide) in paragraph at lines 223--224
+ \T1/cmss/bx/n/10 Definizione:[] [] 
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 231--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--244
+
+ []
+
+
+Overfull \hbox (3.691pt too wide) in paragraph at lines 241--244
+[] 
+ []
+
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 296--300
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--309
+
+ []
+
+[17]
+Overfull \hbox (35.61375pt too wide) in paragraph at lines 317--319
+[] 
+ []
+
+
+Overfull \hbox (54.57722pt too wide) in paragraph at lines 333--334
 [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--341
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
-
- []
-
-[12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 453--456
-
- []
-
-
-Overfull \hbox (68.98428pt too wide) in paragraph at lines 453--456
-[] 
- []
-
-[15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 563--566
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--566
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 610--613
-
- []
-
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 645--648
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 657--660
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 657--660
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 666--670
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 716--718
-
+Overfull \hbox (2.96483pt too wide) in paragraph at lines 393--394
+[]\T1/cmss/m/n/10 Usando gli as-siomi della prob-a-bil-it‡ Ë pos-si-bile di-mostrare che la definizione
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 750--751
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+[21] [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 457--460
 
  []
 
 
-Overfull \hbox (23.10698pt too wide) in paragraph at lines 769--774
-\T1/cmss/m/n/10 SE $\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 = 1 [][]\OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) [][]\OMS/cmsy/m/n/10 ! []$ 
+Overfull \hbox (72.55122pt too wide) in paragraph at lines 457--460
+[] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 769--774
-
- []
-
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 790--799
+[24] [25] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 567--570
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--799
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--818
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--818
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--818
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--818
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--818
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 813--818
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 823--826
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 850--853
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 868--871
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 871--874
-
- []
-
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 940--951
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 957--959
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 957--959
-
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 965--970
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 965--970
+Underfull \hbox (badness 10000) in paragraph at lines 567--570
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 986--995
-
+Overfull \hbox (8.07628pt too wide) in paragraph at lines 571--584
+[]$[]$  $[]$ 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1032--1037
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1045
-
- []
-
-
-Overfull \hbox (23.88145pt too wide) in paragraph at lines 1046--1080
-[]$[]$ $[]$ $[]$ $[]$ $[]$
- []
-
-
-Overfull \hbox (8.88145pt too wide) in paragraph at lines 1046--1080
-[]$ $[]$ $[]$ $[]$ $[]$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1046--1080
+Underfull \hbox (badness 10000) in paragraph at lines 614--617
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1084--1087
-
- []
-
-[31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1155--1156
-
- []
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 1180--1183
-
- []
-
-[34] [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1299--1303
+Underfull \hbox (badness 10000) in paragraph at lines 649--652
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1299--1303
+Underfull \hbox (badness 10000) in paragraph at lines 661--664
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1299--1303
+Underfull \hbox (badness 10000) in paragraph at lines 661--664
+
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 670--674
+
+ []
+
+[32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 720--722
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 754--755
+
+ []
+
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 761--762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1304--1321
+Overfull \hbox (26.67392pt too wide) in paragraph at lines 773--778
+\T1/cmss/m/n/10 SE $\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 = 1 [][]\OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) [][]\OMS/cmsy/m/n/10 ! []$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--778
 
  []
 
-[37] [38] [39] [40] (probabilit√†.aux) ) 
+[36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 794--803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 794--803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 827--830
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 854--857
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 872--875
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 875--878
+
+ []
+
+
+Overfull \hbox (8.07628pt too wide) in paragraph at lines 885--893
+[]$[]$ $[]$ 
+ []
+
+[41] [42]
+Underfull \hbox (badness 10000) in paragraph at lines 944--955
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 961--963
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 961--963
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 969--974
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 969--974
+
+ []
+
+[44] [45]
+Underfull \hbox (badness 10000) in paragraph at lines 990--999
+
+ []
+
+[46] [47]
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1041
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1045--1049
+
+ []
+
+
+Overfull \hbox (48.8815pt too wide) in paragraph at lines 1050--1084
+[]$[]$ $[]$ $[]$ $[]$ $[]$
+ []
+
+
+Overfull \hbox (8.8815pt too wide) in paragraph at lines 1050--1084
+[]$ $[]$ $[]$ $[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1084
+
+ []
+
+
+Overfull \hbox (0.52596pt too wide) in paragraph at lines 1050--1084
+\T1/cmss/m/n/10 Ricordiamoci che la \T1/cmss/m/it/10 somma delle prob-a-bil-it‡ \T1/cmss/m/n/10 Ë pari a \T1/cmss/bx/n/10 1 \T1/cmss/m/n/10 tramite questa di-mostrazione: 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1088--1091
+
+ []
+
+[49] [50] [51] [52]
+Underfull \hbox (badness 10000) in paragraph at lines 1159--1160
+
+ []
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 1184--1187
+
+ []
+
+[54] [55] [56] [57] [58]
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1307
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1303--1307
+
+ []
+
+[59]
+Overfull \hbox (10.30316pt too wide) in paragraph at lines 1308--1325
+[]$[]$ $[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1325
+
+ []
+
+
+Overfull \hbox (2.29424pt too wide) in paragraph at lines 1331--1332
+ \T1/cmss/bx/n/10 Definizione:[] \T1/cmss/m/n/10 Una vari-abile aleato-ria con-tinua si dice \T1/cmss/m/it/10 uni-forme \T1/cmss/m/n/10 sull'intervallo $\OT1/cmr/bx/n/10 [\OML/cmm/b/it/10 ; ^^L\OT1/cmr/bx/n/10 ]$
+ []
+
+[60] [61] [62] [63]
+Underfull \hbox (badness 10000) in paragraph at lines 1414--1418
+
+ []
+
+[64]
+<images/phi_table.png, id=229, 491.58656pt x 868.74562pt>
+File: images/phi_table.png Graphic file (type png)
+<use images/phi_table.png>
+Package pdftex.def Info: images/phi_table.png  used on input line 1442.
+(pdftex.def)             Requested size: 201.44424pt x 356.00243pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1445--1450
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1445--1450
+
+ []
+
+[65]
+Overfull \vbox (17.66371pt too high) has occurred while \output is active []
+
+ [66 <./images/phi_table.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1453--1454
+
+ []
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 1495--1498
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1506--1514
+
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1520--1540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1552--1556
+
+ []
+
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 1562--1564
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1588
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1590--1595
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1590--1595
+
+ []
+
+[71]
+Overfull \hbox (1.26009pt too wide) in paragraph at lines 1620--1623
+ \T1/cmss/bx/n/10 Propo-sizione:[] \T1/cmss/m/n/10 se ab-bi-amo $\OML/cmm/m/it/10 X[]; X[]; [] X[]$ \T1/cmss/m/it/10 in-dipen-denti \T1/cmss/m/n/10 di parametri $\OML/cmm/m/it/10 ^^U[]; ^^U[]; [] ^^U[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1620--1623
+
+ []
+
+[72] [73] [74]
+Underfull \hbox (badness 10000) in paragraph at lines 1664--1665
+
+ []
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 1678--1681
+
+ []
+
+[76] [77] (probabilit√†.aux) ) 
 Here is how much of TeX's memory you used:
- 3183 strings out of 476334
- 44873 string characters out of 5787972
- 1864382 words of memory out of 5000000
- 23594 multiletter control sequences out of 15000+600000
- 527961 words of font info for 64 fonts, out of 8000000 for 9000
+ 4944 strings out of 476334
+ 74398 string characters out of 5787972
+ 1859382 words of memory out of 5000000
+ 25292 multiletter control sequences out of 15000+600000
+ 528775 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,19n,62p,376b,240s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probabilit√†.pdf (40 pages, 391522 bytes).
+ 57i,20n,62p,567b,295s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on probabilit√†.pdf (77 pages, 1815521 bytes).
 PDF statistics:
- 544 PDF objects out of 1000 (max. 8388607)
+ 692 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

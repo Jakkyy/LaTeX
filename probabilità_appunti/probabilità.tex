@@ -1,7 +1,11 @@
 \documentclass[]{article}
 
-%\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
-%\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
+\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
+\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -49,9 +53,9 @@
             \item Frequenza assoluta $\rightarrow$ Numero di volte che si verifica un evento
             \item Frequenza relativa $\rightarrow$ Rapporto tra frequenza assoluta e il numero di prove/dati
         \end{itemize}
-        \item Dataset $\rightarrow$ numero di dati a disposizione $\boldsymbol{D_n = \{ x_1 \cdots x_n \}} $
+        \item Dataset $\rightarrow$ numero di dati a disposizione $\boldsymbol{D_n = \{ x_1 \ldots x_n \}} $
         \item Principio di enumerazione $\rightarrow$ Passare solo una volta da ogni elemento della raccolta
-        \item Spazio esiti (s o $\Omega$) $\rightarrow$ Tutti i possibili esiti di un evento $\rightarrow$ $\boldsymbol{Dado=\{1 \cdots 6\}}$
+        \item Spazio esiti (s o $\Omega$) $\rightarrow$ Tutti i possibili esiti di un evento $\rightarrow$ $\boldsymbol{Dado=\{1 \ldots 6\}}$
         \item Spazio eventi (e) $\rightarrow$ Tutti i possibili risultati di un esperimento $\rightarrow$ $\boldsymbol{Dado=\{1||2\}} \leftarrow$ che esca \textbf{1} oppure \textbf{2}
         \item Assioma $\rightarrow$ Tre assiomi fondamentali su cui si poggia la teoria del calcolo delle probabilità
         \begin{itemize}
@@ -134,7 +138,7 @@
 
     \subsection{Insieme di dati Bivariati}
     \definizione è lo studio della relazione di due variabili.
-    \formula \[ D_n : \{(X_1, Y_1) (X_2, Y_2) \cdots (X_n, Y_n)\}\]
+    \formula \[ D_n : \{(X_1, Y_1) (X_2, Y_2) \ldots (X_n, Y_n)\}\]
 
     \subsubsection{Coefficiente di correlazione campionario}
     \definizione utilizzato per capire se esiste un legame \textbf{lineare} tra due serie di dati.
@@ -145,9 +149,9 @@
     \subsection{Permutazioni, Combinazioni e Disposizioni}
     \subsubsection{Permutazioni}
     \definizione Modi possibili per sistemare \textbf{n} oggetti (\textbf{0! = 1})
-    \[ n! = n \cdot (n-1) \cdots (n \cdot (n-1)) \]
+    \[ n! = n \cdot (n-1) \ldots (n \cdot (n-1)) \]
     \paragraph{Esempio:} Fattoriale di 6
-    \[ 6! = 6 \cdot (6-1) \cdot (6-2) \cdots (6-5) = 720 \]
+    \[ 6! = 6 \cdot (6-1) \cdot (6-2) \ldots (6-5) = 720 \]
 
     \subsubsection{Combinazioni}
     \definizione Modi di disporre \textbf{k} elementi scelti da \textbf{n} elementi (l'ordine \textbf{non conta})
@@ -699,7 +703,7 @@
     \end{equation*}
 
     \paragraph{In generale per ogni n}
-    \[ \ev{X_1 + X_2 + \cdots + X_n} = \ev{X_1} + \ev{X_2} + \cdots \ev{X_n} \]
+    \[ \ev{X_1 + X_2 + \ldots + X_n} = \ev{X_1} + \ev{X_2} + \ldots \ev{X_n} \]
 
 
     \paragraph{Esempio: 2 dadi a 6 facce}
@@ -816,10 +820,10 @@
     $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\ \\
     $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\ \\
     
-    \centerline{- Se $X_1 \cdots X_n$ e $Y $ sono variabili aleatorie qualsiasi allora:}
+    \centerline{- Se $X_1 \ldots X_n$ e $Y $ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, Y) = \sum_{i = 1}^{n} Cov(X_i, Y) \]
 
-    \centerline{- Se $X_1 \cdots X_n$ e $Y_1 \cdots Y_m$ sono variabili aleatorie qualsiasi allora:}
+    \centerline{- Se $X_1 \ldots X_n$ e $Y_1 \ldots Y_m$ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, \sum_{j = 1}^{m} Y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \] \\
     \linebreak[10]
     \centerline{Se X e Y sono variabili aleatorie \textbf{indipendenti:}}
@@ -978,29 +982,29 @@
     \newpage
     \section{Legge debole dei grandi numeri}
     \definizione Dice che la probabilità che la differenza tra la media campionaria e il valore atteso superi una determinata soglia diventa sempre più piccola all'aumentare del numero di osservazioni
-    \definizione Sia $X_1, X_2 \cdots X_n$ una successione di variabili aleatorie tutte con la media \boldsymbol{$\ev{X_i} =: \mu$} allora per ogni $\epsilon > 0$ 
+    \definizione Sia $X_1, X_2 \ldots X_n$ una successione di variabili aleatorie tutte con la media \boldsymbol{$\ev{X_i} =: \mu$} allora per ogni $\epsilon > 0$ 
     \formula
-    \[ P(|\frac{X_1 + \cdots + X_n}{n} - \mu | > \epsilon) \longrightarrow 0 \] 
+    \[ P(|\frac{X_1 + \ldots + X_n}{n} - \mu | > \epsilon) \longrightarrow 0 \] 
     \[ \text{quando n} \longrightarrow \infty \]
 
     \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\ 
     \begin{minipage}{0.45\textwidth}
-        \[ \ev{\frac{X_1 + \cdots + X_n}{n}} = \mu \]
+        \[ \ev{\frac{X_1 + \ldots + X_n}{n}} = \mu \]
     \end{minipage}
     \begin{minipage}{0.45\textwidth}
-        \[ Var(\frac{X_1 + \cdots + X_n}{n}) = \frac{\sigma^2}{n}\]
+        \[ Var(\frac{X_1 + \ldots + X_n}{n}) = \frac{\sigma^2}{n}\]
     \end{minipage} \\
     \linebreak[4]
     La seconda si può trovare in questo modo:
     \begin{equation*}
         \begin{split}
-            Var(\frac{X_1 + \cdots + X_n}{n}) & = \frac{1}{n^2} Var(X_1 + \cdots + X_n) \\
-            & = \frac{Var(X_1) + \cdots + Var(X_n)}{n^2} \\
+            Var(\frac{X_1 + \ldots + X_n}{n}) & = \frac{1}{n^2} Var(X_1 + \ldots + X_n) \\
+            & = \frac{Var(X_1) + \ldots + Var(X_n)}{n^2} \\
             & = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}
         \end{split}
     \end{equation*}
-    Segue allora dalla disuguaglianza di \textit{Chebyshev} applicata alla variabile aleatoria $(X_1 + \cdots + X_n)/n$ che:
-    \[ P(| \frac{X_1 + \cdots + X_n}{n} - \mu | > \epsilon) \leq \frac{\sigma^2}{n\epsilon^2}\]
+    Segue allora dalla disuguaglianza di \textit{Chebyshev} applicata alla variabile aleatoria $(X_1 + \ldots + X_n)/n$ che:
+    \[ P(| \frac{X_1 + \ldots + X_n}{n} - \mu | > \epsilon) \leq \frac{\sigma^2}{n\epsilon^2}\]
     \paragraph{Esempio:} Supponiamo di ripetere in successione \textit{molte copie indipendenti} di un esperimento ponendo:
     \begin{equation*}
         X_i :=
@@ -1009,7 +1013,7 @@
             0 & \text{se E \textbf{non} si realizza nell'esperimento \textit{i-esimo}}
         \end{cases}
     \end{equation*}
-    La sommatoria $X_1 + X_2 + \cdots + X_n$ rappresenta il numero di prove \textit{tra le prime n} poichè:
+    La sommatoria $X_1 + X_2 + \ldots + X_n$ rappresenta il numero di prove \textit{tra le prime n} poichè:
     \[ \ev{X_i} = P(X_i = 1) = P(E) \]
     si deduce che la frazione delle n prove nelle quali si realizza E, tende (nel senso della
     legge debole dei grandi numeri) alla probabilità $P(E)$.
@@ -1035,7 +1039,7 @@
     \textit{variabile aleatoria binomiale} di parametri (n, p). \\ \\
     La sua funzione di massa è data da:
     \[ P(X = i) = \binom{n}{i}p^i (1-p)^{n-1}  \]
-    \[ i = 0,1 \cdots, n \]
+    \[ i = 0,1 \ldots, n \]
     Dove (ricordiamo) che il coefficiente binomiale è:
     \[ \binom{n}{i} := \frac{n!}{i!(n-1)!} \] 
     \paragraph{Spiegazione:} Per spiegare le equazioni di sopra dobbiamo fissare una \textit{sequenza di esiti} con $i$ successi e $n - 1$ fallimenti. \\
@@ -1114,7 +1118,7 @@
     \subsubsection{Funzione di massa e di ripartizione di Binomiali}
     \definizione Supponiamo che  X sia binomiale sempre di parametri \textit{(n, p)} possiamo calcolare la sua \textbf{funzione di ripartizione}
     \[ P(X \leq i) = \sum_{k = 0}^{i} \binom{n}{k} p^k (1-p)^{n-k} = \sum_{k = 0}^{i} P(X = k) \]
-    \[ i = 0,1 \cdots n \]
+    \[ i = 0,1 \ldots n \]
     e la sua funzione di massa:
     \[ P(X = i) = \binom{n}{i} p^i (1-p)^{n-i} \]
     è presente una relazione tra $\boldsymbol{P(X = k + 1)}$ e $\boldsymbol{P(K = k)}$:
@@ -1136,7 +1140,7 @@
     \[ P(X = 5) = \frac{4}{6} \cdot \frac{2}{5} \cdot P(X = 4) \approx 0.0369 \]
     \[ P(X = 6) = \frac{4}{6} \cdot \frac{1}{6} \cdot P(X = 5) \approx 0.0041 \]
     \subsection{Poisson}
-    \definizione Una variabile aleatoria X che assume valori $\boldsymbol{X \in \{1,2, \cdots n\}}$ viene detta \textit{poissoniana} di parametro $\boldsymbol{\lambda > 0}$ \\
+    \definizione Una variabile aleatoria X che assume valori $\boldsymbol{X \in \{1,2, \ldots n\}}$ viene detta \textit{poissoniana} di parametro $\boldsymbol{\lambda > 0}$ \\
     Se la sua \textit{funzione di massa} è data da:
     \[ P(X = i) = \frac{\lambda^i}{i!} e^{-\lambda} \]
     \[ i = 0,1,2,n \]
@@ -1164,8 +1168,8 @@
     \begin{equation*}
         \begin{split}
             P(X = i) &= \frac{n!}{(n-i)! i!} p^i (1-p)^{n-i} \\
-            & = \frac{n(n-1) \cdots (n-i+1)}{i!} \binom{\lambda}{n}^i (1 - \frac{\lambda}{n})^{n-1} \\
-            & = \frac{n(n-1) \cdots (n-i+1)}{n^i} \cdot \frac{\lambda^i}{i!} \cdot \frac{(1 - \lambda / n)^n}{(1 - \lambda/n)^i} \\
+            & = \frac{n(n-1) \ldots (n-i+1)}{i!} \binom{\lambda}{n}^i (1 - \frac{\lambda}{n})^{n-1} \\
+            & = \frac{n(n-1) \ldots (n-i+1)}{n^i} \cdot \frac{\lambda^i}{i!} \cdot \frac{(1 - \lambda / n)^n}{(1 - \lambda/n)^i} \\
             & = P(X = i) \approx \frac{\lambda^i}{i!} e^{-\lambda}
         \end{split}
     \end{equation*}
@@ -1245,7 +1249,7 @@
     e in maniera casuale \textit{n} batterie, con \textbf{pari probabilità} a ciascuno degli $\binom{N + M}{n}$ sottoinsiemi.
     \formula
     \[  P(X = i) = \frac{\binom{N}{i} \binom{M}{n - i}}{\binom{N + M}{n}} \]
-    \[ i = 0,1 \cdots n \]
+    \[ i = 0,1 \ldots n \]
     \paragraph{Esempio:} prendiamo a caso \textit{6} componenti da una cassa di \textit{20}. un sistema funziona solamente se tra i 6 componenti
     non ci siano più di 2 componenti guasti. \\
     Se nella cassa ci sono \textbf{15} componenti buoni e \textbf{5} guasti, quanto è la probabilità che il sistema funzioni? \\
@@ -1398,11 +1402,312 @@
     \centerline{Cosi sappiamo che $\mu$ $\sigma^2$ rappresentano rispettivamente la \textit{media} e la \textit{varianza}}
 
     \paragraph{La trasformazione lineare di X (val. al. normale)} è a sua volta una \textbf{gaussiana}:
-    \subsection{Esponenziali}
+    \[ \text{Per } X \backsim \mathcal{N} \longrightarrow Y = \alpha X + \beta \]
+    \[ \alpha, \beta \text{ costanti e } \alpha \not= 0\]
+    Y viene detta variabile aleatoria \textit{normale} con media $\boldsymbol{\alpha \mu + \beta}$ e varianza $\alpha^2 \sigma^2$ \\
+    Se $X \backsim \mathcal{N}(\mu, \sigma^2)$ allora:
+    \[ Z := \frac{X - \mu}{\sigma}\]
+    variabile aletoria \textit{normale} con media 0 e varianza 1 (anche detta \textbf{normale standard}) \\
+    La sua funzione di ripartizione (indicata con $\Phi$) ha la seguente formula:
+    \begin{equation*}
+        \Phi(x):=\frac{1}{\sqrt{2 \pi}} \int_{-\infty}^x e^{-y^2 / 2} d y, \quad \forall x \in \mathbb{R}
+    \end{equation*}
+    \centerline{è uguale a dire $P(X \leq x)$} \\
+    \linebreak[4]
+    Se vogliamo trovare invece $P(X \leq b)$ (se e solo se:)
+    \[ \frac{X - \mu}{\sigma} < \frac{b - \mu}{\sigma}\]
+    \formula Cosi da avere: 
+    \begin{equation*}
+        \begin{split}
+            P(X < b) &= P(\frac{X - \mu}{\sigma} < \frac{b - \mu}{\sigma}) \\
+            &= P(Z < \frac{b - \mu}{\sigma}) \\
+            & =: \boldsymbol{\Phi(\frac{b - \mu}{\sigma})}
+        \end{split}
+    \end{equation*}
 
+    \formula Con queste due equazioni possiamo fare lo stesso per $\boldsymbol{a < b}$:
+    \begin{equation*}
+        \begin{split}
+            P(a < X < b) &= P(\frac{a - \mu}{\sigma} < \frac{X - \mu}{\sigma} < \frac{b - \mu}{\sigma}) \\
+            &= P(\frac{a - \mu}{\sigma} < Z < \frac{b - \mu}{\sigma}) \\
+            &= P(Z < \frac{b - \mu}{\sigma}) - P(Z < \frac{a - \mu}{\sigma}) \\
+            &=: \boldsymbol{\Phi (\frac{b - \mu}{\sigma}) - \Phi(\frac{a - \mu}{\sigma})}
+        \end{split}
+    \end{equation*}
+    In tutti i casi siamo arrivati sempre ad un $\Phi(x)$, per calcolare il valore effettivo c'è bisogno della tabella che segue qua sotto
+
+    \begin{figure}[H]
+        \caption{Tabella di $\Phi$}
+        \begin{minipage}{0.59\textwidth}
+            \includegraphics[width=\textwidth]{images/phi_table.png}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+            \paragraph{Esempio:} per trovare un valore \\
+            se dobbiamo trovare $\boldsymbol{\Phi(1.77)}$ \\
+            cerco: \\ \\
+            \colorbox{bittersweet}{1.7} nelle \textit{righe} \\ \\
+            \colorbox{yellow}{0.07} nelle \textit{righe}
+        \end{minipage}
+    \end{figure}
+    \newpage
+    \paragraph{$\Phi(-x)$} è possibile trovare $\Phi(-x)$ usando la \textit{simmetria della distribuzione} rispetto a 0. \\
+    \begin{equation*}
+        \begin{split}
+            \Phi(-x) &= P(Z < -x) \\
+            &= P(Z > x) \\
+            &= 1 - P(Z < x) = 1 - \Phi(x) \\
+        \end{split}
+    \end{equation*}
+    \paragraph{Esempio:}
+    \[ P(Z < -1) = \Phi(-1) = 1 -\Phi(1) \approx 1 - 0.8413 \approx 0.1587 \]
+    
+    \paragraph{Esempio:} Sia X una variabile aleatoria normale media:$\mu = 3$, varianza:$\sigma^2 = 16$ \\
+    Si trovino \textbf{(a)} P(X < 11); \textbf{(b)} P(X > -1) \textbf{(c)} P(2 < X < 7).
+    \paragraph{(a)} Poniamo prima di tutto $Z := (X - \mu) / \sigma$ 
+    \begin{equation*}
+        \begin{split}
+            P(X < 11) &= P(\frac{X - 3}{4} < \frac{11 - 3}{4}) \\
+            &= P(Z < 2) \\
+            &= \Phi(2) \approx 0.9972
+        \end{split}
+    \end{equation*}
+
+    \paragraph{(b)} stesso ragionamento per b | (P > -1) |
+    \begin{equation*}
+        \begin{split}
+            P(X > 1) &= P(\frac{X - 3}{4} < \frac{-1 - 3}{4}) \\
+            &= P(Z > -1) \\
+            &= P(Z < 1) \\
+            &= \Phi(1) \approx 0.8413
+        \end{split}
+    \end{equation*}
+
+    \paragraph{(c)} stesso ragionamento per c | P(2 < X < 7) |
+    \begin{equation*}
+        \begin{split}
+            P(2 < X < 7) &= P(\frac{2 - 3}{4} < \frac{X - 3}{4} < \frac{7 - 3}{4}) \\
+            &= P(-1/4 < Z < 1) \\
+            &= \Phi(1) - \Phi(-0.25) \\
+            &= \Phi(1) - 1 + \Phi(0.25) \approx 0.4400
+        \end{split}
+    \end{equation*}
+
+    \paragraph{Riproducibilità della distribuzione normale:} Dove: \\
+    $X_1, X_2 \ldots X_n$ sono \textit{aleatorie normali e indipendenti}, $X_i$ ha media $\mu_i$ e varianza $\sigma^{2}_i$ \\ \\
+    La sua funzione generatrice di $\sum_{i = 1}^{n} X_i$ è data da:
+    \begin{equation}
+        \begin{aligned}
+            \phi(t) & =E\left[\exp \left\{t X_1+t X_2+\ldots+t X_n\right\}\right] \\
+            & =E\left[e^{t X_1} e^{t X_2} \ldots e^{t X_n}\right] \\
+            & =\prod_{i=1}^n E\left[e^{t X_i}\right] \\
+            & =\prod_{i=1}^n \exp \left\{\mu_i t+\frac{\sigma_i^2 t^2}{2}\right\} \\
+            & =\exp \left\{\bar{\mu} t+\frac{\bar{\sigma}^2 t^2}{2}\right\} \longrightarrow \mathcal{N}(\overline{\mu}, \overline{\sigma}^2)
+        \end{aligned}
+    \end{equation}
+    Dove: \\
+    \begin{minipage}{0.45\textwidth}
+        \[ \overline{\mu} := \sum_{i = 1}^{n} \mu_i \]
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \[ \overline{\sigma}^2 := \sum_{i = 1}^{n} \sigma^2_i\]
+    \end{minipage} \\
+
+    \paragraph{Semplificazione:} Per ogni $\alpha \in (0,1)$ definiamo $\boldsymbol{z_a}$ in modo che:
+    \[ P(Z > z_a) = 1 - \Phi(Z_a) = \alpha \] 
+    Spieghiamo meglio se no non ci capiamo un cazzo. \\
+    Definiamo $z_a := \Phi^{-1}(1 - \alpha)$ in modo che la probabilità che una \textit{normale standard} assuma un $z_a$ esattamente ad $\alpha$
+
+    \paragraph{Esempio}: \\
+    \begin{minipage}{0.3\textwidth}
+        \[ 1 - \Phi(1.645) \approx 0.05 \]
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        \[ 1 - \Phi(1.96) \approx 0.025 \]
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        \[ 1 - \Phi(2.33) \approx 0.01 \]
+    \end{minipage} \\ \\
+    Diventano uguali a: \\
+    \begin{minipage}{0.3\textwidth}
+        \[ z_{0.05} \approx (1.645) \]
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        \[ z_{0.025} \approx (1.96) \]
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        \[ z_{0.01} \approx (2.33) \]
+    \end{minipage}
+
+    \subsection{Esponenziali}
+    \definizione Una variabile aleatoria continua la cui funzione di densità è data da 
+    \begin{equation*}
+        f(x) =
+        \begin{cases}
+            \lambda e^{-\lambda x} & \text{se } x \geq 0 \\
+            0 & \text{se } x < 0
+        \end{cases}
+    \end{equation*}
+    \centerline{per $\boldsymbol{\lambda > 0}$ si dice \textbf{\textit{esponenziale}} con parametro/intensità $\lambda$}
+    \definizione L' \textit{esponenziale} rappresenta la durata di vita di un fenomeno.
+    \paragraph{Postilla:} La $\boldsymbol{\lambda}$ rappresenta \textit{il tasso di decadimento} della probabilità. \\
+    Ovvero la \textbf{velocità} con cui la probabilità \textit{diminuisce} al cresce del tempo. \\ 
+    Più è grande $\lambda$ più velocemente la probabilità diminuisce \\ \\
+    La sua \textit{funzione di ripartizione} è data da:
+    \begin{equation*}
+        \begin{split}
+            F(x) &= P(X \leq x) \\
+            &= \int_{0}^{x} \lambda e^{-\lambda y} \, dy \\
+            &= 1 - e^{-\lambda x} \quad x \geq 0
+        \end{split}
+    \end{equation*}
+    Come per gli altri modelli possiamo trovare la sua \textit{funzione generatrice dei momenti} e di conseguenza i momenti e la varianza. \\
+    \begin{equation}
+        \begin{aligned}
+            \phi(t) & :=E\left[e^{t X}\right] \\
+            & =\int_0^{\infty} e^{t x} \lambda e^{-\lambda x} d x \\
+            & =\lambda \int_0^{\infty} e^{-(\lambda-t) x} d x \\
+            & =\frac{\lambda}{\lambda-t}, \quad t<\lambda
+        \end{aligned}
+    \end{equation}
+    Derivando $\phi$ otteniamo $\phi'(t)$ e $\phi''(t)$:
+    \[ \phi'(t) = \frac{\lambda}{(\lambda - t)^2}\]
+    \[ \phi''(t) = \frac{2\lambda}{(\lambda - t)^3}\]
+    Ottenendo in questo modo i soliti valori attesi e la varianza:
+    \[ \ev{X} = \phi'(0) = \frac{1}{\lambda} \]
+    \[ \ev{X^2} = \phi''(0) = \frac{2}{\lambda^2} \]
+    \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{1}{\lambda^2} \]
+    \centerline{Per una variabile aleatoria esponenziale $\lambda$ è il \textit{reciproco} del valore atteso}
+    \centerline{e la varianza è il \textit{quadrato} di quest'ultimo.}
+
+    \definizione La proprietà centrale della distribuzione esponenziale è la sua \textbf{assenza di memoria}
+    \paragraph{Spiegazione:} spieghiamo meglio quello scritto prima. \\
+    La seguente proprietà ci dice che la probabilità che un evento che si verifichi in un certo lasso di tempo \textbf{non dipende} dal tempo
+    trascorso fino a quel momento \\
+    ma solo dal tempo trascorso a partire da quel momento. \\ \\
+    In termini di formula riferendoci ad una variabile aleatoria X intendiamo che:
+    \[ P(X > s + t | X > t) = P(X > s) \quad \forall s,t \geq 0 \]
+
+    \paragraph{Esempio:} il numero di miglia percorse da una macchina prima che la batteria si scarichi è di media \textit{10.000} miglia \\
+    Se una persona fa un viaggio di \textit{5.000} miglia \\
+    Quale è la probabilità che lo porti a termine senza dover sostituire la batteria? e se la distribuzione non è esponenziale? \\
+    - ricordandoci la proprietà \textit{di assenza di memoria della distribuzione esponenziale} il tempo di vita residuo è esponenziale \\
+    con intensità $\boldsymbol{\lambda = 1 / 10}$ e quindi la probabilità cercata è: \\ \\
+    \begin{equation*}
+        \begin{split}
+            P(\text{vita residua} > 5) &= 1 - F(5) \\
+            &= e^{-5\lambda} \\
+            &= e^{-0.5} \approx 0.607
+        \end{split}
+    \end{equation*}
+    Se non avessimo saputo che la distribuzione è esponenziale, la probabilità sarebbe stata da questa equazione:
+    \begin{equation*}
+        \begin{split}
+            P(\text{vita residua} > 5) &= P(\text{vita totale} > t + 5 | \text{vita totale} > t) \\
+            &= \frac{1 - F(t + 5)}{1 - F(t)}
+        \end{split}
+    \end{equation*}
+    \paragraph{Postilla:} \textit{t} è il numero di miglia della batteria fino al momento del viaggio \\
+    Quindi senza l'informazione che la nostra distribuzione è esponenziale avremmo \textbf{bisogno di ulteriori informazioni}.
+
+
+    \paragraph{Proprietà con condizione in assenza di memoria:}
+    \[ \frac{P(X > s + t, X > t)}{P(X > t)} = P(X > s) \]
+    e quindi anche a:
+    \[ P(X > s + t) = P(X > s) P(X > t) \]
+    \paragraph{Dimostrazione:}
+    \[ P(X > x) = e^{-\lambda x} \rightarrow e^{-\lambda(s+t)} = e^{-\lambda s} e^{-\lambda t} \]
+
+    \paragraph{Proposizione:} se abbiamo $X_1, X_2, \ldots X_n$ \textit{indipendenti} di parametri $\lambda_1, \lambda_2, \ldots \lambda_n$ \\
+    La variabile aleatoria: \\
+    $Y := min(X_1, X_2, \ldots, X_n)$ è \textbf{esponenziale} di parametro $\sum_{i = 1}^{n} \lambda_i$ \\
+    \paragraph{Spiegazione:} Basta dimostrare che $\boldsymbol{P(Y \leq x) = 1 - exp\{-x \sum_{i = 1}^{n} \lambda_i \}}$ \\
+    quindi che $P(Y > x) = exp\{-x \sum_{i = 1}^{n} \lambda_i \}$ \\ 
+    e ora la vera dimostrazione che tanto è inutile diomerda.
+
+    \paragraph{Dimostrazione:}
+    \begin{equation}
+        \begin{aligned}
+            P(Y>x) & =P\left(\min \left(X_1, X_2, \ldots, X_n\right)>x\right) \\
+            & =P\left(X_1>x, X_2>x, \ldots, X_n>x\right) \\
+            & =\prod_{i=1}^n P\left(X_i>x\right) \quad \text { per l'indipendenza } \\
+            & =\prod_{i=1}^n\left(1-F_{X_i}(x)\right) \\
+            & =\prod_{i=1}^n e^{-\lambda_i x} \\
+            & =e^{-x \sum_{i=1}^n \lambda_i}
+        \end{aligned}
+    \end{equation}
     \subsection{Processi stocastici (Poisson)}
+    \definizione Famiglia di variabili aleatorie parametrizzate da un indice (in questo caso \textbf{t})
+    \definizione Consideriamo una serie di eventi instantanei che avvengono però a intervalli di tempo \textbf{random} \\
+    Sia $N(t)$ il numero di quanti eventi se ne sono verificati nell'intervallo $[0, t]$ \\
+    $N(t)$ viene detto \textbf{processo di Poisson} di intensità $\lambda, \lambda > 0$
+    \paragraph{Condizioni:}
+    \begin{enumerate}
+        \item $N(0) = 0 \longrightarrow$ si iniziano a contare gli eventi dal \textbf{tempo 0}
+        \item Il numero degli eventi che hanno luogo in intervalli di tempo \textit{disgiunti} sono \textbf{indipendenti}. $\rightarrow$ \textit{indipendenza degli incrementi} | 
+        il numero di eventi fino al tempo $t$ -> $N(t)$ è \textbf{indipendente} dal numero di eventi tra il tempo $t$ e il tempo $t+s$
+        \item La distribuzione del numero degli eventi in un dato intervallo di tempo dipende dalla \textbf{lunghezza} dell'intervallo $\rightarrow$ \textit{stazionarietà degli incrementi} | la \textit{distribuzione} di $N(t+s) - N(t)$ è \textbf{la stessa} per tutti i valori di $t$
+        \item $\displaystyle \lim_{h \to 0} \frac{P(N(h) = 1)}{h} = \lambda \rightarrow$ Per un intervallo di tempo \textit{molto piccolo} c'è una probabiltà di $\lambda_h$ che si \textbf{verifica un solo evento}
+        \item $\displaystyle \lim_{h \to 0} \frac{P(N(h) \geq 2)}{h} = 0 \rightarrow$ Per un intervallo di tempo \textit{molto piccolo} c'è una probabiltà \textbf{nulla} che se ne verifichino due o più.
+    \end{enumerate}
+    Con queste ipotesi qua di sopra è possibile dimostrare che \textit{il numero di eventi} che si verificano in un qualsiasi intervallo di tempo $t$ è una \textit{variabile aleatoria di Poisson} di media $\lambda_t$. \\
+    \textbf{Se $n$ è grande:}
+    \[ P(N(t) = k) \approx P(k \text{ sottointervalli con 1 evento, n-k con 0 eventi}) \]
+    \centerline{Sempre per n grande, la condizione \textbf{4} e le condizioni \textbf{4} e \textbf{5} insieme implicano che:}
+    \[ P(1 \text{ evento in un sottointervallo fissato}) \approx \frac{\lambda_t}{n} \]
+    \[ P(0 \text{ eventi in un sottointervallo fissato}) \approx 1 - \frac{\lambda_t}{n} \]
+    Utilizzando l'indipendenza della condizione 2 (\textit{indipendenza degli incrementi}) il numero totale di eventi
+    è assimilabile ad una variabile aleatoria \textbf{binomiale}.
+    \[ P(k \text{ sotto intervalli con 1 evento, n - k con eventi}) \approx \binom{n}{k} (\frac{\lambda_t}{n})^k (1 - \frac{\lambda_t}{n})^{n-k}  \] 
+    \centerline{Se $n$ tende all'infinito può essere \textit{approssimata con Poisson} media $\lambda_t$}
+    \[ P(N(t) = k) \approx \frac{(\lambda t)^k}{k!} e^{-\lambda t}\]
+
+    \paragraph{Proposizione} Siano $X_1, X_2, \cdots X_n$ intervalli di tempo che intercorrono rispettivamente dal 1' al 2' al 3' ecc. \\
+    \paragraph{Esempio:} $X_1 = 5$ e $X_2 = 8$ il primo evento avviene all'istante \textit{5} e il secondo all'istante \textit{13} (5+8) \\
+    Vogliamo determinare la distribuzioni delle $X_i$ (ricordando che l'evento $\{X_1 > t\}$ si verifica se nell'intervallo [0, t] \textit{non si sono realizzati eventi}) quindi:
+    \[ P(X_1 > t) = P(N(t) = 0) = e^{\lambda t} \]
+    \centerline{Questo significa che:}
+    \[ F_{X_1}(t) := P(X_1 \leq t) = 1 - e^{-\lambda t} \]
+    $X_i$ è una variabile aleatoria \textit{esponenziale} di intensità $\lambda$ \\
+    Per trovare $X_2$ si noti che qualunque valore $s$ assuma la variabile aleatoria $X_1$ è data da:
+    \begin{equation*}
+        \begin{split}
+            P(X_2 > t | X_1 = s) &= P(0 \text{ eventi in} (s, s + t | X_1 = s)) \\
+            &= P(0 \text{ eventi in} (s, s + t )) \quad \text{per la condizione \textbf{2}} \\
+            &= e^{-\lambda t}
+        \end{split}
+    \end{equation*}
+    Questo prova che la variabile aleatoria $X_1$ è \textbf{esponenziale} \\
+    e $X_2$ è esponenziale di intensità $\lambda$ e \textbf{indipendente} da $X_1$ \\
+    \paragraph{Proposizione:} Le $X_i$ sono tutte \textit{variabili esponenziali} \\
+    quindi i tempi che separano gli eventi di Poisson di intensità $\lambda$ \\
+    sono una \textit{successioni di esponenziali indipendenti} 
 
     \subsection{Gamma}
+    \definizione Una variabile aleatoria \textit{continua} si dice distribuzione di \textit{tipo gamma}
+    di parametri $(\alpha, \lambda)$ con $\alpha > 0$ e $\lambda > 0$ la sua funzione di intensità è data da:
+
+    \begin{equation*}
+        f(x) =
+        \begin{cases}
+            \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha - 1} e^{-\lambda x} & \text{se } x > 0 \\
+            0 & \text{se } x \leq 0 
+        \end{cases}
+    \end{equation*}
+    dove con $\boldsymbol{\Gamma}$ indichiamo la funzione \textit{gamma di Eulero}, definita in modo da normalizzare l'integrale di f come segue:
+    \begin{equation}
+        \begin{aligned}
+            \Gamma(\alpha) & :=\int_0^{\infty} \lambda^\alpha x^{\alpha-1} e^{-\lambda x} d x \\
+            & =\int_0^{\infty} y^{\alpha-1} e^{-y} d y \quad \text { ponendo } y=\lambda x
+        \end{aligned}
+    \end{equation}
+    è possibile \textbf{integrare} per parti, se $\boldsymbol{\alpha > 1}$ possiamo scrivere:
+    \begin{equation}
+        \begin{aligned}
+            \int_0^{\infty} y^{\alpha-1} e^{-y} d y & =-\left.y^{\alpha-1} e^{-y}\right|_{y=0} ^{\infty}+\int_0^{\infty}(\alpha-1) y^{\alpha-2} e^{-y} d y \\
+            & =(\alpha-1) \int_0^{\infty} y^{\alpha-2} e^{-y} d y
+        \end{aligned}
+    \end{equation}
+    Dove il termine $-y^{a-1} e^{-y} \bigg\rvert_{y = 0}^{\infty}$ è \textbf{nullo} perche $\boldsymbol{\alpha > 1}$ implica che $\lim_{y \to 0} y^{\alpha - 1} = 0$
 
     \subsection{Chi-quadro}
 
