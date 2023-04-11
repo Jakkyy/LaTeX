@@ -3,6 +3,8 @@
 \usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
 \usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
 
+\usepackage{hyperref}
+
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{float}
@@ -1669,13 +1671,146 @@
             & =(\alpha-1) \int_0^{\infty} y^{\alpha-2} e^{-y} d y
         \end{aligned}
     \end{equation}
-    Dove il termine $-y^{a-1} e^{-y} \bigg\rvert_{y = 0}^{\infty}$ è \textbf{nullo} perche $\boldsymbol{\alpha > 1}$ implica che $\lim_{y \to 0} y^{\alpha - 1} = 0$
+    Dove il termine $-y^{a-1} e^{-y} \bigg\rvert_{y = 0}^{\infty}$ è \textbf{nullo} perche $\boldsymbol{\alpha > 1}$ implica che $\lim_{y \to 0} y^{\alpha - 1} = 0$ \\
+    Abbiamo dimostrato quindi che:
+    \[ \Gamma (\alpha) = (\alpha - 1) \Gamma(\alpha - 1) \]
+    La seguente proprietà ci permette di calcolare \textit{per induzione} il valore che $\Gamma$ assume
+    \[ \Gamma(1) = \int_{0}^{\infty} e^{-y} \, dy = 1 \]
+    e anche per una $n \geq 1$:
+    \begin{equation*}
+        \begin{split}
+            \Gamma(n) &= (n - 1) \Gamma(n-1) \\
+            &= (n-1) (n-2)\Gamma(n-2) \\
+            & ... \\
+            &= (n-1)! \Gamma(1)
+        \end{split}
+    \end{equation*}
+    \textbf{Da cui possiamo dedurre che $\boldsymbol{\Gamma(n) = (n-1)!}$} \\
+    \linebreak[4]
+    Possiamo ovviamente ottenere la \textit{funzione generatrice dei momenti} dalla formula:
+    \begin{equation}
+        \begin{aligned}
+            \phi(t) & :=E\left[e^{t X}\right] \\
+            & =\int_0^{\infty} e^{t x} \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\lambda x} d x \\
+            & =\frac{\lambda^\alpha}{\Gamma(\alpha)} \int_0^{\infty} x^{\alpha-1} e^{-(\lambda-t) x} d x \\
+            & =\left(\frac{\lambda}{\lambda-t}\right)^\alpha \frac{1}{\Gamma(\alpha)} \int_0^{\infty} y^{\alpha-1} e^{-y} d y \\
+            & =\left(\frac{\lambda}{\lambda-t}\right)^\alpha
+        \end{aligned}
+    \end{equation}
+    Ora deriviamo per ottenere $\phi'(t)$ e $\phi''(t)$:
+    \[ \phi'(t) = \frac{\alpha \lambda^\alpha}{(\lambda - t)^{\alpha + 1}}\]
+    \[ \phi''(t) = \frac{\alpha (\alpha + 1) \lambda^\alpha}{(\lambda - t)^{\alpha + 2}} \] \\
+    Ricordiamoci che è possibile ottenere dai momenti il \textit{valore atteso} e la \textit{varianza}:
+    \[ \ev{X} = \phi'(0) = \frac{\alpha}{\lambda} \]
+    \[ \ev{X^2} = \phi''(0) = \frac{\alpha(\alpha + 1)}{\lambda^2} \]
+    \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{\alpha}{\lambda^2} \]
+    \paragraph{Riproducibilità:} Come altre distribuzioni fissando $\lambda$ possiamo renderle \textbf{riproducibili} \\
+    Se $X_1 e X_2$ sono variabili aleatorie gamma indipendenti, parametri $(\alpha_1, \lambda)$ e $(\alpha_2, \lambda)$ \\
+    possiamo calcolare la funzione generatrice:
+    \begin{equation*}
+        \begin{split}
+            \phi(t) &= \ev{e^{t(X_1 + X_2)}} \\
+            &= \ev{e^{tX_1} e^{tX_2}} \\
+            &= \ev{e^{tX_1}} \ev{e^{tX_2}} \\
+            &= (\frac{\lambda}{\lambda - t})^{\alpha_1} (\frac{\lambda}{\lambda - t})^{\alpha_2} \\
+            &= (\frac{\lambda}{\lambda - t})^{\alpha_1 + \alpha_2}
+        \end{split}
+    \end{equation*}
+    L'enunciato segue quindi che $\phi$ determina la \textit{distribuzione}. \\
+    è possibile ovviamente generalizzare alla \textbf{somma di due variabili aleatorie}
+    \paragraph{Proposizione gamma:} Se $X_1, i = 1, 2, \ldots, n$ sono variabili indipendenti con parametri gamma ($\alpha_1 + \alpha_2, \lambda$) allora:
+    \[ \sum_{i = 1}^{n} X_i \]
+    \centerline{è una gamma di parametri} 
+    \[ \sum_{i = 1}^{n} \alpha_i, \lambda \]
 
+    \paragraph{Proposizione esponenziali:} Se $X_1, i = 1, 2, \ldots, n$ sono variabili aleatorie \textit{esponenziali} di densità $\lambda$ allora è una gamma di parametri ($n, \lambda$):
+    \[ \sum_{i = 1}^{n} X_i \]
+
+    \section{Distribuzioni che derivano da quella normale}
     \subsection{Chi-quadro}
+    \definizione Se $Z_1, Z_2, \ldots Z_n$ sono variabili aleatorie normali standard e indipendenti, la somma dei loro quadrati è:
+    \[ X := Z_1^2 + Z_1^2 + \cdots + Z_n^2 \]
+    \definizione Viene definita una distribuzione \textit{CHI-QUADRO} quando abbiamo bisogno di valutare se una \textit{differenza} tra più insiemi di dati
+    è statisticamenente significativo, quindi per fare confronti, e la definiamo così:
+    \[ X \sim \chi_n^2 \quad \text{$\chi$ = chi-quadro}\]
+    \paragraph{Riproducibilità:}
+    La distribuzione è \textit{riproducibile} dove $X_1$ e $X_2$ sono indipendenti con $n_1$ $n_2$ gradi di libertà \\
+    Per la distribuzione normale standard, se $X$ è una \textit{chi-quadro} con $n$ gradi di liberta e $\alpha$ ($0 \leq \alpha \leq 1$) definiamo la quantità $\chi_{\alpha,n}^2$ tramite queste equazione:
+    \[ P(X \geq \chi_{\alpha,n}^2) = \alpha \]
+    \paragraph{Esempio:} Si determini $P(X \leq 30)$ quando X è una aleatoria chi-quadro con \textbf{26} gradi di libertà (dal software):
+    \[ P(X \leq 30) \approx 0.7325 \]
+    \paragraph{Esempio 2:} Si trova vale $\chi_{0.05, 15}^2$ tra le tabelle
+    \[ \chi_{0.05, 15}^2 \approx 24.996 \]
+
+    \begin{figure}[H]
+        \caption{Tabella di $\chi_{\alpha,n}^2$}
+        \begin{minipage}{0.59\textwidth}
+            \includegraphics[width=\textwidth]{images/xan_table.png}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+            \paragraph{Dove:}
+            $n = $ \textit{gradi di libertà} \\ \\
+            se abbiamo \\
+            \colorbox{bittersweet}{$\boldsymbol{n = 10}$} \\
+            \colorbox{yellow}{$\boldsymbol{\alpha = 0.05}$} \\
+            cerco: \\
+            \colorbox{bittersweet}{10} nelle \textit{righe} \\ \\
+            \colorbox{yellow}{0.05} nelle \textit{colonne} \\ \\
+            Trovo subito che $\chi^2 = 18.307$
+        \end{minipage}
+    \end{figure}
 
     \subsection{Distribuzione T}
+    \definizione Se $Z$ e $C_n$ sono variabili indipendenti, con Z \textit{normale standard} e $C_n$ \textit{chi-quadro} con n gradi di libertà
+    la sua variabile aleatoria $T_n$ è definita:
+    \[ T_n := \frac{Z}{\sqrt{C_n / n}} \]
+    in questo caso si dice di avere una \textbf{distribuzione t} con $n$ gradi di libertà, che denotiamo così:
+    \[ T_n \sim t_n \]
+    \[ C_n \sim X^2_n \longrightarrow \frac{C_n}{n} = \frac{Z_1^2 + \ldots + Z_n^2}{n} \]
+    Se applichiamo \textit{la legge dei grandi numeri} otteniamo che se $n$ è grande \\
+    $C_n / n$ sarà molto vicina a $\ev{Z_1^2} = 1$
+    \paragraph{Dimostrazione di valore atteso e varianza} di $T_n$ che sono dati da:
+    \[ \ev{T_n} = 0 \quad n \geq 2 \]
+    \[ Var(T_n) = \frac{n}{n-2} \quad n \geq 3 \]
+    Se $T_n$ è una $t$ con $n$ gradi di libertà e $\alpha \in(0,1)$ definiamo la quantità $t_{\alpha,n}$ in questo modo:
+    \[ P(T_n \geq t_{\alpha,n}) = \alpha \]
+    è possibile \textbf{applicare la simmetria}:\
+    \begin{equation*}
+        \begin{split}
+            \alpha &= P(-T_n \geq t_{\alpha, n}) \\
+            &= P(T_n \leq -t_{\alpha, n}) \\
+            &= 1 - P(T_n > -T_{\alpha, n}) \\
+            &= P(T_n \geq t_{\alpha, n}) = 1 - \alpha
+        \end{split}
+    \end{equation*}
+    Da tutto questo otteniamo qunidi che:
+    \[ -t_{\alpha, n} = t_{1-\alpha, n}\]
 
     \subsection{Distribuzione F}
+    \formula 
+    \[ F_{n, m} := \frac{C_n / n}{C_m / m}\]
+    \paragraph{Definizione:} Se $C_n$ e $C_m$ sono aleatorie indipendenti, chi-quadro con $n$ e $m$ gradi di libertà \\
+    si dice di avere una \textit{distribuzione F} con $n$ e $m$ gradi di libertà \\ \\
+    Per ogni $\alpha \in (0,1)$ possiamo definire la quantità $F_{\alpha, n, m}$ in modo:
+    \[ P(F_{n,m} > F_{\alpha, n, m}) = \alpha \]
+    Se vogliamo trovare una $\alpha > 0.5$ possiamo ottenerla in questo modo:
+    \begin{equation*}
+        \begin{split}
+            \alpha &= P(\frac{C_n / n}{C_m / m} > F_{\alpha, n, m}) \\
+            &= P(\frac{C_m / m}{C_n / n} < \frac{1}{F_{\alpha, n ,m}}) \\
+            &= 1 - P(\frac{C_m / m}{C_n / n} \geq   \frac{1}{F_{\alpha, n, m}})
+        \end{split}
+    \end{equation*}
+    Facciamola più semplive vah:
+    \[ P(\frac{C_m / m}{C_n / n} > \frac{1}{F_{\alpha, n, m}}) = 1 - \alpha \]
+    Per trovare invece $F_{1-\alpha, n, m}$ dobbiamo fare così:
+    \[ P(\frac{C_m / m}{C_n / n} > \frac{1}{F_{\-\alpha, n, m}}) = 1 - \alpha \]
+    Osservando le due equazioni possiamo notare che:
+    \[ \frac{1}{F_{\alpha,n,m}} = F_{1-\alpha,n,m} \]
+    \centerline{Boh vabbe}
+
+    \paragraph{Esempio:} Determiniamo $P(F_{6, 14} \leq 1.5)$ \\
+    Guardando il software si ottiene che la soluzione è \textbf{0.752}
 
     \subsection{Distribuzione logistica}
 
