@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1681169490 "/Users/jacopo/Desktop/Programming/LaTeX/probabilità_appunti/probabilità.tex" "probabilità.pdf" "probabilità" 1681169491 0
-  "/Users/jacopo/Desktop/Programming/LaTeX/probabilità_appunti/probabilità.tex" 1681169490 83305 a6680410167845b0ef5e0fb42f877629 ""
+["pdflatex"] 1681210951 "/Users/jacopo/Desktop/Programming/LaTeX/probabilità_appunti/probabilità.tex" "probabilità.pdf" "probabilità" 1681210951 0
+  "/Users/jacopo/Desktop/Programming/LaTeX/probabilità_appunti/probabilità.tex" 1681210950 83324 574e0b69151762d204190f02b64403a6 ""
   "/Users/jacopo/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi1000.600pk" 1681031975 24520 2ed8c16deb8acf2d1f8fc1fb4ff27e15 ""
   "/Users/jacopo/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecso1000.600pk" 1681168053 28324 03ac1b5e497466196d16fa976f25fda6 ""
   "/Users/jacopo/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1000.600pk" 1681031976 19908 ff79eba2b2b7abf27841e48536ad6337 ""
@@ -100,9 +100,9 @@
   "/usr/local/texlive/2023basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1681031726 7200388 8021f60420d9beb3e65764f31b846793 ""
   "/usr/local/texlive/2023basic/texmf.cnf" 1678817979 628 bde3cc671e29677eea4172140533535c ""
   "images/phi_table.png" 1681166460 1364975 dbbb2e94b77618be54a4ce4cebebc3ad ""
-  "probabilità.aux" 1681169491 24333 47ba94a24c8f9c1eb87d5e5af699e042 "pdflatex"
-  "probabilità.tex" 1681169490 83305 a6680410167845b0ef5e0fb42f877629 ""
-  "probabilità.toc" 1681169491 14255 6d1f0b0adec1e0b49466e4f7a8d136ab "pdflatex"
+  "probabilità.aux" 1681210951 24333 47ba94a24c8f9c1eb87d5e5af699e042 "pdflatex"
+  "probabilità.tex" 1681210950 83324 574e0b69151762d204190f02b64403a6 ""
+  "probabilità.toc" 1681210951 14255 6d1f0b0adec1e0b49466e4f7a8d136ab "pdflatex"
   (generated)
   "probabilità.aux"
   "probabilità.log"
