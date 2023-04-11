@@ -315,7 +315,7 @@
     \subsection{Funzione di ripartizione congiunta}
     \definizione Funzione di ripartizione a due variabili aleatorie X e Y
     \formula \[ F(x, y) = P(X \leq x, Y \leq y) \]
-    \text{Se vogliamo trovare solamente la funzione di ripartizione di una singola variabile aleatoria:}
+    Se vogliamo trovare solamente la funzione di ripartizione di una singola variabile aleatoria:
     \begin{equation*}
     \begin{split}
         F_X(x) & = P(X \leq x) \\
@@ -328,9 +328,8 @@
 
     \subsection{Funzione di massa congiunta}
     \definizione Probabilita che accadano due eventi (\textbf{X} e \textbf{Y}) nello stesso istante.
-    \formula $ p(x_i, y_j) = P(X=x_i, Y=y_j) $
-
-    \text{Se vogliamo trovare solamente la funzione di massa di una singola variabile aleatoria:}
+    \formula \[ p(x_i, y_j) = P(X=x_i, Y=y_j) \]
+    Se vogliamo trovare solamente la funzione di massa di una singola variabile aleatoria:
     \begin{equation*}
         \begin{split}
             p_X(x_i) & := P(X = x_i) \\ 
@@ -350,8 +349,7 @@
     definita per tutti gli x e gli y
     \formula
     \[ P((X,Y) \in C) = \int_{}^{} \int_{(x,y) \in C}^{} f(x,y) \, dx \, dy \] \\
-
-    \text{se A e B sono sottoinsiemi qualsiasi di $\mathbb{R}$ e C:= A x B}
+    \centerline{se A e B sono sottoinsiemi qualsiasi di $\mathbb{R}$ e C:= A x B}
     \[ C:= {(x,y) \in \mathbb{R}^2 : x \in A, y \in B}\]
     \text{Possiamo riscrivere la funzione di ripartizione congiunta di X e Y come segue:}
     \begin{equation*}
@@ -389,12 +387,10 @@
     \text{Un evento su una variabile non influenza l'altra.}
     \formula Se soddisfano questa richiesta le variabili si dicono \textit{indipendenti} 
     \[ P(X \in A, Y \in B) = P(X \in A) P(Y \in B)\]
-
     Usando gli assiomi della probabilità è possibile dimostrare che la definizione di sopra è equivalente a:
     \[ P(X \leq a, Y \leq b) = P(X \leq a) P(Y \leq b)\]
     \[ \forall a,b \in \mathbb{R} \]
     \linebreak[3]
-
     Ovvero che la funzione di ripartizione congiunta sia il prodotto delle marginali:
     \[ F(a,b) = F_X(a) F_Y(b)\]
 
@@ -488,7 +484,6 @@
     \[ f_{X|Y}(x | y) = \frac{f(x, y)}{f_Y(y)}\]
     Se X e Y sono congiuntamente continue e A è un sottoinsieme di numeri reali per ogni y si può definire:
     \[ P(X \in A | Y = y) := \int_{A}^{} f_{X|Y}(x | y) \, dx \]
-
     Notiamo che X e Y sono indipendenti allora:
     \begin{center}
         \begin{minipage}{0.45 \textwidth}
@@ -514,7 +509,6 @@
     \linebreak[2]
     Si calcoli la densità condizionata di X rispetto a Y = y per 0 < y < 1. \\
     Se questi due numeri sono compresi tra 0 e 1 abbiamo che:
-
     \begin{equation*}
         \begin{split}
             f_{X|Y}(x,y):&= \frac{f(x,y)}{f_Y(y)} \\
@@ -567,16 +561,15 @@
     \definizione è possibile calcolare il valore atteso di una funzione g(X) notando che essa stessa è una variabile aleatoria \\
     quindi si applicano le stesse proprietà, come segue: \\
     \linebreak[4]
-
     \begin{minipage}{0.45\textwidth}
-        \text{Variabile discreta:}
+        \textbf{Variabile discreta:}
         \begin{equation*}
             \ev{g(X)} = \sum_{i}^{} g(x_i) p(x_i)
         \end{equation*}
     \end{minipage}
     \hfill
     \begin{minipage}{0.45\textwidth}
-        \text{Variabile Continua:}
+        \textbf{Variabile Continua:}
         \begin{equation*}
             \ev{g(x)} = \int_{-\infty}^{+\infty} g(x) f(x) \, dx
         \end{equation*}
@@ -602,7 +595,6 @@
     \[ \ev{X^2} = \ev{Y} = 0 \cdot 0.2 + 1 \cdot 0.5 + 4 \cdot 0.3 = 1.7 \]
     Oppure (utilizzando la proposizione delle variabili discrete)
     \[ \ev{X^2} = 0^2 \cdot 0.2 + 1^2 \cdot 0.5 + 2^2 \cdot 0.3 = 1.7\]
-
     \paragraph{Esempio (continue):} Il tempo – in ore – necessario per localizzare un guasto nell’impianto
     elettrico di una fabbrica è una variabile aleatoria X con funzione di densità
     \begin{equation*}
@@ -672,7 +664,6 @@
     % \[ X, Y -> g(X,Y) - \boldsymbol{g: \mathbb{R}^2 \rightarrow \mathbb{R}} \]
     \text{se $g(X,Y)$ come $\boldsymbol{g = X + Y}$ allora}
     \[ \ev{X + Y} = \ev{X} + \ev{Y} \]
-
     \paragraph{Dimostrazione caso discreto:}
     \begin{equation*}
         \begin{split}
@@ -682,7 +673,6 @@
             & = \ev{X} + \ev{Y}
         \end{split}
     \end{equation*}
-
     \paragraph{Dimostrazione caso continuo:}
     \begin{equation*}
         \begin{split}
@@ -701,10 +691,8 @@
             & = \ev{X} + \ev{Y} + \ev{Z}
         \end{split}
     \end{equation*}
-
     \paragraph{In generale per ogni n}
     \[ \ev{X_1 + X_2 + \ldots + X_n} = \ev{X_1} + \ev{X_2} + \ldots \ev{X_n} \]
-
 
     \paragraph{Esempio: 2 dadi a 6 facce}
     \begin{equation*}
@@ -715,11 +703,9 @@
         & = \frac{7}{2} + \frac{7}{2} = 7 
       \end{split}  
     \end{equation*}
-    
-    \centerline{Dove \textbf{7} è il valore atteso della somma dei due dadi.}
+    \centerline{Dove \textbf{7} è il valore atteso della somma dei due dadi.} \\ \\
     Se vogliamo predire il valore di X possiamo scegliere un numero che sarà ugual ad X.
-    L'errore che commeteremo sarà di $\boldsymbol{(X - c)^2}$ \\
-
+    L'errore che commeteremo sarà di $\boldsymbol{(X - c)^2}$ \\ \\
     Se \boldsymbol{$c = \ev{X}$} l'errore sarà minimizzato $\boldsymbol{\mu := \ev{X}}$
     \[ \ev{(X - c)^2} \geq \ev{(X - \mu)^2}\]
 
@@ -733,7 +719,6 @@
     \end{minipage}
 
     \formula \[ Var(X) := \ev{(X - \mu)^2} \]
-
     \paragraph{Generalizzazione:}
     \begin{equation*}
         \begin{split}
@@ -759,7 +744,6 @@
     \subsection{Costanti reali nella varianza}
     Una utile identità che riguarda la varianza è la seguente (per ogni coppia di costanti reali a e b)
     \[ Var(aX + b) = a^2 \cdot Var(X) \] \\
-
     Per dimostrare ciò ricordiamoci sempre di $\boldsymbol{\mu := \ev{X}}$
     \paragraph{Dimostrazione:}
     \begin{equation*}
@@ -799,10 +783,8 @@
     \centerline{\textit{La covarianza può essere negativa, positiva o nulla } }
     \text{\textbf{Positivo} $\longrightarrow$ Le due variabili crescono o decrescono insieme} \\
     \text{\textbf{Negativo} $\longrightarrow$ Quando una variabile cresce l'altra decresce} \\
-    \text{\textbf{Nullo} $\longrightarrow$ Le due variabili sono indipendenti} \\
-
+    \text{\textbf{Nullo} $\longrightarrow$ Le due variabili sono indipendenti} \\ \\
     è presente una formula alternativa \textbf{più semplice} \textit{(si trova espandendo il prodotto al secondo membro)}
-
     \begin{equation*}
         \begin{split} 
             Cov(X, Y) &= \ev{XY - \mu_XY - \mu_YX + \mu_X \mu_Y} \\
@@ -819,13 +801,11 @@
     $ Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) $ \\ \\
     $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\ \\
     $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\ \\
-    
     \centerline{- Se $X_1 \ldots X_n$ e $Y $ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, Y) = \sum_{i = 1}^{n} Cov(X_i, Y) \]
-
     \centerline{- Se $X_1 \ldots X_n$ e $Y_1 \ldots Y_m$ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, \sum_{j = 1}^{m} Y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \] \\
-    \linebreak[10]
+    \linebreak[2]
     \centerline{Se X e Y sono variabili aleatorie \textbf{indipendenti:}}
     \[ \ev{XY} = \ev{X} \ev{Y} \]
     Questo implica che:
@@ -859,9 +839,7 @@
     \section{Funzione generatrice dei momenti}
     \definizione Funzione che ci permette di calcolare i momenti della distribuzione.
     \formula \[ \phi(t) = \ev{e^{tX}}\]
-
-    \centerline{Dove X è una variabile aleatoria e t è un parametro reale}
-
+    \centerline{Dove X è una variabile aleatoria e t è un parametro reale} \\
     \begin{equation*}
         \phi(t) := \ev{e^{tX}} = 
         \displaystyle
@@ -878,23 +856,20 @@
     \[ \phi''(t) = \frac{d^2}{dt^2} \ev{e^{tX}} = \ev{\frac{d^2}{dt^2} e^{tX}} = \ev{X^2e^{tX} \longrightarrow \phi''(0) = \ev{X^2}}\]
 
 
-    \paragraph{Generalizzando:}
-    \[ \phi^{(n)}(0) = \ev{X^n} \]
-    \linebreak[2]
+    \paragraph{Generalizzando:} \[ \phi^{(n)}(0) = \ev{X^n} \]
 
     \begin{minipage}{0.45\linewidth}
         Media:
-        \[\mu_x = \phi'(0)\]
+        $ \mu_x = \phi'(0) $
     \end{minipage}
     \begin{minipage}{0.45\linewidth}
         Varianza:
-        \[ \sigma^{2}_x = \phi''(0) = \{\phi(0)'\}' \]
+        $ \sigma^{2}_x = \phi''(0) = \{\phi(0)'\}' $
     \end{minipage}
 
     \paragraph{Ipotizziamo:} se X e Y sono indipendenti con $\phi_X$ e $\phi_Y$ e se $\phi_{X + Y}$ \\
     è la funzione generatrice dei momenti di X + Y allora:
     \[ \phi_{X + Y}(t) = \phi_X(t) \phi_Y(t) \]
-
     \text{Concludiamo che:}
     \begin{equation*}
         \begin{split}
@@ -904,9 +879,6 @@
             & = \phi_X(t) \phi_Y(t)
         \end{split}
     \end{equation*}
-    
-
-
     \subsection{Disugaglianza di Markov}
     \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi \\
     Serve per calcolare che una variabile aleatoria assuma un minimo di "a" $\longrightarrow a \in \mathbb{R}$
@@ -928,9 +900,8 @@
     
     \subsection{Disugaglianza di Chebyshev}
     \definizione Ci permette di sapere la probabilità che una variabile si discosti dalla media per più di un certo numero di deviazioni standard.
-    
     \begin{equation*}
-        \text{Se} X \text{var aleatoria}
+        \text{Se } X \text{ var aleatoria}
         \begin{cases}
             \mu & \text{Media} \\
             \sigma^2 & \text{Varianza}
@@ -952,7 +923,6 @@
     Questi due eventi coincidono e quindi sono \textbf{equiprobabili} \\
     Sapendo per certo che \boldsymbol{$(X - \mu)^2$} è \textit{non negativa} \\
     Possiamo applicare \textbf{Markov} con $a = r^2$ ottenendo:
-
     \begin{equation*}
         \begin{split}
             P(|X - \mu | \geq r) & = P((X - \mu)^2 \geq r^2) \\
@@ -960,7 +930,6 @@
         \end{split}
     \end{equation*}
     \linebreak
- 
     La disuguaglianza di \textbf{Markov} e di \textbf{Chebyshev} servono per ottenere le stime di probabilità di eventi rari di variabili
     cui conosciamo solo la \textbf{media} e la \textbf{varianza}.
 
@@ -972,12 +941,10 @@
     \linebreak[4]
     \textbf{(a)} per la disuglianza di \textit{Markov}
     \[ P(X \geq 75) \leq \frac{\ev{X}}{75} = \frac{50}{75} = \frac{2}{3}\]
-
     \textbf{(b)} Applicando la disuguaglianza di \textit{Chebyshev}
     \[ P(|X - 50| \geq 10) \leq \frac{25}{10^2} = \frac{1}{4}\]
     Quindi:
     \[ P(40 \leq X \leq 60) = P(|X - 50| \leq 10) \geq 1 - \frac{1}{4} = \frac{3}{4}\]
-
     Perciò la probabilità che la produzione sia compresa tra \textit{40} e i \textit{60} pezzi è almeno del \textbf{75\%}
     \newpage
     \section{Legge debole dei grandi numeri}
@@ -987,12 +954,12 @@
     \[ P(|\frac{X_1 + \ldots + X_n}{n} - \mu | > \epsilon) \longrightarrow 0 \] 
     \[ \text{quando n} \longrightarrow \infty \]
 
-    \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\ 
-    \begin{minipage}{0.45\textwidth}
-        \[ \ev{\frac{X_1 + \ldots + X_n}{n}} = \mu \]
+    \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\
+    \begin{minipage}{0.4\textwidth}
+        $ \ev{\frac{X_1 + \ldots + X_n}{n}} = \mu $
     \end{minipage}
-    \begin{minipage}{0.45\textwidth}
-        \[ Var(\frac{X_1 + \ldots + X_n}{n}) = \frac{\sigma^2}{n}\]
+    \begin{minipage}{0.4\textwidth}
+        $ Var(\frac{X_1 + \ldots + X_n}{n}) = \frac{\sigma^2}{n} $
     \end{minipage} \\
     \linebreak[4]
     La seconda si può trovare in questo modo:
@@ -1045,8 +1012,7 @@
     \paragraph{Spiegazione:} Per spiegare le equazioni di sopra dobbiamo fissare una \textit{sequenza di esiti} con $i$ successi e $n - 1$ fallimenti. \\
     La probabilità che si verichi questa sequenza è appunto $\boldsymbol{p^i(1-p)^{n-1}}$ \\
     Si continua quindi con il contare le sequenze di esiti con questa caratteristica $\binom{n}{i}$ \\ 
-    Ad esempio, concludendo, per $n = 5$ e $i = 2$ ci sono $\binom{5}{2} = 10$ scelte possibili. \\
-
+    Ad esempio, concludendo, per $n = 5$ e $i = 2$ ci sono $\binom{5}{2} = 10$ scelte possibili. \\ \\
     \begin{minipage}{0.2\textwidth}
         (s, s, f, f, f)
     \end{minipage}
@@ -1156,7 +1122,7 @@
         \end{split}
     \end{equation*}
     Derivando troviamo che:
-    \[ \phi'(t) = \lambda e^t exp\{\lambda(e^t - 1) \} \] \\
+    \[ \phi'(t) = \lambda e^t exp\{\lambda(e^t - 1) \} \]
     \[ \phi''(t) = (\lambda e^t)^2 exp\{\lambda(e^t - 1)\} + \lambda e^t exp\{\lambda(e^t - 1)\} \]
     Se valutiamo le due funzioni con il parametro t = 0 ottieniamo che il $\ev{X}$ e la $Var(X)$ \textbf{coincidono}:
     \[ \ev{X} = \phi'(0) = \lambda \]
@@ -1184,7 +1150,6 @@
     \paragraph{Esempio:} Se il numero medio di incidenti in un autostrada sia pari a \textbf{3}, quanto è la probabilità
     che la prossima settimana ci sia almeno un incidente? \\ \\
     (se denotiamo il numero di incidenti con X il numero di questi sarà \textit{approsimativamente} distribuito con Poisson di media 3):
-    
     \begin{equation*}
         \begin{split}
             P(X \geq 1) &= 1 - P(X = 0)\\
@@ -1221,9 +1186,8 @@
             & = \frac{(n+m)!}{n! m!} p^n (1-p)^m \frac{\lambda^{n+m}}{(n+m)!} e^{-\lambda} \\
             & = \frac{(\lambda p)^n}{n!} e^{-\lambda p} \frac{(\lambda (1-p))^m}{m!} e^{-\lambda (1-p)}
         \end{split}
-    \end{equation*}
-
-    è possibile ora calcolare le \textbf{distribuzioni marginali} di $N_1$ e $N_2$:
+    \end{equation*} \\
+    \centerline{è possibile ora calcolare le \textbf{distribuzioni marginali} di $N_1$ e $N_2$:}
     \begin{equation*}
         \begin{split}
             P(N_1 = n) &= \sum_{m = 0}^{\infty} P(N_1 = n, N_2 = m) \\
@@ -1287,7 +1251,6 @@
     \[ Var(X_i) = P(X_i = 1) P(X_i = 0) = \frac{N M}{(N + M)^2}\]
     Utilizziamo la formula per il calcolo della varianza della somma di variabili aleatorie:
     \[ Var(X) = \sum_{i = 1}^{n} Var(X_i) + 2 \sum_{j = 2}^{n} \sum_{i < j}^{} Cov(X_i, X_j) \]  
-
     \[ Var(X) = np(1-p)[1 - \frac{n - 1}{N + M - 1}]\]
 
     \subsubsection{Relazioni tra Binomiali ed Ipergeometriche}
@@ -1303,8 +1266,7 @@
     \paragraph{Differenze} la differenza principale tra i due modelli di variabili sta nel caso in esame \\
     se l'estrazione o l'evento \textbf{non influenza} la probabilità dell'evento successivo (quindi quando la \textit{probabilità} è uguale per ogni esperimento) allora si usa la \textbf{binomiale}. \\ \\
     Se però la probabilità \textbf{cambia} dopo ogni esperimento allora si usa una \textbf{ipergeometrica} \\ \\
-    Nei casi però in cui gli \textit{elementi estratti} sono pochi rispetto \textit{all'insieme totale} una ipergeometrica si può \textbf{approssimare} con una binomiale. \\
-
+    Nei casi però in cui gli \textit{elementi estratti} sono pochi rispetto \textit{all'insieme totale} una ipergeometrica si può \textbf{approssimare} con una binomiale. \\ \\
     \begin{minipage}{0.30\textwidth}
         \textbf{Binomiale} \\
         Se lanciamo 10 volte \\
@@ -1321,7 +1283,7 @@
         Estrarre 10 biglietti vincenti
         da 100 \\
         (20 vincenti e 80 perdenti)
-    \end{minipage} \\
+    \end{minipage} \\ \\
 
     \centerline{Nel caso di entrambe si può approssimare la ipergeometrica}
     \centerline{con una binomiale con prob. \textbf{0.2} e \textbf{10} estrazioni totali} 
@@ -1586,7 +1548,6 @@
     ma solo dal tempo trascorso a partire da quel momento. \\ \\
     In termini di formula riferendoci ad una variabile aleatoria X intendiamo che:
     \[ P(X > s + t | X > t) = P(X > s) \quad \forall s,t \geq 0 \]
-
     \paragraph{Esempio:} il numero di miglia percorse da una macchina prima che la batteria si scarichi è di media \textit{10.000} miglia \\
     Se una persona fa un viaggio di \textit{5.000} miglia \\
     Quale è la probabilità che lo porti a termine senza dover sostituire la batteria? e se la distribuzione non è esponenziale? \\

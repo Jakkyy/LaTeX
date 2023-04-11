@@ -103,140 +103,140 @@
 \contentsline {subsection}{\numberline {4.3}Valore atteso di una funzione}{28}{}%
 \contentsline {paragraph}{Definizione:}{28}{}%
 \contentsline {paragraph}{Esempio (discrete):}{29}{}%
-\contentsline {paragraph}{Esempio (continue):}{30}{}%
+\contentsline {paragraph}{Esempio (continue):}{29}{}%
 \contentsline {paragraph}{Applicando la proposizione della variabile continua}{30}{}%
 \contentsline {subsection}{\numberline {4.4}Dimostrazioni}{30}{}%
-\contentsline {paragraph}{Per caso discreto:}{31}{}%
+\contentsline {paragraph}{Per caso discreto:}{30}{}%
 \contentsline {paragraph}{Per caso continuo:}{31}{}%
 \contentsline {subsection}{\numberline {4.5}Momenti N-esimi nel valore atteso}{31}{}%
 \contentsline {paragraph}{Definizione:}{31}{}%
-\contentsline {subsection}{\numberline {4.6}Valore atteso della somma di due variabili}{32}{}%
-\contentsline {paragraph}{Definizione:}{32}{}%
+\contentsline {subsection}{\numberline {4.6}Valore atteso della somma di due variabili}{31}{}%
+\contentsline {paragraph}{Definizione:}{31}{}%
 \contentsline {paragraph}{Dimostrazione caso discreto:}{32}{}%
-\contentsline {paragraph}{Dimostrazione caso continuo:}{33}{}%
+\contentsline {paragraph}{Dimostrazione caso continuo:}{32}{}%
 \contentsline {paragraph}{è possibile applicare la ricorsione per il numero di variabili aleatori}{33}{}%
 \contentsline {paragraph}{In generale per ogni n}{33}{}%
-\contentsline {paragraph}{Esempio: 2 dadi a 6 facce}{34}{}%
+\contentsline {paragraph}{Esempio: 2 dadi a 6 facce}{33}{}%
 \contentsline {section}{\numberline {5}Varianza}{34}{}%
 \contentsline {paragraph}{Definizione:}{34}{}%
-\contentsline {paragraph}{Formula generica:}{35}{}%
-\contentsline {paragraph}{Generalizzazione:}{35}{}%
-\contentsline {paragraph}{Esempio: Varianza di un dado}{35}{}%
-\contentsline {subsection}{\numberline {5.1}Costanti reali nella varianza}{36}{}%
-\contentsline {paragraph}{Dimostrazione:}{36}{}%
-\contentsline {section}{\numberline {6}Deviazione Standard}{37}{}%
+\contentsline {paragraph}{Formula generica:}{34}{}%
+\contentsline {paragraph}{Generalizzazione:}{34}{}%
+\contentsline {paragraph}{Esempio: Varianza di un dado}{34}{}%
+\contentsline {subsection}{\numberline {5.1}Costanti reali nella varianza}{35}{}%
+\contentsline {paragraph}{Dimostrazione:}{35}{}%
+\contentsline {section}{\numberline {6}Deviazione Standard}{36}{}%
+\contentsline {paragraph}{Definizione:}{36}{}%
+\contentsline {paragraph}{Formula generica:}{36}{}%
+\contentsline {section}{\numberline {7}Covarianza}{37}{}%
 \contentsline {paragraph}{Definizione:}{37}{}%
 \contentsline {paragraph}{Formula generica:}{37}{}%
-\contentsline {section}{\numberline {7}Covarianza}{38}{}%
-\contentsline {paragraph}{Definizione:}{38}{}%
-\contentsline {paragraph}{Formula generica:}{38}{}%
-\contentsline {subsection}{\numberline {7.1}Proprietà della covarianza}{39}{}%
-\contentsline {paragraph}{Esempio:}{40}{}%
-\contentsline {subsection}{\numberline {7.2}Coefficiente di correlazione lineare}{40}{}%
+\contentsline {subsection}{\numberline {7.1}Proprietà della covarianza}{37}{}%
+\contentsline {paragraph}{Esempio:}{39}{}%
+\contentsline {subsection}{\numberline {7.2}Coefficiente di correlazione lineare}{39}{}%
+\contentsline {paragraph}{Definizione:}{39}{}%
+\contentsline {paragraph}{Formula generica:}{39}{}%
+\contentsline {section}{\numberline {8}Funzione generatrice dei momenti}{40}{}%
 \contentsline {paragraph}{Definizione:}{40}{}%
 \contentsline {paragraph}{Formula generica:}{40}{}%
-\contentsline {section}{\numberline {8}Funzione generatrice dei momenti}{41}{}%
+\contentsline {paragraph}{Generalizzando:}{40}{}%
+\contentsline {paragraph}{Ipotizziamo:}{41}{}%
+\contentsline {subsection}{\numberline {8.1}Disugaglianza di Markov}{41}{}%
 \contentsline {paragraph}{Definizione:}{41}{}%
+\contentsline {paragraph}{Solo per variabili positive:}{41}{}%
 \contentsline {paragraph}{Formula generica:}{41}{}%
-\contentsline {paragraph}{Generalizzando:}{41}{}%
-\contentsline {paragraph}{Ipotizziamo:}{42}{}%
-\contentsline {subsection}{\numberline {8.1}Disugaglianza di Markov}{42}{}%
+\contentsline {paragraph}{Dimostrazione:}{42}{}%
+\contentsline {subsection}{\numberline {8.2}Disugaglianza di Chebyshev}{42}{}%
 \contentsline {paragraph}{Definizione:}{42}{}%
-\contentsline {paragraph}{Solo per variabili positive:}{42}{}%
 \contentsline {paragraph}{Formula generica:}{42}{}%
 \contentsline {paragraph}{Dimostrazione:}{43}{}%
-\contentsline {subsection}{\numberline {8.2}Disugaglianza di Chebyshev}{43}{}%
-\contentsline {paragraph}{Definizione:}{43}{}%
-\contentsline {paragraph}{Formula generica:}{43}{}%
-\contentsline {paragraph}{Dimostrazione:}{44}{}%
-\contentsline {paragraph}{Postilla:}{44}{}%
-\contentsline {paragraph}{Esempio:}{44}{}%
-\contentsline {section}{\numberline {9}Legge debole dei grandi numeri}{46}{}%
-\contentsline {paragraph}{Definizione:}{46}{}%
-\contentsline {paragraph}{Definizione:}{46}{}%
-\contentsline {paragraph}{Formula generica:}{46}{}%
-\contentsline {paragraph}{Dimostrazione:}{46}{}%
-\contentsline {paragraph}{Esempio:}{47}{}%
-\contentsline {section}{\numberline {10}Modelli di variabili aleatorie}{48}{}%
-\contentsline {paragraph}{Definizione:}{48}{}%
-\contentsline {subsection}{\numberline {10.1}Bernoulli}{48}{}%
-\contentsline {paragraph}{Definizione:}{48}{}%
-\contentsline {paragraph}{Formula generica:}{48}{}%
-\contentsline {subsection}{\numberline {10.2}Binomiali}{48}{}%
-\contentsline {paragraph}{Definizione:}{48}{}%
-\contentsline {paragraph}{Spiegazione:}{49}{}%
-\contentsline {paragraph}{Dimostrazione:}{49}{}%
-\contentsline {paragraph}{Esempio:}{49}{}%
-\contentsline {paragraph}{Continuo:}{50}{}%
-\contentsline {subsubsection}{\numberline {10.2.1}Valore atteso e varianza di Binomiali}{50}{}%
+\contentsline {paragraph}{Postilla:}{43}{}%
+\contentsline {paragraph}{Esempio:}{43}{}%
+\contentsline {section}{\numberline {9}Legge debole dei grandi numeri}{45}{}%
+\contentsline {paragraph}{Definizione:}{45}{}%
+\contentsline {paragraph}{Definizione:}{45}{}%
+\contentsline {paragraph}{Formula generica:}{45}{}%
+\contentsline {paragraph}{Dimostrazione:}{45}{}%
+\contentsline {paragraph}{Esempio:}{46}{}%
+\contentsline {section}{\numberline {10}Modelli di variabili aleatorie}{47}{}%
+\contentsline {paragraph}{Definizione:}{47}{}%
+\contentsline {subsection}{\numberline {10.1}Bernoulli}{47}{}%
+\contentsline {paragraph}{Definizione:}{47}{}%
+\contentsline {paragraph}{Formula generica:}{47}{}%
+\contentsline {subsection}{\numberline {10.2}Binomiali}{47}{}%
+\contentsline {paragraph}{Definizione:}{47}{}%
+\contentsline {paragraph}{Spiegazione:}{48}{}%
+\contentsline {paragraph}{Dimostrazione:}{48}{}%
+\contentsline {paragraph}{Esempio:}{48}{}%
+\contentsline {paragraph}{Continuo:}{49}{}%
+\contentsline {subsubsection}{\numberline {10.2.1}Valore atteso e varianza di Binomiali}{49}{}%
+\contentsline {paragraph}{Definizione:}{49}{}%
+\contentsline {subsubsection}{\numberline {10.2.2}Funzione di massa e di ripartizione di Binomiali}{50}{}%
 \contentsline {paragraph}{Definizione:}{50}{}%
-\contentsline {subsubsection}{\numberline {10.2.2}Funzione di massa e di ripartizione di Binomiali}{51}{}%
+\contentsline {paragraph}{Esempio:}{51}{}%
+\contentsline {subsection}{\numberline {10.3}Poisson}{51}{}%
 \contentsline {paragraph}{Definizione:}{51}{}%
-\contentsline {paragraph}{Esempio:}{52}{}%
-\contentsline {subsection}{\numberline {10.3}Poisson}{52}{}%
-\contentsline {paragraph}{Definizione:}{52}{}%
-\contentsline {paragraph}{La Poissoniana può essere usata come approsimazione di una binomiale}{54}{}%
-\contentsline {paragraph}{Possiamo dire che l'approssimazione di poisson si può usare per:}{54}{}%
-\contentsline {paragraph}{Esempio:}{54}{}%
-\contentsline {paragraph}{Dimostrazione:}{55}{}%
-\contentsline {paragraph}{Definizione:}{57}{}%
-\contentsline {subsubsection}{\numberline {10.3.1}Calcolo esplicito della distribuzione di Poisson}{57}{}%
-\contentsline {paragraph}{Definizione:}{57}{}%
-\contentsline {subsection}{\numberline {10.4}Ipergeometriche}{57}{}%
-\contentsline {paragraph}{Definizione:}{57}{}%
-\contentsline {paragraph}{Introduzione:}{57}{}%
-\contentsline {paragraph}{Formula generica:}{57}{}%
-\contentsline {paragraph}{Esempio:}{58}{}%
-\contentsline {subsubsection}{\numberline {10.4.1}Media e varianza delle ipergeometriche}{58}{}%
-\contentsline {paragraph}{Per determinare la media e la varianza}{58}{}%
-\contentsline {paragraph}{Dimostrazione:}{58}{}%
-\contentsline {paragraph}{Ciascuna delle $X_i$ è una bernoulliana}{59}{}%
-\contentsline {subsubsection}{\numberline {10.4.2}Relazioni tra Binomiali ed Ipergeometriche}{59}{}%
+\contentsline {paragraph}{La Poissoniana può essere usata come approsimazione di una binomiale}{53}{}%
+\contentsline {paragraph}{Possiamo dire che l'approssimazione di poisson si può usare per:}{53}{}%
+\contentsline {paragraph}{Esempio:}{53}{}%
+\contentsline {paragraph}{Dimostrazione:}{54}{}%
+\contentsline {paragraph}{Definizione:}{55}{}%
+\contentsline {subsubsection}{\numberline {10.3.1}Calcolo esplicito della distribuzione di Poisson}{56}{}%
+\contentsline {paragraph}{Definizione:}{56}{}%
+\contentsline {subsection}{\numberline {10.4}Ipergeometriche}{56}{}%
+\contentsline {paragraph}{Definizione:}{56}{}%
+\contentsline {paragraph}{Introduzione:}{56}{}%
+\contentsline {paragraph}{Formula generica:}{56}{}%
+\contentsline {paragraph}{Esempio:}{57}{}%
+\contentsline {subsubsection}{\numberline {10.4.1}Media e varianza delle ipergeometriche}{57}{}%
+\contentsline {paragraph}{Per determinare la media e la varianza}{57}{}%
+\contentsline {paragraph}{Dimostrazione:}{57}{}%
+\contentsline {paragraph}{Ciascuna delle $X_i$ è una bernoulliana}{58}{}%
+\contentsline {subsubsection}{\numberline {10.4.2}Relazioni tra Binomiali ed Ipergeometriche}{58}{}%
+\contentsline {paragraph}{Definizione:}{58}{}%
+\contentsline {paragraph}{Differenze}{59}{}%
+\contentsline {subsection}{\numberline {10.5}Uniformi}{59}{}%
+\contentsline {subsubsection}{\numberline {10.5.1}Continue}{59}{}%
 \contentsline {paragraph}{Definizione:}{59}{}%
-\contentsline {paragraph}{Differenze}{60}{}%
-\contentsline {subsection}{\numberline {10.5}Uniformi}{60}{}%
-\contentsline {subsubsection}{\numberline {10.5.1}Continue}{60}{}%
-\contentsline {paragraph}{Definizione:}{60}{}%
-\contentsline {subsubsection}{\numberline {10.5.2}Discrete}{62}{}%
-\contentsline {paragraph}{Definizione:}{62}{}%
-\contentsline {subsection}{\numberline {10.6}Normali o Gaussiane}{62}{}%
-\contentsline {paragraph}{Definizione:}{62}{}%
-\contentsline {paragraph}{La trasformazione lineare di X (val. al. normale)}{64}{}%
+\contentsline {subsubsection}{\numberline {10.5.2}Discrete}{61}{}%
+\contentsline {paragraph}{Definizione:}{61}{}%
+\contentsline {subsection}{\numberline {10.6}Normali o Gaussiane}{61}{}%
+\contentsline {paragraph}{Definizione:}{61}{}%
+\contentsline {paragraph}{La trasformazione lineare di X (val. al. normale)}{63}{}%
+\contentsline {paragraph}{Formula generica:}{63}{}%
 \contentsline {paragraph}{Formula generica:}{64}{}%
-\contentsline {paragraph}{Formula generica:}{65}{}%
+\contentsline {paragraph}{Esempio:}{65}{}%
+\contentsline {paragraph}{$\Phi (-x)$}{66}{}%
 \contentsline {paragraph}{Esempio:}{66}{}%
-\contentsline {paragraph}{$\Phi (-x)$}{67}{}%
-\contentsline {paragraph}{Esempio:}{67}{}%
-\contentsline {paragraph}{Esempio:}{67}{}%
-\contentsline {paragraph}{(a)}{67}{}%
-\contentsline {paragraph}{(b)}{67}{}%
-\contentsline {paragraph}{(c)}{68}{}%
-\contentsline {paragraph}{Riproducibilità della distribuzione normale:}{68}{}%
-\contentsline {paragraph}{Semplificazione:}{69}{}%
-\contentsline {paragraph}{Esempio}{69}{}%
-\contentsline {subsection}{\numberline {10.7}Esponenziali}{69}{}%
-\contentsline {paragraph}{Definizione:}{69}{}%
-\contentsline {paragraph}{Definizione:}{69}{}%
-\contentsline {paragraph}{Postilla:}{69}{}%
-\contentsline {paragraph}{Definizione:}{71}{}%
-\contentsline {paragraph}{Spiegazione:}{71}{}%
-\contentsline {paragraph}{Esempio:}{71}{}%
-\contentsline {paragraph}{Postilla:}{72}{}%
-\contentsline {paragraph}{Proprietà con condizione in assenza di memoria:}{72}{}%
+\contentsline {paragraph}{Esempio:}{66}{}%
+\contentsline {paragraph}{(a)}{66}{}%
+\contentsline {paragraph}{(b)}{66}{}%
+\contentsline {paragraph}{(c)}{67}{}%
+\contentsline {paragraph}{Riproducibilità della distribuzione normale:}{67}{}%
+\contentsline {paragraph}{Semplificazione:}{68}{}%
+\contentsline {paragraph}{Esempio}{68}{}%
+\contentsline {subsection}{\numberline {10.7}Esponenziali}{68}{}%
+\contentsline {paragraph}{Definizione:}{68}{}%
+\contentsline {paragraph}{Definizione:}{68}{}%
+\contentsline {paragraph}{Postilla:}{68}{}%
+\contentsline {paragraph}{Definizione:}{70}{}%
+\contentsline {paragraph}{Spiegazione:}{70}{}%
+\contentsline {paragraph}{Esempio:}{70}{}%
+\contentsline {paragraph}{Postilla:}{71}{}%
+\contentsline {paragraph}{Proprietà con condizione in assenza di memoria:}{71}{}%
+\contentsline {paragraph}{Dimostrazione:}{71}{}%
+\contentsline {paragraph}{Proposizione:}{72}{}%
+\contentsline {paragraph}{Spiegazione:}{72}{}%
 \contentsline {paragraph}{Dimostrazione:}{72}{}%
-\contentsline {paragraph}{Proposizione:}{73}{}%
-\contentsline {paragraph}{Spiegazione:}{73}{}%
-\contentsline {paragraph}{Dimostrazione:}{73}{}%
-\contentsline {subsection}{\numberline {10.8}Processi stocastici (Poisson)}{73}{}%
+\contentsline {subsection}{\numberline {10.8}Processi stocastici (Poisson)}{72}{}%
+\contentsline {paragraph}{Definizione:}{72}{}%
 \contentsline {paragraph}{Definizione:}{73}{}%
-\contentsline {paragraph}{Definizione:}{74}{}%
-\contentsline {paragraph}{Condizioni:}{74}{}%
-\contentsline {paragraph}{Proposizione}{75}{}%
-\contentsline {paragraph}{Esempio:}{76}{}%
-\contentsline {paragraph}{Proposizione:}{76}{}%
-\contentsline {subsection}{\numberline {10.9}Gamma}{76}{}%
-\contentsline {paragraph}{Definizione:}{76}{}%
-\contentsline {subsection}{\numberline {10.10}Chi-quadro}{77}{}%
-\contentsline {subsection}{\numberline {10.11}Distribuzione T}{77}{}%
-\contentsline {subsection}{\numberline {10.12}Distribuzione F}{77}{}%
-\contentsline {subsection}{\numberline {10.13}Distribuzione logistica}{77}{}%
+\contentsline {paragraph}{Condizioni:}{73}{}%
+\contentsline {paragraph}{Proposizione}{74}{}%
+\contentsline {paragraph}{Esempio:}{75}{}%
+\contentsline {paragraph}{Proposizione:}{75}{}%
+\contentsline {subsection}{\numberline {10.9}Gamma}{75}{}%
+\contentsline {paragraph}{Definizione:}{75}{}%
+\contentsline {subsection}{\numberline {10.10}Chi-quadro}{76}{}%
+\contentsline {subsection}{\numberline {10.11}Distribuzione T}{76}{}%
+\contentsline {subsection}{\numberline {10.12}Distribuzione F}{76}{}%
+\contentsline {subsection}{\numberline {10.13}Distribuzione logistica}{76}{}%
