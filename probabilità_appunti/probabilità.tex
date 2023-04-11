@@ -1813,5 +1813,23 @@
     Guardando il software si ottiene che la soluzione è \textbf{0.752}
 
     \subsection{Distribuzione logistica}
-
+    \definizione Una variabile \textbf{continua} si dice avere una \textit{distribuzione logistica} di parametri $(\mu, \upsilon > 0 )$ se la funzione di ripartizione è data da:
+    \[ F(x) = \frac{e^{(x-\mu)/\upsilon}}{1 + e^{(x-\mu)/\upsilon}} \quad \forall x \in \mathbb{R} \]
+    Se deriviamo $F(x) = 1 - 1/(1+e^{(x-\mu)/\upsilon})$ troviamo la sua \textit{densità di probabilita:}
+    \[ f(x) = \frac{e^{(x-\mu)/\upsilon}}{\upsilon(1 + e^{(x-\mu)/\upsilon})^2} \quad \forall x \in \mathbb{R} \] \\
+    possiamo ricavare la \textit{media} di una logistica \textbf{X} di parametri $(\mu, \upsilon)$ possiamo procedere in questo modo:
+    \begin{equation*}
+        \begin{split}
+            \ev{X} &= \mu + \upsilon \ev{\frac{X - \mu}{\upsilon}} \\
+            &= \mu + \upsilon \int_{-\infty}^{\infty} \frac{x- \mu}{\upsilon} \cdot \frac{e^{(x-\mu)/\upsilon}}{\upsilon(1+e^{(x - \mu)/\upsilon})^2} \, dx \\
+            &= \mu + \upsilon \int_{-\infty}^{\infty} \frac{ye^y}{(1+e^y)^2} \, dy \quad \text{ponendo } y=\frac{x - \mu}{\upsilon} \\
+            &= \mu
+        \end{split}
+    \end{equation*}
+    è possibile ottenere anche la \textit{varianza} in questo modo:
+    \[ Var(x) = \frac{\sigma^2}{3}\]
+    \paragraph{Postilla:} In conclusione $\mu$ è la \textbf{media della distribuzione}\\ 
+    il parametro $\upsilon$ è invece detto \textit{dispersione}. \\ 
+    Una variabile aleatoria logistica con \textit{media} 0 e \textit{dispersione} 1 è detta
+    \textbf{logistica standard}.
 \end{document}

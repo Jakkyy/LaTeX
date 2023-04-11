@@ -255,3 +255,5 @@
 \contentsline {paragraph}{Definizione:}{83}{section*.186}%
 \contentsline {paragraph}{Esempio:}{84}{section*.187}%
 \contentsline {subsection}{\numberline {11.4}Distribuzione logistica}{84}{subsection.11.4}%
+\contentsline {paragraph}{Definizione:}{84}{section*.188}%
+\contentsline {paragraph}{Postilla:}{85}{section*.189}%
