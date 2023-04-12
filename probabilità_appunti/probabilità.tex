@@ -41,14 +41,15 @@
     \section{Introduzione alla probabilità}    
     \subsection{Glossario}
     \begin{itemize}
+        \item Probabilità $\rightarrow$ \textit{la materia che studia i sistemi non deterministici}
+        \begin{itemize}
+            \item Frequestista $\rightarrow $ \textit{probabilità assegnata sulla base di più esperimenti ripetuti nelle stesse condizioni}
+            \item Soggettivista $\rightarrow $ \textit{non esiste un valore oggettivo ma ci si basa sulla fiducia e sull'incertezza che l'individuo ha riguardo l'occorrenza di un certo evento}
+        \end{itemize}
         \item Sistemi non deterministici $\rightarrow$ \textit{conoscendo i dati iniziali non possiamo determinare i dati finali}
         \item Incertezza degli eventi $\rightarrow$ \textit{la varianza degli eventi che possono succede}
         \item Rumore $\rightarrow$ \textit{possiamo misurare un evento solo approssimatamente}
-        \item Probabilità $\rightarrow$ \textit{la materia che studia i sistemi non deterministici}
-        \begin{itemize}
-            \item Frequestista $\rightarrow $ \textit{probabilità assegnata sulla base di più esperimenti ripetuti nella stessa condizioni}
-            \item Soggettivista $\rightarrow $ \textit{non esiste un valore oggettivo ma ci si basa sulla fiducia e sull'incertezza che l'individuo ha riguardo l'occorrenza di un certo evento}
-        \end{itemize}
+        \item Statistica $\rightarrow$ studio dei sistemi deterministici
         \item Varianza $\rightarrow$ \textit{dispersione dei dati attorno al valore centrale / media / valore}
         \item Confidenza $\rightarrow$ \textit{intervallo che rappresenta una stima dei valori medi}
         \item Frequenza
@@ -60,6 +61,7 @@
         \item Principio di enumerazione $\rightarrow$ Passare solo una volta da ogni elemento della raccolta
         \item Spazio esiti (s o $\Omega$) $\rightarrow$ Tutti i possibili esiti di un evento $\rightarrow$ $\boldsymbol{Dado=\{1 \ldots 6\}}$
         \item Spazio eventi (e) $\rightarrow$ Tutti i possibili risultati di un esperimento $\rightarrow$ $\boldsymbol{Dado=\{1||2\}} \leftarrow$ che esca \textbf{1} oppure \textbf{2}
+        \item Statistica descrittiva $\rightarrow$ la branca della statistica che usa tecniche per descrivere le caratteristiche dei dati in un esperimento (tramite grafici ecc.)
         \item Assioma $\rightarrow$ Tre assiomi fondamentali su cui si poggia la teoria del calcolo delle probabilità
         \begin{itemize}
             \item 1' Assioma $\rightarrow$ La probabilità di E è un numero reale \textbf{non negativo} $\mathbb{P}(E) \in \mathbb{R}, \mathbb{P}(E) \geq 0$ $ \forall E \subseteq \Omega $ \space \textbf{|} \space $0 \leq P(E) \leq 1$
@@ -138,26 +140,37 @@
     \end{enumerate}
     \begin{itemize}
         \item se $k$ è \textbf{intero} il valore si ottiene  tramite la media dell'elemento k-esimo e del (k+1)
-        \item se $k$ \textbf{non è intero} il valore si ottiene arrotondando per \textit{eccesso} al primo intero e si sceglie come percentile il valore trovato
+        \item se $k$ \textbf{non è intero} il valore si ottiene arrotondando per \textit{eccesso} al primo intero e si sceglie come percentile la posizione nel dataset del valore trovato
     \end{itemize}
 
     \paragraph{Esempio:} $D_n = \textbf{\{ 1, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}} \quad n=10$ \\
-    Calcolo \textbf{25esimo} percentile (1' quartile)
-    \[ k = 10 \cdot 0.25 = 2.5 \approx \boldsymbol{3}\] \\
+    Calcolo \textbf{25esimo} percentile (1' quartile) (k è intero, \textbf{arrotondiamo} per eccesso)
+    \[ k = 10 \cdot 0.25 = 2.5 \approx \text{pos } \boldsymbol{3} = \text{valore: } \boldsymbol{2}\] \\
     Calcolo \textbf{50esimo} percentile (2' quartile) = mediana
-    \[ k = 10 \cdot 0.50 = 5 \longrightarrow \frac{4+5}{2} = \boldsymbol{4.5}\] \\
+    \[ k = 10 \cdot 0.50 = 5 \longrightarrow \frac{4+5}{2} = \text{valore: } \boldsymbol{4.5}\] \\
     Calcolo \textbf{75esimo} percentile (3' quartile)
-    \[ k = 10 \cdot 0.75 = 7.5 \approx \boldsymbol{8}\]
+    \[ k = 10 \cdot 0.75 = 7.5 \approx \text{pos } \boldsymbol{8} = \text{valore: } \boldsymbol{7} \]
     \subsection{Disugaglianza di Chebyshev}
-    FARE ESEMPIO
-    \definizione Dice quanti dati di un campione cadono all'interno di un intervallo con centro la \textbf{media}
-
-    \[ \forall k \geq 1 : k \in \mathbb{R} \]
+    \definizione Dice quanti dati di un campione cadono all'interno di un intervallo con centro la \textbf{media} $\quad \forall k \geq 1 : k \in \mathbb{R}$
     \[ (\overline{x} - k_s, \overline{x} + k_s) \longrightarrow \boldsymbol{S_k : [i : 1 \leq i \leq n, |x_i - \overline{x} < k_s|]} \]
+    \formula 
+    \[ \frac{\#S_k}{n} \geq 1 - \frac{n - 1}{nk^2} > 1 - \frac{1}{k^2} \]
+    $S_k$ è il numero di elementi dell'insieme $S_k$ \\
+    $n$ è il numero di dati nel dataset \\
+    $k^2$ è l'incognita da trovare
     \paragraph{Generalizzando:}
     \[ |x - \overline{x}| < 5 \longrightarrow 68\% \]
     \[ |x - \overline{x}| < 25 \longrightarrow 95\% \]
     \[ |x - \overline{x}| < 35 \longrightarrow 99.7\% \]
+
+    \paragraph{Esempio:} $D_n = \textbf{\{2, 1, 4, 5, 3, 1, 4, 3, 2, 1\}}$ \\
+    (trovare l'intervallo che ricade nel 30\%) \\
+    La media è \textit{2.6} \\
+    $S_k$ = 3 $\longrightarrow \boldsymbol{100 : 10 = 30 : x} \longrightarrow \frac{10 \cdot 30}{100} = 3 $ \\
+    $\frac{3}{10} > 1 - \frac{1}{k^2}$ \\
+    $k^2 = \frac{7}{10}$ \\
+    $-\sqrt{\frac{7}{10}} < k < \sqrt{\frac{7}{10}}$ \\
+    $(2.6 - \sqrt{\frac{7}{10}}, 2.6 + \sqrt{\frac{7}{10}}) $
 
 
     \subsection{Insieme di dati Bivariati}
@@ -202,7 +215,7 @@
     \definizione è la probabilità che succeda un evento \textbf{E} dato un evento \textbf{F}
     \[ P(E | F) = \frac{P(E | F)}{P(F)}\]
     \paragraph{Esempio:} \textbf{3} \text{scatole con contenuto nascosto dove in una è presente il premio} \\
-    \[ P(Vincita) = \frac{1}{3}\]
+    \[ P(\text{Vincita}) = \frac{1}{3}\]
     \[ P(\text{Vincita} \hspace{0.5em} | \hspace{0.5em} \text{1' pacco contiene un gatto}) = \frac{1}{2}\]
     \[ P(\text{Vincita} \hspace{0.5em} | \hspace{0.5em} \text{1' pacco \textbf{NON} contiene un gatto}) = 0\]
 
@@ -213,7 +226,19 @@
     \begin{center} 
         \text{Probablità di \textbf{$F_j$} sapendo che si sia verificato l'evento \textbf{E}}
     \end{center}
+    \paragraph{Esempio:}
+    Un oggetto si è rotto, e si suppone che possa essere rotto a causa di un componente qualsiasi dei 5 elementi che lo compongono, con uguale probabilità. Per $i=1,2, \ldots, 5$, sia $1-\alpha_i$ la probabilità di diagnosticare che il componente i-esimo sia rotto. Qual è la probabilità che l'oggetto sia rotto a causa di ognuno di 5 componenti se il componente 1 è stato diagnosticato funzionante?
 
+    \paragraph{Risoluzione}: \\
+    Per $R_i$: (probabilità che il componente \textit{i-esimo} sia rotto) \\
+    Per $E$: (l'evento che conosciamo (in questo caso che il \textit{componente 1} funziona)) \\
+    $1 - \alpha_i$ è la probabilità che il componente \textit{i-esimo} sia rotto \\ \\
+    Per $R_1$:
+    $$
+        \begin{aligned}
+            P\left(R_1 \mid E\right) & =\frac{P\left(E \mid R_1\right) P\left(R_1\right)}{\sum_{i=1}^5 P\left(E \mid R_i\right) P\left(R_i\right)} \\
+        \end{aligned}
+    $$
     \subsection{Operazioni e proprietà tra eventi}
     \definizione Prendiamo come esempio \textbf{E} ed \textbf{F} come eventi
     \begin{itemize}
@@ -244,7 +269,7 @@
     \]
     \subsection{Funzione di ripartizione (Tutte le variabili)}
     \definizione
-    \text{La Probabilità che la variabile aleatoria \textbf{X} assuma un valore minore o uguale ad x}
+    La Probabilità che la variabile aleatoria \textbf{X} assuma un valore minore o uguale ad x
     \formula $ F(x) = P(X \leq x) $
     \begin{itemize}
         \item F = funzione di ripartizione
@@ -306,8 +331,7 @@
 
     \text{Relazione che lega la funzione di ripartizione \textbf{F} alla densità \textbf{f}:}
     \[ F(x) = P(X \leq x) = \int_{-\infty}^{x} f(x )\, dx \]
-
-    \text{Derivando entrambi i membri otteniamo che:}
+    Derivando entrambi i membri otteniamo che:
     \[ \frac{d}{da} F(a) = f(a)  \]
     \paragraph{Esempio:} Sia assegnata una variabile aleatoria X con densità data da:
     \begin{equation*}
@@ -346,7 +370,7 @@
         & = F(x, \infty) \\
     \end{split}
     \end{equation*}
-    Applicabile anche alla $F_y(y)$
+    Applicabile anche alla $F_y(y)$:
     \[ F_Y(y) = F(\infty, y) \]
 
     \subsection{Funzione di massa congiunta}
@@ -361,7 +385,7 @@
             & = \sum_{j}^{} p(x_i, y_j) \\
         \end{split}
     \end{equation*}
-    Applicabile anche alla $p_Y$
+    Applicabile anche alla $p_Y$:
     \[ p_Y(y_j) = \sum_{i}^{} p(x_i, y_j) \]
     \linebreak[4]
     \[ \sum_{x}^{} \sum_{y}^{} p(x, y) = 1 \]
@@ -468,14 +492,14 @@
     \formula
     \begin{equation*}
         \begin{split}
-            p_{X|Y}(X | Y) & = P (X=x, Y=y) \\
+            p_{X|Y}= P(X | Y) & = P (X=x, Y=y) \\
             & = \frac{P(X=x, Y=y)}{P(Y=y)} \\
-            & = \frac{p(X,Y)}{p_Y(x, y) > 0} 
         \end{split}
     \end{equation*}
     \[ \forall x, \forall y \text{ con } p_Y(y) > 0\]
     \linebreak[4]
-    \text{Se y non è un valore possibile di Y, ovvero se P(Y = y) = 0, la quantità $p_{X|Y}(x|y)$ non è definita }
+    Se y non è un valore possibile di Y, ovvero se P(Y = y) = 0 \\
+    la quantità $\boldsymbol{p_{X|Y}(x|y)}$ non è definita:
     
     \paragraph{Esempio:} Siano X e Y due variabili aleatorie discrete con funzione di massa congiunta p dato che: 
     \begin{center}
@@ -844,6 +868,18 @@
             & = \frac{175}{6}
         \end{split}
     \end{equation*}
+    \paragraph{Esempio:} Un sistema composto di n componenti distinti si dice in parallelo se funziona fino a che almeno uno dei componenti funziona \\
+    Sia dato un sistema di questo tipo, per il quale, per $i=\{1,2, \ldots, n\}$ il componente \textit{i-esimo} funziona - indipendentemente da tutti gli altri - con probabilità $p_{\text {i. }}$. \\
+    Qual è la probabilità che \textbf{l'intero sistema funzioni}? \\
+    Denotiamo con $A_i$ l'evento che il componente $i$ funzioni. Allora:
+    $$
+    \begin{aligned}
+    P(\text { il sistema funziona }) & =1-P(\text { il sistema non funziona }) \\
+    & =1-P(\text { nessun componente funziona }) \\
+    & =1-P\left(A_1^c \cap A_2^C \cap \cdots \cap A_{\mathrm{n}}^c\right) \\
+    & =1-\prod_{i=1}^n\left(1-P_i\right) \quad \text { per } I^* i \text { indipendenza }
+    \end{aligned}
+    $$
     
     \subsection{Coefficiente di correlazione lineare}
     \definizione numero puro che tiene conto della deviazione standard di X e Y
@@ -874,14 +910,12 @@
     \end{equation*}
     \linebreak[10]
     Derivando la funzione si ottengono i momenti:
-    \[ \phi'(t) = \frac{d}{dt} \ev{e^{tX}} = \ev{\frac{d}{dt} e^{tX}} = \ev{Xe^{tX} \longrightarrow \phi'(0) = \ev{X}}\]
+    \[ \phi'(t) = \frac{d}{dt} \ev{e^{tX}} = \ev{\frac{d}{dt} e^{tX}} = \ev{Xe^{tX}} \longrightarrow \phi'(0) = \ev{X}\]
     \linebreak[10]
     Analogamente:
     \[ \phi''(t) = \frac{d^2}{dt^2} \ev{e^{tX}} = \ev{\frac{d^2}{dt^2} e^{tX}} = \ev{X^2e^{tX} \longrightarrow \phi''(0) = \ev{X^2}}\]
 
-
     \paragraph{Generalizzando:} \[ \phi^{(n)}(0) = \ev{X^n} \]
-
     \begin{minipage}{0.45\linewidth}
         Media:
         $ \mu_x = \phi'(0) $
@@ -971,7 +1005,7 @@
     $\frac{40+60}{2} = 50 \longrightarrow 60 - 50 = \boldsymbol{10} \rvert 50 - 40 = \boldsymbol{10}$
     \[ P(|X - 50| \geq 10) \leq \frac{25}{10^2} = \boldsymbol{\frac{1}{4}} \]
     Quindi:
-    \[ P(40 \leq X \leq 60) = P(|X - 50| \leq 10) \geq 1 - \frac{1}{4} = \frac{3}{4}\]
+    \[ P(40 \leq X \leq 60) = P(|X - 50| \leq 10) \geq 1 - \frac{1}{4} = \boldsymbol{\frac{3}{4}} \]
     Perciò la probabilità che la produzione sia compresa tra \textit{40} e i \textit{60} pezzi è almeno del \textbf{75\%}
     \newpage
     \section{Legge debole dei grandi numeri}
@@ -980,8 +1014,7 @@
     \formula
     \[ P(|\frac{X_1 + \ldots + X_n}{n} - \mu | > \epsilon) \longrightarrow 0 \] 
     \[ \text{quando n} \longrightarrow \infty \]
-
-    \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\
+    \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\ \\
     \begin{minipage}{0.4\textwidth}
         $ \ev{\frac{X_1 + \ldots + X_n}{n}} = \mu $
     \end{minipage}
