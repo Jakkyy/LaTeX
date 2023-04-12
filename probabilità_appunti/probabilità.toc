@@ -142,8 +142,8 @@
 \contentsline {paragraph}{Definizione:}{40}{section*.97}%
 \contentsline {paragraph}{Esempio:}{41}{section*.98}%
 \contentsline {paragraph}{Esempio:}{41}{section*.99}%
-\contentsline {subsection}{\numberline {6.3}Coefficiente di correlazione lineare}{41}{subsection.6.3}%
-\contentsline {paragraph}{Definizione:}{41}{section*.100}%
+\contentsline {subsection}{\numberline {6.3}Coefficiente di correlazione lineare}{42}{subsection.6.3}%
+\contentsline {paragraph}{Definizione:}{42}{section*.100}%
 \contentsline {paragraph}{Formula generica:}{42}{section*.101}%
 \contentsline {section}{\numberline {7}Funzione generatrice dei momenti}{43}{section.7}%
 \contentsline {paragraph}{Definizione:}{43}{section*.102}%

@@ -849,6 +849,7 @@
     $ Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) $ \\ \\
     $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\ \\
     $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\ \\
+    $ Cov(X,Y) = \frac{1}{2}[Var(X+Y) - Var(X) - Var(Y)] $ \\ \\
     \centerline{- Se $X_1 \ldots X_n$ e $Y $ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, Y) = \sum_{i = 1}^{n} Cov(X_i, Y) \]
     \centerline{- Se $X_1 \ldots X_n$ e $Y_1 \ldots Y_m$ sono variabili aleatorie qualsiasi allora:}
@@ -1065,7 +1066,7 @@
     si dice che abbiamo una
     \textit{variabile aleatoria binomiale} di parametri (n, p). \\ \\
     La sua funzione di massa è data da:
-    \[ P(X = i) = \binom{n}{i}p^i (1-p)^{n-1}  \]
+    \[ P(X = i) = \binom{n}{i}p^i (1-p)^{n-i}  \]
     \[ i = 0,1 \ldots, n \]
     Dove (ricordiamo) che il coefficiente binomiale è:
     \[ \binom{n}{i} := \frac{n!}{i!(n-1)!} \] 
@@ -1108,7 +1109,7 @@
     si sono verificati nelle prove numero \textit{2} e numero \textit{4}. \\
     Ricordiamoci che la \textit{somma delle probabilità} è pari a \textbf{1} tramite questa dimostrazione:
     \paragraph{Dimostrazione:}
-    \[ \sum_{i}^{} P(X = i) = \sum_{i = 0}^{n} \binom{n}{i} p^i (1-p)^{n-1} = [p + (1 - p)^n] = 1 \]
+    \[ \sum_{i}^{} P(X = i) = \sum_{i = 0}^{n} \binom{n}{i} p^i (1-p)^{n-i} = [p + (1 - p)^n] = 1 \]
 
 
     \paragraph{Esempio:} Se X è il numero di pezzi difettosi in 10 dischetti con X di parametri (10, 0.1) quanto è
