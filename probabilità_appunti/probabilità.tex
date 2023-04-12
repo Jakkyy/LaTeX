@@ -17,7 +17,8 @@
 \usepackage{sectsty}
 \definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
 \definecolor{grey}{rgb}{0.25, 0.25, 0.28}
-\subsectionfont{\color{grey}}
+\definecolor{black}{rgb}{0, 0, 0}
+\subsubsectionfont{\color{black}}
 \subsubsectionfont{\color{grey}}
 \sectionfont{\color{bittersweet}}
 
@@ -92,14 +93,12 @@
     \end{equation*}
     \paragraph{Esempio:} \[ D_n = \textbf{\{ 28, 34, 51, 19, 62, 43, 29, 38, 45, 26, 49, 33 \}} \]
     \paragraph{Per la mediana è necessario ordinare i dati in ordine crescente:} \[ D_n = \textbf{\{ 19, 26, 28, 29, 33, 34, 38, 43, 45, 49, 51, 62 \}} \]
-
-    \[ \frac{x_{\frac{12}{2}} + x_{\frac{12}{2} + 1}}{2} = \frac{x_6 + x_7}{2} = \frac{34 + 38}{2} = \frac{72}{2} = \textbf{36} \]
-
+    Mediana: \[ \frac{x_{\frac{12}{2}} + x_{\frac{12}{2} + 1}}{2} = \frac{x_6 + x_7}{2} = \frac{34 + 38}{2} = \frac{72}{2} = \textbf{36} \]
     \paragraph{Nota:} quando si trova ad esempio $x_6$ bisogna andare a sostituire il valore con la posizione di x
 
 
 
-    \subsection{Media e Varianza Campionaria}
+    \subsection{Media, Varianza e Deviazione Standard Campionaria}
     \subsubsection{Media Campionaria}
     \definizione La media campionaria è la \textbf{media} degli elementi di un campione.
     \formula  \[ \overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i \]
@@ -108,13 +107,47 @@
     \definizione La varianza campionaria è la \textbf{dispersione} degli elementi di un campione.
     \formula \[ S^2 = \frac{\sum_{i = 1}^{n} (x_i - \overline{x})^2}{n-1} \]
 
-    \paragraph{Esempio: (Varianza e Media)} $D_n = \textbf{\{ 3, 4, 6, 7, 10 \}}$ \\
-    \linebreak[2]
- 
-    \text{Media del campione:} $ \overline{X} = \boldsymbol{\frac{( 3 + 4 + 6 + 7 + 10)}{5}} = \frac{30}{5} = 6 $ \\
+    \subsubsection{Deviazione Standard}
+    \paragraph{Definizione:} La deviazione standard è la \textbf{media} degli scarti degli elementi di un campiona. 
+    \formula
+    \[ S := \sqrt{\frac{\sum_{i = 1}^{n} (x_i - \overline{x})^2}{n-1}} = \sqrt{S^2} \]
+    \paragraph{Esempio: (Varianza, Media e Dev. St.)} $D_n = \textbf{\{ 3, 4, 6, 7, 10 \}}$ \\
+    \linebreak[4]
+    \centerline{Media del campione: $ \overline{X} = \boldsymbol{\frac{( 3 + 4 + 6 + 7 + 10)}{5}} = \frac{30}{5} = 6 $} \\ \\
+    \centerline{Varianza campionaria: $ S^2 = \boldsymbol{\frac{[ (-3)^2 + (-2)^2 + 0^2 + 1^2 + 4^2 ]}{4}} = 7.5 $} \\ \\
+    \centerline{Dev. St. campionaria: $ S = \sqrt{S^2} = \sqrt{7.5}$} \\
 
-    \text{Varianza campionaria:} $ s^2 = \boldsymbol{\frac{[ (-3)^2 + (-2)^2 + 0^2 + 1^2 + 4^2 ]}{4}} = 7.5 $ 
 
+    \subsection{Percentile}
+    \definizione Il percentile è un indicatore che serve ad \textbf{indicare il valore minimo} sotto al quade ricade una \textbf{determinata percentuale} degli altri elementi sotto osservazione.
+    \begin{equation*}
+        Valore
+        \begin{cases}
+            \geq & \text{k \% dati} \\
+            \leq & \text{100 - k \% dati}
+        \end{cases}
+    \end{equation*}
+    \centerline{Dove il secondo quartile è sempre uguale alla \textbf{mediana}}
+    \begin{enumerate}
+        \item Prima cosa da fare è ordinare i valori in ordine crescente
+        \item Si calcola il prodotto $k = np$
+        \begin{itemize}
+            \item \textit{p} indica il percentile in decimale es. $p=0.25$
+            \item \textit{n} indica il numero di dati presenti nel dataset
+        \end{itemize}
+    \end{enumerate}
+    \begin{itemize}
+        \item se $k$ è \textbf{intero} il valore si ottiene  tramite la media dell'elemento k-esimo e del (k+1)
+        \item se $k$ \textbf{non è intero} il valore si ottiene arrotondando per \textit{eccesso} al primo intero e si sceglie come percentile il valore trovato
+    \end{itemize}
+
+    \paragraph{Esempio:} $D_n = \textbf{\{ 1, 1, 2, 3, 4, 5, 6, 7, 8, 9 \}} \quad n=10$ \\
+    Calcolo \textbf{25esimo} percentile (1' quartile)
+    \[ k = 10 \cdot 0.25 = 2.5 \approx \boldsymbol{3}\] \\
+    Calcolo \textbf{50esimo} percentile (2' quartile) = mediana
+    \[ k = 10 \cdot 0.50 = 5 \longrightarrow \frac{4+5}{2} = \boldsymbol{4.5}\] \\
+    Calcolo \textbf{75esimo} percentile (3' quartile)
+    \[ k = 10 \cdot 0.75 = 7.5 \approx \boldsymbol{8}\]
     \subsection{Disugaglianza di Chebyshev}
     FARE ESEMPIO
     \definizione Dice quanti dati di un campione cadono all'interno di un intervallo con centro la \textbf{media}
@@ -125,19 +158,7 @@
     \[ |x - \overline{x}| < 5 \longrightarrow 68\% \]
     \[ |x - \overline{x}| < 25 \longrightarrow 95\% \]
     \[ |x - \overline{x}| < 35 \longrightarrow 99.7\% \]
-    \subsection{Percentile}
-    \definizione Il percentile è un indicatore che serve ad \textbf{indicare il valore minimo} sotto al quade ricade una \textbf{determinata percentuale} degli altri elementi sotto osservazione.
-    \begin{equation*}
-        Valore
-        \begin{cases}
-            \geq & \text{k \% dati} \\
-            \leq & \text{100 - k \% dati}
-        \end{cases}
-    \end{equation*}
-    \text{Prima cosa da fare è ordinare i valori in ordine crescente} \\
-    \linebreak[3]
-    \text{Dove il secondo quartile è sempre uguale alla \textbf{mediana}}
-    \paragraph{Esempio:} $D_n = \textbf{\{ 0, 1, 2, 3, 4, 5, 6, 7, 8 \}}$
+
 
     \subsection{Insieme di dati Bivariati}
     \definizione è lo studio della relazione di due variabili.
@@ -182,8 +203,8 @@
     \[ P(E | F) = \frac{P(E | F)}{P(F)}\]
     \paragraph{Esempio:} \textbf{3} \text{scatole con contenuto nascosto dove in una è presente il premio} \\
     \[ P(Vincita) = \frac{1}{3}\]
-    \[ P(Vincita | \text{1' pacco contiene un gatto}) = \frac{1}{2}\]
-    \[ P(Vincita | \text{1' pacco \textbf{NON} contiene un gatto}) = 0\]
+    \[ P(\text{Vincita} \hspace{0.5em} | \hspace{0.5em} \text{1' pacco contiene un gatto}) = \frac{1}{2}\]
+    \[ P(\text{Vincita} \hspace{0.5em} | \hspace{0.5em} \text{1' pacco \textbf{NON} contiene un gatto}) = 0\]
 
 
 
@@ -246,7 +267,6 @@
     \text{se si ha la funzione di ripartizione è possibile ottenere la funzione di massa perche:}
     \[ X \leq a = \cup X_i \]
     \formula \[ F(x) = P(X \leq a) = \sum_{x \leq a}^{} p(x_i) \]
-    TODO- GRAFICO
     \paragraph{Esempio:} \text{variabile aleatoria X che può assumere valori \textbf{1}, \textbf{2} o \textbf{3}} \\
     \text{Dato che p(1) + p(2) + p(3) = \textbf{1}}
     \paragraph{Se:}
@@ -765,7 +785,7 @@
     
 
     \newpage
-    \section{Deviazione Standard}
+    \subsection{Deviazione Standard}
     \definizione Indica di quanto dei dati si \textbf{discotastano dalla media} (non al quadrato)
 
     \formula \[ S = \sqrt{Var(X)} \]
@@ -777,7 +797,8 @@
 
     \newpage
     \section{Covarianza}
-    \definizione Misura la \textbf{variazione} tra due variabili aleatorie associate tra di loro
+    \definizione Misura la \textbf{variazione} tra due variabili aleatorie associate tra di loro \\
+    \textit{è la media del prodotto degli scarti}
     \formula \[ \boldsymbol{Cov(X,Y) := \ev{(X - \mu_X) (Y - \mu_Y)}} \]
     \textbf{Dove:} \\
     $ \mu_x = \ev{X} $ \\
@@ -808,12 +829,12 @@
     \[ Cov(\sum_{i = 1}^{n}X_i, Y) = \sum_{i = 1}^{n} Cov(X_i, Y) \]
     \centerline{- Se $X_1 \ldots X_n$ e $Y_1 \ldots Y_m$ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, \sum_{j = 1}^{m} Y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \] \\
-    \linebreak[2]
-    \centerline{Se X e Y sono variabili aleatorie \textbf{indipendenti:}}
+    \subsection{Variabili indipendenti}
+    \definizione Se X e Y sono variabili aleatorie \textbf{indipendenti:}
     \[ \ev{XY} = \ev{X} \ev{Y} \]
     Questo implica che:
     \[ Cov(X, Y) = 0 \]
-
+    \[ \displaystyle{Var(\sum_{i = 1}^{n} X_i) = \sum_{i = 1}^{n} Var(X_i)}\]
     \paragraph{Esempio:} varianza della somma di 10 lanci indipendenti di un dado \\
     Denotiamo con \textbf{$X_i$} il punteggio del dado \textit{i-esimo}, sappiamo che:
     \begin{equation*}
@@ -882,7 +903,7 @@
             & = \phi_X(t) \phi_Y(t)
         \end{split}
     \end{equation*}
-    \subsection{Disugaglianza di Markov}
+    \subsection{Disuguaglianza di Markov}
     \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi \\
     Serve per calcolare che una variabile aleatoria assuma un minimo di "a" $\longrightarrow a \in \mathbb{R}$
 
@@ -901,7 +922,7 @@
         \end{split}
     \end{equation*}
     
-    \subsection{Disugaglianza di Chebyshev}
+    \subsection{Disuguaglianza di Chebyshev}
     \definizione Ci permette di sapere la probabilità che una variabile si discosti dalla media per più di un certo numero di deviazioni standard.
     \begin{equation*}
         \text{Se } X \text{ var aleatoria}
@@ -914,7 +935,8 @@
     \centerline{Per ogni \textbf{r > 0} $\longrightarrow$ valore che indica il discostamento dalla media}
     \formula 
     \[ P(|X - \mu| \geq r) \leq \frac{\sigma^2}{r^2} \]
-
+    \formula per calcolare la probabilità di X nell'intervallo
+    \[ P(a \leq X \leq b) = P(|X - \mu| \leq r) \geq 1 - \frac{\sigma^2}{r^2} \]
     \paragraph{Dimostrazione:} Dimostriamo che: \\
     \begin{minipage}{0.45\linewidth}
         \[ \{ |X - \mu | \geq r \} \]
@@ -939,13 +961,15 @@
     \paragraph{Postilla:} in caso di \textit{distribuzione nota} non c'è bisogno di utilizzare una di queste disuguaglianze.
 
     \paragraph{Esempio:} I numeri di pezzi prodotti in una settimana è una X di \textbf{50} \\
-    \textbf{(a)} Cosa si può dire sulla probabilità che la produzione superi i 75 pezzi (\textit{a})? \\ \\
+    \textbf{(a)} Cosa si può dire sulla probabilità che la produzione superi i 75 pezzi?  \\ \\
     \textbf{(b)} Se è nota anche la varianza pari a \textbf{25} cosa si può dire sulla probabilità che la produzione sia compresa tra i \textit{40} e i \textit{60} pezzi? \\
-    \linebreak[4]
+    \paragraph{Risoluzione}: \\
     \textbf{(a)} per la disuglianza di \textit{Markov}
     \[ P(X \geq 75) \leq \frac{\ev{X}}{75} = \frac{50}{75} = \frac{2}{3}\]
-    \textbf{(b)} Applicando la disuguaglianza di \textit{Chebyshev}
-    \[ P(|X - 50| \geq 10) \leq \frac{25}{10^2} = \frac{1}{4}\]
+    \textbf{(b)} Applicando la disuguaglianza di \textit{Chebyshev} \\ 
+    Prima di tutto dobbiamo ricavarci $\boldsymbol{r}$, essa è la distanza della media tra \textit{40} e \textit{60} \\
+    $\frac{40+60}{2} = 50 \longrightarrow 60 - 50 = \boldsymbol{10} \rvert 50 - 40 = \boldsymbol{10}$
+    \[ P(|X - 50| \geq 10) \leq \frac{25}{10^2} = \boldsymbol{\frac{1}{4}} \]
     Quindi:
     \[ P(40 \leq X \leq 60) = P(|X - 50| \leq 10) \geq 1 - \frac{1}{4} = \frac{3}{4}\]
     Perciò la probabilità che la produzione sia compresa tra \textit{40} e i \textit{60} pezzi è almeno del \textbf{75\%}
@@ -1512,7 +1536,7 @@
             0 & \text{se } x < 0
         \end{cases}
     \end{equation*}
-    \centerline{per $\boldsymbol{\lambda > 0}$ si dice \textbf{\textit{esponenziale}} con parametro/intensità $\lambda$}
+    \centerline{per $\boldsymbol{\lambda > 0}$ si dice(sesso) \textbf{\textit{esponenziale}} con parametro/intensità $\lambda$}
     \definizione L' \textit{esponenziale} rappresenta la durata di vita di un fenomeno.
     \paragraph{Postilla:} La $\boldsymbol{\lambda}$ rappresenta \textit{il tasso di decadimento} della probabilità. \\
     Ovvero la \textbf{velocità} con cui la probabilità \textit{diminuisce} al cresce del tempo. \\ 
