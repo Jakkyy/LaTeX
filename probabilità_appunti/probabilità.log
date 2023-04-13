@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  12 APR 2023 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  13 APR 2023 23:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,8 +395,8 @@ LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 4
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-Overfull \hbox (5.07962pt too wide) in paragraph at lines 46--47
-[]\T1/cmss/m/n/10 Frequestista $\OMS/cmsy/m/n/10 !$ \T1/cmss/m/it/10 prob-a-bil-it‡ as-seg-nata sulla base di pi˘ es-per-i-menti ripetuti
+Overfull \hbox (6.41263pt too wide) in paragraph at lines 46--47
+[]\T1/cmss/m/n/10 Frequentista $\OMS/cmsy/m/n/10 !$ \T1/cmss/m/it/10 prob-a-bil-it‡ as-seg-nata sulla base di pi˘ es-per-i-menti ripetuti
  []
 
 [4] [5] [6] [7] [8]
@@ -420,436 +420,459 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--121
  []
 
 [9] [10] [11] [12]
-Overfull \hbox (4.30751pt too wide) in paragraph at lines 208--210
+Overfull \hbox (4.30751pt too wide) in paragraph at lines 207--209
 [] 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--237
+Underfull \hbox (badness 10000) in paragraph at lines 231--236
 
  []
 
-[14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 280--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--287
+[14] [15] [16] [17] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 342--346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--293
-
- []
-
-
-Overfull \hbox (3.691pt too wide) in paragraph at lines 290--293
-[] 
- []
-
-[17] [18]
-Underfull \hbox (badness 10000) in paragraph at lines 343--347
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--356
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 389--391
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--391
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
 [21] [22] [23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 499--503
+Underfull \hbox (badness 10000) in paragraph at lines 496--500
 
  []
 
 [26] [27] [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 608--624
+Underfull \hbox (badness 10000) in paragraph at lines 607--623
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 653--656
+Underfull \hbox (badness 10000) in paragraph at lines 652--655
 
  []
 
 [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 688--691
+Underfull \hbox (badness 10000) in paragraph at lines 687--689
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--703
+Underfull \hbox (badness 10000) in paragraph at lines 698--701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 700--703
+Underfull \hbox (badness 10000) in paragraph at lines 698--701
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 707--711
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 732--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 709--713
+Underfull \hbox (badness 10000) in paragraph at lines 732--737
 
  []
 
-[33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 752--757
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 752--757
-
- []
-
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 786--787
-
- []
-
-[36]
-Overfull \hbox (26.67392pt too wide) in paragraph at lines 804--809
+[35] [36]
+Overfull \hbox (26.67392pt too wide) in paragraph at lines 784--789
 \T1/cmss/m/n/10 SE $\OML/cmm/m/it/10 a \OT1/cmr/m/n/10 = 1 [][]\OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 b\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Var\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ) [][]\OMS/cmsy/m/n/10 ! []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--809
+Underfull \hbox (badness 10000) in paragraph at lines 784--789
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 784--789
 
  []
 
 [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 826--836
+Underfull \hbox (badness 10000) in paragraph at lines 806--816
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 826--836
+Underfull \hbox (badness 10000) in paragraph at lines 806--816
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--854
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--854
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--854
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--854
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--854
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 847--854
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 856--857
+
+Underfull \hbox (badness 10000) in paragraph at lines 827--834
 
  []
 
-[40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 895--898
+[39] [40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 878--881
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 902--904
+Underfull \hbox (badness 10000) in paragraph at lines 885--887
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 911--914
+Underfull \hbox (badness 10000) in paragraph at lines 894--897
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 914--917
-
- []
-
-[43] [44] [45]
-Underfull \hbox (badness 10000) in paragraph at lines 975--986
+Underfull \hbox (badness 10000) in paragraph at lines 897--900
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 991--995
+Underfull \hbox (badness 10000) in paragraph at lines 900--910
+
+ []
+
+[43] [44]
+Underfull \hbox (badness 10000) in paragraph at lines 938--949
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1001
+Underfull \hbox (badness 10000) in paragraph at lines 954--958
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1001
-
- []
-
-[46] [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1027
+Underfull \hbox (badness 10000) in paragraph at lines 961--964
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1027
+Underfull \hbox (badness 10000) in paragraph at lines 961--964
 
  []
 
-[48] [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1069
+[45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 976--978
 
  []
 
-[50]
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1111
+[47] [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1022
 
  []
 
 
-Overfull \hbox (8.8815pt too wide) in paragraph at lines 1073--1111
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1064
+
+ []
+
+
+Overfull \hbox (8.8815pt too wide) in paragraph at lines 1026--1064
 []$ $[]$ $[]$ $[]$ $[]$
  []
 
 
-Overfull \hbox (8.8815pt too wide) in paragraph at lines 1073--1111
+Overfull \hbox (8.8815pt too wide) in paragraph at lines 1026--1064
 []$ $[]$ $[]$ $[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1111
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1064
 
  []
 
 
-Overfull \hbox (0.52596pt too wide) in paragraph at lines 1073--1111
+Overfull \hbox (0.52596pt too wide) in paragraph at lines 1026--1064
 \T1/cmss/m/n/10 Ricordiamoci che la \T1/cmss/m/it/10 somma delle prob-a-bil-it‡ \T1/cmss/m/n/10 Ë pari a \T1/cmss/bx/n/10 1 \T1/cmss/m/n/10 tramite questa di-mostrazione: 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1115--1118
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 1068--1071
 
  []
 
 [51] [52] [53] [54] [55]
-Underfull \hbox (badness 10000) in paragraph at lines 1211--1214
+Underfull \hbox (badness 10000) in paragraph at lines 1164--1167
 
  []
 
 [56] [57] [58] [59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1306
 
  []
 
 [61]
-Overfull \hbox (2.29424pt too wide) in paragraph at lines 1354--1355
+Overfull \hbox (2.29424pt too wide) in paragraph at lines 1312--1313
  []\T1/cmss/bx/n/10 Definizione:[] \T1/cmss/m/n/10 Una vari-abile aleato-ria con-tinua si dice \T1/cmss/m/it/10 uni-forme \T1/cmss/m/n/10 sull'intervallo $\OT1/cmr/bx/n/10 [\OML/cmm/b/it/10 ; ^^L\OT1/cmr/bx/n/10 ]$
  []
 
 [62] [63] [64] [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1437--1441
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1400
 
  []
 
-[66]
-<images/phi_table.png, id=825, 491.58656pt x 868.74562pt>
-File: images/phi_table.png Graphic file (type png)
-<use images/phi_table.png>
-Package pdftex.def Info: images/phi_table.png  used on input line 1465.
-(pdftex.def)             Requested size: 201.44424pt x 356.00243pt.
+[66] [67]
+Underfull \hbox (badness 10000) in paragraph at lines 1421--1422
 
-Underfull \hbox (badness 10000) in paragraph at lines 1468--1473
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 1463--1467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1468--1473
-
- []
-
-[67]
-Overfull \vbox (17.66371pt too high) has occurred while \output is active []
-
- [68
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1475     \newpage
-                    <./images/phi_table.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1476--1477
+Underfull \hbox (badness 10000) in paragraph at lines 1475--1483
 
  []
 
 [69]
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1521
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1529--1537
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1509
 
  []
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1563
+Underfull \hbox (badness 10000) in paragraph at lines 1522--1526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1575--1579
+Underfull \hbox (badness 10000) in paragraph at lines 1532--1534
 
  []
 
 [71]
-Underfull \hbox (badness 10000) in paragraph at lines 1585--1587
+Underfull \hbox (badness 10000) in paragraph at lines 1553--1558
 
  []
 
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 1606--1611
+Underfull \hbox (badness 10000) in paragraph at lines 1559--1564
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1612--1617
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1612--1617
+Underfull \hbox (badness 10000) in paragraph at lines 1559--1564
 
  []
 
 [73]
-Overfull \hbox (1.26009pt too wide) in paragraph at lines 1642--1645
+Overfull \hbox (1.26009pt too wide) in paragraph at lines 1589--1592
  []\T1/cmss/bx/n/10 Proposizione:[] \T1/cmss/m/n/10 se ab-bi-amo $\OML/cmm/m/it/10 X[]; X[]; [] X[]$ \T1/cmss/m/it/10 in-dipen-denti \T1/cmss/m/n/10 di parametri $\OML/cmm/m/it/10 ^^U[]; ^^U[]; [] ^^U[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1642--1645
+Underfull \hbox (badness 10000) in paragraph at lines 1589--1592
 
  []
 
-[74] [75] [76]
-Underfull \hbox (badness 10000) in paragraph at lines 1686--1687
+[74] [75]
+<images/stocastici_poisson.png, id=888, 753.5653pt x 115.93312pt>
+File: images/stocastici_poisson.png Graphic file (type png)
+<use images/stocastici_poisson.png>
+Package pdftex.def Info: images/stocastici_poisson.png  used on input line 1615.
+(pdftex.def)             Requested size: 341.43306pt x 52.52675pt.
+ [76
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1623         \item $
+                      \displaystyle \lim_{h \to 0} \frac{P(N(h) = 1)}{h} = \... <./images/stocastici_poisson.png>] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 1638--1639
 
  []
 
-[77]
-Underfull \hbox (badness 10000) in paragraph at lines 1700--1703
+
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1655
 
  []
 
 [78] [79]
-Underfull \hbox (badness 10000) in paragraph at lines 1745--1749
+Underfull \hbox (badness 10000) in paragraph at lines 1697--1701
 
  []
 
-[80] [81] [82]
-<images/xan_table.png, id=944, 610.53094pt x 598.48593pt>
+[80] [81] [82] [83] [84] [85]
+Underfull \hbox (badness 10000) in paragraph at lines 1784--1787
+
+ []
+
+[86] [87] [88]
+<images/phi_table.png, id=976, 398.99063pt x 539.01375pt>
+File: images/phi_table.png Graphic file (type png)
+<use images/phi_table.png>
+Package pdftex.def Info: images/phi_table.png  used on input line 1831.
+(pdftex.def)             Requested size: 201.44424pt x 272.13809pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1834--1840
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1834--1840
+
+ []
+
+<images/xan_table.png, id=977, 414.79968pt x 452.4403pt>
 File: images/xan_table.png Graphic file (type png)
 <use images/xan_table.png>
-Package pdftex.def Info: images/xan_table.png  used on input line 1806.
-(pdftex.def)             Requested size: 201.44424pt x 197.47357pt.
+Package pdftex.def Info: images/xan_table.png  used on input line 1845.
+(pdftex.def)             Requested size: 201.44424pt x 219.72324pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1810--1818
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1810--1818
+Underfull \hbox (badness 10000) in paragraph at lines 1849--1857
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1810--1818
+Underfull \hbox (badness 10000) in paragraph at lines 1849--1857
 
  []
 
-[83] [84
+
+Underfull \hbox (badness 10000) in paragraph at lines 1849--1857
+
+ []
+
+<images/tan_table.png, id=978, 414.04688pt x 511.15968pt>
+File: images/tan_table.png Graphic file (type png)
+<use images/tan_table.png>
+Package pdftex.def Info: images/tan_table.png  used on input line 1862.
+(pdftex.def)             Requested size: 201.44424pt x 248.6999pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1872
+ []\T1/cmss/bx/n/10 Esempio:[] \T1/cmss/m/n/10 per trovare un
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1872
+\T1/cmss/m/n/10 val-ore se dob-bi-amo trovare
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1872
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1872
+
+ []
+
+[89
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1826     \[ T_n \sim t_n \]
-                              <./images/xan_table.png>] [85]
-Underfull \hbox (badness 10000) in paragraph at lines 1850--1853
-
- []
-
-[86] [87] [88] (probabilit√†.aux)
+l.1873     \end{figure}
+                        <./images/phi_table.png>]
+<images/F_table.png, id=986, 414.04688pt x 471.26062pt>
+File: images/F_table.png Graphic file (type png)
+<use images/F_table.png>
+Package pdftex.def Info: images/F_table.png  used on input line 1877.
+(pdftex.def)             Requested size: 201.44424pt x 229.2874pt.
+ [90
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1881     \end{figure}
+                        <./images/xan_table.png>] [91
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1882 \end{document}
+                      <./images/tan_table.png>] [92
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1882 \end{document}
+                      <./images/F_table.png>] (probabilit√†.aux)
 Package rerunfilecheck Info: File `probabilit√†.out' has not changed.
-(rerunfilecheck)             Checksum: 1578A5480A52ED502EF9DCC293E604EB;13692.
+(rerunfilecheck)             Checksum: 572D85FD64E01F61D8096C7571E7DDBB;13905.
  ) 
 Here is how much of TeX's memory you used:
- 11694 strings out of 476334
- 179954 string characters out of 5787972
+ 11721 strings out of 476334
+ 180535 string characters out of 5787972
  1865382 words of memory out of 5000000
- 31574 multiletter control sequences out of 15000+600000
+ 31592 multiletter control sequences out of 15000+600000
  528775 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,20n,67p,567b,551s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on probabilit√†.pdf (88 pages, 3143146 bytes).
+Output written on probabilit√†.pdf (92 pages, 754368 bytes).
 PDF statistics:
- 1500 PDF objects out of 1728 (max. 8388607)
- 377 named destinations out of 1000 (max. 500000)
- 595 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1528 PDF objects out of 1728 (max. 8388607)
+ 383 named destinations out of 1000 (max. 500000)
+ 610 words of extra memory for PDF output out of 10000 (max. 10000000)
 

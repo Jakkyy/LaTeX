@@ -43,7 +43,7 @@
     \begin{itemize}
         \item Probabilità $\rightarrow$ \textit{la materia che studia i sistemi non deterministici}
         \begin{itemize}
-            \item Frequestista $\rightarrow $ \textit{probabilità assegnata sulla base di più esperimenti ripetuti nelle stesse condizioni}
+            \item Frequentista $\rightarrow $ \textit{probabilità assegnata sulla base di più esperimenti ripetuti nelle stesse condizioni}
             \item Soggettivista $\rightarrow $ \textit{non esiste un valore oggettivo ma ci si basa sulla fiducia e sull'incertezza che l'individuo ha riguardo l'occorrenza di un certo evento}
         \end{itemize}
         \item Sistemi non deterministici $\rightarrow$ \textit{conoscendo i dati iniziali non possiamo determinare i dati finali}
@@ -158,10 +158,6 @@
     $S_k$ è il numero di elementi dell'insieme $S_k$ \\
     $n$ è il numero di dati nel dataset \\
     $k^2$ è l'incognita da trovare
-    \paragraph{Generalizzando:}
-    \[ |x - \overline{x}| < 5 \longrightarrow 68\% \]
-    \[ |x - \overline{x}| < 25 \longrightarrow 95\% \]
-    \[ |x - \overline{x}| < 35 \longrightarrow 99.7\% \]
 
     \paragraph{Esempio:} $D_n = \textbf{\{2, 1, 4, 5, 3, 1, 4, 3, 2, 1\}}$ \\
     (trovare l'intervallo che ricade nel 30\%) \\
@@ -171,7 +167,10 @@
     $k^2 = \frac{7}{10}$ \\
     $-\sqrt{\frac{7}{10}} < k < \sqrt{\frac{7}{10}}$ \\
     $(2.6 - \sqrt{\frac{7}{10}}, 2.6 + \sqrt{\frac{7}{10}}) $
-
+    \paragraph{Generalizzando:}
+    \[ |x - \overline{x}| < 5 \longrightarrow 68\% \]
+    \[ |x - \overline{x}| < 25 \longrightarrow 95\% \]
+    \[ |x - \overline{x}| < 35 \longrightarrow 99.7\% \]
 
     \subsection{Insieme di dati Bivariati}
     \definizione è lo studio della relazione di due variabili.
@@ -213,7 +212,7 @@
 
     \subsection{Probabilità condizionata}
     \definizione è la probabilità che succeda un evento \textbf{E} dato un evento \textbf{F}
-    \[ P(E | F) = \frac{P(E | F)}{P(F)}\]
+    \[ P(E | F) = \frac{P(E \cap F)}{P(F)}\]
     \paragraph{Esempio:} \textbf{3} \text{scatole con contenuto nascosto dove in una è presente il premio} \\
     \[ P(\text{Vincita}) = \frac{1}{3}\]
     \[ P(\text{Vincita} \hspace{0.5em} | \hspace{0.5em} \text{1' pacco contiene un gatto}) = \frac{1}{2}\]
@@ -277,19 +276,19 @@
         \item x = variabile normale
     \end{itemize}
     
-    \paragraph{Esempio}:  \\
-    \linebreak[4]
-    $ P(a < X \leq b) $ \\
-    \linebreak[4]
-    $ P(X \leq b) = P(X \leq a) + P(a < X \leq b) $ \\
-    \linebreak[4]
-    $ P(a < X \leq b) = P(X \leq b) - P(X \leq a) = F(b) - F(a) $
-    
-  
+    \paragraph{Esempio}:
+    \[ P(a < X \leq b) \]
+    \[ P(X \leq b) = P(X \leq a) + P(a < X \leq b) \]
+    \begin{equation*}
+        \begin{split}
+            P(a < X \leq b) &= P(X \leq b) - P(X \leq a) \\
+            &= F(b) - F(a)
+        \end{split}
+    \end{equation*}
+
     \subsection{Funzione di massa (Variabili discrete)}
     \formula $p(a) = P(X = a) $ \\
-    \linebreak[4]
-    \text{se si ha la funzione di ripartizione è possibile ottenere la funzione di massa perche:}
+    Se si ha la funzione di ripartizione è possibile ottenere la funzione di massa perche:
     \[ X \leq a = \cup X_i \]
     \formula \[ F(x) = P(X \leq a) = \sum_{x \leq a}^{} p(x_i) \]
     \paragraph{Esempio:} \text{variabile aleatoria X che può assumere valori \textbf{1}, \textbf{2} o \textbf{3}} \\
@@ -407,6 +406,14 @@
             & = \int_{-\infty}^{a} \int_{-\infty}^{b} f(x,y) \, dx \, dy \\
         \end{split}
     \end{equation*}
+    Da questa equazione, visto che $A$ è un insieme arbitrario, si ricava (con teoremi generali) che deve valere per forza l'uguaglianza degli integrandi:
+    $$
+        f_X(x)=\int_{-\infty}^{\infty} f(x, y) d y
+    $$
+    Analogamente, si può ricavare la funzione di densità marginüle di $Y$ che è,
+    $$
+        f_Y(y)=\int_{-\infty}^{\infty} f(x, y) d x
+    $$
     \paragraph{Esempio:} Siano X e Y due variabili aleatorie congiuntamente continue con densità
     di probabilità data da:
     \begin{equation*}
@@ -440,19 +447,9 @@
     \linebreak[3]
     Ovvero che la funzione di ripartizione congiunta sia il prodotto delle marginali:
     \[ F(a,b) = F_X(a) F_Y(b)\]
-
-    \textbf{Funzione di massa:}
+    \paragraph{Funzione di massa:}
     \[ p(a,b) = p_X(a) p_Y(b) \]
     \[ P(X=a, Y=b) = P(X=a) P(Y=b)\]
-    \paragraph{Dimostrazione:}
-    \begin{equation*}
-        \begin{split}
-            P(X \in A, Y \in B) & = \sum_{x \in A}^{} \sum_{y \in B}^{} p(x, y) \\
-            & = \sum_{x \in A}^{} \sum_{y \in B}^{} p_X(x) p_Y(y) \\
-            & = \sum_{x \in A}^{} p_X(x) \sum_{y \in B}^{} p_Y(y) \\
-            & = P(X \in A) P(Y \in B)
-        \end{split}
-    \end{equation*}
 
     \paragraph{Funzione di densità:}
     \[ f(x, y) = f_X(x) f_Y(y)\]
@@ -466,7 +463,7 @@
             0 & altrimenti
         \end{cases}
     \end{equation*}
-    Quale è la densità di probabilità della variabile aleatoria data dal rapporto X/Y
+    Quale è la densità di probabilità della variabile aleatoria data dal rapporto X|Y
     \begin{equation*}
     \begin{split}
         F_{X|Y}(a) & = P(X | Y \leq a) \\
@@ -517,7 +514,13 @@
         \end{minipage}
     \end{center}
     Calcolare la massa di X condizionata da Y = 1
-    \[ P(Y = 1) = \sum_{x}^{} p(x, 1) = p(0,1) + p(1,1) = 0.5 \]
+    \begin{equation*}
+        \begin{split}
+            P(Y = 1) &= \sum_{x}^{} p(x, 1) \\
+            &= p(0,1) + p(1,1) \\
+            &= 0.5
+        \end{split}
+    \end{equation*}
     \paragraph{Quindi:}
     \[ P(X = 0 | Y = 1) = \frac{p(0,1)}{P(Y = 1)} = \frac{2}{5} \]
     \[ P(X = 1 | Y = 1) = \frac{p(1,1)}{P(Y = 1)} = \frac{3}{5} \]
@@ -528,9 +531,9 @@
 
     \subsection{funzione di densità condizionata (Continue)}
     \formula
-    \[ f_{X|Y}(x | y) = \frac{f(x, y)}{f_Y(y)}\]
+    \[ f_{X|Y}(x,y) = \frac{f(x, y)}{f_Y(y)}\]
     Se X e Y sono congiuntamente continue e A è un sottoinsieme di numeri reali per ogni y si può definire:
-    \[ P(X \in A | Y = y) := \int_{A}^{} f_{X|Y}(x | y) \, dx \]
+    \[ P(X \in A | Y = y) := \int_{A}^{} f_{X|Y}(x|y) \, dx \]
     Notiamo che X e Y sono indipendenti allora:
     \begin{center}
         \begin{minipage}{0.45 \textwidth}
@@ -541,24 +544,20 @@
         \end{minipage}
     \end{center}
 
-
     \paragraph{Esempio:} è data la seguente densità congiunta di X e Y
-
-
-
     \begin{equation*}
         f(x,y) =
         \begin{cases}
-            \frac{12}{5} x(2-x-y) & 0 < x < 1, 0 < y < 1 \\
+            \frac{12}{5} x(2-x-y) & 0 < x < 1, \quad 0 < y < 1 \\
             0 & altrimenti
         \end{cases}
     \end{equation*} \\
     \linebreak[2]
-    Si calcoli la densità condizionata di X rispetto a Y = y per 0 < y < 1. \\
+    Si calcoli la densità condizionata di X rispetto a $Y = y$ per $0 < y < 1$. \\
     Se questi due numeri sono compresi tra 0 e 1 abbiamo che:
     \begin{equation*}
         \begin{split}
-            f_{X|Y}(x,y):&= \frac{f(x,y)}{f_Y(y)} \\
+            f_{X|Y}(x|y):&= \frac{f(x,y)}{f_Y(y)} \\
             & = \frac{f(x, y)}{\int_{-\infty}^{\infty} f(x', y) \, dx'} \\
             & = \frac{x(2-x-y)}{\int_{0}^{1} x'(2-x'-y) \, dx'} \\
             & = \frac{x(2-x-y)}{\frac{2}{3} - \frac{y}{2}} \\
@@ -656,16 +655,17 @@
     \paragraph{Applicando la proposizione della variabile continua} possiamo ottenere quanto segue:
     \[ \ev{X^3} = \int_{0}^{1} x^3 \, dx = \frac{1}{4} \]
 
-    \subsection{Dimostrazioni}
+    \subsection{Costanti reali nel valore atteso}
     \text{Sia per discreto che per continuo si applicano le seguenti proprietà:}
     \[ \ev{aX+b} = a \ev{X} + b \]
-    Se proviamo a ponere a = 0 scopriamo che:
+    Se proviamo a porre a = 0 scopriamo che:
     \[ \ev{b} = b \]
-    Se proviamo a ponere b = 0 scopriamo che:
+    Se proviamo a porre b = 0 scopriamo che:
     \[ \ev{aX} = a \ev{X} \]
     Ovvero, il valore atteso di un fattore costante moltiplicato per una variabile aleatoria,
     è pari alla costante per il valore atteso della variabile aleatoria.
 
+    \paragraph{Dimostrazioni:}
     \paragraph{Per caso discreto:}
     \begin{equation*}
         \begin{split}
@@ -674,7 +674,6 @@
             & = a\ev{X} + b
         \end{split}
     \end{equation*}
-
     \paragraph{Per caso continuo:}
     \begin{equation*}
         \begin{split}
@@ -685,8 +684,7 @@
     \end{equation*}
 
     \subsection{Momenti N-esimi nel valore atteso}
-    \definizione se n = 1,2 ... n, la quantità $\ev{X^n}$ se esiste viene detta \textit{momento n-esimo} della variabile aleatoria X. \\
-    \linebreak[4]
+    \definizione se n = 1,2 ... n, la quantità $\ev{X^n}$ se esiste viene detta \textit{momento n-esimo} della variabile aleatoria X. \\ \\
     \centerline{è possibile applicare le formule di prima, come segue:}
     \begin{equation*}
         \ev{X^n} =
@@ -711,24 +709,6 @@
     % \[ X, Y -> g(X,Y) - \boldsymbol{g: \mathbb{R}^2 \rightarrow \mathbb{R}} \]
     \text{se $g(X,Y)$ come $\boldsymbol{g = X + Y}$ allora}
     \[ \ev{X + Y} = \ev{X} + \ev{Y} \]
-    \paragraph{Dimostrazione caso discreto:}
-    \begin{equation*}
-        \begin{split}
-            \ev{X + Y} &= \sum_{x}^{} \sum_{y}^{} (x + y) p(x, y) \\
-            & = \sum_{x}^{} x \cdot [\sum_{j}^{} p(x_i, y_j)] + \sum_{x}^{} y \cdot [\sum_{i}^{} p(x_i, y_j)] \\
-            & = \sum_{x}^{} xp_X(x) + \sum_{y}^{} yp_Y(y) \\
-            & = \ev{X} + \ev{Y}
-        \end{split}
-    \end{equation*}
-    \paragraph{Dimostrazione caso continuo:}
-    \begin{equation*}
-        \begin{split}
-            \ev{X + Y} &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} (x + y) f(x, y) \, dx \, dy \\
-            & = \int_{-\infty}^{\infty} x [\int_{-\infty}^{\infty} f(x,y) \, dy] \, dx + \int_{-\infty}^{+\infty} y [ \int_{-\infty}^{+\infty} f(x,y) \, dx ] \, dy \\
-            & = \int_{-\infty}^{\infty} x f_X(x) \, dx + \int_{-\infty}^{\infty} yf_Y(y) \, dy \\
-            & = \ev{X} + \ev{Y}
-        \end{split}
-    \end{equation*}
 
     \paragraph{è possibile applicare la ricorsione per il numero di variabili aleatori}
     \begin{equation*}
@@ -772,7 +752,8 @@
             Var(X) & = \ev{(X - \mu)^2} \\
             & = \ev{X^2 - 2 \mu \cdot X + \mu^2} \\
             & = \ev{X^2} - 2 \mu \cdot \ev{X} + \mu^2 \\
-            & = \ev{X^2} - \mu^2 \longrightarrow \ev{X^2} - \ev{X}^2
+            & = \ev{X^2} - \mu^2 \\ 
+            & = \ev{X^2} - \ev{X}^2
         \end{split}
     \end{equation*}
     
@@ -784,8 +765,7 @@
             & = \frac{91}{6}
         \end{split}
     \end{equation*} \\
-
-    Sapendo che $\ev{X} = \frac{7}{2}$
+    Sapendo che $\boldsymbol{\ev{X} = \frac{7}{2}}$
     \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{91}{6} - (\frac{7}{2})^2 = \frac{35}{12} \]
 
     \subsection{Costanti reali nella varianza}
@@ -804,7 +784,7 @@
     \end{equation*}
     Se sostituiamo i valori di \textbf{a} e \textbf{b} troviamo che: \\
     SE $a = 0 \longrightarrow Var(b) = 0 \longrightarrow \text{le costanti hanno varianza \textbf{nulla}}$ \\
-    SE $a = 1 \longrightarrow Var(X + b) = Var(X) \longrightarrow \text{sommando una const. non cambia la varianza}$ \\
+    SE $a = 1 \longrightarrow Var(X + b) = Var(X) \longrightarrow \text{sommando una const. non cambia la varianza}$ \\ \\
     SE $b = 0 \longrightarrow Var(aX) = a^2 \cdot Var(X)$ \\
     
 
@@ -817,11 +797,11 @@
     \[ Var(X + X) = Var(2 \cdot X) = 4 \cdot Var(X) \]
     \linebreak[1]
     \textbf{Se X è indipendente allora:}
-    \[ Var(X) + Var(X) = Var(X + X) \]
+    \[ Var(X + X) = Var(X) + Var(X) \]
 
     \newpage
     \section{Covarianza}
-    \definizione Misura la \textbf{variazione} tra due variabili aleatorie associate tra di loro \\
+    \definizione Misura la \textbf{variazione} tra due variabili aleatorie associate tra di loro. \\
     \textit{è la media del prodotto degli scarti}
     \formula \[ \boldsymbol{Cov(X,Y) := \ev{(X - \mu_X) (Y - \mu_Y)}} \]
     \textbf{Dove:} \\
@@ -847,13 +827,14 @@
     $ Cov(X, Y) = Cov(Y, X) \longleftarrow \text{Simmetria} $ \\ \\
     $ Cov(X, X) = Var(X) \longleftarrow \text{Generalizzazione della varianza} $ \\ \\
     $ Cov(X+Y, Z) = Cov(X, Z) + Cov(Y, Z) $ \\ \\
-    $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\ \\
+    $ Cov(X+Y, Z+W) = Cov(X, Z) + Cov(X, W) + Cov(Y, Z) + Cov(Y, W) $ \\ \\ \\
     $ Var(X + Y) = Var(X) + Var(Y) + 2 Cov(X, Y) $ \\ \\
     $ Cov(X,Y) = \frac{1}{2}[Var(X+Y) - Var(X) - Var(Y)] $ \\ \\
     \centerline{- Se $X_1 \ldots X_n$ e $Y $ sono variabili aleatorie qualsiasi allora:}
     \[ Cov(\sum_{i = 1}^{n}X_i, Y) = \sum_{i = 1}^{n} Cov(X_i, Y) \]
     \centerline{- Se $X_1 \ldots X_n$ e $Y_1 \ldots Y_m$ sono variabili aleatorie qualsiasi allora:}
-    \[ Cov(\sum_{i = 1}^{n}X_i, \sum_{j = 1}^{m} Y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \] \\
+    \[ Cov(\sum_{i = 1}^{n}X_i, \sum_{j = 1}^{m} Y_j) = \sum_{i = 1}^{n} \sum_{j = 1}^{m} Cov(X_i, Y_j) \]
+    \centerline{Dove nella seconda sommatoria j $\not =$ i}
     \subsection{Variabili indipendenti}
     \definizione Se X e Y sono variabili aleatorie \textbf{indipendenti:}
     \[ \ev{XY} = \ev{X} \ev{Y} \]
@@ -869,18 +850,20 @@
             & = \frac{175}{6}
         \end{split}
     \end{equation*}
-    \paragraph{Esempio:} Un sistema composto di n componenti distinti si dice in parallelo se funziona fino a che almeno uno dei componenti funziona \\
-    Sia dato un sistema di questo tipo, per il quale, per $i=\{1,2, \ldots, n\}$ il componente \textit{i-esimo} funziona - indipendentemente da tutti gli altri - con probabilità $p_{\text {i. }}$. \\
+    \paragraph{Esempio:} Un sistema composto di n componenti distinti si dice in \textit{parallelo} se funziona fino a che almeno uno dei componenti funziona \\
+    Sia dato un sistema di questo tipo, per il quale, per $i=\{1,2, \ldots, n\}$ il componente \textit{i-esimo} funziona - (\textit{indipendentemente da tutti gli altri}) - con probabilità $p_{\text {i. }}$. \\
     Qual è la probabilità che \textbf{l'intero sistema funzioni}? \\
     Denotiamo con $A_i$ l'evento che il componente $i$ funzioni. Allora:
     $$
     \begin{aligned}
-    P(\text { il sistema funziona }) & =1-P(\text { il sistema non funziona }) \\
-    & =1-P(\text { nessun componente funziona }) \\
-    & =1-P\left(A_1^c \cap A_2^C \cap \cdots \cap A_{\mathrm{n}}^c\right) \\
-    & =1-\prod_{i=1}^n\left(1-P_i\right) \quad \text { per } I^* i \text { indipendenza }
+        P(\text{il sistema funziona}) & =1-P(\text { il sistema non funziona }) \\
+        & =1-P(\text { nessun componente funziona }) \\
+        & =1-P\left(A_1^c \cap A_2^c \cap \cdots \cap A_{\mathrm{n}}^c\right) \\
+        & =1-\prod_{i=1}^n\left(1-p_i\right) \quad \text { per } I^* i \text { indipendenza }
     \end{aligned}
     $$
+    \paragraph{Spiegazione:} La produttoria viene usata per indicare quanto sia la probabilità che il nostro sistema non funzioni (infatti viene usato il complementare di \textit{$p_i$} (componente i-esimo che funzioni)) \\
+    Dato che il testo richiede \textbf{la probabilità che il sistema funzioni} dobbiamo fare il complementare della produttoria.
     
     \subsection{Coefficiente di correlazione lineare}
     \definizione numero puro che tiene conto della deviazione standard di X e Y
@@ -914,9 +897,8 @@
     \[ \phi'(t) = \frac{d}{dt} \ev{e^{tX}} = \ev{\frac{d}{dt} e^{tX}} = \ev{Xe^{tX}} \longrightarrow \phi'(0) = \ev{X}\]
     \linebreak[10]
     Analogamente:
-    \[ \phi''(t) = \frac{d^2}{dt^2} \ev{e^{tX}} = \ev{\frac{d^2}{dt^2} e^{tX}} = \ev{X^2e^{tX} \longrightarrow \phi''(0) = \ev{X^2}}\]
-
-    \paragraph{Generalizzando:} \[ \phi^{(n)}(0) = \ev{X^n} \]
+    \[ \phi''(t) = \frac{d^2}{dt^2} \ev{e^{tX}} = \ev{\frac{d^2}{dt^2} e^{tX}} = \ev{X^2e^{tX}} \longrightarrow \phi''(0) = \ev{X^2} \]
+    Quindi in sintesi: \\ \\
     \begin{minipage}{0.45\linewidth}
         Media:
         $ \mu_x = \phi'(0) $
@@ -926,37 +908,18 @@
         $ \sigma^{2}_x = \phi''(0) = \{\phi(0)'\}' $
     \end{minipage}
 
+
+    \paragraph{Generalizzando:} \[ \phi^{(n)}(0) = \ev{X^n} \]
+
     \paragraph{Ipotizziamo:} se X e Y sono indipendenti con $\phi_X$ e $\phi_Y$ e se $\phi_{X + Y}$ \\
     è la funzione generatrice dei momenti di X + Y allora:
     \[ \phi_{X + Y}(t) = \phi_X(t) \phi_Y(t) \]
-    \text{Concludiamo che:}
-    \begin{equation*}
-        \begin{split}
-            \phi_{X + Y}(t) :&= \ev{e^{t(X + Y)}} \\
-            & = \ev{e^{tX} e^{tY}} \\
-            & = \ev{e^{tX}} \ev{e^{tY}} \\
-            & = \phi_X(t) \phi_Y(t)
-        \end{split}
-    \end{equation*}
     \subsection{Disuguaglianza di Markov}
-    \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi \\
+    \definizione Ci permette di sapere la probabilità che una variabile assuma valori molto grandi. \\
     Serve per calcolare che una variabile aleatoria assuma un minimo di "a" $\longrightarrow a \in \mathbb{R}$
 
     \paragraph{Solo per variabili positive:} $X \in (0, +\infty) $
     \formula \[ P(X \geq a) \leq \frac{\ev{X}}{a}\]
-
-    \paragraph{Dimostrazione:}
-    \begin{equation*}
-        \begin{split}
-            \ev{X} & := \int_{0}^{+\infty} xf(x) \, dx \\
-            & = \int_{0}^{a} x f(x) \, dx + \int_{a}^{+\infty} x f(x) \, dx \\ 
-            & \geq \int_{a}^{+\infty} x f(x) \, dx \\ 
-            & \geq \int_{a}^{+\infty} a f(x) \, dx \\
-            & = a \int_{a}^{+\infty} f(x) \, dx \\ 
-            & = \boldsymbol{aP(X \geq a)}
-        \end{split}
-    \end{equation*}
-    
     \subsection{Disuguaglianza di Chebyshev}
     \definizione Ci permette di sapere la probabilità che una variabile si discosti dalla media per più di un certo numero di deviazioni standard.
     \begin{equation*}
@@ -1006,32 +969,18 @@
     $\frac{40+60}{2} = 50 \longrightarrow 60 - 50 = \boldsymbol{10} \rvert 50 - 40 = \boldsymbol{10}$
     \[ P(|X - 50| \geq 10) \leq \frac{25}{10^2} = \boldsymbol{\frac{1}{4}} \]
     Quindi:
-    \[ P(40 \leq X \leq 60) = P(|X - 50| \leq 10) \geq 1 - \frac{1}{4} = \boldsymbol{\frac{3}{4}} \]
+    \[ P(40 \leq X \leq 60) \geq 1 - \frac{1}{4} = \boldsymbol{\frac{3}{4}} \]
     Perciò la probabilità che la produzione sia compresa tra \textit{40} e i \textit{60} pezzi è almeno del \textbf{75\%}
     \newpage
     \section{Legge debole dei grandi numeri}
-    \definizione Dice che la probabilità che la differenza tra la media campionaria e il valore atteso superi una determinata soglia diventa sempre più piccola all'aumentare del numero di osservazioni
-    \definizione Sia $X_1, X_2 \ldots X_n$ una successione di variabili aleatorie tutte con la media \boldsymbol{$\ev{X_i} =: \mu$} allora per ogni $\epsilon > 0$ 
+    \definizione Dice che la probabilità che la differenza tra la media campionaria e il valore atteso superi una determinata soglia diventi sempre più piccola all'aumentare del numero di osservazioni \\ \\
+    Quando le misurazioni $n$ tendono ad un numero molto grande la media campionaria si avvicinerà sempre di più al valore atteso ($\mu$).
+    \definizione Sia $X_1, X_2 \ldots X_n$ una successione di variabili aleatorie \\
+    tutte con la media \boldsymbol{$\ev{X_i} =: \mu$} allora per ogni $\epsilon > 0$ 
     \formula
     \[ P(|\frac{X_1 + \ldots + X_n}{n} - \mu | > \epsilon) \longrightarrow 0 \] 
     \[ \text{quando n} \longrightarrow \infty \]
-    \paragraph{Dimostrazione:} Proveremo a dimostrare con l'ipotesi che le $X_i$ hanno varianza finita $\sigma^2$ abbiamo che: \\ \\
-    \begin{minipage}{0.4\textwidth}
-        $ \ev{\frac{X_1 + \ldots + X_n}{n}} = \mu $
-    \end{minipage}
-    \begin{minipage}{0.4\textwidth}
-        $ Var(\frac{X_1 + \ldots + X_n}{n}) = \frac{\sigma^2}{n} $
-    \end{minipage} \\
-    \linebreak[4]
-    La seconda si può trovare in questo modo:
-    \begin{equation*}
-        \begin{split}
-            Var(\frac{X_1 + \ldots + X_n}{n}) & = \frac{1}{n^2} Var(X_1 + \ldots + X_n) \\
-            & = \frac{Var(X_1) + \ldots + Var(X_n)}{n^2} \\
-            & = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}
-        \end{split}
-    \end{equation*}
-    Segue allora dalla disuguaglianza di \textit{Chebyshev} applicata alla variabile aleatoria $(X_1 + \ldots + X_n)/n$ che:
+    Segue dalla disuguaglianza di \textit{Chebyshev} applicata alla variabile aleatoria $(X_1 + \ldots + X_n)/n$ che:
     \[ P(| \frac{X_1 + \ldots + X_n}{n} - \mu | > \epsilon) \leq \frac{\sigma^2}{n\epsilon^2}\]
     \paragraph{Esempio:} Supponiamo di ripetere in successione \textit{molte copie indipendenti} di un esperimento ponendo:
     \begin{equation*}
@@ -1048,30 +997,34 @@
 
     \newpage
     \section{Modelli di variabili aleatorie}
-    \definizione Quelle che studieremo ora (porca madonna) sono dei modelli di variabili aleatorie caratterizzate 
+    \definizione Quelle che studieremo ora sono dei modelli di variabili aleatorie caratterizzate 
     dal fatto che vengono utilizzati da una vasta generalità dei campi applicativi nei quali compaiono e soprattutto usate in natura.
     \subsection{Bernoulli}
     \definizione Una variabile X si dice \textit{bernoulliana} se può essere solo \textbf{0} e \textbf{1}
     \formula 
-    \[ P(X = 0) = 1 - p \]
     \[ P(X = 1) = p \]
+    \[ P(X = 0) = 1 - p \]
     Dove con $p$ intendiamo un valore che dovrà essere $\boldsymbol{0 \leq p \leq 1}$ \\
     Il suo valore atteso è dato da:
-    \[ \ev{X} := 1 \cdot P(X = 1) + 0 \cdot P(X = 0) = p \]
+    \[ \ev{X} := 1 \cdot P(X = 1) + 0 \cdot P(X = 0) = p \] \\
+    La sua varianza è data da:
+    \[ Var(X) = p(1 - p) \]
 
-
+    \newpage
     \subsection{Binomiali}
-    \definizione Ipotizziamo che dobbiamo realizzare $n$ ripetizioni di un esperimento \\
-    Se X è il numero totale di successi e \textit{n} il numero di ripetizioni di un esperimento \\
+    \definizione Ipotizziamo che dobbiamo realizzare $n$ ripetizioni di un esperimento. \\
+    Se X è il numero totale di successi e \textit{n} il numero di ripetizioni di un esperimento, \\
     si dice che abbiamo una
-    \textit{variabile aleatoria binomiale} di parametri (n, p). \\ \\
+    \textit{variabile aleatoria binomiale} di parametri (n, p). \\ 
+    n = n. esperimenti $\quad$ p = probabilità di successo \\
+    La \textit{somma} di tutti i valori che la binomiale può assumere è \textbf{1} \\ \\
     La sua funzione di massa è data da:
     \[ P(X = i) = \binom{n}{i}p^i (1-p)^{n-i}  \]
     \[ i = 0,1 \ldots, n \]
-    Dove (ricordiamo) che il coefficiente binomiale è:
-    \[ \binom{n}{i} := \frac{n!}{i!(n-1)!} \] 
+    \centerline{Dove (ricordiamo) che il coefficiente binomiale è:}
+    \[ \binom{n}{i} := \frac{n!}{i!(n-1)!} \]
     \paragraph{Spiegazione:} Per spiegare le equazioni di sopra dobbiamo fissare una \textit{sequenza di esiti} con $i$ successi e $n - 1$ fallimenti. \\
-    La probabilità che si verichi questa sequenza è appunto $\boldsymbol{p^i(1-p)^{n-1}}$ \\
+    La probabilità che si verichi questa sequenza è appunto $\boldsymbol{p^i(1-p)^{n-i}}$ \\
     Si continua quindi con il contare le sequenze di esiti con questa caratteristica $\binom{n}{i}$ \\ 
     Ad esempio, concludendo, per $n = 5$ e $i = 2$ ci sono $\binom{5}{2} = 10$ scelte possibili. \\ \\
     \begin{minipage}{0.2\textwidth}
@@ -1169,10 +1122,9 @@
     \subsection{Poisson}
     \definizione Una variabile aleatoria X che assume valori $\boldsymbol{X \in \{1,2, \ldots n\}}$ viene detta \textit{poissoniana} di parametro $\boldsymbol{\lambda > 0}$ \\
     Se la sua \textit{funzione di massa} è data da:
-    \[ P(X = i) = \frac{\lambda^i}{i!} e^{-\lambda} \]
-    \[ i = 0,1,2,n \]
-    La funzione sopra è chiaro che rappresenta una funzione di massa accettabile, difatti:
-    \[ \sum_{i = 0}^{\infty} P(X = i) = e^{-\lambda} \sum_{i = 0}^{\infty} \frac{\lambda^i}{i!} = e^{-\lambda} e^\lambda = 1 \leftarrow \text{sviluppo in serie} \] \\ 
+    \[ P(X = i) = \frac{\lambda^i}{i!} e^{-\lambda} \quad i = 0,1,2,n \]
+    La funzione sopra rappresenta una funzione di massa accettabile, difatti:
+    \[ \sum_{i = 0}^{\infty} P(X = i) = e^{-\lambda} \sum_{i = 0}^{\infty} \frac{\lambda^i}{i!} = e^{-\lambda} e^\lambda = \boldsymbol{1} \leftarrow \text{sviluppo in serie} \] \\ 
     Per determinare la \textbf{media} e la \textbf{varianza} dobbiamo prima calcolare la sua \textit{funzione generatrice dei momenti}:
     \begin{equation*}
         \begin{split}
@@ -1185,7 +1137,8 @@
     Derivando troviamo che:
     \[ \phi'(t) = \lambda e^t exp\{\lambda(e^t - 1) \} \]
     \[ \phi''(t) = (\lambda e^t)^2 exp\{\lambda(e^t - 1)\} + \lambda e^t exp\{\lambda(e^t - 1)\} \]
-    Se valutiamo le due funzioni con il parametro t = 0 ottieniamo che il $\ev{X}$ e la $Var(X)$ \textbf{coincidono}:
+    Se valutiamo le due funzioni con il parametro t = 0 \\
+    otteniamo che il $\ev{X}$ e la $Var(X)$ \textbf{coincidono}:
     \[ \ev{X} = \phi'(0) = \lambda \]
     \[ Var(X) = \phi''(0) - \ev{X}^2 = \lambda^2 + \lambda - \lambda^2 = \lambda \]
 
@@ -1267,14 +1220,17 @@
     \[ \frac{P(X = i + 1)}{P(X = i)} = \frac{\lambda^{i+1} e^{-\lambda}}{(i+1)!} \frac{i!}{\lambda^i e^{-\lambda}} = \frac{\lambda}{i + 1} \]
     Tramite questa formula possiamo ottenere anche:
     \[ P(X = i + 1) = \frac{\lambda}{i + 1} P(X = i) \]
+    \newpage
     \subsection{Ipergeometriche}
-    \definizione Una variabile aleatoria X che ha come \textit{massa di probabilità} si dice \textit{ipergeometrica} di parametri N, M e n.
+    \definizione Una variabile aleatoria X che ha come \textit{massa di probabilità} si dice \textit{ipergeometrica} di parametri N, M e n. \\
+    N -> primo gruppo \\
+    M -> secondo gruppo \\
+    n -> numero di estrazioni
     \paragraph{Introduzione:}
     Una scatola contiene N batterie \textit{accettabili} e M \textit{difettose}. se si estraggono senza rimessa \\
     e in maniera casuale \textit{n} batterie, con \textbf{pari probabilità} a ciascuno degli $\binom{N + M}{n}$ sottoinsiemi.
     \formula
-    \[  P(X = i) = \frac{\binom{N}{i} \binom{M}{n - i}}{\binom{N + M}{n}} \]
-    \[ i = 0,1 \ldots n \]
+    \[  P(X = i) = \frac{\binom{N}{i} \binom{M}{n - i}}{\binom{N + M}{n}} \quad \quad i = 0,1 \ldots n \]
     \paragraph{Esempio:} prendiamo a caso \textit{6} componenti da una cassa di \textit{20}. un sistema funziona solamente se tra i 6 componenti
     non ci siano più di 2 componenti guasti. \\
     Se nella cassa ci sono \textbf{15} componenti buoni e \textbf{5} guasti, quanto è la probabilità che il sistema funzioni? \\
@@ -1297,6 +1253,7 @@
     \end{equation*}
     Quindi:
     \[ P(X_i = 1) = \frac{N}{N + M} \]
+    \centerline{La probabilità della \textbf{prima} estrazione di una \textit{batteria accettabile}}
     \paragraph{Dimostrazione:} 
     \begin{equation*}
         \begin{split}
@@ -1304,15 +1261,16 @@
             & = \frac{N - 1}{N + M - 1} \cdot \frac{N}{N + M}
         \end{split}
     \end{equation*}
+    \centerline{Probabilità di estrarre una \textit{batteria accettabile} sapendo che la prima era accettabile.}
     \paragraph{Ciascuna delle $X_i$ è una bernoulliana} quindi:
     \[\ev{X_i} = P(X_i = 1) = \frac{N}{N + M}\]
-    Utilizziamo il fatto che la X è la somme delle $X_i$ per ottenere la \textbf{media}
-    \[ \ev{X} = \ev{\sum_{i = 1}^{n} X_i} = \sum_{i = 1}^{n} \ev{X_i} = n \frac{N}{N + M+}\]
-    Riprendendo il discorso di prima la formula della \textbf{varianza} è la seguente:
     \[ Var(X_i) = P(X_i = 1) P(X_i = 0) = \frac{N M}{(N + M)^2}\]
-    Utilizziamo la formula per il calcolo della varianza della somma di variabili aleatorie:
-    \[ Var(X) = \sum_{i = 1}^{n} Var(X_i) + 2 \sum_{j = 2}^{n} \sum_{i < j}^{} Cov(X_i, X_j) \]  
+    Utilizziamo il fatto che la X è la somma delle $X_i$, per ottenere la \textbf{media di una ipergeometrica:}
+    \[ \ev{X} = \ev{\sum_{i = 1}^{n} X_i} = \sum_{i = 1}^{n} \ev{X_i} = n \cdot \frac{N}{N + M}\]
+    Utilizziamo la formula per ottenere la \textbf{varianza di una ipergeometrica}:
     \[ Var(X) = np(1-p)[1 - \frac{n - 1}{N + M - 1}]\]
+    Utilizziamo la formula per ottenere la \textbf{covarianza di una ipergeometrica}:
+    \[ Cov(X_i, X_j) = \frac{-NM}{(N+M)^2 (N+M-1)} \]
 
     \subsubsection{Relazioni tra Binomiali ed Ipergeometriche}
     \definizione per $N, M \longrightarrow \infty$ binomiale = ipergeometrica
@@ -1350,7 +1308,7 @@
     \centerline{con una binomiale con prob. \textbf{0.2} e \textbf{10} estrazioni totali} 
 
     \subsection{Uniformi}
-    \subsubsection{Continue}
+    \subsubsection{Variabili Continue}
     \definizione Una variabile aleatoria continua si dice \textit{uniforme} sull'intervallo $\boldsymbol{[\alpha, \beta]}$ se ha la seguente funzione di densità:
     \begin{equation*}
         f(x) =
@@ -1359,16 +1317,17 @@
             0 & \text{altrimenti}
         \end{cases}
     \end{equation*}
-    Si nota che il grafico di una densità soddisfa le condizioni per essere una \textit{densità di probabilità}:
+    Si nota che il grafico di una densità soddisfa le condizioni per essere una \textbf{densità di probabilità}:
     \[ \int_{-\infty}^{\infty} f(x) \, dx = \frac{1}{\beta - \alpha} \int_{\alpha}^{\beta} \, dx = 1 \]
-    Se $\boldsymbol{[a, b] \subseteq [\alpha, \beta]}$ possiamo ricavare la sua \textit{funzione di ripartizione}:
+    Se $\boldsymbol{[a, b] \subseteq [\alpha, \beta]}$ possiamo ricavare la sua \textbf{funzione di ripartizione}:
     \[ P(a < X < b) = \frac{1}{\beta - \alpha} \int_{a}^{b} \, dx = \frac{b - a}{\beta - \alpha}\]
     è possibile anche ricavare la \textit{media di una variabile aleatoria X} su $[\alpha, \beta]$
     \begin{equation*}
         \begin{split}
             \ev{X} :&= \int_{\alpha}^{\beta} \frac{x \,dx}{\beta - \alpha} \\
             & = \frac{\beta^2 - \alpha^2}{2(\beta - \alpha)} \\
-            & = \frac{(\beta - \alpha) (\beta + \alpha)}{2(\beta - \alpha)} = \frac{\alpha + \beta}{2}
+            & = \frac{(\beta - \alpha) (\beta + \alpha)}{2(\beta - \alpha)} \\
+            & = \boldsymbol{\frac{\alpha + \beta}{2}}
         \end{split}
     \end{equation*}
     e la varianza (se abbiamo il \textbf{momento secondo}):
@@ -1376,11 +1335,11 @@
         \begin{split}
             Var(X) &= \frac{\alpha^2 + \alpha \beta + \beta^2}{3} - (\frac{\alpha + \beta}{2})^2 \\
             & = \frac{\alpha^2 - 2\alpha \beta + \beta^2}{12} \\
-            & = \frac{(\beta - \alpha)^2}{12}
+            & = \boldsymbol{\frac{(\beta - \alpha)^2}{12}}
         \end{split}
     \end{equation*}
 
-    \subsubsection{Discrete}
+    \subsubsection{Variabili Discrete}
     \definizione se p:
     \begin{equation*}
         p(x) =
@@ -1394,12 +1353,12 @@
     E la sua \textbf{varianza}:
     \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{(\beta - \alpha + 1)^2 - 1}{12} = \frac{n^2 - 1}{12}\]
 
+    \newpage
     \subsection{Normali o Gaussiane}
     \definizione Una variabile aleatoria X si dice \textit{normale} o \textit{gaussiana} \\ 
     Di parametri $\mu$ e $\sigma^2$. \\
     Se X ha funzione di densità data da:
-    \[ f(x) = \frac{1}{\sqrt{2 \pi} \sigma} exp\{- \frac{(x - \mu)^2}{2 \sigma^2}\} \]
-    \[ \forall x \in \mathbb{R} \]
+    \[ f(x) = \frac{1}{\sqrt{2 \pi} \sigma} exp\{- \frac{(x - \mu)^2}{2 \sigma^2}\} \quad \forall x \in \mathbb{R} \]
     La \textit{funzione generatrice dei momenti} di una gaussiana (parametri $\mu, \sigma^2$) si può dedurre da questa equazione:
     \begin{equation*}
         \begin{split}
@@ -1420,13 +1379,13 @@
     \end{equation}
     Come ci ricordiamo dalle seguenti funzione generatrici di momenti possiamo ricavarci il \textit{valore atteso} e la \textit{varianza} (in questo caso) di una gaussiana 
     \[ \ev{X} = \phi'(0) = \mu \]
-    \[ \ev{X^2} = \phi''(0) = \sigma^2 \mu^2 \]
+    \[ \ev{X^2} = \phi''(0) = \sigma^2 + \mu^2 \]
     \[ Var(X) = \ev{X^2} - \ev{X}^2 = \sigma^2 \]
-    \centerline{Cosi sappiamo che $\mu$ $\sigma^2$ rappresentano rispettivamente la \textit{media} e la \textit{varianza}}
+    \centerline{Cosi sappiamo che $\mu$ + $\sigma^2$ rappresentano rispettivamente la \textbf{media} e la \textbf{varianza}}
 
     \paragraph{La trasformazione lineare di X (val. al. normale)} è a sua volta una \textbf{gaussiana}:
-    \[ \text{Per } X \backsim \mathcal{N} \longrightarrow Y = \alpha X + \beta \]
-    \[ \alpha, \beta \text{ costanti e } \alpha \not= 0\]
+    \[ \text{Per } X \backsim  \mathcal{N} (\mu, \sigma^2) \longrightarrow Y = \alpha X + \beta \]
+    \[ \textit{Dove: } \alpha, \beta \text{ costanti e } \alpha \not= 0\]
     Y viene detta variabile aleatoria \textit{normale} con media $\boldsymbol{\alpha \mu + \beta}$ e varianza $\alpha^2 \sigma^2$ \\
     Se $X \backsim \mathcal{N}(\mu, \sigma^2)$ allora:
     \[ Z := \frac{X - \mu}{\sigma}\]
@@ -1457,21 +1416,7 @@
             &=: \boldsymbol{\Phi (\frac{b - \mu}{\sigma}) - \Phi(\frac{a - \mu}{\sigma})}
         \end{split}
     \end{equation*}
-    In tutti i casi siamo arrivati sempre ad un $\Phi(x)$, per calcolare il valore effettivo c'è bisogno della tabella che segue qua sotto
-
-    \begin{figure}[H]
-        \caption{Tabella di $\Phi$}
-        \begin{minipage}{0.59\textwidth}
-            \includegraphics[width=\textwidth]{images/phi_table.png}
-        \end{minipage}
-        \begin{minipage}{0.4\textwidth}
-            \paragraph{Esempio:} per trovare un valore \\
-            se dobbiamo trovare $\boldsymbol{\Phi(1.77)}$ \\
-            cerco: \\ \\
-            \colorbox{bittersweet}{1.7} nelle \textit{righe} \\ \\
-            \colorbox{yellow}{0.07} nelle \textit{colonne}
-        \end{minipage}
-    \end{figure}
+    In tutti i casi siamo arrivati sempre ad un $\Phi(x)$, per calcolare il valore effettivo c'è bisogno della tabella (fine pagine)
     \newpage
     \paragraph{$\Phi(-x)$} è possibile trovare $\Phi(-x)$ usando la \textit{simmetria della distribuzione} rispetto a 0. \\
     \begin{equation*}
@@ -1516,7 +1461,8 @@
     \end{equation*}
 
     \paragraph{Riproducibilità della distribuzione normale:} Dove: \\
-    $X_1, X_2 \ldots X_n$ sono \textit{aleatorie normali e indipendenti}, $X_i$ ha media $\mu_i$ e varianza $\sigma^{2}_i$ \\ \\
+    $X_1, X_2 \ldots X_n$ sono \textit{aleatorie normali e indipendenti}. \\ 
+    $X_i$ ha media $\mu_i$ e varianza $\sigma^{2}_i$ \\ \\
     La sua funzione generatrice di $\sum_{i = 1}^{n} X_i$ è data da:
     \begin{equation}
         \begin{aligned}
@@ -1561,6 +1507,7 @@
         \[ z_{0.01} \approx (2.33) \]
     \end{minipage}
 
+    \newpage
     \subsection{Esponenziali}
     \definizione Una variabile aleatoria continua la cui funzione di densità è data da 
     \begin{equation*}
@@ -1570,10 +1517,10 @@
             0 & \text{se } x < 0
         \end{cases}
     \end{equation*}
-    \centerline{per $\boldsymbol{\lambda > 0}$ si dice(sesso) \textbf{\textit{esponenziale}} con parametro/intensità $\lambda$}
+    \centerline{per $\boldsymbol{\lambda > 0}$ si dice \textbf{\textit{esponenziale}} con parametro/intensità $\lambda$}
     \definizione L' \textit{esponenziale} rappresenta la durata di vita di un fenomeno.
     \paragraph{Postilla:} La $\boldsymbol{\lambda}$ rappresenta \textit{il tasso di decadimento} della probabilità. \\
-    Ovvero la \textbf{velocità} con cui la probabilità \textit{diminuisce} al cresce del tempo. \\ 
+    Ovvero la \textbf{velocità} con cui la probabilità \textit{diminuisce} al crescere del tempo. \\ 
     Più è grande $\lambda$ più velocemente la probabilità diminuisce \\ \\
     La sua \textit{funzione di ripartizione} è data da:
     \begin{equation*}
@@ -1595,11 +1542,11 @@
     Derivando $\phi$ otteniamo $\phi'(t)$ e $\phi''(t)$:
     \[ \phi'(t) = \frac{\lambda}{(\lambda - t)^2}\]
     \[ \phi''(t) = \frac{2\lambda}{(\lambda - t)^3}\]
-    Ottenendo in questo modo i soliti valori attesi e la varianza:
+    Ottenendo in questo modo i soliti \textbf{valori attesi} e la \textbf{varianza}:
     \[ \ev{X} = \phi'(0) = \frac{1}{\lambda} \]
     \[ \ev{X^2} = \phi''(0) = \frac{2}{\lambda^2} \]
     \[ Var(X) = \ev{X^2} - \ev{X}^2 = \frac{1}{\lambda^2} \]
-    \centerline{Per una variabile aleatoria esponenziale $\lambda$ è il \textit{reciproco} del valore atteso}
+    \centerline{Per una variabile aleatoria esponenziale $\lambda$ è il \textbf{reciproco} del valore atteso}
     \centerline{e la varianza è il \textit{quadrato} di quest'ultimo.}
 
     \definizione La proprietà centrale della distribuzione esponenziale è la sua \textbf{assenza di memoria}
@@ -1612,7 +1559,7 @@
     \paragraph{Esempio:} il numero di miglia percorse da una macchina prima che la batteria si scarichi è di media \textit{10.000} miglia \\
     Se una persona fa un viaggio di \textit{5.000} miglia \\
     Quale è la probabilità che lo porti a termine senza dover sostituire la batteria? e se la distribuzione non è esponenziale? \\
-    - ricordandoci la proprietà \textit{di assenza di memoria della distribuzione esponenziale} il tempo di vita residuo è esponenziale \\
+    - ricordandoci la proprietà \textbf{di assenza di memoria} della distribuzione esponenziale il tempo di vita residuo è esponenziale \\
     con intensità $\boldsymbol{\lambda = 1 / 10}$ e quindi la probabilità cercata è: \\ \\
     \begin{equation*}
         \begin{split}
@@ -1657,11 +1604,16 @@
             & =e^{-x \sum_{i=1}^n \lambda_i}
         \end{aligned}
     \end{equation}
+    \newpage
     \subsection{Processi stocastici (Poisson)}
     \definizione Famiglia di variabili aleatorie parametrizzate da un indice (in questo caso \textbf{t})
     \definizione Consideriamo una serie di eventi instantanei che avvengono però a intervalli di tempo \textbf{random} \\
     Sia $N(t)$ il numero di quanti eventi se ne sono verificati nell'intervallo $[0, t]$ \\
     $N(t)$ viene detto \textbf{processo di Poisson} di intensità $\lambda, \lambda > 0$
+    \begin{figure}[H]
+        \caption{Intervallo di tempo che va da $[0, t]$}
+        \includegraphics[width=\textwidth]{images/stocastici_poisson.png}
+    \end{figure}
     \paragraph{Condizioni:}
     \begin{enumerate}
         \item $N(0) = 0 \longrightarrow$ si iniziano a contare gli eventi dal \textbf{tempo 0}
@@ -1799,25 +1751,7 @@
     \[ P(X \leq 30) \approx 0.7325 \]
     \paragraph{Esempio 2:} Si trova vale $\chi_{0.05, 15}^2$ tra le tabelle
     \[ \chi_{0.05, 15}^2 \approx 24.996 \]
-
-    \begin{figure}[H]
-        \caption{Tabella di $\chi_{\alpha,n}^2$}
-        \begin{minipage}{0.59\textwidth}
-            \includegraphics[width=\textwidth]{images/xan_table.png}
-        \end{minipage}
-        \begin{minipage}{0.4\textwidth}
-            \paragraph{Dove:}
-            $n = $ \textit{gradi di libertà} \\ \\
-            se abbiamo \\
-            \colorbox{bittersweet}{$\boldsymbol{n = 10}$} \\
-            \colorbox{yellow}{$\boldsymbol{\alpha = 0.05}$} \\
-            cerco: \\
-            \colorbox{bittersweet}{10} nelle \textit{righe} \\ \\
-            \colorbox{yellow}{0.05} nelle \textit{colonne} \\ \\
-            Trovo subito che $\chi^2 = 18.307$
-        \end{minipage}
-    \end{figure}
-
+    \newpage
     \subsection{Distribuzione T}
     \definizione Se $Z$ e $C_n$ sono variabili indipendenti, con Z \textit{normale standard} e $C_n$ \textit{chi-quadro} con n gradi di libertà
     la sua variabile aleatoria $T_n$ è definita:
@@ -1837,13 +1771,13 @@
         \begin{split}
             \alpha &= P(-T_n \geq t_{\alpha, n}) \\
             &= P(T_n \leq -t_{\alpha, n}) \\
-            &= 1 - P(T_n > -T_{\alpha, n}) \\
+            &= 1 - P(T_n > -t_{\alpha, n}) \\
             &= P(T_n \geq t_{\alpha, n}) = 1 - \alpha
         \end{split}
     \end{equation*}
     Da tutto questo otteniamo qunidi che:
     \[ -t_{\alpha, n} = t_{1-\alpha, n}\]
-
+    \newpage
     \subsection{Distribuzione F}
     \formula 
     \[ F_{n, m} := \frac{C_n / n}{C_m / m}\]
@@ -1890,4 +1824,59 @@
     il parametro $\upsilon$ è invece detto \textit{dispersione}. \\ 
     Una variabile aleatoria logistica con \textit{media} 0 e \textit{dispersione} 1 è detta
     \textbf{logistica standard}.
+    \newpage
+    \begin{figure}[H]
+        \caption{Tabella di $\Phi$}
+        \begin{minipage}{0.59\textwidth}
+            \includegraphics[width=\textwidth]{images/phi_table.png}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+            \paragraph{Esempio:} per trovare un valore \\
+            se dobbiamo trovare $\boldsymbol{\Phi(1.77)}$ \\
+            cerco: \\ \\
+            \colorbox{bittersweet}{1.7} nelle \textit{righe} \\ \\
+            \colorbox{yellow}{0.07} nelle \textit{colonne} \\
+            = 0.9616
+        \end{minipage}
+    \end{figure}
+    \begin{figure}[H]
+        \caption{Tabella di $\chi_{\alpha, n}^2$}
+        \begin{minipage}{0.59\textwidth}
+            \includegraphics[width=\textwidth]{images/xan_table.png}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+            \paragraph{Dove:}
+            $n = $ \textit{gradi di libertà} \\ \\
+            se abbiamo \\
+            \colorbox{bittersweet}{$\boldsymbol{n = 10}$} \\
+            \colorbox{yellow}{$\boldsymbol{\alpha = 0.05}$} \\
+            cerco: \\
+            \colorbox{bittersweet}{10} nelle \textit{righe} \\ \\
+            \colorbox{yellow}{0.05} nelle \textit{colonne} \\ \\
+            Trovo subito che $\chi^2 = 18.307$
+        \end{minipage}
+    \end{figure}
+    \begin{figure}[H]
+        \caption{Tabella di $T_{\alpha, n}$}
+        \begin{minipage}{0.59\textwidth}
+            \includegraphics[width=\textwidth]{images/tan_table.png}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+            \paragraph{Esempio:} per trovare un valore
+            se dobbiamo trovare $\boldsymbol{T_{\alpha,n} \rightarrow (T_{0.025,10})}$ \\
+            cerco: \\ \\
+            \colorbox{bittersweet}{10} nelle \textit{righe} \\ \\
+            \colorbox{yellow}{0.025
+            } nelle \textit{colonne} \\
+            = 2.228
+        \end{minipage}
+    \end{figure}
+    \begin{figure}[H]
+        \caption{Tabella di $F_{0.05, n, m}$}
+        \begin{minipage}{0.59\textwidth}
+            \includegraphics[width=\textwidth]{images/F_table.png}
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
+        \end{minipage}
+    \end{figure}
 \end{document}
