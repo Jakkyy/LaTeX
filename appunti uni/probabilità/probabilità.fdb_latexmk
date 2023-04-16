@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1681421398 "c:/Users/jacop/Desktop/programming/LaTeX/probabilità_appunti/probabilità.tex" "probabilità.pdf" "probabilità" 1681421400 0
+["pdflatex"] 1681665148 "c:/Users/jacop/Desktop/programming/LaTeX/appunti uni/probabilità/probabilità.tex" "probabilità.pdf" "probabilità" 1681665151 0
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1681146257 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi525/ecss0800.pk" 1681307643 14032 38602ff2a5e5bf9d33229c95dab08081 ""
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecsi1000.pk" 1680949172 24544 3347d0558675e0d580ce062dfe34efbc ""
@@ -123,16 +123,16 @@
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1667245866 13231 b52297489a0e9d929aae403417d92a02 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/jacop/Desktop/programming/LaTeX/probabilità_appunti/probabilità.tex" 1681421396 99624 fceeafe2890f947f2f5b930b64c4fd3c ""
+  "c:/Users/jacop/Desktop/programming/LaTeX/appunti uni/probabilità/probabilità.tex" 1681665146 99624 fceeafe2890f947f2f5b930b64c4fd3c ""
   "images/F_table.png" 1681397818 108288 94e29502d7af6c3d2300b5b1c6dc7b03 ""
   "images/phi_table.png" 1681397768 118570 e7125c3c831dbd32ecbb7703a29683f2 ""
   "images/stocastici_poisson.png" 1681416807 20112 88d6f1cba079799d828e70df53f996b6 ""
   "images/tan_table.png" 1681397794 111809 ca7ce73fb4034f1a162b39e2982fa561 ""
   "images/xan_table.png" 1681397780 143796 38217a8ecec83c821930a41ff841a416 ""
-  "probabilità.aux" 1681421400 31395 64f639bfe4412d785d8ec37589ead913 "pdflatex"
-  "probabilità.out" 1681421400 13905 572d85fd64e01f61d8096c7571e7ddbb "pdflatex"
-  "probabilità.tex" 1681421396 99624 fceeafe2890f947f2f5b930b64c4fd3c ""
-  "probabilità.toc" 1681421400 19066 9baaa5fee3909858b6aa8b1da1a3065b "pdflatex"
+  "probabilità.aux" 1681665150 31395 64f639bfe4412d785d8ec37589ead913 "pdflatex"
+  "probabilità.out" 1681665150 13905 572d85fd64e01f61d8096c7571e7ddbb "pdflatex"
+  "probabilità.tex" 1681665146 99624 fceeafe2890f947f2f5b930b64c4fd3c ""
+  "probabilità.toc" 1681665150 19066 9baaa5fee3909858b6aa8b1da1a3065b "pdflatex"
   (generated)
   "probabilità.aux"
   "probabilità.log"
