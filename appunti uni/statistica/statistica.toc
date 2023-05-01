@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}%
+\contentsline {paragraph}{Possibile soluzione}{2}{section*.2}%
+\contentsline {paragraph}{Stima parametrica}{2}{section*.3}%
+\contentsline {paragraph}{Formula generica:}{2}{section*.4}%
+\contentsline {paragraph}{MLE}{3}{section*.5}%
+\contentsline {paragraph}{Esempio}{3}{section*.6}%
+\contentsline {paragraph}{Esempio}{3}{section*.7}%
+\contentsline {paragraph}{Esercizio 1}{4}{section*.8}%
+\contentsline {paragraph}{Esercizio 2}{4}{section*.9}%
+\contentsline {paragraph}{MLE POISSON}{5}{section*.10}%
+\contentsline {paragraph}{Formula generica:}{5}{section*.11}%
+\contentsline {paragraph}{Esercizio 3}{5}{section*.12}%
+\contentsline {paragraph}{MLE UNIFORME}{5}{section*.13}%
+\contentsline {paragraph}{MLE GAUSSIANA}{5}{section*.14}%
+\contentsline {paragraph}{Esercizio}{6}{section*.15}%
+\contentsline {paragraph}{Intervalli di confidenza}{6}{section*.16}%
+\contentsline {paragraph}{Intervalli di confidenza}{6}{section*.17}%
+\contentsline {paragraph}{Esempio:}{7}{section*.18}%
+\contentsline {paragraph}{In generale}{7}{section*.19}%

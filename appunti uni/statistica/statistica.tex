@@ -1,0 +1,172 @@
+\documentclass[]{article}
+
+\usepackage[paperheight=18cm,paperwidth=14cm,textwidth=12cm]{geometry}
+\usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
+
+\usepackage{hyperref}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{xcolor}
+\usepackage{sectsty}
+\definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
+\definecolor{grey}{rgb}{0.25, 0.25, 0.28}
+\definecolor{black}{rgb}{0, 0, 0}
+\subsubsectionfont{\color{black}}
+\subsubsectionfont{\color{grey}}
+\sectionfont{\color{bittersweet}}
+
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault} 
+
+\usepackage{bm}
+
+\newcommand{\ev}{\mathbb{E}[X]}
+\renewcommand{\ev}[1]{\mathbb{E}[#1]}
+
+\newcommand{\definizione}{\paragraph{Definizione:}}
+\newcommand{\formula}{\paragraph{Formula generica:}}
+
+\newcommand{\highlight}[1]{\colorbox{yellow}{$\displaystyle #1$}}
+
+\begin{document}
+    \tableofcontents
+    \newpage
+    
+    \section{Introduzione}
+    $X_1 = 1.7$ \\
+    $X_2 = 1.82$ \\
+    $X_3 = 1.73$\\
+    $X_4 = 1.7$\\
+    $X_5 = 1.8$ \\
+    $\hat{\theta}? \quad \text{Altezza della popolazione}$
+    \paragraph{Possibile soluzione}: 
+    \[ \hat{\theta_a} = \frac{1}{n} \sum_{4}^{5} x_i = \frac{1.7 + 1.82 + 1.73 + 1.7 + 1.8}{5} = \frac{8.75}{5} = 1.75 \]
+    \[ \hat{\theta_b} = \frac{min(x_i) + max(x_i)}{2} = \frac{3.52}{2} = 1.76 \]
+    \[ \hat{\theta_c} = \frac{1}{3} \sum_{2}^{4} x_i = \frac{1}{3} (1.8 + 1.73 + 1.7) = \frac{5.23}{3} = 1.743 \]
+    \centerline{Scartiamo il più \textit{piccolo} e il \textit{massimo}, calcolando poi la \textbf{media} dei rimanenti}
+    \paragraph{Stima parametrica}(Point) Parametric Estimation \\ \\
+    \underline{Ipotesi}:
+    - Esiste un parametro $\theta$ incognito $n$ dati a disposizione $\{X_1, X_2, X_n\}$ \\
+    \textbf{Legge di probabilità} che descrive il fenomeno che ha generato i dati
+    \formula Bayes
+    \[ P(\theta / X_1 \ldots X_n) = \frac{P(X_1 \ldots X_n / \theta) P(\theta)}{P(X_1 \ldots X_n)} \]
+    \centerline{Verosomiglianza (likelihood)}
+    \paragraph{MLE} Maximum Likelihood Estimation (Stima a Massima Verosomiglianza)
+    \[ \hat{\theta} = argmax L(\theta) = argmax[f(X_1 \ldots X_n / \theta )] \]
+    \paragraph{Esempio} (Legge -> Distribuzione di Poisson)
+    \begin{equation*}
+        \begin{split}
+            f(X_1, X_2 \ldots X_n / \theta) &= f(X_1 / \theta) \cdot f(X_2 / \theta) \ldots f(X_n / \theta) \\
+            &= \frac{1}{\theta} e^{-\frac{X_1}{\theta}} \cdot \frac{1}{\theta} e^{-\frac{X_2}{\theta}} \cdot \ldots \frac{1}{\theta} e^{-\frac{X_n}{\theta}} \\
+            &= \frac{1}{\theta n} e^{-\frac{1}{\theta} \sum_{i}^{} X_i }
+        \end{split}
+    \end{equation*}
+    \paragraph{Esempio} (MLE Ipotesi di Bernoulli)
+    \begin{equation*}
+        X_i =
+        \begin{cases}
+            0 \\
+            1
+        \end{cases}
+    \end{equation*}
+    \[ P\{X_i = 1\} = 1 - P\{X_i = 0\} \]
+    \[ P\{X_i = x\} = P^x (1-P)^x \quad x \in \{0, 1\} \]
+    \centerline{Dove \textbf{X} è una \textit{variabile aleatoria} e \textbf{x} una \textit{variabile sperimentale} }
+    \[ f(x_1 \ldots x_n / P) = P^{x_1} (1-P)^{1-x_1} \cdot P^{x_2} (1-P)^{1-x_2} \ldots P^{x_n} (1-P)^{1-x_n} = \]
+    \[ P^{\sum_{i}^{n}x_i} (1-P)^{n - \sum_{1}^{n} x_i} \longrightarrow \text{Bisogna trovare il \textbf{massimo} della funzione} \]
+    \begin{equation*}
+        \begin{split}
+            log(f(x_1 \ldots x_n / P)) &= \sum_{1}^{n} x_i log P - (n - \sum_{i}^{n} x_i) log(1-P) \\
+            &= \frac{d}{dP}[log(f)] = 0 = \frac{1}{\hat{P}} \sum_{i}^{n} x_i - \frac{n - \sum_{i}^{} x_i }{(1-\hat{P})} \\
+            &= (1- \hat{P}) \sum_{i}^{} x_i = \hat{P} (n - \sum_{i}^{} x_i) \\
+            &= \hat{P} = \frac{\sum_{i}^{} x_i }{n} \quad \text{MLE}
+        \end{split}
+    \end{equation*}
+    \paragraph{Esercizio 1} Probabilità che Oneto dia 30L (Lode) \\
+    $n = 120$ \\
+    $\sum_{i}^{120} x_i = 18$ \\
+    $\hat{P} = \frac{18}{120} = 0.15 \rightarrow 15\%$ \\
+    \paragraph{Esercizio 2} N studenti da 30 e lode \\
+    $n_1 = 18 \leftarrow \text{Oneto}$ \\ 
+    $n_2 = 20 \leftarrow \text{Anguita}$ \\
+    $n_{1,2} = 10 \leftarrow \text{30L sia con Oneto che con Anguita}$ \\
+    $N= ? \quad \text{Studenti da \textbf{30 e Lode}}$ \\
+    \begin{minipage}{0.30\textwidth}
+        \[ \hat{P_1} \approx \frac{n_1 2}{n_2} \]
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+        \[ \hat{P_1} \approx \frac{n_1}{N} \]
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+        \[ \frac{n_{1,2}}{n_2} = \frac{n_1}{N} \]
+    \end{minipage} \\
+    $ \Longrightarrow N= \frac{n_1 \cdot n_2}{n_{1,2}} \rightarrow \frac{18 \cdot 20}{10} = 36 $
+    \paragraph{MLE POISSON}
+    \begin{equation*}
+        \begin{split}
+            f(x_1, x_2 \ldots x_n / \lambda) &= \frac{e^{-\lambda} \lambda^{x_1}}{x_1 !} \cdot \frac{e^{-\lambda} \lambda^{x_2}}{x_2 !} \cdots \frac{e^{-\lambda} \lambda^{x_n}}{x_n !} \\
+            &= \frac{e^{-n\lambda} \lambda^{\sum_{i}^{} x_i}}{x_1! x_2! \ldots x_n!}
+        \end{split}
+    \end{equation*}
+    \formula
+    $\lambda = \frac{\sum_{i}^{} x_i}{\lambda} \quad \text{MLE} $
+    \paragraph{Esercizio 3} Stima del numero di incidenti medio in auto n = 10 \\
+    $x_1 = \{ 4,0,6,5,2,1,2,0,4,3 \}$ \\
+    $\hat{\lambda} = \frac{\sum_{i}^{} x_i}{n} = \frac{27}{10} = 2.7$
+    \[ P\{x \leq 2 \} = e^{-2.7} (\frac{2.7^0}{0!} + \frac{2.7^1}{1!} + \frac{2.7^2}{2!}) \approx .4936 \rightarrow 49.36\% \]
+    \centerline{Probabilità che non ci siano più di \textbf{2 incidenti} }
+    \paragraph{MLE UNIFORME}
+    \begin{equation*}
+        f(x_1, x_2 \ldots x_n / \theta) =
+        \begin{cases}
+                \frac{1}{\theta^n} & \quad 0 < x_i < \theta \\
+                0 & \quad \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    $\hat{\theta} = max\{x_i\}$ \\
+    $\frac{\hat{\theta}}{2} = \frac{max\{ x_i\}}{2}$
+    \paragraph{MLE GAUSSIANA}
+    \[ f(x_1,x_2 \ldots x_n / \mu, \sigma) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi} \sigma} e^{\frac{-(x_1 - \mu)^2}{2 \sigma^2}} \]
+    \[ (\frac{1}{2 \pi})^{\frac{n}{2}} \frac{1}{\sigma^n} e^{\frac{-\sum_{i}^{}(x_i - \mu)^2}{2 \sigma}} \]
+    $log[f] = - \frac{n}{2} log 2\pi - n log \sigma - \frac{\sum_{i}^{}(x_i - \mu)^2}{2\sigma^2}$ \\ \\
+    $\frac{d log f}{d \mu} = 0 = \frac{\sum_{i}^{}(x_i - \mu)^2}{\sigma^2} \longrightarrow \hat{\mu} = \frac{\sum_{i}^{}x_i}{n}$ \\
+    $\frac{d log f}{d \sigma} = 0 = - \frac{n}{\sigma} + \frac{\sum_{i}^{} (x_i - \mu)^2}{4 \sigma^4} \rightarrow \sigma = \sqrt{\frac{\sum_{i}^{}(x_i - \mu)^2}{n}}$
+    \paragraph{Esercizio} primo \\
+    $x_1 = 1.7$ \\
+    $x_2 = 1.82$ \\
+    $x_3 = 1.73$\\
+    $x_4 = 1.7$\\
+    $x_5 = 1.8$ \\
+    \[ \hat{\mu} = \frac{\sum_{i}^{} x_i}{n} = \frac{1.7 + 1.82 + 1.73 + 1.7 + 1.8}{5} = 1.75 \]
+    \[ \hat{\sigma} = \sqrt{\frac{0.05^2 + 0.07^2 + 0.02^2 + 0.05^2 + 0.05^2}{5}} \approx 0.051 \]
+    \paragraph{Intervalli di confidenza} normali
+    TODO
+    \paragraph{Intervalli di confidenza} gaussiani
+    $\sigma^2$ Nota \\
+    $x_1m x_2 \ldots x_n$ \\
+    $\hat{\mu} \longleftarrow \mu$ \\
+    $\frac{\overline{x} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0,1)$ \\
+    \[ P(-1.96 < \frac{\overline{x} - \mu}{\frac{\sigma}{\sqrt{n}}} < +1.96) = 0.95 \]
+    \[ \longrightarrow P(-1.96 \frac{\sigma}{\sqrt{n}} < \overline{x} - \mu < 1.96 \frac{\sigma}{\sqrt{n}}) \]
+    \[ P(\overline{x} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \overline{x} + 1.96 \frac{\sigma}{\sqrt{n}}) \]
+    \paragraph{Esempio:} Sistema di comunicazione
+    $\sigma^2 = 4 \quad n = 9$
+    \[ x_1 = \{ 5.85, 12, 15, 7, 9, 7.5, 6, 5, 10.5 \} \]
+    \[ \hat{\mu} = \frac{1}{n} \sum_{i}^{n} x_i = \frac{1}{9} \sum_{i}^{n} x_i = \frac{81}{9} = 9 \] \\
+    \begin{equation*}
+        \begin{aligned}
+            & P\left(9-1.96 \frac{\sigma}{\sqrt{m}}<\mu<9+1.96 \frac{\sigma}{\sqrt{m}}\right)=0.95 \\
+            & p\left(9-1.96 \frac{2}{3}<\mu<9+1.96 \frac{2}{3}\right)=0.95 \\
+            & \longrightarrow[7.693,10.31] \rightarrow \mu \text { si trova tra 7.693 e 10.31} \\
+        \end{aligned}
+    \end{equation*}
+    \paragraph{In generale} Prob = $1-\alpha$
+    \[ (\overline{x} - z_a \frac{\sigma}{\sqrt{n}}, \overline{x} + z_a \frac{\sigma}{\sqrt{n}} ) \rightarrow \text{Si rileva dalle tavole} \]
+\end{document}
