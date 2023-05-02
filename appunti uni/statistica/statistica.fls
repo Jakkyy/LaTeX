@@ -632,8 +632,6 @@ INPUT .\statistica.toc
 INPUT statistica.toc
 INPUT statistica.toc
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsx1000.tfm
-OUTPUT statistica.toc
-INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
@@ -659,14 +657,22 @@ INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
+OUTPUT statistica.toc
+INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecss0800.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecss0800.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsi1000.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsx0800.tfm
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsx0800.tfm
+INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecss1200.tfm
+INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsx1200.tfm
+INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsi0800.tfm
+INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecsi0800.tfm
 INPUT statistica.aux
 INPUT .\statistica.out
 INPUT .\statistica.out
+INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk
+INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1200.pk
 INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsi1000.pk
 INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecsi1000.pk
 INPUT C:\Users\jacop\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1000.pk
@@ -697,3 +703,5 @@ INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\jacop\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

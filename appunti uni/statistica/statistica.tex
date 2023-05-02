@@ -169,4 +169,79 @@
     \end{equation*}
     \paragraph{In generale} Prob = $1-\alpha$
     \[ (\overline{x} - z_a \frac{\sigma}{\sqrt{n}}, \overline{x} + z_a \frac{\sigma}{\sqrt{n}} ) \rightarrow \text{Si rileva dalle tavole} \]
+    \subsection{Intervalli di confidenza (Bilaterali)}
+    \[ \overline{X} = \frac{1}{n} \sum_{i}^{n} x_i \]
+    \[ x_i \sim \mathcal{N}(\mu, \sigma^2) \]
+    \[ \overline{X} \sim(\mu, \frac{\sigma^2}{n}) \]
+    \[ \mathcal{Z} = \frac{\overline{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0, 1) \quad Var(\frac{x}{2}) = \frac{1}{\sigma^2} Var(x) \]
+    \text{Supponiamo che $\sigma$ sia nota:}
+    \begin{equation*}
+        \begin{aligned}
+            &\begin{aligned}
+            & \operatorname{Pr}\left\{-z_{\frac{\alpha}{2}}<Z<+z_{\frac{\alpha}{2}}\right\}=1-\alpha \\
+            & \operatorname{Pr}\left\{-z_{\frac{\alpha}{2}}<\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{m}}}<+z_{\frac{\alpha}{2}}\right\}=1-\alpha \\
+                & \operatorname{Pr}\left\{-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}<\bar{x}-\mu<+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}\right\}
+        \end{aligned}\\
+        &\begin{aligned}
+        & \operatorname{Pr}\left\{-\bar{x}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}<-\mu<-\bar{x}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}\right\}= \\
+        & \operatorname{Pr}\left\{\bar{x}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}<\mu<\bar{x}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}\right\}=1-\alpha
+        \end{aligned}
+        \end{aligned}
+    \end{equation*}
+    \subsection{Intervalli di confidenza (Unilaterali)}
+    \begin{equation*}
+        \begin{aligned}
+        & \operatorname{Pr}\left\{z<z_\alpha\right\}=1-\alpha \\
+        & \operatorname{Pr}\left\{\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{m}}}<z_\alpha\right\}=1-\alpha \\
+        & \operatorname{Pr}_r\left\{\bar{x}-\mu<z_\alpha \frac{\sigma}{\sqrt{m}}\right\}=1-\alpha \\
+        & \operatorname{Pr}\left\{-\mu<-\bar{x}+z_\alpha \frac{\sigma}{\sqrt{m}}\right\}=1-\alpha \\
+        & \operatorname{Pr}\left\{\bar{x}-z_\alpha \frac{\sigma}{\sqrt{m}}<\mu\right\}=1-\alpha \\
+        & \mu \in\left(\bar{x}-z_\alpha \frac{\sigma}{\sqrt{m}},+\infty\right)
+        \end{aligned}
+    \end{equation*}
+    \subsection{Esempio:} Pesca stagionale dei salmoni (\textit{Fisso intervallo -> trovo $n$}) \\
+    \text{Ad ogni stagione il peso medio dei salmoni è diverso ma $\sigma = 0.3$ Kg} \\
+    \text{Intervallo di confidenza al 95\%, quindi $\alpha = 0.05$}
+    \[ (\overline{X} - 1.96 \frac{\sigma}{\sqrt{n}}, \overline{X} + 1.96 \frac{\sigma}{\sqrt{n}}) \]
+    \[ 1.96 \frac{\sigma}{\sqrt{n}} \geq 0.1 \quad \sqrt{n} \geq \frac{1.96}{0.1} \sigma \]
+    \[ n \geq (\frac{1.96}{0.1} 0.3)^2 = 5.88^2 \approx 34.6 \leftarrow \text{salmoni} \]
+    \subsection{Intervallo di confidenza} con \textit{media} e \textit{varianza} \textbf{incognite}
+    \begin{equation*}
+        \begin{aligned}
+            & Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}} \sigma \quad \text{ Non nota} \\
+            & s^2=\frac{1}{n-1} \sum_i\left(x_i-\bar{x}\right)^2=\frac{1}{n-1} \sum_i^n\left(x_i^2-n \bar{x}^2\right) \\
+            & =\frac{1}{n-1} \sum_i\left(x_i^2+\bar{x}^2-2 x_i \bar{x}\right) \\
+            & =\frac{1}{n-1} \sum_i x_i^2+\frac{n \bar{x}^2}{n-1}-2 \bar{x} \frac{\bar{x} n}{n-1} \\
+        \end{aligned}
+    \end{equation*}
+    \[ T = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}} \sim T_n - 1 \quad \text{(T studenti con n gradi di libertà)} \]
+    \paragraph{Esempio:} Trasimttente ($\mu$) e ricevitore ($\mu$ + rumore)
+    \[ 95\% (7.69, 10.31) \quad \hat{\mu} = 9, \sigma^2 = 4 \]
+    $X_i \{ 5, 8.5, 12, 15, 7, 9, 7.5, 6.5, 10.5 \}$ \\
+    $\hat{\mu} = \overline{X} = \frac{1}{9} \sum_{i}^{n} X_i = \frac{81}{9} = 9$ \\
+    $s^2 = \frac{1}{8}\sum_{i}^{}(X_i^2-9.81) \approx 9.5 \quad s = 3.082$
+    \[ \mu \in (9-2.306 \frac{3.082}{3}, 9 + 2.306 \frac{3.082}{3}) = (6.63, 11.37) \]
+    \centerline{Si può dimostrare che $T_{\frac{\alpha}{2} \cdot n - 1} \ev{S} \geq z_\alpha\sigma$}
+    \subsection{Integrali Monte Carlo}
+    \[ \theta = \ev{f(u)} = \int_{-\infty}^{+\infty} f(u) p(u) \, du = \int_{-\infty}^{+\infty} f(u) \, du \]
+    \paragraph{Esempio}: \\
+    $\int_{0}^{1} \sqrt{1-x^2} \,dx = ?$
+    $\ev{\sqrt{1-x^2}} \quad n = 100$ \\
+    $X_i = \sqrt{1 - U_i^2} \quad X = \{ X_1, X_2 \ldots X_100 \}$ \\
+    $\hat{\theta} = \overline{X} \pm t_{\frac{\alpha}{2}}, 99 \frac{s}{\sqrt{100}} \rightarrow \text{Per vedere se il risultato è corretto \textit{(confidenza)}}$ 
+    \subsection{Intervallo di confidenza di Bernoulli}
+    n esperimenti \\
+    Binomiale \\
+    media np \\
+    varianza np(1-p) \\
+    \[ \hat{P} = \frac{1}{n} \sum_{i}^{n}X_i \quad X_i \in \{ 0, 1 \} \] \\
+    \[ X = n\hat{P} \quad P_r \{ -z_{\frac{\alpha}{2}} < z < z_{\frac{\alpha}{2}} \approx 1-\alpha \}\] \\
+    \centerline{Dove z = $\frac{X-np}{\sqrt{np(1-p)}}$}
+    \[ \frac{x-nP}{\sqrt{nP(1-P)}} \sim \mathcal{N}(0,1)\]
+    \begin{equation}
+        \begin{aligned}
+        & \rho_r\left\{-z_{\frac{a}{2}}<\frac{x-m p}{\sqrt{m p(1-\hat{p})}}<z_{\frac{a}{2}}\right\} \cong 1-\alpha \\
+        & \rho_r\left\{\hat{p}-z_{\frac{a}{2}} \sqrt{\frac{p(1-p)}{m}}<\mu<\hat{p}+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-p)}{m}}\right\} \simeq 1-\alpha
+        \end{aligned}
+    \end{equation}
 \end{document}
