@@ -244,4 +244,126 @@
         & \rho_r\left\{\hat{p}-z_{\frac{a}{2}} \sqrt{\frac{p(1-p)}{m}}<\mu<\hat{p}+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-p)}{m}}\right\} \simeq 1-\alpha
         \end{aligned}
     \end{equation}
-\end{document}
+
+    \section{Intervalli di confidenza}
+    \paragraph{Se $\sigma^2$ è nota} allora:
+    \[ X_i \sim \mathcal{N}(\mu, \sigma^2) \quad \overline{X} = \frac{1}{n} \sum_{i}^{n} X_i \]
+    \begin{equation*}
+        \begin{aligned}
+            \mu \in (-\infty, \overline{X} + z_\alpha \frac{\sigma}{\sqrt{n}}) \\
+            \mu \in (\overline{X} - z_{\frac{\sigma}{\sqrt{n}}}, \overline{X} + z_{\frac{\sigma}{\sqrt{n}}}) \quad p_r (1-\alpha) \\
+            \mu \in (-\infty, \overline{X} + z_\alpha \frac{\sigma}{\sqrt{n}}) \\
+            \mu \in (\overline{X} - z_\alpha \frac{\sigma}{\sqrt{n}}, \infty)
+        \end{aligned}
+    \end{equation*}
+    $s^2 = \frac{1}{n - 1} \sum_{i}{} (X_i - \overline{X})$ \\
+    Se $\sigma^2$ è ignota allora: \\
+    \[ \mu \in (\overline{X} - z_{\frac{\alpha}{2}}, n - 1 \frac{s}{\sqrt{n}}) \quad \sigma^2 \rightarrow s^2 = z \rightarrow t \]
+    \subsection{Intervallo di confidenza nella varianza}
+    \[ (n-1) \frac{S^2}{\sigma^2} \sim \mathcal{X}^2 \quad X_i \sim \mathcal{N}(\mu, \sigma^2) \]
+    \begin{equation*}
+        \begin{aligned}
+            p_r \left \{ \mathcal{X}_{1- \frac{\alpha}{2}, n - 1}^2 \leq (n-1)\frac{s^2}{\sigma^2} \leq \mathcal{X}_{\frac{\alpha}{2}, n-1} \right \} \\
+            p_r \left \{ \frac{s^2(n-1)}{\mathcal{X}_{\frac{\alpha}{2}, n-1}} \leq \sigma^2 \leq \frac{s^2(n-1)}{\mathcal{X}_{1- \frac{\alpha}{2}, n - 1}^2} \right \} = 1-\alpha \\
+            \sigma^2 \in \left (\frac{s^2(n-1)}{\mathcal{X}_{\frac{\alpha}{2}, n-1}^2}, \frac{s^2(n-1)}{\mathcal{X}_{1- \frac{\alpha}{2}, n-1}}\right )  \quad p_r = 1- \alpha
+        \end{aligned}
+    \end{equation*}
+    \paragraph{Esempio:} Laminatoio n = 4
+    $X_i = \{ 0.123, 0.124, 0.126, 0.12 \} \text{spessore in \textbf{mm}}$ \\
+    \paragraph{Svolgimento}
+    \begin{equation*}
+        \begin{aligned}
+            \frac{1}{4} \sum_{i}^{4} X_i = \frac{0.493}{4} = 0.12325 \\
+            \frac{1}{4-1} \sum_{i}^{4}\left ( X_i - 0.12325 \right )^2 = 1.875 \cdot 10^{-5} \\
+            \sigma^2 \in \left ( \frac{s^2(n-1)}{9.348}, \frac{s^2(n-1)}{0.216} \right )
+        \end{aligned} 
+    \end{equation*}
+    \centerline{Dove \textbf{9.348} e \textbf{0.216} sono ricavati dalle tabelle}
+    Facciamo la radice: \\
+    $\sigma \in (0.0014, 0.0093) \rightarrow 95\% $
+    \subsection{Intervallo di confidenza}della differenza di due medie: \\ \\
+    \begin{minipage}{0.5\textwidth}
+        \centerline{\textbf{N} campioni}
+        \[ X_i \sim \mathcal{N}(\mu_1, \sigma_1^2) \]
+        \[ \overline{X} = \frac{1}{n} \sum_{i}^{n} X_i \]
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centerline{\textbf{M} campioni}
+        \[ Y_i \sim \mathcal{N}(\mu_2, \sigma_2^2) \]
+        \[ \overline{Y} = \frac{1}{m} \sum_{i}^{m} Y_i \]
+    \end{minipage}
+    \[ \overline{X} - \overline{Y} \sim \mathcal{N}\left ( \mu_1 - \mu_2, \frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m} \right ) \]
+    \[ \mathcal{N}(0,1) \sim \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}} \]
+    $\mu_1 - \mu_2 \in \left ( \overline{X} - \overline{Y} - z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}}, \overline{X} - \overline{Y} + z_{\frac{\alpha}{2}}, \overline{X} - \overline{Y} + z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n} + \frac{\sigma_2^2}{m}} \right )$ \\ \\
+    Se $\sigma_1^2, \sigma_2^2$ non sono note: \\ \\
+    \begin{minipage}{0.5\textwidth}
+        $S_1^2 = \frac{1}{n-1} \sum_{i}^{n}(X_i - \overline{X})$ \\ \\
+        $(n-1) \frac{S_1^2}{\sigma_1^2} \sim \mathcal{X}_{n-1}^2$
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        $s_2^2 = \frac{1}{m - 1} \sum_{i}^{m} (X_i - \overline{Y})$ \\ \\
+        $(n-1) \frac{s_2^2}{\sigma_2^2} \sim \mathcal{X}_{n-1}^2$
+    \end{minipage} \\ \\
+    \textbf{Possiamo andare avanti solo se \boldsymbol{$\sigma_1^2 = \sigma_2^2 = \sigma^2$}}
+    \[ (n-1) \frac{s_1^2}{\sigma^2} + (n-1) \frac{s_2^2}{\sigma^2} \sim \mathcal{X}_{n+m-2}^2 \]
+    \[ \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\sigma^2 (\frac{1}{n} + \frac{1}{m})}} \longrightarrow \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{S_p(\frac{1}{n} + \frac{1}{m})}} \]
+    \[ \sim \mathcal{N}(0,1) \quad \quad \quad \quad \quad \sim T_{n+m-2}\]
+    $S_p = \frac{(n-1) S_1^2 + (m-1) S_2^2}{n+m-2}$ \\ \\
+    \centerline{Se $\sigma$ sono ignote ma uguali}
+    $\mu_1 - \mu_2 \in (\overline{X} - \overline{Y} -T_{\frac{\alpha}{2},n+m-2} \sqrt{s^2(\frac{1}{n} + \frac{1}{m})})$ \\
+    $\overline{X} - \overline{Y} + T_{\frac{\alpha}{2}, n+m-2} \sqrt{s^2 (\frac{1}{n} + \frac{1}{m})}$
+    \subsection{Intervallo di previsione}
+    $X_1, \ldots X_n, X_{n+1} \sim \mathcal{N}(\mu, \sigma^2)$ \\
+    $\overline{X}_n = \frac{1}{n} \sum_{i}^{n} X_i \quad \overline{X}_n \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$ \\
+    $\overline{X}_n - X_{n+1} \sim \mathcal{N}(0, \sigma^2 + \frac{\sigma^2}{n}) \rightarrow (\mu - \mu, \sigma^2 + \frac{\sigma^2}{n})$ \\
+    $\sigma^2(1 + \frac{1}{n})$
+    \begin{minipage}{0.4\textwidth}
+        $\frac{X_n - X_n + 1}{\sigma \sqrt{1 + \frac{1}{n}}} \sim \mathcal{N}(0,1)$
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        $s_n^2 = \frac{1}{n-1} \sum_{i}^{} (X_i - \overline{X}_n)^2$
+    \end{minipage}
+    \[ X_{n+1} \in(\overline{X}_n - T_{\frac{\alpha}{2}, n-1} s_n \sqrt{1 + \frac{1}{n}}, \overline{X}_n + T_{\frac{\alpha}{2}, n-1} s_n \sqrt{1 + \frac{1}{n}}) \longrightarrow P_r(1-\alpha) \]
+    \paragraph{Esempio} smartwatch contapassi $\boldsymbol{n = 7}$ \\ \\
+    \centerline{\begin{minipage}{0.3\textwidth}
+        $LUN \quad 6922 \quad X_1$ \\
+        $MAR \quad 5333 \quad X_2$ \\
+        $MER \quad 7420 \quad X_3$ \\ 
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        $GIO \quad 7432 \quad X_4$ \\
+        $VEN \quad 6252 \quad X_5$ \\
+        $SAB \quad 7005 \quad X_6$ \\
+    \end{minipage}} \\
+    \[ DOM \quad 6752 \quad X_7 \]
+    \[ \overline{X}_n = \frac{1}{n} \sum_{i}^{m} X_i = \frac{47016}{7} \approx 6717 \]
+    \[ 1-\alpha = 95\% \quad \alpha = 5\% \]
+    \[ t_{0.0025,6} = 2.997 \]
+    \[ S_n = \sqrt{S_n^2} = 7.333.8 \]
+    \[ x_{n+1} \in (6717 -2.447 \cdot 733397 \sqrt{1 + \frac{1}{7}}, 6717 + 2.447 \cdot 73397 \sqrt{1 + \frac{1}{7}}) \]
+    $X_{n+1} \in (9796, 8637) \mu \in (6037, 7396)$
+    \subsection{Qualità di uno stimatore}
+    $X = X_1 \ldots X_n \quad \theta \leftarrow \text{parametro} \quad \quad d(x) \leftarrow \text{stimatore di $\theta$}$ \\
+    \begin{minipage}{0.5\textwidth}
+        \[ \boldsymbol{(d(x) - \theta)^2}\] Errore Quadratico (\textit{misura della qualità})
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \[ \boldsymbol{\ev{(d(x)-\theta)^2}} \] Errore Quadratico Medio (\textit{M.S.E})
+    \end{minipage} \\
+    Rischio $r(d, \theta) = \ev{(d-\theta)^2}$ 
+    Lo stimatore "ottimo" sarà quello con il rischio minimo -> d con r minimo $\theta$
+    \paragraph{Esempio}
+    $d^* (x) = 4 \quad \text{se} \theta = 4 \Rightarrow d^* = \text{stimatore ottimo(per tutti gli altri valori non va bene)}$
+    \subsection{Proprietà di uno stimatore}
+    Def: $b_\theta(d) = \ev{d} - \theta \rightarrow \text{bias o polarizzazione}$
+    Uno stimatore non è \textbf{polarizzato} se $b_\theta(d) = 0$
+    \paragraph{Esempio}:
+    $X_1 \ldots X_n \quad \theta \text{media}$ \\
+    $d_1(X_1 \ldots X_n) = X_1$ \\
+    $d_2(X_1 \ldots X_n) = \frac{X_1 + X_2}{2}$ \\
+    $d_3(X_1 \ldots X_n) = \frac{X_1 + X_2 + \ldots X_n}{n}$
+    \centerline{Tutti questi sono \textbf{unbiased}}
+    \subsection{Stimatore unbaieseo}
+    $r(d, \theta) = \ev{(d(x) - \theta)^2} = \ev{(d(x) - \ev{d(x)})^2} = Var(d)$ \\
+    tra gli stimatori non polarizzati di ottimo è quello con la varianza minima
+\end{document} 
