@@ -48,7 +48,7 @@
     $\hat{\theta}? \quad \text{Altezza della popolazione}$
     \paragraph{Possibile soluzione}: 
     \[ \hat{\theta_a} = \frac{1}{n} \sum_{4}^{5} x_i = \frac{1.7 + 1.82 + 1.73 + 1.7 + 1.8}{5} = \frac{8.75}{5} = 1.75 \]
-    \[ \hat{\theta_b} = \frac{min(x_i) + max(x_i)}{2} = \frac{3.52}{2} = 1.76 \]
+    \[ \hat{\theta_b} = \frac{min(x_i) + \max(x_i)}{2} = \frac{3.52}{2} = 1.76 \]
     \[ \hat{\theta_c} = \frac{1}{3} \sum_{2}^{4} x_i = \frac{1}{3} (1.8 + 1.73 + 1.7) = \frac{5.23}{3} = 1.743 \]
     \centerline{Scartiamo il più \textit{piccolo} e il \textit{massimo}, calcolando poi la \textbf{media} dei rimanenti}
     \paragraph{Stima parametrica}(Point) Parametric Estimation \\ \\
@@ -130,8 +130,8 @@
                 0 & \quad \text{altrimenti}
         \end{cases}
     \end{equation*}
-    $\hat{\theta} = max\{x_i\}$ \\
-    $\frac{\hat{\theta}}{2} = \frac{max\{ x_i\}}{2}$
+    $\hat{\theta} = \max\{x_i\}$ \\
+    $\frac{\hat{\theta}}{2} = \frac{\max\{ x_i\}}{2}$
     \paragraph{MLE GAUSSIANA}
     \[ f(x_1,x_2 \ldots x_n / \mu, \sigma) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi} \sigma} e^{\frac{-(x_1 - \mu)^2}{2 \sigma^2}} \]
     \[ (\frac{1}{2 \pi})^{\frac{n}{2}} \frac{1}{\sigma^n} e^{\frac{-\sum_{i}^{}(x_i - \mu)^2}{2 \sigma}} \]
@@ -366,4 +366,130 @@
     \subsection{Stimatore unbaieseo}
     $r(d, \theta) = \ev{(d(x) - \theta)^2} = \ev{(d(x) - \ev{d(x)})^2} = Var(d)$ \\
     tra gli stimatori non polarizzati di ottimo è quello con la varianza minima
+    \subsection{Valutazione di uno stimatore}
+    \[ X = X_1 \ldots X_n \quad \theta = ? \]
+    \centerline{Dove $\theta$ è un \textit{parametro} e $d(x)$ è uno \textit{stimatore} di $\theta$} \\ \\
+    $r(d, \theta) \text{(mse) rischio} \quad \quad b_\theta(d) = \ev{d} - \theta$ \\
+    se $b_\theta(d) = 0 \Rightarrow r(d, \theta) = Var(d)$ \\
+    \centerline{se $b_\theta(d) \not = 0$ ? $r(d, \theta)$ = ?}
+    \begin{equation*}
+        \begin{split}
+            r(d, \theta) = \ev{(d(x) - \theta)^2} &= \ev{(d(x) - \ev{d} + \ev{d} - \theta)^2} \\
+            &= \ev{(d - \ev{d})^2 + (\ev{d} - \theta)^2 - 2(d - \ev{d}) (\ev{d} - \theta)} \\
+            &= \ev{(d - \ev{d})^2} + \ev{(\ev{d} - \theta)^2} - 2(\ev{d} - \theta) \cdot \ev{(d- \ev{d})}
+        \end{split}
+    \end{equation*}
+    \begin{equation*}
+        \begin{split}
+           r(d, \theta) &= \ev{(d - \ev{d})^2} + \ev{(\ev{d} - \theta)^2} \\
+           &= Var(d) + b_\theta(d)^2 \leftarrow \text{bias$^2$}
+        \end{split}
+    \end{equation*}
+    \subsection{Esempio:} Stimatore della media di una \textit{distribuzione uniforme} \\\\
+    \begin{minipage}{0.4\textwidth}
+        $\ev{X_i} = \theta / 2$ \\
+        $X_1, X_2 \ldots X_n$
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        $d_1 = 2 \frac{1}{n} \sum_{i}^{n} X_i$ \\
+        $d_2 = \max X_i$
+    \end{minipage} \\[4ex]
+    $d_1 : \ev{d_1} = \frac{2}{n} \sum_{i}^{} \ev{X_i} = \frac{2}{n} n \frac{\theta}{2} = \theta$ \\
+    $r(d_1, \theta) = Var(d_1) = \frac{4}{n^2} n Var(X_i) = \frac{4}{n} \frac{\theta^2}{12} = \boldsymbol{\frac{\theta^2}{3n}} \Leftarrow$ \textit{Unbiased} \\[4ex]
+    \begin{equation*}
+        \begin{split}
+            F_2(x) = P_r \{ d_2(x) \leq x \} &= P_r \{ \max X_1 \leq x \} \\
+            &= P_r \{ X_1 \leq, \forall i \in 1 \} = \prod_{i = 1}^{n} P_r \{ X_i \leq x \} = (\frac{x}{\theta})^n \\
+            f_2(x) &= \frac{d}{dx} F_2(x) = n \frac{x^{n-1}}{\theta^n} \quad x \leq \theta
+        \end{split}
+    \end{equation*} \\[6ex]
+    $\displaystyle \ev{d_2} = \int_{0}^{\theta} x f_x(x) \, dx = \int_{0}^{\theta} \frac{n}{\theta^n} x^n \, dx = \frac{n}{\theta^n} \left[ \frac{x^{n+1}}{n+1} \bigg\rvert_{0}^{\theta}\right] = \frac{n}{n+1} \theta$ \\[2ex]
+    $\displaystyle \ev{d_2^2} = \frac{n}{\theta^n} \int_{0}^{\theta} x^2 f(x) \, dx = \frac{n}{\theta^n} \int_{0}^{\theta} x^{n+1} \, dx = \frac{n}{\theta^n} \left[ \frac{x^{n+2}}{n+2} \bigg\rvert_{0}^{\theta}\right] = \frac{n}{n+2} \theta^2$ \\[2ex]
+    $Var(d_2) = \ev{d^2} - \ev{d_2}^2 = \frac{n}{n+2}\theta^2 - \frac{n^2}{(n+1)^2} \theta^2 = \boldsymbol{\frac{n}{(n+2)(n+1)^2} \theta^2}$ \\[4ex]
+    $r(d_2, \theta) = Var(d_2) + (\ev{d_2} - \theta)^2 = \boldsymbol{\frac{2 \cdot \theta^2}{(n+1)(n+2)}}$ \\[4ex]
+    $n \geq 4 \quad r(d_2, \theta) < r(d_1, \theta) \quad \quad d_3 = \frac{n+1}{n} d_2$
+
+    \paragraph{In sintesi}
+    \begin{equation*}
+        \begin{aligned}
+            r(d_1, \theta) = \frac{\theta^2}{3n} \Leftarrow \text{Unbiased} \\
+            r(d_2, \theta) = \frac{2\theta^2}{(n+1)(n+2)} \Leftarrow \text{Biased} \\
+            r(d_3, \theta) = \frac{\theta^2}{n^2 + 2n} \Leftarrow \text{Unbiased} \\
+            r(d_4, \theta) = \frac{\theta^2}{(n+1)^2} \Leftarrow \text{Biased}
+        \end{aligned}
+    \end{equation*}
+    \section{Test di ipotesi}
+    \paragraph{Ipotesi:} Affermazione rispetto a uno o più parametri di una distribuzione
+    Ipotesi da confutare: $H_0$ (ipotesi nulla) \\
+    \paragraph{Esempio}:
+    \begin{equation}
+        \begin{aligned}
+            X_1 \ldots X_n \sim \mathcal{N}(\mu, \sigma^2) \\
+            H_0 : \mu = 0 \\
+            H_a : \mu \not = 0
+        \end{aligned}
+    \end{equation}
+    \centerline{Diamo per scontato che l'ipotesi sia \textbf{vera}}
+    \centerline{Dobbiamo cercare di \textit{confutarla}}
+    \paragraph{Definizione} Regione critica tale che: \\\\
+    $(X_1 \ldots X_n) \in C \rightarrow H_0 \text{è rifiutata}$ \\
+    $(X_1 \ldots X_n) \not\in C \rightarrow H_0 \text{è accettata}$ \\
+    $\alpha = $ Livello di \textbf{significatività} del test ($\alpha = 10\%, 5\% \ldots$)
+    \paragraph{Procedimento}
+    \begin{itemize}
+        \item Fisso alpha
+        \item Suppongo che $\alpha$ sia vera
+        \item calcolo stima di $\mu$
+        \item verifico che non sia "\textit{troppo distante}"
+    \end{itemize}
+    $X_1 \ldots X_n \sim \mathcal{N}(\mu, \sigma^2)$ \\
+    $H_0 : \mu = \mu_0 \quad H_a : \mu \not = \mu_0$ \\
+    $\overline{X} = \frac{1}{n} \sum_{i}^{} X_i $
+    \paragraph{Regione critica}
+    $\{ (X_1 \ldots X_n): \rvert \overline{X} - \mu_0 \rvert > c \}$ \\
+    $P_{r_{\mu_0}} \left\{ | \overline{X} - \mu_0 | > c \right\} = \alpha$ \\
+    $P_{r_{\mu_0}} \left\{ \frac{|\overline{X} - \mu_0|}{\frac{\sigma}{\sqrt{n}}} > \frac{c}{\frac{\sigma}{\sqrt{n}}} \right\} = \alpha$ \\
+    $P_{r_{\mu_0}} \left\{ |z| > z_\alpha \right\} = \alpha$
+    \paragraph{Esempio} (5 transimissioni) \\
+    \begin{minipage}{0.45\textwidth}
+        $\boldsymbol{n=5}$ \\
+        $\overline{X} = 9.5$
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        $H_0 : \mu = 8$ \\
+        $\alpha = 5\%$
+    \end{minipage} \\[4ex]
+    Ipotizzando che $H_0$ sia vera:
+    \[ \frac{|\overline{X} - \mu|}{\frac{\sigma}{\sqrt{n}}} = \frac{|9.5 - 8|}{\frac{2}{\sqrt{5}}} \approx 1.68 \]
+    Se: \\
+    $\alpha = P_r$(rifiuto $H_0$ / $H_0$ vera) \\
+    $\alpha \uparrow$ più \textit{"facile"} rifiutare l'ipotesi \\
+    $\alpha \downarrow$ più \textit{"difficile"} rifiutare l'ipotesi
+    \subsection{Metolodogia alternativa}
+    \[ Ts = \frac{\overline{X} - \mu_0}{\frac{\sigma}{\sqrt{n}}} \rightarrow \text{Statistica di test} \]
+    $P-$value = \textbf{probabilità} di ottenere un valore più "anomalo" di quello osservato
+    \paragraph{Esempio:} $X_i \sim \mathcal{N}(\mu, 4)$ \\
+    \begin{minipage}{0.5\textwidth}
+        \[ n = 5 \]
+        \[ \overline{X} = 8.5\]
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \[ H_0 : \mu = 8 \]
+        \[ H_a : \mu \not = 8\]
+    \end{minipage}
+    \[ \frac{|\overline{X} - \mu_0|}{\frac{\sigma}{\sqrt{n}}} = \frac{|8.5 - 8|}{\frac{2}{\sqrt{5}}} = \frac{\sqrt{5}}{2} 0.5 \approx 0.559 \]
+    \[ P \{ |z| > 0.559 \} = 2P \{ z > 0.559 \} \approx 2 \cdot 0.288 = 0.579 \rightarrow \text{P-value}\] \\[2ex]
+    Se $\boldsymbol{\overline{X} = 11.5}$:
+    \[ \frac{|\overline{X} - \mu_0|}{\frac{\sigma}{\sqrt{n}}} = \frac{|11.5 - 8|}{\frac{2}{\sqrt{5}}} \approx 3.913 \]
+    \[ P \{ |z| > 3.913 \} = 2P \{ z > 3.913 \} \leq 0.00005 \rightarrow \text{\underline{Rifiuto ipotesi $H_0$}}\]
+    \subsection{Test di Hp unilaterale}
+    \begin{minipage}{0.5\textwidth}
+        \[ H_0 : \mu = \mu_0 (\mu \leq \mu_0) \]
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \[ H_a : \mu > \mu_0 \]
+    \end{minipage}
+    \[ C = \{ (X_1 \ldots n) \cdot \overline{X} - \mu_0 > c \} \]
+    \[ P_{r_{\mu_0}} \{ \overline{X} - \mu_0 > c \} = P_r \{ \frac{\overline{X} - \mu_0}{\frac{\sigma}{\sqrt{n}}} > \frac{c}{\frac{\sigma}{\sqrt{n}}}\} = P_{r_{\mu_0}} \{ z > z_a \} = \alpha \] \\[2ex]
+    \centerline{Statistica test $\boldsymbol{\frac{\overline{X} - \mu_0}{\frac{\sigma}{\sqrt{n}}} \leq z_\alpha}$ accetto}
 \end{document} 
