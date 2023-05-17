@@ -587,5 +587,105 @@
         $X_i \sim \mathcal{N}(\mu_1, \sigma_1^2)$ \\
         $Y_i \sim \mathcal{N}(\mu_2, \sigma_2^2)$
     \end{minipage}
-    \paragraph{ES} Manutenzione (n guasti) tagliand
+    \paragraph{ES} Manutenzione (n guasti) tagliand \\[2ex]
+    $H_0 : \mu_a - \mu_b \geq 0 \quad \overline{W} = \frac{1}{5}(-7.5 + 2.5 - 2.5 - 3.5 -1.5) = -2.5$ \\[2ex]
+    $S^2_W = \frac{1}{4}(W_i - \overline{W})^2 = 13$ \\[2ex]
+    $Ts = \frac{\frac{\overline{W}}{S_W}}{\sqrt{n}} = \frac{\frac{-2.5}{\sqrt{13}}}{\sqrt{5}} = 1.55$
+    \[ P_r \{ T_{n-1} \leq Ts \} = \{ T_4 \leq Ts \}\]
+    \paragraph{5) Test sulla varianza}
+    \[ H_0 : \sigma^2 = \sigma^2_0 \quad H_a : \sigma^2 \not = \sigma^2_0 \]
+    \[ \frac{(n-1)}{\sigma^2_0} \sim \mathcal{X}^2_{n-1} \]
+    $Pr \{ \mathcal{X}^2_{1-\frac{\alpha}{2}, n-1} \leq \frac{(n-1) s^2}{\sigma^2_0} \leq \mathcal{X}^2_{\frac{\alpha}{2}, n-1}\} = 1 -\alpha$
+    \paragraph{Uguaglianza di varianza}: \\
+    $X_1 \ldots X_n \qquad Y_1 \ldots Y_n \quad H_0 : \sigma^2_x = \sigma^2_y \qquad H_a : \sigma^2_x \not = \sigma^2_y$ \\[2ex]
+    $\displaystyle S^2_x - S^2_y \quad Ts = \frac{\frac{S^2_x}{\sigma^2_x}}{\frac{S^2_y}{\sigma^2_y}} = \frac{S^2_x}{S^2_y}$ \\[4ex]
+    $\frac{S^2_x}{S^2_y} \sim F_{n-1, m-1} \qquad Pr \{ F_{1-\frac{\alpha}{2}, n-1, m-1} \leq \frac{S^2_x}{S^2_y} \leq - F_{1-\frac{\alpha}{2}, n-1, m-1} \}$ \\
+    \centerline{\textit{Non rifiuto se soddisfa la disuguaglianza}}
+    \paragraph{Test parametro Bernoulli} (Var discrete.) \\
+    $H_0 : p \leq p_0 \quad H_a i p > p_0$ \\[2ex]
+    $p(k) = \binom{n}{k} p^k (1-p)^{n-k} \quad \text{\textit{n campioni (Bernoulli)}}$ \\[4ex]
+    \paragraph{Binomiale $\sim$ Gaussiana} (quando n è grande) \\
+    X n eventi favorevoli \\
+    $\ev{X} = np \qquad Var(X) = np(1-p) \quad \mathcal{N}(np, np(1-p))$
+    \paragraph{Esempio} Difetti di fabbricazione: \\
+    n = 300 $H_o i p \leq p_0 \quad p_0 = 2\%$ \\
+    X = 10 n difetti \\[2ex]
+    $\displaystyle\frac{X-np}{\sqrt{nP_0(1-p_0)}} = \frac{10-300 \cdot 0.02}{\sqrt{300 \cdot 0.02 \cdot 0.98}} = 1.65$
+    \[ Pr \{ z > 1.65 \} = 0.0495 \]
+    \subsection{Modelli previsionali}
+    \subsubsection{Modelli di regressione previsionale}
+    $Y_i = \alpha + \beta x_i + e_i  \qquad e_i \sim \mathcal{N}(0, \sigma^2)$ \\[4ex]
+    Problema $\{ x_i, y_i \}^n_{i=1} \quad \alpha, \beta = ?$ \\[4ex]
+    Sum of square -> SS \\
+    $SS = \sum_{i}^{n} (y_i - \alpha + \beta x_i)^2 \text{\textit{Dove B e A -> var aleatoria}}$ \\[2ex]
+    \begin{equation*}
+        \begin{cases}
+            & \displaystyle\frac{dSS}{dA} = -2 \sum_{i}^{n} (y_i - A - Bx_i) = 0 \\
+            & \displaystyle\frac{dSS}{dB} = -2 \sum_{i}^{n} (y_i - A - Bx_i)^2x_i = 0
+        \end{cases} 
+    \end{equation*}
+    \begin{equation*}
+        \begin{cases}
+            & \displaystyle\sum_{i}^{n} y_i = nA + B \sum_{i}^{} x_i \\
+            & \displaystyle\sum_{i}^{n} x_i y_i = n \sum_{i}^{n} + B \sum_{i}^{n} x_i
+        \end{cases} 
+    \end{equation*}
+    \[ A = \frac{1}{n} \sum_{i}^{} y_i - B\frac{1}{n} \sum_{}^{} x_i = \overline{y} - \beta \overline{x} \]
+    \subsubsection{Regressione lineare}
+    $y = \alpha + \beta x \quad e \sim(0,1) \quad y_i = A + \beta x$ \\[4ex]
+    $\ev{B} = \beta \qquad \ev{A} = \alpha$ \\
+    $Var[B] = \frac{\sigma^2}{\sum_{i}^{}x^2_i - n\overline{x}} \qquad Var[A] = \frac{\sigma^2 \sum_{}^{} x^2_i}{n(\sum_{}^{} x^2_i - n\overline{x}^2)}$ \\[4ex]
+    $SS_R = \sum_{i}^{} (y_i - (A+B x_i))^2 \quad (\text{Somma dei quadrati dei residui})$ \\\\
+    $\frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2}$ \\[4ex]
+    \begin{minipage}{0.45\textwidth}
+        $\ev{\frac{SS_R}{\sigma^2}} = n-2$
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        $\ev{\frac{SS_R}{n-2}} = \sigma^2$
+    \end{minipage}
+    \paragraph{MLE}: \\
+    \[ f_{y_1 \ldots y_n} (y_1 \ldots y_n) = \prod_{i= 1}^{n} \frac{1}{\sqrt{2 \pi} \sigma^2} e^{-\sum_{}^{} (y-(\alpha + \beta x_i0))^2 / 2\sigma^2} \]
+    \centerline{MSE = MLE}
+    \paragraph{Notazione}:
+    \begin{equation}
+        \begin{aligned}
+            & S_{x y}=\sum_i\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)=\ldots=\sum_i x_i y_i-n \bar{x} \bar{y} \\
+            & S_{x x}=\sum_i\left(x_i-\bar{x}\right)^2=\ldots=\sum_i x_i^2-n \bar{x} \\
+            & S_{y y}=\sum_i\left(y_i-\bar{y}\right)^2=\cdots=\sum_i y_i^2-n \bar{y}
+        \end{aligned}
+    \end{equation}
+    \begin{minipage}{0.5\textwidth}
+        $S_{xy}$ (Dispersione di x e y)
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        $S_{xy}$ (Dispersione di x)
+    \end{minipage} \\
+    \centerline{$S_{xy}$ (Dispersione di y)} \\[3ex]
+    \begin{minipage}{0.3\textwidth}
+        $A = \overline{y} - B \overline{x}$
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        $B = \frac{S_{xy}}{S_{xx}}$
+    \end{minipage}
+    \begin{minipage}{0.3\textwidth}
+        $SS_R = \frac{S_{xx} S_{yy} - S_{xy}^2}{S_{xx}}$
+    \end{minipage}
+    \paragraph{Inferenza su $\mathbf{\beta}$}
+    $\frac{B - \beta}{\sqrt{\frac{\sigma^2}{S_{xx}}}} \sim \mathcal{N}(0,1) \qquad \frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2}$
+    \[ \frac{\frac{B - \beta}{\sqrt{\frac{\sigma^2}{S_{xx}}}}}{- \sqrt{\frac{SS_R}{j^2(n-2)}}} \sim t_{2-2} \] \\[4ex]
+    $\displaystyle\sqrt{\frac{(n-2) S_{xx}}{SS_R}} (B- \beta) \sim t_{n-2}$ \\
+    $\beta \in B \pm \sqrt{\frac{SS_R}{(n-2) S_{xx}}} \quad t_{\frac{\alpha}{2}, n-2} \rightarrow \text{Livello di confidenza}$
+    \paragraph{Inferenza su $\mathbf{\alpha}$}
+    $\displaystyle\frac{A - \alpha}{\sqrt{\frac{\sigma^2 \sum_{}^{} x^2_i}{nS_{xx}}}} \sim \mathcal{N}(0,1) \qquad \frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2}$ \\
+    coeffieciente della retta: \\[2ex]
+    $\alpha \in A \pm \frac{SS_R \sum_{}^{} x^2_i}{\sqrt{n(n-2) S_{xx}}} \sim t_{\frac{\alpha}{2}, n-2} \rightarrow \text{Livello di confidenza}$
+    \paragraph{Interferenza su $\alpha + \beta x_0$}: \\[2ex]
+    $\ev{A+Bx_0} = \ev{A} + x_0 \ev{B} = \alpha + \beta x_0$ \\
+    $Var(A+B x_0) = \ldots = \sigma^2[\frac{1}{n} + \frac{(\overline{x} - x_0)^2}{S_{xx}}]$ \\[3ex]
+    \textbf{Distribuzione $A+B x_0$ ?} \\
+    $A+B x_0 \sim \mathcal{N}(\alpha + \beta x_0, \sigma^2 [\frac{1}{n} + \frac{(\overline{x} - x_0)^2}{S_{xx}}])$ \\
+    Stima di $\alpha + \beta x_0$ \\
+    \[ \frac{A + B x_0 - (\alpha + \beta x_0)}{\sqrt{(\frac{1}{n} + \frac{(x_0 - x)^2}{S_{xx}}(\frac{SS_R}{n-2}))}} \sim t_{n-2} \] \\[2ex]
+    \[ \alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{n}, n-2} \sqrt{\frac{1}{n} + \frac{(x_0 - \overline{x})^2}{S_{xx}} (\frac{SS_R}{n-2})} \]
+    \centerline{\textbf{Piccolo} se i punti sono vicini alla media}
 \end{document} 
