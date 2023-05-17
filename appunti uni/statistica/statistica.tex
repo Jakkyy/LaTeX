@@ -492,4 +492,100 @@
     \[ C = \{ (X_1 \ldots n) \cdot \overline{X} - \mu_0 > c \} \]
     \[ P_{r_{\mu_0}} \{ \overline{X} - \mu_0 > c \} = P_r \{ \frac{\overline{X} - \mu_0}{\frac{\sigma}{\sqrt{n}}} > \frac{c}{\frac{\sigma}{\sqrt{n}}}\} = P_{r_{\mu_0}} \{ z > z_a \} = \alpha \] \\[2ex]
     \centerline{Statistica test $\boldsymbol{\frac{\overline{X} - \mu_0}{\frac{\sigma}{\sqrt{n}}} \leq z_\alpha}$ accetto}
+    \subsection{Test di ipotesi}
+    \begin{minipage}{0.2\textwidth}
+        $H_0$ \\[2ex]
+        $\mu = \mu_0$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        $H_a$ \\[2ex]
+        $\mu \not= \mu_0$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        TS \\[2ex]
+        $\frac{\overline{X} - \mu_0}{\sigma / \sqrt{1}}$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        Livello $\alpha$ \\[2ex]
+        Rifiuto $H_0$ \\
+        se $TS > \frac{z\alpha}{2}$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        P - Value \\[2ex]
+        $2P(z \geq |TS|)$
+    \end{minipage}
+    \paragraph{Altre ipotesi}: \\[2ex]
+    \begin{minipage}{0.2\textwidth}
+        $H_0$ \\[2ex]
+        $\mu < \mu_0$ \\
+        $\mu \geq \mu_0$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        $H_a$ \\[2ex]
+        $\mu > \mu_0$ \\
+        $\mu < \mu_0$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        TS \\[2ex]
+        $\frac{\overline{X} - \mu_0}{\sigma / \sqrt{2}}$ \\
+        \textit{//}
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        Livello $\alpha$ \\[2ex]
+        $H_0 \quad z_\alpha > TS$ \\
+        $H_0 \quad z_\alpha < -TS$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        P - Value \\[2ex]
+        $P(z\geq TS)$ \\
+        $P(z \leq TS)$
+    \end{minipage}
+    \subsection{Uguaglianza media di due popolazioni}
+    \begin{minipage}{0.45\textwidth}
+        $X_1 \ldots X_n \sim \mathcal{N}(\mu_1, \sigma_2^2)$ \\
+        $\overline{X} = \frac{1}{n} \sum_{i}^{n} X_i$ \\
+        $S_x^2 = \frac{1}{n - 1} \sum_{i}^{} (X_i - \overline{X})^2$
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        $Y_i \ldots Y_m \sim \mathcal{N} (\mu_2, \sigma_2^2)$ \\
+        $\overline{Y} = \frac{1}{m} \sum_{i}^{m} Y_i$ \\
+        $S_y^2 = \frac{1}{m-1} \sum_{i}^{} (Y_i - \overline{Y})^2$
+    \end{minipage}
+    \[ S_p^2 = \frac{(n-1)S_x^2 + (m-1)S_y^2}{n+m} \]
+    \begin{minipage}{0.2\textwidth}
+        $H_0$ \\[2ex]
+        $\mu_1 = \mu_2$ \\[2ex]
+        $\mu_1 = \mu_2$ \\[2ex]
+        $\mu_1 = \mu_2$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        $H_a$ \\[2ex]
+        $\mu \not =  \mu_2$ \\[2ex]
+        $\mu \not =  \mu_2$ \\[2ex]
+        $\mu \not =  \mu_2$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        TS \\[2ex]
+        $\frac{\overline{X} - \overline{Y}}{\sqrt{\sigma^2_{1/n} + \sigma^2_{2/m}}}$ \\[2ex]
+        $\frac{\overline{X} - \overline{Y}}{\sqrt{S_p^2(\frac{1}{n} + \frac{1}{m})}}$ \\[2ex]
+        $S_i \in \text{T-student}$ 
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        Livello $\alpha$ \\[2ex]
+        rif. $|TS| > z_{\frac{\alpha}{2}}$
+    \end{minipage}
+    \begin{minipage}{0.2\textwidth}
+        P - Value \\[2ex]
+        $2P(z\geq |TS|)$
+    \end{minipage} 
+    \paragraph{4) T-test per coppie di dati}
+    Se $X_1$ e $X_2$ \underline{\textbf{NON}} sono indipendenti \\
+    \begin{minipage}{0.5\textwidth}
+        $W_i = X_i - Y_i$
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        $X_i \sim \mathcal{N}(\mu_1, \sigma_1^2)$ \\
+        $Y_i \sim \mathcal{N}(\mu_2, \sigma_2^2)$
+    \end{minipage}
+    \paragraph{ES} Manutenzione (n guasti) tagliand
 \end{document} 
