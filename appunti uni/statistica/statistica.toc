@@ -69,3 +69,17 @@
 \contentsline {paragraph}{Inferenza su $\mathbf {\beta }$}{27}{section*.46}%
 \contentsline {paragraph}{Inferenza su $\mathbf {\alpha }$}{28}{section*.47}%
 \contentsline {paragraph}{Interferenza su $\alpha + \beta x_0$}{28}{section*.48}%
+\contentsline {subsubsection}{\numberline {3.5.3}Regressione Lineare (e non)}{28}{subsubsection.3.5.3}%
+\contentsline {paragraph}{Inferenza $\alpha + \beta x_0 = \mathbb {E}[y] \rightarrow $}{29}{section*.49}%
+\contentsline {paragraph}{Inferenza $y_0 = y(x_0) \rightarrow $}{29}{section*.50}%
+\contentsline {paragraph}{Coefficiente di determinazione}{29}{section*.51}%
+\contentsline {paragraph}{Definizione:}{29}{section*.52}%
+\contentsline {paragraph}{Formula generica:}{29}{section*.53}%
+\contentsline {paragraph}{Coefficiente di correlazione}{30}{section*.54}%
+\contentsline {paragraph}{Formula generica:}{30}{section*.55}%
+\contentsline {paragraph}{Analisi dei residui}{30}{section*.56}%
+\contentsline {paragraph}{Trasformazione lineare}{30}{section*.57}%
+\contentsline {paragraph}{Rimedio al caso eteroschedastico}{31}{section*.58}%
+\contentsline {paragraph}{AN.O.VA}{32}{section*.59}%
+\contentsline {paragraph}{Esempio}{32}{section*.60}%
+\contentsline {paragraph}{Verifico stimatori}{33}{section*.61}%

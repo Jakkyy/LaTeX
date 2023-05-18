@@ -29,6 +29,7 @@
 
 \newcommand{\ev}{\mathbb{E}[X]}
 \renewcommand{\ev}[1]{\mathbb{E}[#1]}
+\newcommand*{\diff}{\mathop{}\!\mathrm{d}}
 
 \newcommand{\definizione}{\paragraph{Definizione:}}
 \newcommand{\formula}{\paragraph{Formula generica:}}
@@ -688,4 +689,89 @@
     \[ \frac{A + B x_0 - (\alpha + \beta x_0)}{\sqrt{(\frac{1}{n} + \frac{(x_0 - x)^2}{S_{xx}}(\frac{SS_R}{n-2}))}} \sim t_{n-2} \] \\[2ex]
     \[ \alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{n}, n-2} \sqrt{\frac{1}{n} + \frac{(x_0 - \overline{x})^2}{S_{xx}} (\frac{SS_R}{n-2})} \]
     \centerline{\textbf{Piccolo} se i punti sono vicini alla media}
+    \subsubsection{Regressione Lineare (e non)}
+    $\displaystyle \{ x_i, y_i \}^2_{i=1} \leftarrow$ punti stocastici \\
+    \paragraph{Inferenza $\alpha + \beta x_0 = \ev{y} \rightarrow$} non so niente del valore della y in quel punto
+    \centerline{Inferenza $y_0 = y(x_0) \theta$} \\[2ex]
+    $\displaystyle\alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{2}, n-2} \sqrt{(\frac{1}{n} + \frac{(x_0 - \overline{x})^2}{S_{xx}})\frac{SS_R}{n-2}}$ \\
+    $\mathbf{\alpha + \beta x_0} \rightarrow$ Il punto $x_0$ che sta sulla retta $\alpha + \beta x_0$
+    \paragraph{Inferenza $y_0 = y(x_0) \rightarrow$} predittivo
+    \begin{equation*}
+        \begin{aligned}
+            & y \sim \mathcal{N}(\alpha + \beta x_0, \sigma^2) \\
+            & A + B x_0 \sim \mathcal{N}(\alpha + \beta x_0, \sigma^2 (\frac{1}{n} + \frac{(x_0 - \overline{x})^2}{S_{xx}})) \\
+            & y_0 - (A + B x_0) \sim \mathcal{N}(\sigma, \sigma^2 (1 + \frac{1}{n} + \frac{(x_0 - \overline{x})^2}{S_{xx}})) \\
+            & y_0 = y(x_0) = A + B x_0 \pm t_{\frac{\alpha}{2}, n-2} \sqrt{(1 + \frac{1}{n} + \frac{(x_0 - \overline{x})^2}{S_{xx}}) \frac{SS_R}{n-2}}
+        \end{aligned}
+    \end{equation*}
+    \paragraph{Coefficiente di determinazione}
+    \definizione La verifica dei miei valori
+    \formula $S_{yy} = \sum_{i = 1}^{n}(y_i - \overline{y})^2 \rightarrow$ dispersione di y \\
+    La dispersione è data da due fattori:
+    \begin{itemize}
+        \item Retta (regressione)
+        \item Rumore
+    \end{itemize}
+    $\displaystyle SS_R = \sum_{i = 1}^{n}(y_i - (A + B x_i))^2 \rightarrow$ Dipende dalla porzione non spiegata della retta \\
+    Utilizzo coefficienti di determinazione:
+    \[ R^2 = \frac{S_{yy} - SS_R}{S_{yy}} = 1 - \frac{SS_R}{S_{yy}} \quad 0 \leq R^2 \leq 1 \] 
+    Se $\mathbf{R^2 = 1}$ la dispersione è data solo dalla retta \textit{(regressione)} \\
+    Se $\mathbf{R^2 = 0}$ la dispersione è data solo dal \textit{rumore} \\\\
+    \centerline{La retta è migliore più $R^2$ è vicino a \textbf{1}}
+    \paragraph{Coefficiente di correlazione}
+    \formula
+    \[ r = \frac{\sum_{i}^{} (x_i - \overline{x}) (y_i - \overline{y})}{\sqrt{\sum_{i}^{}(x_i - \overline{x})^2 \sum_{i}^{} (y_i - \overline{y})^2}}= \frac{S_{xy}}{\sqrt{S_{xx} S_{yy}}} \]
+    \centerline{$r^2 = \frac{S_{xy}^2}{S_{xx} S_{yy}} = \ldots = 1 - \frac{SS_R}{S_{yy}} \rightarrow $ Dimostrazione matematica di $R^2$}
+    \paragraph{Analisi dei residui} $y-(A + Bx) \rightarrow$ verifico tutti gli errori residui \\
+    \textbf{Per la non linearità}
+    \paragraph{Trasformazione lineare}
+    \[ W(t) = ce^{-dt} \]
+    \centerline{Dove $ce$ e $-dt$ sono \textit{parametri}} \\[3ex]
+    $\log(W(t)) = \log(c) -dt \rightarrow$ Prob. soluzione al non lineare $y = \alpha + \beta x$
+    \paragraph{Rimedio al caso eteroschedastico}: \\
+    $\displaystyle y_i = \alpha + \beta x_i + e_i \qquad e_i \sim \mathcal{N}(0, \sigma^2_i) \rightarrow$ errore in crescita x \\
+    $\displaystyle Var(e_i) = \frac{\sigma^2}{W_i} \sum_{}^{} W_i (y - (A + B x_0))^2$
+    \begin{itemize}
+        \item Regressione lineare multipla
+        \begin{itemize}
+            \item $\mathbf{y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 \ldots \beta_k x_k + e}$
+            \item $min \sum_{i}^{} (y_i - (B_0 + B_1 x_{i1} + B_2 x_{i2} + \ldots + B_k x_{ik}))^2$
+        \end{itemize}
+        \item Regressione (lineare) polinomiale
+        \begin{itemize}
+            \item $y = \beta_0 = \beta_{1} x + \beta_2 x^2 + \ldots + \beta_k x^k + e$
+            \item $\left\{ \underline{x_i}, y_i \right\}^n_{i=1}$
+        \end{itemize}
+    \end{itemize}
+    $\displaystyle\frac{\diff}{\diff B_0} = 0 = \sum_{i}^{} (y_i - 1 - B_1 x_{i1} + B_2 x_{i2} + \ldots + B_k x_{ik})$ \\
+    $\displaystyle\frac{\diff}{\diff B_1} = 0 = \sum_{i}^{} x_{i1} (y_i - B_0 - B_1 x_{i1} + B_2 x_{i2} + \ldots + B_k x_{ik})$ \\[4ex]
+    $x^t x\underline{\beta} = x^t \underline{y} \Longrightarrow \underline{\beta} = (x^x x)^{-1} x^t \underline{y}$ \\
+    \paragraph{AN.O.VA} (analysis of variance) \\
+    Analisi delle varianze / estensione del test di ipotesi sulle medie
+    \paragraph{Esempio} voti medi degli anni scolastici \\[2ex]
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Anno.} \\
+        2020-2021 lockdown \\
+        2021-2022 lockdown parziale \\
+        2022-2023 presenza
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Voti medi.} \\
+        $\mu_a$ \\
+        $\mu_b$ \\
+        $\mu_c$
+    \end{minipage} \\[2ex]
+    $H_0 : \mu_a = \mu_b = \mu_c$ \\[3ex]
+    \textbf{1) stimatore di $\sigma^2$:} \\
+    \[ \sum_{i=1}^{} \sum_{j}^{} \frac{(x_{ij} - \ev{x_{ij}})^2}{\sigma^2} = \sum_{i=1}^{} \sum_{j=1}^{} \frac{(x_{ij} - \mu_i)^2}{\sigma^2} \sim \mathcal{X}^2_{m\cdot n} \]
+    \[ SS_W = \sum_{i=1}^{} \sum_{j=1}^{} \frac{(x_{ij} - x_{i*})^2}{\sigma^2} \sim \mathcal{X}^2_{m \cdot n - m} \]
+    $\ev{\frac{SS_w}{\sigma^2}} = n \cdot m - m$ \\[2ex]
+    $\ev{\frac{SS_w}{nm - m}} = \sigma^2 \quad$ stimatore 1 \\[4ex]
+    \textbf{2) stimatore di $\sigma^2$ supponendo $\mu_1 = \mu_2 = \mu_3 = \ldots = \mu_m = \mu$}
+    \[ n \sum_{i=1}^{m} \frac{(x_{i*} - \mu)^2}{\sigma^2} \sim \mathcal{X}^2_m \qquad x_{**} = \frac{\sum_{i=1}^{m} \sum_{i=1}^{n} x_{ij}}{m \cdot n} \]
+    $SS_b = n \sum_{i = 1}^{m} (x_{i*} - x_{**})^2 \sim \mathcal{X}^2_{m-1}$ \\
+    $\ev{\frac{SS_b}{m-1}} = \sigma^2 \rightarrow$ Stimatore 2
+    \paragraph{Verifico stimatori}:
+    \[ Ts = \frac{SS_b / m-1}{SS_W / nm - m} \rightarrow \text{intorno a 1 va bene}\]
+    \textbf{F Distribution:} $F_{m-1}, mn - m, \alpha$
 \end{document} 
