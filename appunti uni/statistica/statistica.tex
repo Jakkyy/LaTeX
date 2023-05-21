@@ -38,15 +38,24 @@
 
 \begin{document}
     \tableofcontents
-    \newpage
-    
+    \newpage 
     \section{Introduzione}
-    $X_1 = 1.7$ \\
-    $X_2 = 1.82$ \\
-    $X_3 = 1.73$\\
-    $X_4 = 1.7$\\
-    $X_5 = 1.8$ \\
-    $\hat{\theta}? \quad \text{Altezza della popolazione}$
+    In probabilità quello che facciamo noi è quello di supporre che le nostre distribuzioni siano \textbf{note}. \\
+    in statistica facciamo il contrario, ossia dire qualcosa (anche detto \textit{fare dell'inferenza}) su \textbf{parametri sconosciuti}. \\
+    Dato che i parametri sono sconosciuti il massimo che possiamo fare è quello di ottenere \textit{una stima} dei parametri \textit{incogniti}. \\[2ex]
+    Codesti signorini sono chiamati \textbf{stimatori puntuali} e sono indicati con il simbolo $\boldsymbol{\hat{\theta}}$ (in questo caso stiamo parlando di uno stimatore del parametro incognito $\boldsymbol{\theta}$) \\[2ex]
+    Esisono anche gli \textit{stimatori non puntuali}, noti come \textbf{intervalli di confidenza}, ossia un intervallo di valori in cui può essere contenuto il \textit{dato incognito}.
+
+    \paragraph{Esempio} $\hat{\theta}? \quad \text{Altezza della popolazione}$ \\[2ex]
+    \begin{minipage}{0.49\textwidth}
+        $X_1 = 1.7$ \\
+        $X_2 = 1.82$ \\
+        $X_3 = 1.73$
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        $X_4 = 1.7$ \\
+        $X_5 = 1.8$ \\
+    \end{minipage}
     \paragraph{Possibile soluzione}: 
     \[ \hat{\theta_a} = \frac{1}{n} \sum_{4}^{5} x_i = \frac{1.7 + 1.82 + 1.73 + 1.7 + 1.8}{5} = \frac{8.75}{5} = 1.75 \]
     \[ \hat{\theta_b} = \frac{min(x_i) + \max(x_i)}{2} = \frac{3.52}{2} = 1.76 \]
@@ -774,4 +783,62 @@
     \paragraph{Verifico stimatori}:
     \[ Ts = \frac{SS_b / m-1}{SS_W / nm - m} \rightarrow \text{intorno a 1 va bene}\]
     \textbf{F Distribution:} $F_{m-1}, mn - m, \alpha$
+    \paragraph{ANOVA}: \\
+    Se i gruppi sono uguali : $n $ camp = $n \cdot m$ \\
+    Se sono diversi : $n $ camp = $\sum_{i}^{} n_i$
+    \paragraph{Life testing} (Misura di affidabilità) \\
+    $x \geq 0 \rvert$ \textit{tempo di vita} $\qquad \lambda(t) = \frac{f(t)}{1- F(t)}$ \\
+    $f(t) = \text{Densità di popolazione}$ \\
+    $\lambda(t) = \text{Intensità di rottura (failure rate)}$
+    \begin{equation*}
+        \begin{split}
+            P(x \in (t, t + \triangle t) \rvert x > t) &= \frac{P(x \in (t, t + \triangle t), x > t)}{P(x > t)} \\
+            &= \frac{P(x \in (t, t + \triangle t))}{P(x > t)} \\
+            &\approx \frac{F(t) \triangle t}{1-F(t)}
+        \end{split}
+    \end{equation*}
+    \paragraph{Intensità di rottura} 
+    \definizione Densità condizionale di probabilità che un oggetto funzionante almeno fino a t si guasti "subito dopo"
+    \formula \[ \lambda(t) = \frac{F(t)}{1 - F(t)} \] 
+    Se la distribuzione è esponenziale:
+    \[ \lambda(t) = \frac{\lambda e^{-\lambda t}}{1 - 1 + e^{-\lambda t}} = \lambda \rightarrow \text{dove $\lambda$ è una costante}\]
+    \paragraph{Proprietà} $\lambda(t) \Rightarrow F(t)$
+    \[ \lambda(s) = \frac{f(s)}{1 - F(s)} = \frac{F'(s)}{1 - F(s)} = \frac{d}{dS} [ - \log (1 - F(s))] \]
+    \[ \int_{0}^{t} \lambda(s) = -\log (1-F(s)) + \log (1- F(s)) = 1 - F(t) = e^{-\int_{0}^{t} \lambda(s) ds}\]
+    \paragraph{Esempio} Tasso di mortalità di un fumatore ($\mathbf{\lambda_s}$) e di un \underline{non} fumatore ($\mathbf{\lambda_n}$)
+    \[ \lambda_s(t) = 2 \lambda_n (t) \]
+    \begin{equation*}
+        \begin{split}
+            &= P(\text{Non fumatore di età \textbf{A} vive fino a \textbf{B}}) \\
+            &=P(\text{Non fumatore vive fino a \textbf{B} | è vissuto fino \textbf{A}}) \\
+            &= \frac{P(\text{Non fumatore viva fino a \textbf{B}})}{P(\text{Non fumatore viva fino a \textbf{A}})} \\
+            &= \frac{1 - F_N(B)}{1 - F_N(A)} \\
+            &= \frac{e^{-\int_{0}^{B} \lambda (t) \, dt}}{e^{-\int_{0}^{A} \lambda(t) \, dt}}
+        \end{split}
+    \end{equation*} \\[2ex]
+    Quindi: \\
+    $\displaystyle P(\text{Non fumatore di eta \textbf{A} vive fino a \textbf{B}}) = e^{-\int_{A}^{B} \lambda(t) \, dt}$ \\[3ex]
+    Per i non fumatori invece: \\
+    $\displaystyle P(\text{Fumatore di eta \textbf{A} vive fino a \textbf{B}}) = e^{-\int_{A}^{B} \lambda(t) \, dt} = Ps$ \\[2ex]
+    Dove $Ps = (Pn)^2 \rightarrow$ quindi la probabilità di soppravivenza del fumatore è uguale alla probabilità di soppravivenza del non fumatore \textit{al quadrato}
+    \paragraph{Probabilità} che un non fumatore arrivi ai 60 anni sapendo che è arrivato ai 50: \\
+    \[ \lambda_N(t) = \frac{1}{20} \qquad 50 \leq t \leq 60 \]
+    $ P_N = e^{-\int_{50}^{60} \frac{1}{20} \, dt } = e^{-\frac{1}{20}(60-50)} = e^{-\frac{1}{2}} \approx 0.607 \approx 61\%$ \\
+    $P_\leq (e^{-\frac{1}{2}})^2 = e^{-1} \approx 0.368 \approx 37\%$
+    \paragraph{Stima di affidabilità} N oggetti che si possono guastare \textit{indipendenti} tra di loro \\
+    Tempi di vita: $\lambda e^{-\lambda t} \qquad \lambda = \frac{1}{\theta} \Rightarrow \frac{1}{\theta} e^{-\frac{t}{\theta}}$ \\[2ex]
+    \textbf{Dati a disposizione}: $x_1 \leq x_2 \leq x_3 \leq x_4 = r \quad i_1 = 2, i_2 = 3, i_3 = n, i_4 = 1$ \\[2ex]
+    Studio la variabile aleatoria $X_i$, $i_j$ indica quale \textit{oggetto si è guastato} per j-esimo all'istante $x_j$ \\[3ex]
+    (n-r) non si sono guastati $\Rightarrow$ per questi $X_i > x_r$
+    \[ f x_1, x_2 \ldots x_r (x_1, x_2, \ldots, x_r) = \prod_{j}^{r} \frac{1}{\theta} e^{-\frac{x_j}{\theta}} = \frac{1}{\theta^r} e^{-\frac{\sum_{j}^{} x_j}{\theta}}\]
+    Ora per i non guasti:
+    \[ P\left(X_j > x_j \text{ con } j \not \in \{ i_1, \ldots, i_r \}\right) = \prod_{r+1}^{n} (1-F_{X_j} (x_r)) = \left[ 1- (1- e^{\frac{-x_r}{\theta}}) \right] \]
+    \begin{equation*}
+        \begin{aligned}
+            & \log L = -r \log\theta - \frac{1}{\theta} \left[\sum_{i}^{r} x_i + (n-r) x_r \right] \\
+            & \frac{d \log}{d \theta} = - \frac{r}{\theta} + \frac{1}{\theta^2} \left[ \sum_{i}^{r} x_i + (n-r) x_r \right] = 0 \\
+            & -\theta r + \left[ \sum_{i}^{r} x_i + (n-r) x_r \right] = 0 \\
+            & \hat{\theta} = \frac{\sum_{i}^{r} x_i + (n-r) x_r}{r} = \frac{t}{r} = \frac{TTT}{r} \rightarrow \text{Total Time Test}
+        \end{aligned}
+    \end{equation*}
 \end{document} 
