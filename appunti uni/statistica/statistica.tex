@@ -42,7 +42,7 @@
     \section{Introduzione}
     In probabilità quello che facciamo noi è quello di supporre che le nostre distribuzioni siano \textbf{note}. \\
     in statistica facciamo il contrario, ossia dire qualcosa (anche detto \textit{fare dell'inferenza}) su \textbf{parametri sconosciuti}. \\
-    Dato che i parametri sono sconosciuti il massimo che possiamo fare è quello di ottenere \textit{una stima} dei parametri \textit{incogniti}. \\[2ex]
+    Dato che i parametri sono scimage.pngonosciuti il massimo che possiamo fare è quello di ottenere \textit{una stima} dei parametri \textit{incogniti}. \\[2ex]
     Codesti signorini sono chiamati \textbf{stimatori puntuali} e sono indicati con il simbolo $\boldsymbol{\hat{\theta}}$ (in questo caso stiamo parlando di uno stimatore del parametro incognito $\boldsymbol{\theta}$) \\[2ex]
     Esisono anche gli \textit{stimatori non puntuali}, noti come \textbf{intervalli di confidenza}, ossia un intervallo di valori in cui può essere contenuto il \textit{dato incognito}.
     \paragraph{Esempio} $\hat{\theta}? \quad \text{Altezza della popolazione}$ \\[2ex]
@@ -134,10 +134,127 @@
     \[ \log f(x_1, x_2, \ldots, x_n \rvert \mu, \sigma) = - \frac{n}{2} \log(2\pi) - n \log \sigma - \frac{1}{2\sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \]
     La risoluzione (che lasciamo al libro) ci porta alle formule per le stime:
     \[ \hat{\mu} = \frac{1}{n} \sum_{i = 1}^{n} x_1 \]
-    \[ \hat{\sigma} = \left\{ \frac{1}{n} \sum_{i = 1}^{n}(x_i - \hat{\mu})^2 \right\}^{1/2} \]
+    \[ \hat{\sigma} = \sqrt{\frac{1}{n} \sum_{i = 1}^{n}(x_i - \hat{\mu})^2 } \]
     TODO TEORIA DEL LIMITE CENTRALE
     \section{Intervalli di confidenza}
+    \subsection{$\mu$ incognita e varianza  $\sigma^2$ nota}
     Sia $\boldsymbol{X_1, X_2, \ldots, X_n}$ un campione di una popolazione normale con $\mu$ \textit{incognita} e varianza $\sigma^2$ \textit{nota}
+    \[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
+    Chiedo aiuto alla regia, non so cosa stia sta roba ma comunque:
+    \[ P \left( \overline{X} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \overline{X} + 1.96 \frac{\sigma}{\sqrt{n}} \approx 0.95 \right) \]
+    Il 95\% circa delle volte $\mu$ starà a una distanza non superiore a 1.96 $\sigma / \sqrt{n}$ dalla
+    media aritmetica dei dati. Se osserviamo il campione, e registriamo che $\overline{X} = \overline{x}$,
+    allora possiamo dire che "con il 95\% di confidenza"
+    \[ \left( \overline{x} - 1.96 \frac{\sigma}{\sqrt{n}}, \overline{x} + 1.96 \frac{\sigma}{\sqrt{n}} \right) \]
+    \centerline{Questo intervallo è detto \textit{intervallo di confidenza} ad un livello del 95\%}
+    \paragraph{Esempio} segnale elettrico di valore $\mu$ \\
+    i valori registrati sono i seguenti: 5 8.5 12 15 7 9 7.5 6.5 10.5 \\
+    Otteniamo $\boldsymbol{\overline{x}}$:
+    \[ \overline{x} = \frac{81}{9} = 9 \]
+    Un intervallo di confidenza al 95\% per $\mu$ è
+    \[ \left( 9 - 1.96 \frac{2}{3}, \quad 9 + 1.96 \frac{2}{3}\right) = (7.69, 10.31) \]
+    \centerline{Otteniamo quindi il 95\% di fiducia che il messaggio fosse \textbf{compreso} tra 7.69 e 10.31}
+    \begin{figure}[H]
+        \caption{TODO CAPIRE CHE SFACCIMM è STA ROBA}
+        \includegraphics[width=\textwidth]{images/boh.png}
+    \end{figure}
+    \subsection{$\mu$ incognita e varianza  $\sigma^2$ incognita}
+    Dato che tutti i nostri parametri sono ignoti, non possiamo basarci sul fatto che $\sqrt{n}(\overline{X} - \mu) / \sigma$ è una \textit{normale standard}, dobbiamo quindi ricorrere a una varianza campionaria come segue:
+    \[ S^2 := \frac{1}{n-1} \sum_{i}^{} (X_i - \overline{X})^2 \longrightarrow \frac{\overline{X} - \mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}\]
+    \centerline{Alla fine otteniamo una variabile aleatoria di tipo $t$ con n-1 gradi di libertà}
+    \paragraph{Per Bilaterale}
+    \[ P \left\{ \overline{X} - t_{\frac{\alpha}{2}, n-1} \frac{S}{\sqrt{n}} < \mu < \overline{X} + t_{\frac{\alpha}{2}, n_1} \frac{S}{\sqrt{n}} \right\} = 1 - \alpha \]
+    \paragraph{Per Unilaterale}
+    \[ P \left(  \overline{X} - t_{\frac{\alpha}{2}, n-1} \frac{\sigma}{\sqrt{n}} < \mu \right) / P \left( \mu < \overline{X} + t_{\frac{\alpha}{2}, n_1} \frac{\sigma}{\sqrt{n}}\right) = 1 - \alpha  \]
+    \subsection{Metodo Montecarlo}
+    supponendo di avere una funzione $f$ da $\mathbb{R}^r$ in $\mathbb{R}$ e vogliamo stimare la quantità $\theta$:
+    \[ \theta := \int_{0}^{1} \int_{0}^{1} \cdots \int_{0}^{1} f(y_1, y_2, \ldots, y_n) \, dy_1 \, dy_2 \ldots \, dy_n \]
+    Possiamo notare che $U_1, U_2, \ldots, U_r$ sono var. al. \textit{uniformi} su 0,1 quindi:
+    \[ \ev{f(U_1, U_2, \ldots, U_r)} = \theta \]
+    Se produciamo un numero casuale distribuito come la funzione e lo ripetiamo $n$ volte, possiamo stimare $\boldsymbol{\theta}$
+    \[ \hat{\theta} = \frac{1}{n} \sum_{i = 1}^{n} X_i \]
+    \paragraph{Esempio} pensiamo alla stima di questo integrale:
+    \[ \theta := \int_{0}^{1} \sqrt{1 - y^2} \, dy = \ev{\sqrt{1-U^2}} \]
+    Se $\boldsymbol{U_1, U_2, \ldots, U_{100}}$ sono variabili aleatorie con tale distribuzione e \textit{indipendenti} ponendo 
+    \[ X_i := \sqrt{1-U^2_i} \qquad i = 1,2, \ldots, 100 \]
+    Otteniamo un campione di \textbf{100} variabili aleatorie di media $\theta$. Calcoliamo ora la \textit{media campionaria}:
+    \[ \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} X_1 = 0.786 \]
+    e successivamente la \textit{deviazione standard campionaria}:
+    \[ S = 0.23 \]
+    dato che $t_{0.025, 99} \approx 1.985$ otteniamo che un intervallo di confidenza al 95\% per $\theta$ è il seguente:
+    \[ 0.786 \pm 1.985 \cdot 0.023 \]
+    \centerline{Quindi il valore è compreso tra 0.740 e 0.832}
+    \section{Intervalli di predizione}
+    \subsection{$\mu$ incognita e varianza $\sigma^2$ incognita}
+    Supponiamo che $X_1, X_2, \ldots, X_n, X_{n+1}$ sia un campione normale di media $\mu$ e varianza $\sigma^2$ entrambe \textit{incognite}
+    \[ \mu = \overline{X}_n = \frac{1}{n} \sum_{i = 1}^{n} X_i \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})  \]
+    \paragraph{Per la riproducibilità}
+    \[ X_{n+1} - \overline{X}_n \sim \mathcal{N}(0, \sigma^2 + \frac{\sigma^2}{n}) \longrightarrow \frac{X_{n+1} - \overline{X}_n}{\sigma \sqrt{1+1 /n}} \]
+    Dato che $\sigma$ è incognita dobbiamo sostituirla col suo stimatore (scegliendo la \textit{deviazione standard campionaria} quindi poniamo:
+    \[ S^2_n := \frac{1}{n -1} \sum_{i= 1}^{n} (X_i - \overline{X}_n)^2 \]
+    Questa grandezza è \textit{indipendente} da $\overline{X}_n$ quindi otteniamo
+    \[ \frac{X_{n+1} - \overline{X}_n}{S_n \sqrt{1+1/n}} \sim t_n - 1 \]
+    \paragraph{Esempio} prendiamo in campione i valori rilevati da un contapassi negli ultimi 7 giorni \\
+    Dataset: 6822 5333 7420 6252 7005 6752 \\
+    Si trovi l'intervallo di predizione al 95\% di confidenza \\
+    \textbf{Risoluzione:} le statistiche del campione sono:
+    \[ \overline{X}_7 \approx 6716.57 \qquad \qquad S_7 \approx 733.97 \]
+    Dalle tabelle ricaviamo che $t_{0.025,6} \approx 2.447$ (+ altri passaggi) concludiamo col dire che il 95\% di confidenza che $X_8$ cadrà nell'intervallo [4796, 8637]
+    \subsection{Intervalli do confidenza per la varianza} 
+    Se $X_1, X_2, \ldots, X_n$ è un campione di una distribuzione \textit{normale} con parametri $\mu$ $\sigma^2$ \textbf{incogniti} ci possiamo basare sul fatto che
+    \formula \[ (n-1) \frac{S^2}{\sigma^2} \sim \mathcal{X}^2_{n-1}  \]
+    \paragraph{Per caso Bilaterale}:
+    \begin{equation}
+        \left(\frac{(n-1) s^2}{\chi_{\frac{\alpha}{2}, n-1}^2}, \quad \frac{(n-1) s^2}{\chi_{1-\frac{\alpha}{2}, n-1}^2}\right)
+    \end{equation}
+    \paragraph{Per caso Unilaterale}:
+    \begin{equation}
+        P \left( 0 < \sigma^2  < \frac{(n-1)S^2}{\mathcal{X}^2_{1-\alpha, n-1}}\right) / P \left( \frac{(n-1)S^2}{\mathcal{X}^2_{\alpha, n-1}} < \sigma^2 \right)
+    \end{equation}
+    \subsection{Stime per la differenza tra le medie di due popolazioni normali}
+    Siano $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2, \ldots, Y_m$ due campioni normali e differenti e denotiamo con $\mu_1$ e $\sigma^2_1$ e con $\mu_2$ e $\sigma^2_2$ \\
+    $\boldsymbol{\overline{X} - \overline{Y}}$ è lo stimatore di massima verosomiglianza $\mu_1 - \mu_2$
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_2.png}
+    \end{figure}
+    Per ottenere uno \textit{stimatore non puntuale}, dobbiamo conoscere la distribuzione di $\overline{X} - \overline{Y}$ poiche:
+    \[ \overline{X} \sim \mathcal{N} \left( \mu_1, \frac{\sigma^2_1}{n} \right)  \qquad e \qquad \overline{Y} \sim \mathcal{N}\left( \mu_2, \frac{\sigma^2_2}{m} \right) \]
+    Possiamo dedurre che:
+    \[ \overline{X} - \overline{Y} \sim \mathcal{N}\left( \mu_1 - \mu_2, \frac{\sigma^2_1}{n} + \frac{\sigma^2_2}{m} \right) \]
+    Ipotizzando di conoscere $\sigma^2_1$ e $\sigma^2_2$ abbiamo che:
+    \[ \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\sigma^2_1 / n + \sigma^2_2 / m}} \sim \mathcal{N}(0,1) \]
+    e possiamo dedurre, con i passaggi che ci sono ormai familiari, che
+    \paragraph{Per caso Bilaterale}
+    $$
+    \begin{aligned}
+    1-\alpha & =P\left(-z_{\frac{\alpha}{2}}<\frac{\overline{X}-\overline{Y}-\left(\mu_1-\mu_2\right)}{\sqrt{\sigma_1^2 / n+\sigma_2^2 / m}}<z_{\frac{\alpha}{2}}\right) \\
+    & =P\left(\overline{X}-\overline{Y}-z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_2^2}{m}}<\mu_1-\mu_2<\overline{X}-\overline{Y}+z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_2^2}{m}}\right)
+    \end{aligned}
+    $$
+    \paragraph{Per caso Unilaterale}
+    $$
+    \begin{aligned}
+    1 - \alpha &= P\left( \overline{X} - \overline{Y} - z_{\alpha} \sqrt{\frac{\sigma^2_1}{n} + \frac{\sigma^2_2}{m} < \mu_1 - \mu_2} \right) / P \\
+    &= \left( \mu_1 - \mu_2 < \overline{X} - \overline{Y} - z_{\alpha} \sqrt{\frac{\sigma^2_2}{n} + \frac{\sigma^2_2}{m}} \right)\\
+    \end{aligned}
+    $$
+    \section{Intervalli di confidenza}
+    \subsection{Intervalli approssimati per Bernoulli}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
