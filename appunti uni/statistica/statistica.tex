@@ -45,7 +45,6 @@
     Dato che i parametri sono sconosciuti il massimo che possiamo fare è quello di ottenere \textit{una stima} dei parametri \textit{incogniti}. \\[2ex]
     Codesti signorini sono chiamati \textbf{stimatori puntuali} e sono indicati con il simbolo $\boldsymbol{\hat{\theta}}$ (in questo caso stiamo parlando di uno stimatore del parametro incognito $\boldsymbol{\theta}$) \\[2ex]
     Esisono anche gli \textit{stimatori non puntuali}, noti come \textbf{intervalli di confidenza}, ossia un intervallo di valori in cui può essere contenuto il \textit{dato incognito}.
-
     \paragraph{Esempio} $\hat{\theta}? \quad \text{Altezza della popolazione}$ \\[2ex]
     \begin{minipage}{0.49\textwidth}
         $X_1 = 1.7$ \\
@@ -61,6 +60,12 @@
     \[ \hat{\theta_b} = \frac{min(x_i) + \max(x_i)}{2} = \frac{3.52}{2} = 1.76 \]
     \[ \hat{\theta_c} = \frac{1}{3} \sum_{2}^{4} x_i = \frac{1}{3} (1.8 + 1.73 + 1.7) = \frac{5.23}{3} = 1.743 \]
     \centerline{Scartiamo il più \textit{piccolo} e il \textit{massimo}, calcolando poi la \textbf{media} dei rimanenti}
+    \section{MLE}
+    \definizione Stima a Massima Verosomiglianza (Maximum Likelihood Estimation) \\
+    Questa classe di stimatori sono molto usati in statistica, servono per determinare i migliori parametri del modello che si adattano ai dati e comparare molteplici modelli per \textit{determinare} quello che si adatta di più ai dati. \\
+    Ad esempio la stima di massima verosomiglianza $\hat{\theta}$ è definita come il valore di $\theta$ che rende massima $\boldsymbol{f(x_1, x_2, \ldots, x_n \rvert \theta)} \rightarrow$ anche detta \textit{funziona di likelihood} \\[2ex]
+    \textbf{Likelihood}: avendo dei dati quale è la probabilità che un certo modello descriva al meglio la natura dei nostri dati
+    \[ \hat{\theta} = argmax L(\theta) = argmax[f(X_1 \ldots X_n / \theta )] \]
     \paragraph{Stima parametrica}(Point) Parametric Estimation \\ \\
     \underline{Ipotesi}:
     - Esiste un parametro $\theta$ incognito $n$ dati a disposizione $\{X_1, X_2, X_n\}$ \\
@@ -68,25 +73,75 @@
     \formula Bayes
     \[ P(\theta / X_1 \ldots X_n) = \frac{P(X_1 \ldots X_n / \theta) P(\theta)}{P(X_1 \ldots X_n)} \]
     \centerline{Verosomiglianza (likelihood)}
-    \paragraph{MLE} Maximum Likelihood Estimation (Stima a Massima Verosomiglianza)
-    \[ \hat{\theta} = argmax L(\theta) = argmax[f(X_1 \ldots X_n / \theta )] \]
-    \paragraph{Esempio} (Legge -> Distribuzione di Poisson)
-    \begin{equation*}
-        \begin{split}
-            f(X_1, X_2 \ldots X_n / \theta) &= f(X_1 / \theta) \cdot f(X_2 / \theta) \ldots f(X_n / \theta) \\
-            &= \frac{1}{\theta} e^{-\frac{X_1}{\theta}} \cdot \frac{1}{\theta} e^{-\frac{X_2}{\theta}} \cdot \ldots \frac{1}{\theta} e^{-\frac{X_n}{\theta}} \\
-            &= \frac{1}{\theta n} e^{-\frac{1}{\theta} \sum_{i}^{} X_i }
-        \end{split}
-    \end{equation*}
-    \paragraph{Esempio} (MLE Ipotesi di Bernoulli)
+    \subsection{MLE di una Bernoulliana}
+    Vengono realizzate \textit{n} prove indipendenti con probabilità $p$ di successo
     \begin{equation*}
         X_i =
         \begin{cases}
-            0 \\
-            1
+            1 & \text{se la prova i-esima ha successo} \\
+            0 & \text{altrimenti}
         \end{cases}
     \end{equation*}
+    La distribuzione dell $X_i$ è la seguente:
+    \[ P(X_i = k) = p^k (1-p)^{1-k}, \qquad k \in \{0,1\} \]
+    La likelihood (ossia la \textit{funzione di massa congiunta}) è:
+    \begin{equation*}
+        \begin{split}
+            f(x_1, x_2, \ldots, x_n \rvert p) &:= P(X_1 = x_1, X_2 = x_2, \ldots X_n = x_n \rvert p) \\
+            &= p^{x1}(1-p)^{1-x1} \ldots p^{x_n}(1-p)^{1-x_n} \\
+            &= p^{\sum_{i}^{} x_1}(1-p)^{n- \sum_{i}^{} x_1} \qquad x_1 = 0,1 \qquad i = 1, \ldots, n
+        \end{split}
+    \end{equation*}
+    Possiamo derivare rispetto a $p$:
+    \[ \frac{d}{dp} \log f(x_1, x_2, \ldots, x_n \rvert p) = \frac{1}{p} \sum_{i = 1}^{n} x_i - \frac{1}{1- p} \left(n-\sum_{i = 1}^{n} x_1 \right) \]
+    Da questo bro possiamo ottenere un'espressione per la stima $\boldsymbol{\hat{p}}$:
+    \[ \hat{p} = \frac{1}{n} \sum_{i = 1}^{n} x_i \]
+    \subsection{MLE di una Poisson}
+    La funzione di \textit{likelihood} è data da:
+    \begin{equation*}
+        \begin{split}
+            f(x_1, x_2 \ldots x_n / \lambda) &= \frac{\lambda^{x_1} e^{-y}}{x_1!} \ldots \frac{\lambda^{x_n} e^{-\lambda}}{x_n!} \\
+            &= \frac{\lambda^{\sum_{i}^{} x_i} e^{-\lambda}}{x_1 ! \ldots x_n !} \\
+        \end{split}
+    \end{equation*}
+    Come sempre deriviamo e otteniamo:
+    \[ \frac{d}{d\lambda} \log f(x_1, x_2, \ldots, x_n \rvert \lambda) = \frac{1}{\lambda} \sum_{i = 1}^{n} x_i - n \]
+    Da questo bro possiamo ottenere un'espressione per la stima $\hat{\lambda}$:
+    \[ \hat{\lambda} = \frac{1}{n} \sum_{i = 1}^{n} x_1 \]
+    La stessa formula può essere applicata al campione $X_1, X_2, \ldots, X_n$:
     \[ P\{X_i = 1\} = 1 - P\{X_i = 0\} \]
+    \paragraph{Esempio} Numero di incidenti stradali in 10 giornate senza pioggia \\
+    Dataset: \{ 4 0 6 5 2 1 2 0 4 3 \} \\
+    Si vuole stimare per quell'anno la frazione di giornate senza pioggia con \textit{2 incidenti o meno}
+    \[ \overline{X} = \frac{1}{10} \sum_{i = 1}^{10} X_i = \boldsymbol{2.7} \]
+    Cosi otteniamo che la media della poissoniana è 2.7, la stima desiderata è data da:
+    \[ (1+2.7+ (2.7)^2 /2 ) e^{-2.7} \approx 0.4936 \]
+    \subsection{MLE distribuzione Uniforme}
+    \begin{equation*}
+        f(X_1, \ldots X_n \rvert \theta) =
+        \begin{cases}
+            \frac{1}{\theta} & 0 < x_1 < \theta \\
+            0 & \text{altrimenti}
+        \end{cases}
+    \end{equation*}
+    La formula per la stima di $\theta$
+    \[ \hat{\theta} = \max \{ X_1, \ldots, X_n \} \]
+    \subsection{MLE distribuzione Normale} 
+    \definizione La distribuzione normale ha media $\mu$ e dev. st. $\sigma$ \textbf{incognite} \\
+    La densità congiunta (la likelihood) è data da:
+    \[ f(x_1, x_2, \ldots, x_n \rvert \mu, \sigma) = \prod_{i= 1}^{n} \frac{1}{\sqrt{2 \mu \sigma}} \exp \left \{ - \frac{(x_1-\mu)^2}{2 \sigma^2} \right \} \]
+    La log-likelihood (metodo semplificato per migliorarci la vita che è già una merda) è data da:
+    \[ \log f(x_1, x_2, \ldots, x_n \rvert \mu, \sigma) = - \frac{n}{2} \log(2\pi) - n \log \sigma - \frac{1}{2\sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \]
+    La risoluzione (che lasciamo al libro) ci porta alle formule per le stime:
+    \[ \hat{\mu} = \frac{1}{n} \sum_{i = 1}^{n} x_1 \]
+    \[ \hat{\sigma} = \left\{ \frac{1}{n} \sum_{i = 1}^{n}(x_i - \hat{\mu})^2 \right\}^{1/2} \]
+    TODO TEORIA DEL LIMITE CENTRALE
+    \section{Intervalli di confidenza}
+    Sia $\boldsymbol{X_1, X_2, \ldots, X_n}$ un campione di una popolazione normale con $\mu$ \textit{incognita} e varianza $\sigma^2$ \textit{nota}
+
+
+
+
     \[ P\{X_i = x\} = P^x (1-P)^x \quad x \in \{0, 1\} \]
     \centerline{Dove \textbf{X} è una \textit{variabile aleatoria} e \textbf{x} una \textit{variabile sperimentale} }
     \[ f(x_1 \ldots x_n / P) = P^{x_1} (1-P)^{1-x_1} \cdot P^{x_2} (1-P)^{1-x_2} \ldots P^{x_n} (1-P)^{1-x_n} = \]

@@ -1,95 +1,101 @@
-\contentsline {section}{\numberline {1}Introduzione}{2}{section.1}%
-\contentsline {paragraph}{Esempio}{2}{section*.2}%
-\contentsline {paragraph}{Possibile soluzione}{2}{section*.3}%
-\contentsline {paragraph}{Stima parametrica}{3}{section*.4}%
-\contentsline {paragraph}{Formula generica:}{3}{section*.5}%
-\contentsline {paragraph}{MLE}{3}{section*.6}%
-\contentsline {paragraph}{Esempio}{3}{section*.7}%
-\contentsline {paragraph}{Esempio}{3}{section*.8}%
-\contentsline {paragraph}{Esercizio 1}{4}{section*.9}%
-\contentsline {paragraph}{Esercizio 2}{4}{section*.10}%
-\contentsline {paragraph}{MLE POISSON}{5}{section*.11}%
-\contentsline {paragraph}{Formula generica:}{5}{section*.12}%
-\contentsline {paragraph}{Esercizio 3}{5}{section*.13}%
-\contentsline {paragraph}{MLE UNIFORME}{5}{section*.14}%
-\contentsline {paragraph}{MLE GAUSSIANA}{6}{section*.15}%
-\contentsline {paragraph}{Esercizio}{6}{section*.16}%
-\contentsline {paragraph}{Intervalli di confidenza}{6}{section*.17}%
-\contentsline {paragraph}{Intervalli di confidenza}{7}{section*.18}%
-\contentsline {paragraph}{Esempio:}{7}{section*.19}%
-\contentsline {paragraph}{In generale}{7}{section*.20}%
-\contentsline {subsection}{\numberline {1.1}Intervalli di confidenza (Bilaterali)}{8}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Intervalli di confidenza (Unilaterali)}{9}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Esempio:}{9}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Intervallo di confidenza}{10}{subsection.1.4}%
-\contentsline {paragraph}{Esempio:}{10}{section*.21}%
-\contentsline {subsection}{\numberline {1.5}Integrali Monte Carlo}{11}{subsection.1.5}%
-\contentsline {paragraph}{Esempio}{11}{section*.22}%
-\contentsline {subsection}{\numberline {1.6}Intervallo di confidenza di Bernoulli}{11}{subsection.1.6}%
-\contentsline {section}{\numberline {2}Intervalli di confidenza}{12}{section.2}%
-\contentsline {paragraph}{Se $\sigma ^2$ è nota}{12}{section*.23}%
-\contentsline {subsection}{\numberline {2.1}Intervallo di confidenza nella varianza}{12}{subsection.2.1}%
-\contentsline {paragraph}{Esempio:}{13}{section*.24}%
-\contentsline {paragraph}{Svolgimento}{13}{section*.25}%
-\contentsline {subsection}{\numberline {2.2}Intervallo di confidenza}{13}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Intervallo di previsione}{15}{subsection.2.3}%
-\contentsline {paragraph}{Esempio}{15}{section*.26}%
-\contentsline {subsection}{\numberline {2.4}Qualità di uno stimatore}{16}{subsection.2.4}%
-\contentsline {paragraph}{Esempio}{16}{section*.27}%
-\contentsline {subsection}{\numberline {2.5}Proprietà di uno stimatore}{16}{subsection.2.5}%
-\contentsline {paragraph}{Esempio}{16}{section*.28}%
-\contentsline {subsection}{\numberline {2.6}Stimatore unbaieseo}{17}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Valutazione di uno stimatore}{17}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Esempio:}{17}{subsection.2.8}%
-\contentsline {paragraph}{In sintesi}{19}{section*.29}%
-\contentsline {section}{\numberline {3}Test di ipotesi}{19}{section.3}%
-\contentsline {paragraph}{Ipotesi:}{19}{section*.30}%
-\contentsline {paragraph}{Esempio}{19}{section*.31}%
-\contentsline {paragraph}{Definizione}{19}{section*.32}%
-\contentsline {paragraph}{Procedimento}{20}{section*.33}%
-\contentsline {paragraph}{Regione critica}{20}{section*.34}%
-\contentsline {paragraph}{Esempio}{20}{section*.35}%
-\contentsline {subsection}{\numberline {3.1}Metolodogia alternativa}{21}{subsection.3.1}%
-\contentsline {paragraph}{Esempio:}{21}{section*.36}%
-\contentsline {subsection}{\numberline {3.2}Test di Hp unilaterale}{22}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Test di ipotesi}{22}{subsection.3.3}%
-\contentsline {paragraph}{Altre ipotesi}{22}{section*.37}%
-\contentsline {subsection}{\numberline {3.4}Uguaglianza media di due popolazioni}{23}{subsection.3.4}%
-\contentsline {paragraph}{4) T-test per coppie di dati}{23}{section*.38}%
-\contentsline {paragraph}{ES}{23}{section*.39}%
-\contentsline {paragraph}{5) Test sulla varianza}{24}{section*.40}%
-\contentsline {paragraph}{Uguaglianza di varianza}{24}{section*.41}%
-\contentsline {paragraph}{Test parametro Bernoulli}{24}{section*.42}%
-\contentsline {paragraph}{Binomiale $\sim $ Gaussiana}{24}{section*.43}%
-\contentsline {paragraph}{Esempio}{25}{section*.44}%
-\contentsline {subsection}{\numberline {3.5}Modelli previsionali}{25}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Modelli di regressione previsionale}{25}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Regressione lineare}{26}{subsubsection.3.5.2}%
-\contentsline {paragraph}{MLE}{26}{section*.45}%
-\contentsline {paragraph}{Notazione}{27}{section*.46}%
-\contentsline {paragraph}{Inferenza su $\mathbf {\beta }$}{27}{section*.47}%
-\contentsline {paragraph}{Inferenza su $\mathbf {\alpha }$}{28}{section*.48}%
-\contentsline {paragraph}{Interferenza su $\alpha + \beta x_0$}{28}{section*.49}%
-\contentsline {subsubsection}{\numberline {3.5.3}Regressione Lineare (e non)}{28}{subsubsection.3.5.3}%
-\contentsline {paragraph}{Inferenza $\alpha + \beta x_0 = \mathbb {E}[y] \rightarrow $}{29}{section*.50}%
-\contentsline {paragraph}{Inferenza $y_0 = y(x_0) \rightarrow $}{29}{section*.51}%
-\contentsline {paragraph}{Coefficiente di determinazione}{29}{section*.52}%
-\contentsline {paragraph}{Definizione:}{29}{section*.53}%
-\contentsline {paragraph}{Formula generica:}{29}{section*.54}%
-\contentsline {paragraph}{Coefficiente di correlazione}{30}{section*.55}%
-\contentsline {paragraph}{Formula generica:}{30}{section*.56}%
-\contentsline {paragraph}{Analisi dei residui}{30}{section*.57}%
-\contentsline {paragraph}{Trasformazione lineare}{30}{section*.58}%
-\contentsline {paragraph}{Rimedio al caso eteroschedastico}{31}{section*.59}%
-\contentsline {paragraph}{AN.O.VA}{32}{section*.60}%
-\contentsline {paragraph}{Esempio}{32}{section*.61}%
-\contentsline {paragraph}{Verifico stimatori}{33}{section*.62}%
-\contentsline {paragraph}{ANOVA}{33}{section*.63}%
-\contentsline {paragraph}{Life testing}{33}{section*.64}%
-\contentsline {paragraph}{Intensità di rottura}{34}{section*.65}%
-\contentsline {paragraph}{Definizione:}{34}{section*.66}%
-\contentsline {paragraph}{Formula generica:}{34}{section*.67}%
-\contentsline {paragraph}{Proprietà}{34}{section*.68}%
-\contentsline {paragraph}{Esempio}{34}{section*.69}%
-\contentsline {paragraph}{Probabilità}{35}{section*.70}%
-\contentsline {paragraph}{Stima di affidabilità}{35}{section*.71}%
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}%
+\contentsline {paragraph}{Esempio}{3}{section*.2}%
+\contentsline {paragraph}{Possibile soluzione}{3}{section*.3}%
+\contentsline {section}{\numberline {2}MLE}{4}{section.2}%
+\contentsline {paragraph}{Definizione:}{4}{section*.4}%
+\contentsline {paragraph}{Stima parametrica}{4}{section*.5}%
+\contentsline {paragraph}{Formula generica:}{4}{section*.6}%
+\contentsline {subsection}{\numberline {2.1}MLE di una Bernoulliana}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}MLE di una Poisson}{6}{subsection.2.2}%
+\contentsline {paragraph}{Esempio}{6}{section*.7}%
+\contentsline {subsection}{\numberline {2.3}MLE distribuzione Uniforme}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}MLE distribuzione Normale}{7}{subsection.2.4}%
+\contentsline {paragraph}{Definizione:}{7}{section*.8}%
+\contentsline {section}{\numberline {3}Intervalli di confidenza}{8}{section.3}%
+\contentsline {paragraph}{Esercizio 1}{8}{section*.9}%
+\contentsline {paragraph}{Esercizio 2}{9}{section*.10}%
+\contentsline {paragraph}{MLE POISSON}{9}{section*.11}%
+\contentsline {paragraph}{Formula generica:}{9}{section*.12}%
+\contentsline {paragraph}{Esercizio 3}{9}{section*.13}%
+\contentsline {paragraph}{MLE UNIFORME}{9}{section*.14}%
+\contentsline {paragraph}{MLE GAUSSIANA}{10}{section*.15}%
+\contentsline {paragraph}{Esercizio}{10}{section*.16}%
+\contentsline {paragraph}{Intervalli di confidenza}{10}{section*.17}%
+\contentsline {paragraph}{Intervalli di confidenza}{11}{section*.18}%
+\contentsline {paragraph}{Esempio:}{11}{section*.19}%
+\contentsline {paragraph}{In generale}{11}{section*.20}%
+\contentsline {subsection}{\numberline {3.1}Intervalli di confidenza (Bilaterali)}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Intervalli di confidenza (Unilaterali)}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Esempio:}{13}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Intervallo di confidenza}{14}{subsection.3.4}%
+\contentsline {paragraph}{Esempio:}{14}{section*.21}%
+\contentsline {subsection}{\numberline {3.5}Integrali Monte Carlo}{15}{subsection.3.5}%
+\contentsline {paragraph}{Esempio}{15}{section*.22}%
+\contentsline {subsection}{\numberline {3.6}Intervallo di confidenza di Bernoulli}{15}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Intervalli di confidenza}{16}{section.4}%
+\contentsline {paragraph}{Se $\sigma ^2$ è nota}{16}{section*.23}%
+\contentsline {subsection}{\numberline {4.1}Intervallo di confidenza nella varianza}{16}{subsection.4.1}%
+\contentsline {paragraph}{Esempio:}{17}{section*.24}%
+\contentsline {paragraph}{Svolgimento}{17}{section*.25}%
+\contentsline {subsection}{\numberline {4.2}Intervallo di confidenza}{17}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Intervallo di previsione}{19}{subsection.4.3}%
+\contentsline {paragraph}{Esempio}{19}{section*.26}%
+\contentsline {subsection}{\numberline {4.4}Qualità di uno stimatore}{20}{subsection.4.4}%
+\contentsline {paragraph}{Esempio}{20}{section*.27}%
+\contentsline {subsection}{\numberline {4.5}Proprietà di uno stimatore}{20}{subsection.4.5}%
+\contentsline {paragraph}{Esempio}{20}{section*.28}%
+\contentsline {subsection}{\numberline {4.6}Stimatore unbaieseo}{21}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Valutazione di uno stimatore}{21}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Esempio:}{21}{subsection.4.8}%
+\contentsline {paragraph}{In sintesi}{23}{section*.29}%
+\contentsline {section}{\numberline {5}Test di ipotesi}{23}{section.5}%
+\contentsline {paragraph}{Ipotesi:}{23}{section*.30}%
+\contentsline {paragraph}{Esempio}{23}{section*.31}%
+\contentsline {paragraph}{Definizione}{23}{section*.32}%
+\contentsline {paragraph}{Procedimento}{24}{section*.33}%
+\contentsline {paragraph}{Regione critica}{24}{section*.34}%
+\contentsline {paragraph}{Esempio}{24}{section*.35}%
+\contentsline {subsection}{\numberline {5.1}Metolodogia alternativa}{25}{subsection.5.1}%
+\contentsline {paragraph}{Esempio:}{25}{section*.36}%
+\contentsline {subsection}{\numberline {5.2}Test di Hp unilaterale}{26}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Test di ipotesi}{26}{subsection.5.3}%
+\contentsline {paragraph}{Altre ipotesi}{26}{section*.37}%
+\contentsline {subsection}{\numberline {5.4}Uguaglianza media di due popolazioni}{27}{subsection.5.4}%
+\contentsline {paragraph}{4) T-test per coppie di dati}{27}{section*.38}%
+\contentsline {paragraph}{ES}{27}{section*.39}%
+\contentsline {paragraph}{5) Test sulla varianza}{28}{section*.40}%
+\contentsline {paragraph}{Uguaglianza di varianza}{28}{section*.41}%
+\contentsline {paragraph}{Test parametro Bernoulli}{28}{section*.42}%
+\contentsline {paragraph}{Binomiale $\sim $ Gaussiana}{28}{section*.43}%
+\contentsline {paragraph}{Esempio}{29}{section*.44}%
+\contentsline {subsection}{\numberline {5.5}Modelli previsionali}{29}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Modelli di regressione previsionale}{29}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Regressione lineare}{30}{subsubsection.5.5.2}%
+\contentsline {paragraph}{MLE}{30}{section*.45}%
+\contentsline {paragraph}{Notazione}{31}{section*.46}%
+\contentsline {paragraph}{Inferenza su $\mathbf {\beta }$}{31}{section*.47}%
+\contentsline {paragraph}{Inferenza su $\mathbf {\alpha }$}{32}{section*.48}%
+\contentsline {paragraph}{Interferenza su $\alpha + \beta x_0$}{32}{section*.49}%
+\contentsline {subsubsection}{\numberline {5.5.3}Regressione Lineare (e non)}{32}{subsubsection.5.5.3}%
+\contentsline {paragraph}{Inferenza $\alpha + \beta x_0 = \mathbb {E}[y] \rightarrow $}{33}{section*.50}%
+\contentsline {paragraph}{Inferenza $y_0 = y(x_0) \rightarrow $}{33}{section*.51}%
+\contentsline {paragraph}{Coefficiente di determinazione}{33}{section*.52}%
+\contentsline {paragraph}{Definizione:}{33}{section*.53}%
+\contentsline {paragraph}{Formula generica:}{33}{section*.54}%
+\contentsline {paragraph}{Coefficiente di correlazione}{34}{section*.55}%
+\contentsline {paragraph}{Formula generica:}{34}{section*.56}%
+\contentsline {paragraph}{Analisi dei residui}{34}{section*.57}%
+\contentsline {paragraph}{Trasformazione lineare}{34}{section*.58}%
+\contentsline {paragraph}{Rimedio al caso eteroschedastico}{35}{section*.59}%
+\contentsline {paragraph}{AN.O.VA}{36}{section*.60}%
+\contentsline {paragraph}{Esempio}{36}{section*.61}%
+\contentsline {paragraph}{Verifico stimatori}{37}{section*.62}%
+\contentsline {paragraph}{ANOVA}{37}{section*.63}%
+\contentsline {paragraph}{Life testing}{37}{section*.64}%
+\contentsline {paragraph}{Intensità di rottura}{38}{section*.65}%
+\contentsline {paragraph}{Definizione:}{38}{section*.66}%
+\contentsline {paragraph}{Formula generica:}{38}{section*.67}%
+\contentsline {paragraph}{Proprietà}{38}{section*.68}%
+\contentsline {paragraph}{Esempio}{38}{section*.69}%
+\contentsline {paragraph}{Probabilità}{39}{section*.70}%
+\contentsline {paragraph}{Stima di affidabilità}{39}{section*.71}%
