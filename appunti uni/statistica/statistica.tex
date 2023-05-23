@@ -107,7 +107,7 @@
     Come sempre deriviamo e otteniamo:
     \[ \frac{d}{d\lambda} \log f(x_1, x_2, \ldots, x_n \rvert \lambda) = \frac{1}{\lambda} \sum_{i = 1}^{n} x_i - n \]
     Da questo bro possiamo ottenere un'espressione per la stima $\hat{\lambda}$:
-    \[ \hat{\lambda} = \frac{1}{n} \sum_{i = 1}^{n} x_1 \]
+    \[ \hat{\lambda} = \frac{1}{n} \sum_{i = 1}^{n} x_i \]
     La stessa formula può essere applicata al campione $X_1, X_2, \ldots, X_n$:
     \[ P\{X_i = 1\} = 1 - P\{X_i = 0\} \]
     \paragraph{Esempio} Numero di incidenti stradali in 10 giornate senza pioggia \\
@@ -127,6 +127,7 @@
     La formula per la stima di $\theta$
     \[ \hat{\theta} = \max \{ X_1, \ldots, X_n \} \]
     \subsection{MLE distribuzione Normale} 
+    TODO AGGIUNGERE THETA MAX THETA / 2
     \definizione La distribuzione normale ha media $\mu$ e dev. st. $\sigma$ \textbf{incognite} \\
     La densità congiunta (la likelihood) è data da:
     \[ f(x_1, x_2, \ldots, x_n \rvert \mu, \sigma) = \prod_{i= 1}^{n} \frac{1}{\sqrt{2 \mu \sigma}} \exp \left \{ - \frac{(x_1-\mu)^2}{2 \sigma^2} \right \} \]
@@ -200,7 +201,7 @@
     \textbf{Risoluzione:} le statistiche del campione sono:
     \[ \overline{X}_7 \approx 6716.57 \qquad \qquad S_7 \approx 733.97 \]
     Dalle tabelle ricaviamo che $t_{0.025,6} \approx 2.447$ (+ altri passaggi) concludiamo col dire che il 95\% di confidenza che $X_8$ cadrà nell'intervallo [4796, 8637]
-    \subsection{Intervalli do confidenza per la varianza} 
+    \subsection{Intervalli di confidenza per la varianza} 
     Se $X_1, X_2, \ldots, X_n$ è un campione di una distribuzione \textit{normale} con parametri $\mu$ $\sigma^2$ \textbf{incogniti} ci possiamo basare sul fatto che
     \formula \[ (n-1) \frac{S^2}{\sigma^2} \sim \mathcal{X}^2_{n-1}  \]
     \paragraph{Per caso Bilaterale}:
@@ -240,17 +241,103 @@
     $$
     \section{Intervalli di confidenza}
     \subsection{Intervalli approssimati per Bernoulli}
-
-
-
-
-
-
-
-
-
-
-
+    Nel caso avessimo $n$ oggetti con una quantita $X$ di oggetti che soddisfano i requisiti, possiamo dire che $X$ ha distribuzione \textit{binomiale} di parametri $n$ e $p$
+    \[ \frac{X - np}{\sqrt{np(1-p)}} \sim \mathcal{N}(0,1) \]
+    Per ottenere un intervallo per p denotiamo con $\hat{p} := X / n$ la frazione degli oggetti del campione che soddisfano i requisiti, quindi:
+    \[ \frac{X - np}{\sqrt{n \hat{p}(1-\hat{p})}} \sim \mathcal{N}(0,1) \]
+    Da questa formula possiamo ottenere cosi un intervallo di confidenza
+    \paragraph{Per caso Bilaterale}
+    \[ 1 - \alpha = P \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} < p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} \right) \]
+    \paragraph{Per caso Unilaterale}
+    \[ P \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) /n} < p \right) / P \left(p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1-\hat{p}) / n} \right)\]
+    \paragraph{Esempio} Un campione di \textit{100} transitor viene testato. \textit{80} pezzi sono \textit{adeguati} \\
+    Volendo trovare un intervallo del 95\% per la percentuale $p$ scriviamo:
+    \[ \left(0.8 - 1.96 \sqrt{0.8 \cdot 0.2 / 100}, \quad 0.8 + 1.96 \sqrt{0.8 \cdot 0.2 / 100} \right) = (0.7216, \quad 0.8784) \]
+    Possiamo dire quindi con il 95\% di confidenza che sarà \textit{accettabile} una percentuale compresa tra il \textbf{72.16\%} e il \textbf{87.84\%}
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_3.png}
+    \end{figure}
+    \subsection{Qualità ed efficienza degli stimatori}
+    Sia $X := (X_1, X_2, \ldots, X_n)$ un campionare di una distribuzione \textit{nota} tranne per il parametro $\theta$ che è incognito e $d(X)$ uno stimatore di $\theta$ \\
+    Come possiamo valutare la sua efficacia? un criterio può essere quello dell'\textit{errore quadratico medio} ossia:
+    \[ r(d, \theta) := \ev{(d(X) - \theta)^2} \]
+    \centerline{e sarà questo il nostro indicatore del valore di $d$ come stimatore di $\theta$}
+    \subsubsection{Bias e Polarizzazione}
+    \definizione Sia $d= d(X)$ uno stimatore del parametro $\theta$ allora:
+    \[ b_\theta (d) := \ev{d(X)} - \theta \]
+    \centerline{Questo viene detto \textit{bias} di d come stimatore di $\theta$}
+    \centerline{Se il bias è nullo, si dice che è uno stimatore \textit{corretto} o \textit{non distorto} }
+    \paragraph{Esempio} Sia $X_1, \ldots, X_n$ un campione con media \textit{incognita} $\theta$ quindi:
+    \[ d_1 (X_1, X_2, \ldots, X_n) = X_1 \]
+    \[ d_2 (X_1, X_2, \ldotp, X_n) = \frac{X_1 + X_2 + \cdots + X_n}{n} \]
+    \centerline{sono entrambi \textit{stimatori non distorti di $\theta$}}
+    verifichiamo:
+    \[ \ev{X_1} = \ev{\frac{X_1 + X_2 + \cdots + X_n}{n}} = \theta \]
+    Se $d = d(X)$ è uno \textit{stimatore corretto}, il suo errore quadratico medio è
+    \begin{equation*}
+        \begin{split}
+            r(d, \theta) &= \ev{(d- \theta)^2} \\
+            &= \ev{(d-\ev{d})^2} \\
+            &= Var(d)
+        \end{split}
+    \end{equation*}
+    \centerline{Questo è lo stimatore migliore con Varianza minima}
+    \paragraph{Regola generale}
+    \[ d_3(X_1, X_2, \ldots, X_n) := \sum_{i=1}^{n} \lambda_i X_i \text{  è corretto se } \sum_{i=1}^{n} \lambda_i = 1 \] 
+    \subsubsection{Combinazioni di stimatori corretti}
+    Consideriamo due stimatori \textit{corretti} e \textit{indipendenti} di parametro $\theta$ (denotati con $d_1$ e $d_2$) con varianze rispettivamente $\sigma^2_1$ $\sigma^2_2$
+    \[ \ev{d_i} = \theta \quad Var(d_i) = \sigma^2_i \qquad i=1,2  \]
+    uno stimatore corretto di $\theta$ è il seguente
+    \[ d := \lambda d_1 + (1- \lambda) d_2 \]
+    Successivamente vogliamo trovare anche il valore di $\lambda$ che produce lo stimatore $d$ con il \textit{minore errore quadratico medio}
+    \begin{equation*}
+        \begin{split}
+            r(d, \theta) &= Var(d) \\
+            &= \lambda^2 Var(d_1) + (1- \lambda)^2 Var(d_2) \qquad \text{per l'indipendenza di $d_1$ e $d_2$} \\
+            &= \lambda^2 \sigma^2_1 + (1-\lambda)^2 \sigma^2_2
+        \end{split}
+    \end{equation*}
+    ayo bro what's this shit, le me calculate the derivata with latti:
+    \[ \frac{d}{d \lambda} r(d, \theta) = 2 \lambda \sigma^2_1 - 2(1- \lambda) \sigma^2_2 \]
+    e belin lo studiamo sto segno o no? denotiamo con $\hat{\lambda}$ il valore di $\theta$ che produce il minimo
+    \[ 2 \hat{\lambda} \sigma^2_1 - 2(1- \hat{\lambda}) \sigma^2_2 = 0 \]
+    da cui otteniamo:
+    \[ \hat{\lambda} = \frac{\sigma^2_2}{\sigma^2_1 + \sigma^2_2} = \frac{1 / \sigma^2_1}{1 / \sigma^2_1 + 1 / \sigma^2_2} \]
+    il peso ottimale da dare a uno stimatore deve essere \textbf{inversamente} proporzionale alla sua varianza \\
+    La migliore combinazione lineare delle $d_i$ per l'errore quadratico medio è:
+    \begin{equation*}
+        \begin{split}
+            r(d, \theta) &= Var(d) \\
+            &= \left( \frac{1}{\sum_{i=1}^{n}} 1 / \sigma^2_i \right)^2 \sum_{i=1}^{n} \left( \frac{1}{\sigma^2_i} \sigma^2_i \right) \\
+            &= \frac{1}{\sum_{i=1}^{n} 1 / \sigma^2_i}
+        \end{split}
+    \end{equation*}
+    \[ r(d, \theta) = Var(d) \]
+    \paragraph{Bias/Polarizzazione}
+    Se $d(X)$ è \textbf{distorto}:
+    \begin{equation*}
+        \begin{split}
+            r(d, \theta) &= \ev{(d - \theta)^2} \\
+            &= Var(d) + 0 + \ev{b_\theta (d)^2} \\
+            &= Var(d) + b_\theta(d)^2
+        \end{split}
+    \end{equation*}
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{images/boh_4.png}    
+    \end{figure}
+    \subsection{Stimatore della media di una distribuzione uniforme}
+    Siano $X_1, X_2, \ldots, X_n$ un campione estratto da una popolazione con distribuzione \textit{uniforme} su $(0, \theta)$ dove $\theta$ è un parametro incognito. \\
+    Dato che (non si sa come) $\boldsymbol{\ev{X_i} = \theta / 2}$ è uno stimatore naturale per $\theta$ è dato da
+    \[ d_1 = d_1 (X) := 2 \overline{X} := \frac{2}{n} \displaystyle\sum_{i=1}^{n} X_i \]
+    \[ d_2 = \hat{\theta} = MLE = \max(X_i) \]
+    Siccome $\ev{d_1} = \theta$ otteniamo che:
+    \begin{equation*}
+        \begin{split}
+            r(d_1, \theta) &= \theta \\
+            &= \frac{4}{n} \frac{\theta^2}{12} \\
+            &= \frac{\theta^2}{3n}
+        \end{split}
+    \end{equation*}
 
 
 
