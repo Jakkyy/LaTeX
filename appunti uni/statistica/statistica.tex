@@ -13,7 +13,14 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 
-\usepackage{xcolor}
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+  \protect\leavevmode
+  \begingroup
+    \color#1{#2}#3%
+  \endgroup
+}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{sectsty}
 \definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
 \definecolor{grey}{rgb}{0.25, 0.25, 0.28}
@@ -329,35 +336,307 @@
     Siano $X_1, X_2, \ldots, X_n$ un campione estratto da una popolazione con distribuzione \textit{uniforme} su $(0, \theta)$ dove $\theta$ è un parametro incognito. \\
     Dato che (non si sa come) $\boldsymbol{\ev{X_i} = \theta / 2}$ è uno stimatore naturale per $\theta$ è dato da
     \[ d_1 = d_1 (X) := 2 \overline{X} := \frac{2}{n} \displaystyle\sum_{i=1}^{n} X_i \]
-    \[ d_2 = \hat{\theta} = MLE = \max(X_i) \]
-    Siccome $\ev{d_1} = \theta$ otteniamo che:
+    Siccome $\boldsymbol{\ev{d_1} = \theta}$, otteniamo che:
     \begin{equation*}
         \begin{split}
-            r(d_1, \theta) &= \theta \\
-            &= \frac{4}{n} \frac{\theta^2}{12} \\
+            \boldsymbol{r(d_1, \theta)} &= Var(d_1) \\
+            &= \frac{4}{n} Var(X_i) \\
+            &= \frac{4}{n} \cdot \frac{\theta^2}{12} \\
             &= \frac{\theta^2}{3n}
         \end{split}
     \end{equation*}
-
-
-
-
-
-
-
-
-    \[ P\{X_i = x\} = P^x (1-P)^x \quad x \in \{0, 1\} \]
-    \centerline{Dove \textbf{X} è una \textit{variabile aleatoria} e \textbf{x} una \textit{variabile sperimentale} }
-    \[ f(x_1 \ldots x_n / P) = P^{x_1} (1-P)^{1-x_1} \cdot P^{x_2} (1-P)^{1-x_2} \ldots P^{x_n} (1-P)^{1-x_n} = \]
-    \[ P^{\sum_{i}^{n}x_i} (1-P)^{n - \sum_{1}^{n} x_i} \longrightarrow \text{Bisogna trovare il \textbf{massimo} della funzione} \]
+    Un secondo stimatore che abbiamo è quello di \textbf{massima verosomiglianza} ($d_2$):
+    \[ d_2 = d_2(X) = MLE := \max(X_i) \]
+    Per trovare l'errore quadratico medio di $d_2$ dobbiamo prima conoscere la sua \textit{media} e la sua \textit{varianza}
+    \[ \ev{d_2} = \int_{0}^{\theta} x \frac{nx^{n-1}}{\theta^n} \, dx = \frac{n}{n + 1} \theta \]
+    \[ \ev{d^2_2} = \int_{0}^{\theta} x^2 \frac{nx^{n-1}}{\theta^n} \, dx = \frac{n}{n+2} \theta^2 \]
+    \[ Var(d_2) = \ev{d^2_2} - \ev{d_2}^2 = \frac{n \theta^2}{(n+2) (n+1)^2} \]
+    Quindi ora calcoliamo la $\boldsymbol{r(d_2, \theta)}$:
+    \begin{equation}
+        \begin{aligned}
+        \boldsymbol{r\left(d_2, \theta\right)} & =\operatorname{Var}\left(d_2\right)+\left(E\left[d_2\right]-\theta\right)^2 \\
+        & =\frac{n \theta^2}{(n+2)(n+1)^2}+\frac{\theta^2}{(n+1)^2} \\
+        & =\frac{\theta^2}{(n+1)^2}\left[\frac{n}{n+2}+1\right] \\
+        & =\frac{2 \theta^2}{(n+1)(n+2)}
+        \end{aligned}
+    \end{equation}
+    Confrontando gli errori quadratici medi notiamo che $d_2$ è \textbf{migliore} di $d_1$ per $\theta$
+    \[ \frac{2 \theta^2}{(n+1)(n+2)} \leq \frac{\theta^2}{3n} \qquad \text{$d_2$ migliore} \]
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_5.png}
+    \end{figure}
+    \section{Stimatori Bayesiani}
+    \definizione Quando il parametro incognito $\boldsymbol{\theta}$ possiamo considerarlo come una variabile aleatoria, questo approccio viene detto \textit{bayesiano}. \\
+    Se abbiamo delle informazioni su quelli che possono essere assunti i valori da $\theta$ ed esse assumono la forma di distribuzione di probabilità si dice che abbiamo \textbf{una distribuzione a priori per $\boldsymbol{\theta}$} \\[2ex]
+    Se i valori che osserviamo sono $X_i = x_i \qquad i=1,2, \ldots, n$ la \textit{densità di probabilità condizionale di $\theta$} è data da:
     \begin{equation*}
         \begin{split}
-            log(f(x_1 \ldots x_n / P)) &= \sum_{1}^{n} x_i log P - (n - \sum_{i}^{n} x_i) log(1-P) \\
-            &= \frac{d}{dP}[log(f)] = 0 = \frac{1}{\hat{P}} \sum_{i}^{n} x_i - \frac{n - \sum_{i}^{} x_i }{(1-\hat{P})} \\
-            &= (1- \hat{P}) \sum_{i}^{} x_i = \hat{P} (n - \sum_{i}^{} x_i) \\
-            &= \hat{P} = \frac{\sum_{i}^{} x_i }{n} \quad \text{MLE}
+            \mathcolor{ForestGreen}{\boldsymbol{f(\theta \rvert x_1, x_2, \ldots, x_n)}} &= \frac{f(x_1, x_2, \ldots, x_n, \theta)}{\mathcolor{Turquoise}{\boldsymbol{f(x_1, x_2, \ldots, x_n)}}} \\
+            &= \frac{\mathcolor{red}{\boldsymbol{f(x_1, x_2, \ldots, x_n \rvert \theta)}} \mathcolor{blue}{\boldsymbol{p(\theta)}}}{\int_{}^{} f(x_1, x_2, \ldots, x_n \rvert \theta') p(\theta') d\theta'}
         \end{split}
     \end{equation*}
+    Dove:
+    \begin{itemize}
+        {\color{ForestGreen} \item $\boldsymbol{f(\theta \rvert x_1, x_2, \ldots, x_n)}$ Viene detta \textit{probabilità a posteriori}}
+        {\color{Turquoise} \item $\boldsymbol{f(x_1, x_2, \ldots, x_n)}$ è la \textit{MLE Marginale}}
+        {\color{red} \item $\boldsymbol{f(x_1, x_2, \ldots, x_n \rvert \theta)}$ è la \textit{MLE}}
+        {\color{blue} \item $\boldsymbol{p(\theta)}$ è la \textit{distribuzione a priori}}
+    \end{itemize}
+    Una buona stima per $\theta$ può essere la \textbf{media} perciò:
+    \[ \ev{\theta \rvert X_1 = x_1, \ldots, X_n = x_n} = \int_{-\infty}^{\infty} \theta f(\theta \rvert x_1, x_2, \ldots, x_n) \, d\theta \quad \text{\textit{nel caso continuo}} \]
+    \subsection{Stimatore di $\theta$ per Bernoulli}
+    Se abbiamo $X_1, X_2, \ldots, X_n$ Bernoulliane, con massa di probabilità:
+    \[ f(x \rvert \theta) = \theta^x (1-\theta)^{1-x} \qquad x = 0,1 \]
+    \centerline{Dove $\theta$ è un parametro sconosciuto}
+    Supponiamo quindi che la \textit{distribuzioni a priori} di $\theta$ sia uniforme su (0,1), denotiamo con $p$ la densità a propri di $\theta$
+    \[ p(\theta)=1 \qquad 0 < \theta < 1 \]
+    La densità condizionale di $\theta$ date $x_1, x_2, \ldots, x_n$ è 
+    \begin{equation}
+        \begin{aligned}
+        f\left(\theta \mid x_1, x_2, \ldots, x_n\right) & =\frac{f\left(x_1, x_2, \ldots, x_n, \theta\right)}{f\left(x_1, x_2, \ldots, x_n\right)} \\
+        & =\frac{f\left(x_1, x_2, \ldots, x_n \mid \theta\right) p(\theta)}{\int_0^1 f\left(x_1, x_2, \ldots, x_n \mid \vartheta\right) p(\vartheta) d \vartheta} \\
+        & =\frac{\theta^{\sum_i x_i}(1-\theta)^{n-\sum_i x_i}}{\int_0^1 \vartheta^{\sum_i x_i}(1-\vartheta)^{n-\sum_i x_i} d \vartheta}
+        \end{aligned}
+    \end{equation}
+    Non è difficile provare (e invece lo è) integrando per parti un certo numero di volte che per ogni valore di $m$ e $r$:
+    \[ \int_{0}^{1} \theta^m (1-\theta)^r \, d\theta = \frac{m! r!}{(m+r+1)!} \]
+    poniamo ora $\boldsymbol{x := \sum_{i=1}^{n} x_i}$
+    \[ f(\theta \rvert x_1, x_2, \ldots, x_n) = \frac{(n+1)!}{x! (n-x)!} \theta^x (1-\theta)^{n-x} \qquad 0 < \theta < 1 \]
+    Ora siamo in grado di calcolare \textit{la stima bayesiana}
+    \begin{equation}
+        \begin{aligned}
+        E\left[\theta \mid x_1, x_2, \ldots, x_n\right] & =\frac{(n+1) !}{x !(n-x) !} \int_0^1 \theta^{1+x}(1-\theta)^{n-x} d \theta \\
+        &=\frac{(n+1) !}{x !(n-x) !} \frac{(1+x) !(n-x) !}{(n+2) !} \\
+        &= \frac{x+1}{n+2} \\
+        &= \boldsymbol{\frac{1 + \sum_{i=1}^{n} X_i}{n + 2}}
+        \end{aligned}
+    \end{equation}
+    \paragraph{Esempio} Se raccogliamo un campione di \textit{10 bernoulliane} e trovassimo \textbf{6 successi}, lo stimatore bayesiano di $\theta$ fornirebbe un valore di \textbf{7 / 12} \\
+    Lo stimatore di massima verosomiglianza vale invece \textbf{6 / 10}
+    \subsection{Stimatore di $\theta$ per una Normale}
+    Supponiamo che $X_1, X_2, \ldots, X_n$ sia una distribuzione normale con media $\theta$ \textit{incognita} e varianza $\sigma^2_0$ \textbf{nota} \\[2ex]
+    Calcoliamo la \textit{densità condizionale} di $\theta$:
+    \[ f(\theta \rvert x_1, x_2, \ldots, x_n) = \frac{f(x_1, x_2, \ldots, x_n \rvert \theta) p(\theta)}{f(x_1, x_2, \ldots, x_n)} \]
+    Ora calcoliamo la \textit{media}:
+    \[ \ev{\theta \rvert X_1, X_2, \ldots, X_n } = \boldsymbol{\frac{n / \sigma^2_0}{n / \sigma^2_0 + 1 / \sigma^2} \overline{X} + \frac{1 / \sigma^2}{n / \sigma^2_0 + 1 / \sigma^2} \mu} \]
+    e successivamente la \textit{varianza}:
+    \[ Var(\theta \rvert X_1, X_2, \ldots, X_n) = \boldsymbol{\frac{1}{n / \sigma^2_0 + 1 / \sigma^2}} \]
+    \subsection{Stimatore di $\theta$ per Uniformi}
+    Avendo una funzione di likelihood $f(x_1, x_2, \ldots, x_n \rvert \theta)$ e sapendo che la distribuzione è \textit{uniforme} \\
+    $\theta \in [a,b]$ \\
+    $d_b = d_{MLE}$
+    \section{Verifica delle ipotesi}
+    Se prima noi cercavamo di stimare determinati parametri ora cerchiamo invece (avendo un campione raccolto) di trovare \textit{le ipotesi che li coinvolga}
+    \subsection{Livelli di significatività}
+    Consideriamo una popolazione con distribuzione $F_\theta$ che dipende da $\theta$ incognito e vogliamo verificare una qualche ipotesi su $\theta$, una distribuzione normale con media $\theta$ e varianza 1 abbiamo due ipotesi
+    \begin{enumerate}
+        \item $H_0 : \theta = 1 \rightarrow$ \textit{Ipotesi nulla \textbf{semplice}}
+        \item $H_0 : \theta \leq n \rightarrow$ \textit{Ipotesi nulla \textbf{composta}}
+    \end{enumerate}
+    La prima ipotesi afferma che la popolazione ha come distribuzione $\boldsymbol{\mathcal{N}(1,1)}$ mentre la seconda sostiene che è normale con \textit{varianza} 1 e \textit{media} \textbf{non} superiore a 1. 
+    Queste due ipotesi si possono verificare su un campiona aleatorio $X_1, X_2, \ldots X_n$ \\[2ex]
+    Esiste una regione critica \textbf{C} per cui se il campione aleatorio vi appartiene l'ipotesi \textit{non viene accettata}. Esiste un livello di tolleranza specificato all'interno della regione critica per cui un'ipotesi può essere \textit{ancora accettata}.
+    Questa tolleranza è definita dal \textbf{livello di significatività}, ovvero viene definito $\alpha$ tale che se l'ipotesi è vera la probabilità di rifiutarla non superi $\alpha$
+    \[ \text{accetta } H_0 \text{ se} (X_1, X_2, \ldots, X_n) \not \in C \]
+    \centerline{e}
+    \[ \text{rifiuta } H_0 \text{ se} (X_1, X_2, \ldots, X_n) \in C \]
+    Esistono \textbf{due tipi di errori}:
+    \begin{enumerate}
+        \item \textbf{Prima Specie}: Si rifiuta $H_0$ anche se è vera
+        \item \textbf{Seconda Specie}: si accetta $H_0$ anche se è falsa
+    \end{enumerate}
+    \subsection{Verifica di ipotesi sulla media di una popolazione normale}
+    Supponiamo di avere $X_1, X_2, \ldots, X_n$ sia un campione aleatorio di una popolazione normale di parametri $\mu$ $\sigma^2$ con \textit{varianza} nota e \textit{media} incognita, vogliamo verificare le seguenti ipotesi:
+    \[ H_0 : \mu = \mu_0 \]
+    e l'ipotesi \textit{alternativa}
+    \[ H_1 : \mu \not = \mu_0 \]
+    Lo \textbf{stimatore puntuale} per $\mu$ è:
+    \[ \overline{X} := \frac{1}{n} \sum_{i=1}^{n} X_i \]
+    La \textbf{regione critica del test} invece è:
+    \[ C := \{ (X_1, X_2, \ldots, X_n) : \rvert \overline{X} - \mu_0 \rvert > c \} \]
+    \centerline{Dove c rappresenta la \textit{tolleranza}}
+    Quando $\mu = \mu_0$ sappiamo che $\overline{X}$ ha distribuzione \textbf{normale} con media $\mu_0$ e varianza $\sigma^2 / n$ allora:
+    \[ \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \sim Z \]
+    \centerline{Dove la relazione $\sim$ è \textbf{condizionata} all'ipotesi $H_0 : \mu = \mu_0$} \\[2ex]
+    \textbf{c} deve soddisfare la seguente relazione:
+    \[ \alpha = P(\text{errore di I specie}) = \boldsymbol{P_{\mu_0}(\rvert \overline{X} - \mu_0) > c} \]
+    Possiamo scrivere l'equazione di sopra in questo modo:
+    \[ \alpha = 2P \left( Z > \frac{c \sqrt{n}}{\sigma} \right) \]
+    Per $P(Z > c \sqrt{n} / \sigma)$ per la definzione $z_{\frac{\alpha}{2}}$ vale:
+    \[ P\left( Z > z_{\frac{\alpha}{2}} \right)= \frac{\alpha}{2} \longrightarrow c = z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}}\]
+    Il test con livello di significatività ha \textbf{due esiti}:
+    \[ \text{si rifiuta } H_0 \text{ se} \bigg\rvert \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \bigg\rvert > z_{\frac{\alpha}{2}} \]
+    \[ \text{si accetta } H_0 \text{ se} \bigg\rvert \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \bigg\rvert \leq z_{\frac{\alpha}{2}} \]
+    p dei dati $= \sqrt{n} \frac{\overline{X} - \mu_0}{\sigma}$ \\[2ex]
+    $H_0$ si \textbf{accetta} se $2P(Z > z_{\frac{\alpha}{2}}) \text{ è elevata}$ \\
+    $H_0$ si \textbf{rifiuta} se $2P(Z > z_{\frac{\alpha}{2}}) \text{ è bassa}$ \\
+    Perche se la probabilità che $Z$ sia $> z_{\frac{\alpha}{2}}$ è \textit{alta} allora il mio valore sarà vicino al mezzo e va bene. Se è basso allora è \textit{lontano} dal mezzo e non va bene.
+    \paragraph{Esempio} supponiamo una media campionaria dei \textit{5} segnali ricevuti fosse \textit{8.5}:
+    \[ \frac{\sqrt{n}}{\sigma} \rvert \overline{X} - \mu_0 \rvert = \frac{\sqrt{5}}{2} \cdot 0.5 \approx 0.559 \]
+    Dato che:
+    \[ P(|Z| > 0.559) = 2P(Z > 0.559) \approx 2 X 0.288 = 0.576 \]
+    Otteniamo che il \textit{p-dei-dati} è 0.576 e quindi l'ipotesi nulla che il segnale inviato fosse \textbf{8}, che viene accettata per ogni $\alpha < 0.576$ \\
+    Se avessimo ottenuto che $\overline{X} = 11.5$ il valore del \textit{p-dei-dati} sarebbe:
+    \[ P \left( |Z| > \frac{\sqrt{5}}{2} \cdot 3.5 \right) \approx 2P(Z > 3.913) \approx 0.00005 \]
+    Con un valore così piccolo, l'ipotesi che il messaggio fosse stato 8, \textbf{va rifiutata}. \\[3ex]
+    Riprendendo il discorso degli errori di specie andiamo a vedere ora \textit{gli errori di \textbf{seconda specie}}. \\
+    Rinfreschiamo la memoria, l'errore di seconda specie è quando \textit{si accetta $H_0$ anche se è falsa}, quindi:
+    \[ \boldsymbol{\beta(\mu)} := P_\mu (\text{accettare } H_0) = \boldsymbol{P_\mu \left( -z_{\frac{\alpha}{2}} \leq \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_{\frac{\alpha}{2}}\right)}\]
+    La funzione $\beta(\mu)$ è detta \textbf{curva OC} (\textit{curva operativa caratteristica}) e rappresenta la probabilità di accettare $H_0$ quando la media reale è $\mu$.
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_6.png}
+        \caption{Curva OC di un test \textit{bilaterale} per la media di una popolazione normale, con $\alpha = 0.05$}
+    \end{figure}
+    Per calcolare la probabilità ricordiamoci il fatto che $\overline{X} \sim \mathcal{N}(\mu, \sigma^2 / n)$:
+    \[ Z := \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
+    Quindi:
+    \begin{equation*}
+        \begin{split}
+            \beta(\mu) &= P_\mu \left( -z_{\frac{\alpha}{2}} \leq \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_{\frac{\alpha}{2}} \right) \\
+            &= \boldsymbol{\Phi \left( \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} + z_{\frac{\alpha}{2}}\right) - \Phi \left( \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} - z_{\frac{\alpha}{2}} \right) = 1 - \alpha}
+        \end{split}
+    \end{equation*}
+    \centerline{Dove $\Phi$ indica la \textit{funzione di ripartizione} della distribuzione normale standard}
+    \paragraph{Esempio} quanto vale la probabilità di accettare $\mu = 8$ quando in realtà $\mu = 10$:
+    \[ \frac{\sqrt{n}}{\sigma} (\mu_0 - \mu) = \frac{\sqrt{5}}{2} (-2) = - \sqrt{5} \]
+    Dato che $\boldsymbol{z_{0.025} \approx 1.96}$ ricaviamo la probabilità cercata:
+    \begin{equation*}
+        \begin{split}
+            \beta(10) &\approx \Phi(- \sqrt{5} + 1.96) - \Phi(- \sqrt{5} - 1.96) \\
+            &= 1 - \Phi(0.276) - 1 + \Phi(4.196) \\
+            &\approx -0.609 + 1 = \boldsymbol{0.391}
+        \end{split}
+    \end{equation*}
+    Riprendendo il discorso della curva OC, ci permette di dimensionare il campione in modo che \textit{l'errore di seconda specie} soddisfi le condizioni specifiche. \\[2ex]
+    Come facciamo a trovare $n$ tale che la probabilità di \textit{accettare} $H_0 : \mu = \mu_0$ quando il vero valore è $\mu_1$ sia un valore fissato $\beta$ per $n$ tale che $\boldsymbol{\beta(\mu_1) \approx \beta}$
+    \[ n \approx \left[ \frac{(z_{\frac{\alpha}{2}} + z_\beta) \sigma}{\mu_1 - \mu_0} \right]^2 \]
+    \centerline{Notiamo che anche nel caso in cui $\boldsymbol{\mu_1 < \mu_0}$ troviamo sempre la stessa formula}
+    \paragraph{Esempio} Quante volte è necessario inviare il segnale con verifica dell'ipotesi $H_0 : \mu = 8$ con livello di significatività 0.05 con almeno il 75\% di probabilità di rifiutare l'ipotesi nulla quando $\boldsymbol{\mu = 9.2}$ \\
+    Dato che $z_{0.025 \approx 1.96}$ e $z_{0.25} \approx 0.67$ 
+    \[ n \approx \left( \frac{1.96 + 0.67}{1.2} \right)^2 \cdot 4 \approx 19.21 \]
+    Come vediamo per il risultato è necessario un \textit{campione di 20 segnali}, quindi con $n=20$
+    \begin{equation*}
+        \begin{split}
+            \beta(9.2) &\approx \Phi \left( - \frac{1.2 \sqrt{20}}{2} + 1.96 \right) - \Phi \left( - \frac{1.2 \sqrt{20}}{2} - 1.96 \right) \\
+            &\approx \Phi(-0.723) - \Phi(-4.643) \\
+            &\approx 1 - \Phi(0.723) \approx \boldsymbol{0.235}
+        \end{split}
+    \end{equation*}
+    Quindi ricapitolando, se il segnale viene trasmesso 20 volte c'è il 76.5\% di probabilità che l'ipotesi nulla $\mu = 8$ sia \textbf{rifiutata} se la media reale è \textbf{9.2}
+
+    \subsection{Test unilaterali}
+    Introduzione bla bla bla \\
+    Verifichiamo due ipotesi:
+    \[ H_0 : \mu = \mu_0 \quad \text{ contro } \quad H_1 : \mu > \mu_0 \]
+    Dovremmo rifiutare l'ipotesi nulla quando lo stimatore di $\mu$ è molto più grande di $\mu_0$, la regione critica è quindi:
+    \[ C := \{ (X_1, X_2, \ldots, X_n) : \overline{X} - \mu_0 > c \} \]
+    la probabilità di rifiuto dovrebbe essere $\alpha$ quando $H_0$ è vera, occorre però che \textit{c} soddisfi la relazione:
+    \[ P_{\mu_0} (\overline{X} - \mu_0 > c) = \alpha \]
+    Il test \textit{con livello di significatività} $\alpha$ dovrà rifiutare $\boldsymbol{H_0 \text{ se } \overline{X} - \mu_0 > z_\alpha \cdot \sigma / \sqrt{n}}$
+    \[ \text{si rifiuta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} > z_\alpha \]
+    \[ \text{si accetta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_\alpha \]
+    Quella trovata è detta \textit{regione criticia \textbf{unilaterale}} o a una coda, quindi il problema di verificare le ipotesi alternative
+    \[ H_0 : \mu = \mu_0 \]
+    \[ H_1 : \mu > \mu_0 \]
+    \centerline{Si dice problema di \textbf{test unilaterale}} \\[2ex]
+    poniamo $Z := \sqrt{n}(\overline{X} - \mu) / \sigma$ questa statistica è una \textit{normale standard} quindi:
+    \begin{equation*}
+        \begin{split}
+            \beta(\mu) &:= P_\mu(\text{accettare } H_0) \\
+            &= P_\mu \left( Z \leq \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} + z_\alpha \right) \\
+            &= \boldsymbol{\Phi \left( \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} + z_\alpha \right) = 1 - \alpha}
+        \end{split}
+    \end{equation*}
+    Dato che $\Phi$ in quanto \textit{funzione di ripartizione è \textbf{crescente}} però $\beta(\mu)$ è una funzione \textbf{decrescente} \\
+    L'ipotesi \textit{unilaterale}
+    \[ H_0 : \mu \leq \mu_0 \]
+    contro l'alternativa
+    \[ H_1 : \mu > \mu_0 \]
+    Per accertarci che il \textit{livello di significatività} sia rimasto $\alpha$ \\
+    Al variare di $\mu$ la probabilità di rifiuto è data da $\boldsymbol{1 - \beta(\mu)}$ \\
+    Dobbiamo verificare che per ogni $\mu$ compatibile con $H_0$ per ogni $\boldsymbol{\mu \leq \mu_0}$ 
+    \[ 1 - \beta(\mu) \leq \alpha, \qquad \text{per ogni } \mu \leq \mu_0 \]
+    Quindi:
+    \[ \beta(\mu) \geq 1 - \alpha, \qquad \text{per ogni } \mu \leq \mu_0 \]
+    \paragraph{Osservazione} è possibile verificare l'ipotesi
+    \[ H_0 : \mu = \mu_0 \]
+    contro l'ipotesi \textit{alternativa}
+    \[ H_1 : \mu < \mu_0 \]
+    ad un livello di significatività $\boldsymbol{\alpha}$, decidendo che:
+    \[ \text{si rifiuta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq -z_\alpha \]
+    \[ \text{si accetta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \geq -z_\alpha \]
+    \subsection{Il test t}
+    Fino ad ora abbiamo supposto che l'unico parametro incognito fosse la \textit{media}, in questo caso la nostra varianza $\boldsymbol{\sigma^2}$ \textbf{non è nota} \\
+    In questa situazione consideriamo che si possa verificare l'ipotesi nulla che $\mu$ sia uguale ad un valore assegnato $\mu_0$ contro l'ipotesi alternativa $\mu \not= \mu_0$
+    \[ H_0 : \mu = \mu_0 \]
+    \[ H_1 : \mu \not= \mu_0 \]
+    (Cambiare poi con desc più corta)
+    Come in precedenza, sembra ragionevole rifiutare l’ipotesi nulla quando $\overline{X}$ cade
+    lontano da $\mu_0$ tuttavia la distanza a cui deve essere da $\mu_0$ per giustificare questo
+    rifiuto, dipende dalla deviazione standard $\sigma$ che in quella sede era nota; in particolare
+    $|\overline{X} - \mu0|$ doveva essere maggiore di $z_{\frac{\alpha}{2}} \cdot \sigma / \sqrt{n}$ o equivalentamente
+    \[ \left[ \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \right] > z_{\frac{\alpha}{2}} \]
+    Qui $\boldsymbol{\sigma}$ non è più conosciuta, sostituiamola quindi con la \textit{deviazione standard campionaria} $S$
+    \[ S := \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \overline{X})^2} \]
+    rifiutando l'ipotesi nulla quando 
+    \[ \big\rvert \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big\rvert \] 
+    Quindi alla fine noi dobbiamo ottenere una distribuzione t
+    \[  t_{n-1} \sim \frac{\overline{X} - \mu}{S/ \sqrt{n}} \]
+    Se si denota con T la statistica di questo test, ovvero 
+    \[ T := \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \]
+    allora quando $H_0$ è vera (visto che $\mu = \mu_0$) ha distribuzione \textbf{$t$ con $n-1$ gradi di libertà.}
+    \[ P_{\mu_0} \left( - c \leq \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \leq c \right) = \boldsymbol{1- \alpha} \]
+    Se vogliamo ricavare c:
+    \begin{equation*}
+        \begin{split}
+            \alpha &= 1 - P(-c \leq T < c) \\
+            &= P(T \leq -c) + P(T \geq c) \\
+            &= 2P(T \geq c)
+        \end{split}
+    \end{equation*}
+    Per cui $P(T > c) = \frac{\alpha}{2}$, e quindi deve valere $c = t_{\frac{\alpha}{2}, n-1}$, quindi in fin dei conti:
+    \[ \text{si rifiuta } H_0 \text{ se } \big| \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big| > t_{\frac{\alpha}{2}, n-1} \]
+    \[ \text{si accetta } H_0 \text{ se } \big| \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big| \leq t_{\frac{\alpha}{2}, n-1} \]
+    \centerline{Vedere tabella sotto per tutt'e cose}
+    \begin{figure}[H]
+        \caption{$X_1, X_2, \ldots, X_n$ è un campionare estratto da una popolazione $\mathcal{N}(\mu, \sigma^2)$}
+        \includegraphics[width=\textwidth]{images/boh_7.png}
+    \end{figure}
+    \paragraph{Esempio} Vogliamo verificare l'ipotesi che il consumo \textit{medio} di acqua sia \textit{350} galloni al giorno. \\
+    Si misurano i consumi medi di un campione di \textit{20 campioni} che seguono:
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_8.png}
+    \end{figure}
+    Dobbiamo verificare le due ipotesi seguenti:
+    \[ H_0 : \mu = 350 \quad \text{contro} \quad H_1 : \mu \not = 350 \]
+    Calcoliamo ora la \textbf{media} e la \textbf{deviazione standard campionaria}
+    \[ \overline{X} = 353.8 \qquad S \approx 21.85 \]
+    troviamo ora il valore della statistica del test:
+    \[ T \approx \frac{\sqrt{20} \cdot 3.8}{21.85} \approx 0.778 \]
+    il valore che abbiamo trovato è minore di $t_{0.05, 19} \approx 1.729$ l'ipotesi nulla è \textit{accettata} ad un livello del \textit{5\%}
+    TODO FINIRE PAGINA PDF 324 / 342 TOTALE
+    \begin{figure}[H]
+        \caption{$X_1, X_2, \ldots, X_n$ è un campionare estratto da una popolazione $\mathcal{N}(\mu, \sigma^2)$ e $\sigma^2$ non è nota}
+        \includegraphics[width=\textwidth]{images/boh_9.png}
+    \end{figure}
+    \subsection{Verifica se due popolazioni hanno la stessa media}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     \paragraph{Esercizio 1} Probabilità che Oneto dia 30L (Lode) \\
     $n = 120$ \\
     $\sum_{i}^{120} x_i = 18$ \\
@@ -377,37 +656,14 @@
         \[ \frac{n_{1,2}}{n_2} = \frac{n_1}{N} \]
     \end{minipage} \\
     $ \Longrightarrow N= \frac{n_1 \cdot n_2}{n_{1,2}} \rightarrow \frac{18 \cdot 20}{10} = 36 $
-    \paragraph{MLE POISSON}
-    \begin{equation*}
-        \begin{split}
-            f(x_1, x_2 \ldots x_n / \lambda) &= \frac{e^{-\lambda} \lambda^{x_1}}{x_1 !} \cdot \frac{e^{-\lambda} \lambda^{x_2}}{x_2 !} \cdots \frac{e^{-\lambda} \lambda^{x_n}}{x_n !} \\
-            &= \frac{e^{-n\lambda} \lambda^{\sum_{i}^{} x_i}}{x_1! x_2! \ldots x_n!}
-        \end{split}
-    \end{equation*}
-    \formula
-    $\lambda = \frac{\sum_{i}^{} x_i}{\lambda} \quad \text{MLE} $
+
     \paragraph{Esercizio 3} Stima del numero di incidenti medio in auto n = 10 \\
     $x_1 = \{ 4,0,6,5,2,1,2,0,4,3 \}$ \\
     $\hat{\lambda} = \frac{\sum_{i}^{} x_i}{n} = \frac{27}{10} = 2.7$
     \[ P\{x \leq 2 \} = e^{-2.7} (\frac{2.7^0}{0!} + \frac{2.7^1}{1!} + \frac{2.7^2}{2!}) \approx .4936 \rightarrow 49.36\% \]
     \centerline{Probabilità che non ci siano più di \textbf{2 incidenti} }
-    \paragraph{MLE UNIFORME}
-    \begin{equation*}
-        f(x_1, x_2 \ldots x_n / \theta) =
-        \begin{cases}
-                \frac{1}{\theta^n} & \quad 0 < x_i < \theta \\
-                0 & \quad \text{altrimenti}
-        \end{cases}
-    \end{equation*}
-    $\hat{\theta} = \max\{x_i\}$ \\
-    $\frac{\hat{\theta}}{2} = \frac{\max\{ x_i\}}{2}$
-    \paragraph{MLE GAUSSIANA}
-    \[ f(x_1,x_2 \ldots x_n / \mu, \sigma) = \prod_{i=1}^{n} \frac{1}{\sqrt{2\pi} \sigma} e^{\frac{-(x_1 - \mu)^2}{2 \sigma^2}} \]
-    \[ (\frac{1}{2 \pi})^{\frac{n}{2}} \frac{1}{\sigma^n} e^{\frac{-\sum_{i}^{}(x_i - \mu)^2}{2 \sigma}} \]
-    $log[f] = - \frac{n}{2} log 2\pi - n log \sigma - \frac{\sum_{i}^{}(x_i - \mu)^2}{2\sigma^2}$ \\ \\
-    $\frac{d log f}{d \mu} = 0 = \frac{\sum_{i}^{}(x_i - \mu)^2}{\sigma^2} \longrightarrow \hat{\mu} = \frac{\sum_{i}^{}x_i}{n}$ \\
-    $\frac{d log f}{d \sigma} = 0 = - \frac{n}{\sigma} + \frac{\sum_{i}^{} (x_i - \mu)^2}{4 \sigma^4} \rightarrow \sigma = \sqrt{\frac{\sum_{i}^{}(x_i - \mu)^2}{n}}$
-    \paragraph{Esercizio} primo \\
+    
+    \paragraph{Esercizio gaussiana} primo \\
     $x_1 = 1.7$ \\
     $x_2 = 1.82$ \\
     $x_3 = 1.73$\\
@@ -415,16 +671,6 @@
     $x_5 = 1.8$ \\
     \[ \hat{\mu} = \frac{\sum_{i}^{} x_i}{n} = \frac{1.7 + 1.82 + 1.73 + 1.7 + 1.8}{5} = 1.75 \]
     \[ \hat{\sigma} = \sqrt{\frac{0.05^2 + 0.07^2 + 0.02^2 + 0.05^2 + 0.05^2}{5}} \approx 0.051 \]
-    \paragraph{Intervalli di confidenza} normali
-    TODO
-    \paragraph{Intervalli di confidenza} gaussiani
-    $\sigma^2$ Nota \\
-    $x_1m x_2 \ldots x_n$ \\
-    $\hat{\mu} \longleftarrow \mu$ \\
-    $\frac{\overline{x} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0,1)$ \\
-    \[ P(-1.96 < \frac{\overline{x} - \mu}{\frac{\sigma}{\sqrt{n}}} < +1.96) = 0.95 \]
-    \[ \longrightarrow P(-1.96 \frac{\sigma}{\sqrt{n}} < \overline{x} - \mu < 1.96 \frac{\sigma}{\sqrt{n}}) \]
-    \[ P(\overline{x} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \overline{x} + 1.96 \frac{\sigma}{\sqrt{n}}) \]
     \paragraph{Esempio:} Sistema di comunicazione
     $\sigma^2 = 4 \quad n = 9$
     \[ x_1 = \{ 5.85, 12, 15, 7, 9, 7.5, 6, 5, 10.5 \} \]
@@ -438,36 +684,8 @@
     \end{equation*}
     \paragraph{In generale} Prob = $1-\alpha$
     \[ (\overline{x} - z_a \frac{\sigma}{\sqrt{n}}, \overline{x} + z_a \frac{\sigma}{\sqrt{n}} ) \rightarrow \text{Si rileva dalle tavole} \]
-    \subsection{Intervalli di confidenza (Bilaterali)}
-    \[ \overline{X} = \frac{1}{n} \sum_{i}^{n} x_i \]
-    \[ x_i \sim \mathcal{N}(\mu, \sigma^2) \]
-    \[ \overline{X} \sim(\mu, \frac{\sigma^2}{n}) \]
-    \[ \mathcal{Z} = \frac{\overline{X} - \mu}{\frac{\sigma}{\sqrt{n}}} \sim \mathcal{N}(0, 1) \quad Var(\frac{x}{2}) = \frac{1}{\sigma^2} Var(x) \]
-    \text{Supponiamo che $\sigma$ sia nota:}
-    \begin{equation*}
-        \begin{aligned}
-            &\begin{aligned}
-            & \operatorname{Pr}\left\{-z_{\frac{\alpha}{2}}<Z<+z_{\frac{\alpha}{2}}\right\}=1-\alpha \\
-            & \operatorname{Pr}\left\{-z_{\frac{\alpha}{2}}<\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{m}}}<+z_{\frac{\alpha}{2}}\right\}=1-\alpha \\
-                & \operatorname{Pr}\left\{-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}<\bar{x}-\mu<+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}\right\}
-        \end{aligned}\\
-        &\begin{aligned}
-        & \operatorname{Pr}\left\{-\bar{x}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}<-\mu<-\bar{x}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}\right\}= \\
-        & \operatorname{Pr}\left\{\bar{x}-z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}<\mu<\bar{x}+z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{m}}\right\}=1-\alpha
-        \end{aligned}
-        \end{aligned}
-    \end{equation*}
+
     \subsection{Intervalli di confidenza (Unilaterali)}
-    \begin{equation*}
-        \begin{aligned}
-        & \operatorname{Pr}\left\{z<z_\alpha\right\}=1-\alpha \\
-        & \operatorname{Pr}\left\{\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{m}}}<z_\alpha\right\}=1-\alpha \\
-        & \operatorname{Pr}_r\left\{\bar{x}-\mu<z_\alpha \frac{\sigma}{\sqrt{m}}\right\}=1-\alpha \\
-        & \operatorname{Pr}\left\{-\mu<-\bar{x}+z_\alpha \frac{\sigma}{\sqrt{m}}\right\}=1-\alpha \\
-        & \operatorname{Pr}\left\{\bar{x}-z_\alpha \frac{\sigma}{\sqrt{m}}<\mu\right\}=1-\alpha \\
-        & \mu \in\left(\bar{x}-z_\alpha \frac{\sigma}{\sqrt{m}},+\infty\right)
-        \end{aligned}
-    \end{equation*}
     \subsection{Esempio:} Pesca stagionale dei salmoni (\textit{Fisso intervallo -> trovo $n$}) \\
     \text{Ad ogni stagione il peso medio dei salmoni è diverso ma $\sigma = 0.3$ Kg} \\
     \text{Intervallo di confidenza al 95\%, quindi $\alpha = 0.05$}
@@ -475,15 +693,6 @@
     \[ 1.96 \frac{\sigma}{\sqrt{n}} \geq 0.1 \quad \sqrt{n} \geq \frac{1.96}{0.1} \sigma \]
     \[ n \geq (\frac{1.96}{0.1} 0.3)^2 = 5.88^2 \approx 34.6 \leftarrow \text{salmoni} \]
     \subsection{Intervallo di confidenza} con \textit{media} e \textit{varianza} \textbf{incognite}
-    \begin{equation*}
-        \begin{aligned}
-            & Z=\frac{\bar{x}-\mu}{\frac{\sigma}{\sqrt{n}}} \sigma \quad \text{ Non nota} \\
-            & s^2=\frac{1}{n-1} \sum_i\left(x_i-\bar{x}\right)^2=\frac{1}{n-1} \sum_i^n\left(x_i^2-n \bar{x}^2\right) \\
-            & =\frac{1}{n-1} \sum_i\left(x_i^2+\bar{x}^2-2 x_i \bar{x}\right) \\
-            & =\frac{1}{n-1} \sum_i x_i^2+\frac{n \bar{x}^2}{n-1}-2 \bar{x} \frac{\bar{x} n}{n-1} \\
-        \end{aligned}
-    \end{equation*}
-    \[ T = \frac{\overline{X} - \mu}{\frac{s}{\sqrt{n}}} \sim T_n - 1 \quad \text{(T studenti con n gradi di libertà)} \]
     \paragraph{Esempio:} Trasimttente ($\mu$) e ricevitore ($\mu$ + rumore)
     \[ 95\% (7.69, 10.31) \quad \hat{\mu} = 9, \sigma^2 = 4 \]
     $X_i \{ 5, 8.5, 12, 15, 7, 9, 7.5, 6.5, 10.5 \}$ \\
@@ -491,52 +700,8 @@
     $s^2 = \frac{1}{8}\sum_{i}^{}(X_i^2-9.81) \approx 9.5 \quad s = 3.082$
     \[ \mu \in (9-2.306 \frac{3.082}{3}, 9 + 2.306 \frac{3.082}{3}) = (6.63, 11.37) \]
     \centerline{Si può dimostrare che $T_{\frac{\alpha}{2} \cdot n - 1} \ev{S} \geq z_\alpha\sigma$}
-    \subsection{Integrali Monte Carlo}
-    \[ \theta = \ev{f(u)} = \int_{-\infty}^{+\infty} f(u) p(u) \, du = \int_{-\infty}^{+\infty} f(u) \, du \]
-    \paragraph{Esempio}: \\
-    $\int_{0}^{1} \sqrt{1-x^2} \,dx = ?$
-    $\ev{\sqrt{1-x^2}} \quad n = 100$ \\
-    $X_i = \sqrt{1 - U_i^2} \quad X = \{ X_1, X_2 \ldots X_100 \}$ \\
-    $\hat{\theta} = \overline{X} \pm t_{\frac{\alpha}{2}}, 99 \frac{s}{\sqrt{100}} \rightarrow \text{Per vedere se il risultato è corretto \textit{(confidenza)}}$ 
-    \subsection{Intervallo di confidenza di Bernoulli}
-    n esperimenti \\
-    Binomiale \\
-    media np \\
-    varianza np(1-p) \\
-    \[ \hat{P} = \frac{1}{n} \sum_{i}^{n}X_i \quad X_i \in \{ 0, 1 \} \] \\
-    \[ X = n\hat{P} \quad P_r \{ -z_{\frac{\alpha}{2}} < z < z_{\frac{\alpha}{2}} \approx 1-\alpha \}\] \\
-    \centerline{Dove z = $\frac{X-np}{\sqrt{np(1-p)}}$}
-    \[ \frac{x-nP}{\sqrt{nP(1-P)}} \sim \mathcal{N}(0,1)\]
-    \begin{equation}
-        \begin{aligned}
-        & \rho_r\left\{-z_{\frac{a}{2}}<\frac{x-m p}{\sqrt{m p(1-\hat{p})}}<z_{\frac{a}{2}}\right\} \cong 1-\alpha \\
-        & \rho_r\left\{\hat{p}-z_{\frac{a}{2}} \sqrt{\frac{p(1-p)}{m}}<\mu<\hat{p}+z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{p}(1-p)}{m}}\right\} \simeq 1-\alpha
-        \end{aligned}
-    \end{equation}
 
-    \section{Intervalli di confidenza}
-    \paragraph{Se $\sigma^2$ è nota} allora:
-    \[ X_i \sim \mathcal{N}(\mu, \sigma^2) \quad \overline{X} = \frac{1}{n} \sum_{i}^{n} X_i \]
-    \begin{equation*}
-        \begin{aligned}
-            \mu \in (-\infty, \overline{X} + z_\alpha \frac{\sigma}{\sqrt{n}}) \\
-            \mu \in (\overline{X} - z_{\frac{\sigma}{\sqrt{n}}}, \overline{X} + z_{\frac{\sigma}{\sqrt{n}}}) \quad p_r (1-\alpha) \\
-            \mu \in (-\infty, \overline{X} + z_\alpha \frac{\sigma}{\sqrt{n}}) \\
-            \mu \in (\overline{X} - z_\alpha \frac{\sigma}{\sqrt{n}}, \infty)
-        \end{aligned}
-    \end{equation*}
-    $s^2 = \frac{1}{n - 1} \sum_{i}{} (X_i - \overline{X})$ \\
-    Se $\sigma^2$ è ignota allora: \\
-    \[ \mu \in (\overline{X} - z_{\frac{\alpha}{2}}, n - 1 \frac{s}{\sqrt{n}}) \quad \sigma^2 \rightarrow s^2 = z \rightarrow t \]
     \subsection{Intervallo di confidenza nella varianza}
-    \[ (n-1) \frac{S^2}{\sigma^2} \sim \mathcal{X}^2 \quad X_i \sim \mathcal{N}(\mu, \sigma^2) \]
-    \begin{equation*}
-        \begin{aligned}
-            p_r \left \{ \mathcal{X}_{1- \frac{\alpha}{2}, n - 1}^2 \leq (n-1)\frac{s^2}{\sigma^2} \leq \mathcal{X}_{\frac{\alpha}{2}, n-1} \right \} \\
-            p_r \left \{ \frac{s^2(n-1)}{\mathcal{X}_{\frac{\alpha}{2}, n-1}} \leq \sigma^2 \leq \frac{s^2(n-1)}{\mathcal{X}_{1- \frac{\alpha}{2}, n - 1}^2} \right \} = 1-\alpha \\
-            \sigma^2 \in \left (\frac{s^2(n-1)}{\mathcal{X}_{\frac{\alpha}{2}, n-1}^2}, \frac{s^2(n-1)}{\mathcal{X}_{1- \frac{\alpha}{2}, n-1}}\right )  \quad p_r = 1- \alpha
-        \end{aligned}
-    \end{equation*}
     \paragraph{Esempio:} Laminatoio n = 4
     $X_i = \{ 0.123, 0.124, 0.126, 0.12 \} \text{spessore in \textbf{mm}}$ \\
     \paragraph{Svolgimento}
@@ -582,17 +747,6 @@
     $\mu_1 - \mu_2 \in (\overline{X} - \overline{Y} -T_{\frac{\alpha}{2},n+m-2} \sqrt{s^2(\frac{1}{n} + \frac{1}{m})})$ \\
     $\overline{X} - \overline{Y} + T_{\frac{\alpha}{2}, n+m-2} \sqrt{s^2 (\frac{1}{n} + \frac{1}{m})}$
     \subsection{Intervallo di previsione}
-    $X_1, \ldots X_n, X_{n+1} \sim \mathcal{N}(\mu, \sigma^2)$ \\
-    $\overline{X}_n = \frac{1}{n} \sum_{i}^{n} X_i \quad \overline{X}_n \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$ \\
-    $\overline{X}_n - X_{n+1} \sim \mathcal{N}(0, \sigma^2 + \frac{\sigma^2}{n}) \rightarrow (\mu - \mu, \sigma^2 + \frac{\sigma^2}{n})$ \\
-    $\sigma^2(1 + \frac{1}{n})$
-    \begin{minipage}{0.4\textwidth}
-        $\frac{X_n - X_n + 1}{\sigma \sqrt{1 + \frac{1}{n}}} \sim \mathcal{N}(0,1)$
-    \end{minipage}
-    \begin{minipage}{0.4\textwidth}
-        $s_n^2 = \frac{1}{n-1} \sum_{i}^{} (X_i - \overline{X}_n)^2$
-    \end{minipage}
-    \[ X_{n+1} \in(\overline{X}_n - T_{\frac{\alpha}{2}, n-1} s_n \sqrt{1 + \frac{1}{n}}, \overline{X}_n + T_{\frac{\alpha}{2}, n-1} s_n \sqrt{1 + \frac{1}{n}}) \longrightarrow P_r(1-\alpha) \]
     \paragraph{Esempio} smartwatch contapassi $\boldsymbol{n = 7}$ \\ \\
     \centerline{\begin{minipage}{0.3\textwidth}
         $LUN \quad 6922 \quad X_1$ \\
