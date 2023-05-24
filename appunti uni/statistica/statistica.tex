@@ -620,10 +620,66 @@
         \includegraphics[width=\textwidth]{images/boh_9.png}
     \end{figure}
     \subsection{Verifica se due popolazioni hanno la stessa media}
-
-
-
-
+    Una situazione che accade spesso è decidere se \textit{vari approcci} portano allo stesso risultato, oppure no. \\
+    Questa problematica si ricordune spesso alla verifica dell'ipotesi che due popolazioni normali \textit{abbiano la stessa media.}
+    \subsubsection{Il caso in cui le varianze sono note}
+    Supponiamo di avere $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2, \ldots, Y_n$ sono due campioni di due popolazioni \textit{normali} di medie $\mu_x$ $\mu_y$ e varianze \textit{note} $\sigma^2_x$ e $\sigma^2_y$ \\
+    Come sempre verifichiamo le due ipotesi
+    \[ H_0 : \mu_x = \mu_y \]
+    \[ H_1 : \mu_x \not = \mu_y \]
+    Dato che $\overline{X}$ e $\overline{Y}$ sono rispettivamente \textit{stimatori} di $\mu_x$ e $\mu_y$ \\
+    Possiamo dire che $\overline{X} - \overline{Y}$ può essere \textbf{usato come stimatore} di $\mu_x - \mu_y$
+    \[ \text{si rifiuta } H_0 \text{ se } \big|\overline{X} - \overline{Y} \big| > c \]
+    \[ \text{si accetta } H_0 \text{ se } \big|\overline{X} - \overline{Y} \big| \leq c \]
+    Come facciamo sempre noi possiamo trovare il valore di $c$ che rende questo test di livello di significatività $\alpha$ in questo modo:
+    \[ \frac{\overline{X} - \overline{Y} - (\mu_x - \mu_y)}{\sqrt{\sigma^2_x / n + \sigma^2_y / m}} \sim \mathcal{N}(0,1) \]
+    Per verificare l'ipotesi nulla $H_0 : \mu_x = \mu_y$ contro $H_1 : \mu_x \not = \mu_y$ facciamo cosi:
+    \[ \text{si rifiuta } H_0 \text{ se } \frac{|\overline{X} - \overline{Y}|}{\sqrt{\sigma^2_x / n + \sigma^2_y / m}} > z_{\frac{\alpha}{2}} \]
+    \[ \text{si accetta } H_0 \text{ se } \frac{|\overline{X} - \overline{Y}|}{\sqrt{\sigma^2_x / n + \sigma^2_y / m}} \leq z_{\frac{\alpha}{2}} \]
+    \subsubsection{Il caso in cui le varianze non sono note ma supponiamo siano uguali}
+    Prendiamo in considerazione i campioni di prima, tutti i nostri parametri sono \textit{incogniti} e studiamo le due ipotesi
+    \[ H_0 : \mu_x = \mu_y \quad \text{ contro } \quad H_1 : \mu_x \not = \mu_y \]
+    Prima di far tutto possiamo supporre che le due varianze \textit{incognite} siano uguali tra di loro quindi:
+    \[ \sigma^2 := \sigma^2_x = \sigma^2_y \]
+    Calcoliamo le due \textit{varianze campionarie}
+    \[ S^2_x = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \overline{X})^2 \]
+    \[ S^2_y = \frac{1}{m-1} \sum_{j=1}^{m} (X_j - \overline{Y})^2 \]
+    Equazione idk:
+    \[ \frac{\overline{X} - \overline{Y} - (\mu_x - \mu_y)}{S_p \sqrt{1 / n + 1 / m}} \sim t_{n+m-2}\]
+    Dove $\boldsymbol{S^2_p}$ è lo \textit{stimatore pooled} di $\sigma^2$ e viene definito in questo modo:
+    \[ S^2_p := \frac{(n-1) S^2_x + (m-1) S^2_y}{n + m -2} \]
+    Quando $H_0$ è vera ($\mu_x - \mu_y = 0$):
+    \[ T := \frac{\overline{X} - \overline{Y}}{S_p \sqrt{1 / n + 1 /m}} \]
+    \centerline{ha distribuzione $t$ con $n + m - 2$ gradi di libertà} \\[2ex]
+    Quindi possiamo verificare le ipotesi cosi:
+    \[ \text{si rifiuta } H_0 \text{ se }  |T| > t_{\frac{\alpha}{2};n+m-2} \]
+    \[ \text{si accetta } H_0 \text{ se }  |T| \leq t_{\frac{\alpha}{2};n+m-2} \]
+    possiamo eseguire il test determinando \textit{il p-dei-dati}, denotando con $\upsilon$ il valore assunto da $T$
+    \begin{equation*}
+        \begin{split}
+            \boldsymbol{p-dei-dati} &= P(|T_{n+m-2}| \geq |\upsilon|) \\
+            &= 2P(T_{n+m-2} \geq |\upsilon|)
+        \end{split}
+    \end{equation*}
+    \paragraph{Caso unilaterale}
+    Per l'ipotesi \textit{unilaterale} abbiamo le due seguenti ipotesi:
+    \[ \mu_0 : \mu_x \leq \mu_y \qquad \text{ contro } \qquad H_1 : \mu_x > \mu_y \]
+    $H_0$ deve essere \textbf{rifiutata} per valore elevati di $T$, il test di significatività $\alpha$ è:
+    \[ \text{si rifiuta } H_0 \text{ se }  T > t_{\alpha, n + m -2} \]
+    \[ \text{si accetta } H_0 \text{ se }  T \leq t_{\alpha, n + m -2} \]
+    il \textit{p-dei-dati} invece è il seguente (ricordando che $\upsilon$ è il valore assunto da $T$)
+    \[ \boldsymbol{p-dei-dati} = P(T_{n+m-2} \geq \upsilon) \]
+    \paragraph{Esempio} abbiamo $\overline{X} = 6.450$ e $\overline{Y} = 7.125$ \\
+    Calcoliamo le due S, quindi $\boldsymbol{S^2_x \approx 0.581}$ e $\boldsymbol{S^2_y \approx 0.778}$ \\
+    Calcoliamo ora lo stimatore $\boldsymbol{S^2_p}$:
+    \[ S^2_p = \frac{9}{20} S^2_x + \frac{11}{20} S^2_y \approx 0.689 \]
+    e la statistica del test:
+    \[ \upsilon = \frac{-0.675}{\sqrt{0.689 ( 1/10 + 1/12)}} \approx -1.90 \]
+    \subsubsection{Il caso in cui le varianze sono ignote e diverse}
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_10.png}
+    \end{figure}
+    \subsection{Il test t per campioni di coppie di dati}
 
 
 
