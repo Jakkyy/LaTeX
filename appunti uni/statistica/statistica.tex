@@ -35,7 +35,7 @@
 \usepackage{bm}
 
 \newcommand{\ev}{\mathbb{E}[X]}
-\renewcommand{\ev}[1]{\mathbb{E}[#1]}
+\renewcommand{\ev}[1]{\mathbb{E}\left[#1\right]}
 \newcommand*{\diff}{\mathop{}\!\mathrm{d}}
 
 \newcommand{\definizione}{\paragraph{Definizione:}}
@@ -680,6 +680,384 @@
         \includegraphics[width=\textwidth]{images/boh_10.png}
     \end{figure}
     \subsection{Il test t per campioni di coppie di dati}
+    I dati che prendiamo in esempio sono descritti da $n$ coppie di valori $(X_i, Y_i)$ per $i = 1,2,\ldots, n$ \\
+    $X_1, X_2, \ldots, X_n \qquad Y_1, Y_2, \ldots, Y_m \qquad$ \textbf{$n$ e $m$ devono essere uguali} \\ 
+    Le nostre due variabili sono \textbf{dipendenti} quindi:
+    \[ X \sim \mathcal{N}(\mu_x, \sigma_x) \]
+    \[ Y \sim \mathcal{N}(\mu_y, \sigma_y) \]
+    Se poniamo $\boldsymbol{W_i := X_i - Y_i}$ per $i=1,2,\ldots,n$ possiamo verificare queste due ipotesi
+    \[ H_0 : \mu_W = 0 \quad \text{ contro } \quad H_1 : \mu_W \not = 0 \]
+    La nostre $W$ provengono da un campione di popolazione $\mathcal{N}(\mu_W, \sigma^2_W)$, il test t quindi ci fornisce le seguenti regole:
+    \[ \text{si accetta } H_0 \text{ se } - t_{\frac{\alpha}{2}, n-1} \leq \sqrt{n} \frac{\overline{W}}{S_W} \leq t_{\frac{\alpha}{2}, n-1} \]
+    \[ \text{si rifiuta } H_0 \text{ negli altri casi} \]
+    \subsection{Verifica di ipotesi sulla varianza di una popolazione normale}
+    Sia $X_1, X_2, \ldots, X_n$ un campione di popolazione normale con media incognita $\mu$ e varianza incognita $\sigma^2$, verifichiamo le seguenti ipotesi:
+    \[ H_0 : \sigma^2 = \sigma^2_0 \quad \text{ contro l'alternativa } \quad H_1 : \sigma^2 \not = \sigma^2_0 \]
+    \centerline{con un valore di $\boldsymbol{\sigma^2_0}$ prefissato} \\[2ex]
+    Otteniamo ora il test, abbiamo una distribuzione \textit{chi-quadro} con $n-1$ gradi di libertà, quindi quando $H_0$ è vera:\
+    \[ \frac{S^2}{\sigma^2_0}(n-1) \sim \mathcal{X}^2_{n-1} \]
+    e quindi otteniamo:
+    \[ P_{H_0} \left( \mathcal{X}^2_{1- \frac{\alpha}{2}, n-1} \leq \frac{S^2}{\sigma^2_0} (n-1) \leq \mathcal{X}^2_{\frac{\alpha}{2}, n -1} \right) = 1 - \alpha \]
+    Queste sono infine le nostre regole da adottare
+    \[ \text{si accetta } H_0 \text{ se } \mathcal{X}^2_{1-\frac{\alpha}{2}, n-1} \leq \frac{S^2}{\sigma^2_0} (n-1) \leq \mathcal{X}^2_{\frac{\alpha}{2}, n-1} \]
+    \[ \text{si rifiuta } H_0 \text{ negli altri casi} \]
+    Il \textit{p-dei-dati} del test è il seguente:
+    \[ \boldsymbol{p-dei-dati} = 2 \min \{P(\mathcal{X}^2_{n-1} \leq c), \quad 1-P(\mathcal{X}^2_{n-1} \leq c)\} \]
+    \subsection{Verifica di due popolazione normali che hanno la stessa varianza}
+    Abbiamo $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2,\ldots, Y_m$ sono due campioni \textit{normali} \textbf{indipendenti}, con $\mu_x, \sigma^2_x \quad$ e $\quad \mu_y, \sigma^2_y$ incogniti, vediamo le verifiche dell'ipotesi:
+    \[ H_0 : \sigma^2_x = \sigma^2_y \quad \text{ contro } \quad H_1 : \sigma^2_x \not = \sigma^2_y \]
+    Le due \textit{varianza campionarie} sono:
+    \[ S^2_x = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \overline{X})^2 \]
+    \[ S^2_y = \frac{1}{m-1} \sum_{j=1}^{m} (Y_j - \overline{Y})^2 \]
+    Abbiamo una distribuzione F con parametri $n-1$ e $m-1$ quando $H_0$ è vera:
+    \[ \frac{S^2_x}{S^2_y} \sim F_{n-1, m-1} \]
+    e ne deduciamo che:
+    \[ P_{H_0} \left( F_{1- \frac{\alpha}{2}, n-1, m-1} \leq \frac{S^2_x}{S^2_y} \leq F_{\frac{\alpha}{2}, n-1, m-1} \right) = 1 - \alpha \]
+    Le nostre regole da adottare sono:
+    \[ \text{si accetta } H_0 \text{ se } F_{1-\frac{\alpha}{2}, n-1, m-1} \leq \frac{S^2_x}{S^2_y} \leq F_{\frac{\alpha}{2}, n-1, m-1} \]
+    \[ \text{si rifiuta } H_0 \text{ negli altri casi} \]
+    Il test del \textit{p-dei-dati} è dato da:
+    \[ \boldsymbol{p-dei-dati} = 2\min \{ P(F_{n-1,m-1} \leq \upsilon), \quad 1-P(F_{n-1,m-1} \leq \upsilon )\} \]
+    \paragraph{Nota:} il test \textbf{impone} di rifiutare $H_0$ ogni volta che il \textit{livello di significatività} $\alpha$ è \textit{maggiore o uguale} al p-dei-dati
+    \paragraph{Esempio} Vengono eseguiti 10 esperimenti nel primo caso e 12 nel secondo, con le seguenti varianze campionarie $S^2_1 = 0.14$ e $S^2_2 = 0.28$, possiamo rifiutare ad un livello di significatività del 5\% ? \\
+    Calcoliamo la funzione di ripartizione delle \textit{distribuzioni F}, quindi:
+    \[ P(F_{9,11} \leq 0.5) \approx 0.154 \]
+    Quindi ora calcoliamo il \textit{p-dei-dati}
+    \[ p-dei-dati \approx 2 \min(0.154, 0.846) = 0.308 \]
+    \centerline{L'ipotesi nulla \textbf{deve essere accettata. }}
+    \subsection{La verifica di ipotesi su una popolazione di Bernoulli}
+    Il numero di difetti in un campione di $n$ pezzi ha una distribuzione \textit{binomiale} di parametri $(n, p)$, le verifiche dell'ipotesi sono le seguenti:
+    \[ H_0 : p \leq p_0 \quad \text{ contro l'alternativa } \quad H_1 : p > p_0 \]
+    \centerline{$p_0$ è un \textit{valore assegnato}}
+    \[ \ev{X} = np \]
+    \[ Var(X) = np (1-p) \]
+    \[ \frac{X - np}{\sqrt{np_0 (1- p_0)}} \sim \mathcal{N}(0,1) \]
+    --------------
+    \[ \text{si accetta } H_0 \text{ se } \frac{X - np_0}{\sqrt{np_0 (1- p_0)}} \leq z_\alpha \]
+    \[ \text{si rifiuta } H_0 \text{ se } \frac{X - np_0}{\sqrt{np_0 (1- p_0)}} > z_\alpha \]
+    \section{AN.O.VA} 
+    \definizione Analysis of variance, ci serve per confrontare più gruppi diversi per esempio per capire se hanno \textit{medie uguali}
+    \[ Z_i := \frac{X_i - \mu_i}{\sigma^2} \sim \mathcal{N}(0,1) \]
+    \centerline{le seguenti variabili aleatorie sono \textit{normali standard} e quindi:} \\[2ex]
+    Abbiamo $m$ gruppi formati da $n$ oggetti. ogni gruppo rappresenta una variabile aleatoria $X_i \sim \mathcal{N}(\mu, \sigma^2)$
+    \[ \sum_{i=1}^{N} Z^2_i = \sum_{i=1}^{N} \frac{(X_i - \mu_i)^2}{\sigma^2} \sim \mathcal{X}^2_N \]
+    Essa è una \textit{chi-quadro} con $N$ gradi di libertà, non stimiamo direttamente le $\mu_i$ ma usiamo il fatto che queste sono combinazione lineari di $k$ \textit{parametri incogniti} \\
+    In questa ipotesi possiamo dimostrare ciò:
+    \[ \sum_{i=1}^{N} \frac{(X_i - \hat{\mu_i})^2}{\sigma^2} \sim \mathcal{X}^2_{N-k} \]
+    \centerline{dove \textit{N} sono gli oggetti totali mentre \textit{k} sono i gruppi} \\[2ex]
+    Prendiamo $\mu$ come \textit{unico parametro da stimare} cosi che $k=1$ se sostituiamo $\mu$ con $\overline{X}$ che è il suo stimatore, troviamo questa espressione:
+    \[ \sum_{i=1}^{N} \frac{(X_i - \overline{X})^2}{\sigma^2} = \frac{N-1}{\sigma^2} \cdot \frac{1}{N-1} \sum_{i=1}^{N}(X_i - \overline{X})^2 = \boldsymbol{\frac{S^2}{\sigma^2}(N-1)} \]
+    \subsection{Anova a 1 via}
+    In questo caso noi abbiamo $m$ campioni \textit{indipendenti}, formati da $n$ variabili aleatorie con media che \textbf{dipende} dal campione e varianza \textit{fissata} \\
+    Denotiamo $X_{ij} \quad i = 1,\ldots, m$ con quello che indica il campione mentre con $j=1, \ldots, n$ indichiamo la posizione all'interno del campione stesso \\[2ex] 
+    I parametri $\mu_1, \mu_2, \ldots, \mu_m$ e $\sigma$ sono incogniti, il nostro scopo è quello di verificare l'ipotesi nulla:
+    \[ H_0 : \mu_1 = \mu_2 = \cdots = \mu_m \]
+    e la sua controparte:
+    \[ H_1 : \mu_1 \not= \mu_2 \not= \cdots \not= \mu_m \]
+    Dato che ci sono $nm$ \textit{variabili aleatorie indipendenti} la \textit{somma dei quadrati} è una distribuzione \textit{chi-quadro} con $nm$ gradi di libertà:
+    \[ \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(X_{ij} - \ev{X_{ij}})^2}{\sigma} = \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(X_{ij} - \mu_i)^2}{\sigma^2} \sim \mathcal{X}^2_{nm} \]
+    come stimatori degli $m$ usiamo le medie campionarie dei singoli campioni di dati; in particolare $\boldsymbol{X_{i*}}$ denoterà quella del campione i-esimo:
+    \[ X_{i*} := \frac{1}{n} \sum_{j=1}^{n} X_{ij} \]
+    Siccome $X_{i*}$ è uno stimatore di $\mu_i$ lo \textbf{sostituiamo} nell'equazione di sopra, quindi:
+    \[ \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(X_{ij} - X_{i*})^2}{\sigma^2} = \frac{SS_W}{\sigma^2} \sim \mathcal{X}^2_{nm - m} \]
+    \centerline{Essa rappresenta una \textit{chi-quadro} con $nm-m$ gradi di libertà} \\[2ex]
+    Calcoliamo ora la media di $\boldsymbol{SS_W}$ otteniamo che:\
+    \[ \ev{\frac{SS_W}{\sigma^2}} = nm - m \quad \text{ ovvero } \quad \ev{\frac{SS_W}{nm-m}} = \sigma^2 \]
+    \centerline{Cosi abbiamo trovato il primo stimatore di $\sigma^2$} \\[2ex]
+    Fino ad ora abbiamo supposto che $H_0$ fosse vera o meno.
+    \subsubsection{Stima di $\sigma^2$ valida solo quando $\mu_i = \mu$}
+    In questi casi tutti gli stimatori $X_{1*}, X_{2*}, \ldots, X_{m*}$ sono normali di media $\mu$ e varianza $\sigma^2/n$, la loro somma dei quadrati è la seguente:
+    \[ \sum_{i=1}^{m} \frac{(X_{i*} - \ev{X_{i*}})^2}{Var(X_{i*})} = \sum_{i=1}^{m} \frac{(X_{i*} - \mu)^2}{\sigma^2 / n} \sim \mathcal{X}^2_m \]
+    \centerline{questa è una \textit{chi-quadro} con $m$ gradi di libertà}
+    Abbiamo bisogno però di uno \textit{stimatore} di $\mu$, e la loro media campionaria risulta essere la scelta migliore, quindi:
+    \[ X_{**} := \frac{1}{nm} \sum_{i=1}^{m} \sum_{j=1}^{n} X_{ij} = \frac{1}{m} \sum_{i=1}^{m} X_{i*} \]
+    Nell'equazione sopra ora andiamo quindi a sostituire $\mu$ con $X_{**}$ e otteniamo (quando $H_0$ è vera) 
+    \[ \sum_{i=1}^{m} \frac{(X_{i*} - X_{**})^2}{\sigma^2 / n} = \frac{SS_b}{\sigma^2} \sim \mathcal{X}^2_{m-1} \]
+    Dove $\boldsymbol{SS_b}$ è:
+    \[ SS_b := n \sum_{i=1}^{m} (X_{i*} - X_{**})^2 \]
+    Quindi, riassumento, quando $H_0$ è vera:
+    \[ \ev{\frac{SS_b}{\sigma^2}} = m -1 \quad \text{ ovvero } \quad \ev{\frac{SS_b}{m-1}} = \sigma^2 \]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    n
+    La prima legge di Newton dice che la forza con cui due corpi si attragono è direttamente proporzionale al prodotto delle due masse ed inversamente proporzionale al quadrato della loro distanza.
+    \subsubsection{Legge di gravitazione di Newton}\label{sec:legge-di-gravitazione-di-newton}\[
+     F = G\frac{m_1m_2}{r^2} 
+    \]
+    In quest'espressione $G$ rappresenta la costante gravitazionale:
+    \begin{split} 
+    G &= 6.67 \cdot 10^{-11} N \cdot \frac{m^2}{kg^2} \\
+    & = 6.67 \cdot 10^{-11} \frac{m^3}{kg}\cdot s^2
+    
+    
+    \end{split}\section{Regressione lineare}\label{sec:regressione-lineare}
+    Molti problemi di statistica prevedono una singola variabile $Y$ di \emph{risposta} e un certo numero di variabili $\boldmath{x_1, x_2, \ldots, x_r}$ di \emph{ingresso}. La \emph{risposta} è in funzione dei dati, $Y$ è anche detta \emph{variabile dipendente}, mentre le $x_i$ sono le \emph{variabili indipendenti}.\\
+    La più semplice relazione potrebbe essere quella lineare:
+    \[
+     Y = \beta_0 + \beta_1x_1 + \ldots  + \beta_rx_r 
+    \]
+    (centrare) Dove $\beta_0, \beta_1, \ldots, \beta_r$ sono costanti.
+    
+    Predire esattamente le $\beta_i$ non è possibile, quindi all'equazione si aggiunge un \emph{errore casuale} denominato \emph{e}:
+    \[
+     Y = \beta_0 + \beta_1x_1 + \ldots + \beta_rx_r + e 
+    \]
+    La variabile $e$ ha distribuzione normale standard. $e \sim \mathcal N(0,1)$
+    
+    L'equazione qui sopra è chiamata \emph{equazione di regressione lineare}.
+    questa esprime la regressione di \emph{Y} rispetto alle variabili indipendenti $x_1, x_2, \ldots, x_r$, mentre le costanti $\beta_0, \beta_1, \ldots, \beta_r$ sono dette \emph{coefficienti di regressione} e vanno normalmente stimate.
+    
+    Un equazione di regressione si dice \emph{semplice} se $r = 1$, e quindi c'è solo una variabile indipendente, negli altri casi si dice regressione \emph{multipla}.
+    Quindi la relazione diventa:
+    \[
+     Y = \alpha + \beta x + e 
+    \]
+    Indichiamo con $A$ e $B$ (variabili aleatorie) degli stimatori di $\alpha, \beta$.
+    L'equazione diventerà:
+    \[
+     Y = A + Bx + e 
+    \]
+    Per avvicinarsi alla retta reale la quantità $(Y_i - A + Bx_i)^2$ deve risultare minima.
+    (rappresenta il quadrato della differenza tra predizione e valore osservato)
+    
+    Quindi:
+    \[
+     SS := \sum_{i = 1}^{n}(Y_i-A-Bx_i)^2  
+    \]
+    Ricaviamo $A$ e $B$ tale per cui la $SS$ risulta minima:
+     
+    \begin{split}
+    &B = \frac{\sum_ix_iY_i - \overline{x}\sum_i Y_i }{\sum_i x_i^2 - n \overline x^2} \\ \\
+    &A = \overline Y - B \overline x
+    \end{split}
+    La retta $Y = A + Bx + e$ è \emph{la stima della retta di regressione}.
+    
+    \begin{figure}
+    \includegraphics{Images/Pasted image 20230524120359.png}
+    \caption{undefined undefined}\n\end{figure}
+    
+    \section{Distribuzione degli stimatori}\label{sec:distribuzione-degli-stimatori}
+    $Y_1, Y_2, \ldots, Y_n$ sono indipendenti con distribuzione normale. $Y_i \sim \mathcal N(\alpha + \beta x_i, \sigma^2)$
+    $B$ e $A$ anch'esse hanno distribuzione normale.
+    
+    $B$ è uno stimatore non distorto di $\beta$ perché il suo valore atteso è uguale a $\beta$:
+    \[
+     
+    E[B] = \beta
+    \]
+    Quindi la sua varianza risulta essere:
+    \[
+    \text{Var}(B) = \frac{\sigma^2}{\sum_i x^2_i -n\overline x^2}
+    \]
+    Anche $A$ è uno stimatore non distorto di $\alpha$ perché il valore atteso è $\alpha$:
+    \[
+     
+    E[A] = \alpha 
+    \]
+    Varianza di $A$:
+    \[
+    \text{Var}(A) = \frac{\sigma^2 \sum_i x_i^2}{n(\sum_i x_i^2 - n \overline x^2)}
+    \]
+    Somma dei quadrati dei residui è usata per stimare la varianza degli errori, $\sigma^2$:
+    \[
+     SS_R := \sum_i^n(Y_i - A - Bx_i)^2 
+    \]
+    La $SS_R$ ha distribuzione chi-quadro, con $n-2$ gradi di libertà:
+    \[
+     \frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2}  
+    \]
+    Il valore atteso della $SS_R$ è uguale alla varianza, quindi è uno stimatore non distorto del parametro incognito $\sigma^2$:
+    \[
+     
+    
+    E[\frac{SS_R}{\sigma^2}] = n - 2 \quad \Rightarrow \quad E[\frac{SS_R}{n-2}] = \sigma^2
+    
+    \] 
+    \begin{split}
+    
+    &S_{xY} := \sum_{i=1}^n x_i Y_i - n \overline x \overline Y \quad \text{dispersione di $x$ e $Y$}\\
+    &S_{xx} := \sum_{i = 1}^{n} x^2_i - n \overline x^2 \quad \text{dispersione di $x$ e $x$}\\
+    &S_{YY} := \sum_{i=1}^{n} Y_i^2 - n \overline Y^2 \quad \text{dispersione di $Y$ e $Y$}
+    
+    \end{split}
+    Possiamo riscrivere B come:
+    \[
+     
+    B = \frac{\sum_ix_iY_i - \overline{x}\sum_i Y_i }{\sum_i x_i^2 - n \overline x^2} \quad \Rightarrow \quad B=\frac{S_{xY}}{S_{xx}}
+    \]\subsubsection{In generale}\label{sec:in-generale}
+    Nel caso in cui $Y_i, i = 1,2,3,\ldots,n$  siano normali indipendenti con media $\alpha + \beta x_i$ e varianza $\sigma^2$, gli stimatori dei minimi quadrati per $\beta$ e $\alpha$ sono:
+    \[
+     B = \frac{S_{xY}}{S_{xx}} \quad \quad A = \overline Y - B \overline x $$ e hanno distribuzione: $$ B \sim \mathcal N(\beta,\frac{\sigma^2}{S_{xx}}) \quad \quad A \sim \mathcal N(\alpha,\frac{\sigma^2 \sum_ix_i^2}{nS_{xx}}) 
+    \]
+    La somma dei quadrati dei residui è calcolata tramite:
+    \[
+     SS_R = \frac{S_{xx}S_{YY}- S_{xY}^2}{S_{xx}}
+    \]
+    La $SS_R$ ha distribuzione:
+    \[
+     \frac{SS_R}{\sigma^2} \sim \mathcal X^2_{n-2}
+    \]\section{Inferenza sui parametri della regressione}\label{sec:inferenza-sui-parametri-della-regressione}
+    Quanto sono distanti $A$ e $B$ da $\alpha$ e $\beta$?
+    Dobbiamo vedere l'intervallo di confidenza
+    \subsection{Inferenza su $\beta$}\label{sec:inferenza-su-beta}
+    Formula dell'intervallo di confidenza di $\beta$:
+    \[
+     \beta \in B \pm \sqrt{\frac{SS_R}{(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2}, n-2}
+    \]
+    Estesa:
+    \[
+     P\Big(B - t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}} < \beta < B + t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}}\Big) 
+    \]
+    ==Importante==: $\alpha$ ==NON== è il parametro della regressione, ma è il livello di confidenza.
+    \subsection{Inferenza su $\alpha$}\label{sec:inferenza-su-alpha}
+    Formula dell'intervallo di confidenza di $\alpha$:
+    \[
+     \alpha \in A \pm \frac{SS_R\sum_{i}{}x_i^2}{\sqrt{n(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2},n-2}
+    \]
+    Dove la prima $\alpha$ è il coefficiente della retta mentre $\alpha$ nella t è il livello di confidenza.
+    \subsection{Inferenza su $\alpha + \beta x_0$}\label{sec:inferenza-su-alpha--beta-x_0}
+    Il valore atteso di $A + B x_0$ è uguale a $\alpha + \beta x_0$  quindi è uno stimatore non distorto:
+    \[
+     E[A +B x_0] = E[A] + x_0E[B] = \alpha + \beta x_0 
+    \]
+    La varianza è:
+    \[
+     \text{Var}(A+Bx_0) = \sigma^2 \Big[\frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}}  \Big] 
+    \]
+    qual'è la distribuzione di $A+Bx_0$?
+    \[
+     A+Bx_0 \sim \mathcal N \Big(\alpha+\beta x_0, \sigma^2 \Big[ \frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}} \Big]\Big) 
+    \]
+    intervallo di confidenza di $\alpha + \beta x_0$:
+    \[
+     \alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{n}, n-2}\sqrt{\frac{1}{n} + \frac{(x_0- \overline x)^2}{S_{xx}}} \cdot \sqrt{\Big(\frac{SS_R}{n-2} \Big)}
+    \]
+    $S_{xx}$ risulta piccolo se i punti sono vicini alla media.
+    \subsection{Inferenza di $Y_0 = Y(x_0) \rightarrow$ predittivo}\label{sec:inferenza-di-y_0--yx_0-rightarrow-predittivo}
+    Nel caso dovessimo prevedere un nuovo elemento della retta di regressione(utilizzando i dati già a disposizione) dobbiamo utilizzare la seguente formula:
+    \[
+     A+Bx_0 \pm t_{\frac{\alpha}{2},n-2} \cdot \sqrt{\Big(1+\frac{1}{n} + \frac{(x_0-\overline x)^2}{S_{xx}}\Big)\frac{SS_R}{n-2}} 
+    \]\subsection{Riassunto:}\label{sec:riassunto}
+    \begin{figure}
+    \includegraphics{Images/Pasted image 20230524170143.png}
+    \caption{undefined undefined}\n\end{figure}
+    
+    \subsection{Coefficiente di determinazione}\label{sec:coefficiente-di-determinazione}
+    Come verifico i miei valori(della retta)? Tramite il coefficiente di determinazione.
+    
+    Formula del coefficiente di determinazione:
+    \[
+     R^2 = \frac{S_{YY}-SS_R}{S_{YY}} = 1- \frac{SS_R}{S_{YY}} \quad  \quad 0 \leq R^2 \leq 1 
+    \]
+    Casi possibili:
+    \begin{enumerate}
+    \item 
+    Se $R^2 = 1$:
+    \begin{enumerate}
+    \item 
+    la dispersione è data solo dalla retta (regressione)
+    \end{enumerate}
+    \item 
+    Se $R^2 = 0$:
+    \begin{enumerate}
+    \item 
+    la dispersione è dovuta solo dal rumore
+    \end{enumerate}
+    \end{enumerate}
+    
+    La retta è migliore più $R^2$ è vicino a 1.
+    \subsection{Coefficiente di correlazione}\label{sec:coefficiente-di-correlazione}\[
+     r = \frac{\sum_i (x_i - \overline x)(y_i - \overline y)}{\sqrt{\sum_i (x_i - \overline x)^2 \sum_i(y_i - \overline y)^2}} = \frac{S_{xY}}{\sqrt{S_{xx}S_{YY}}} 
+    \]
+    Dimostrazione matematica di $R^2$:
+    \[
+     r^2 = \frac{S_{xY}^2}{S_{xx}S_{YY}} = \ldots = 1- \frac{SS_R}{S_{YY}}
+    \]
+    Quindi:
+    \[
+     |r| = \sqrt{R^2} 
+    \]\subsection{Analisi dei residui}\label{sec:analisi-dei-residui}
+    Se il nostro modello non segue la forma di una "retta" non possiamo utilizzare la retta di regressione per rappresentare i nostri dati.
+    \subsection{Trasformazione al lineare}\label{sec:trasformazione-al-lineare}
+    Si può linearizzare tramite diverse funzioni, quella esponenziale in questo modo:
+    $W(t) = ce^{-dt}$ dove $e, t$ sono parametri
+    
+    Calcoliamo il log:
+    $\log({W}(t)) \approx \log{(c)}-dt$
+    
+    Se ora poniamo
+    \begin{itemize}
+    \item 
+    $Y = \log{W(t)}$
+    \item 
+    $\alpha = \log{c}$
+    \item 
+    $\beta = -d$
+    \end{itemize}
+    
+    La regressione lineare:
+    \[
+     Y = \alpha + \beta t + e 
+    \]
+    Diventa:
+    \[
+     W(t) \approx e^{A+Bt} 
+    \]\subsection{Rimedio al caso eteroschedastico}\label{sec:rimedio-al-caso-eteroschedastico}
+    (da rivedere)
+    
+    $Y_i = \alpha + \beta x_i + e_i$
+    $e_i \sim \mathcal N(0,\sigma_i^2) \rightarrow$ errore in crescita $x$
+    
+    $\text{Var}(e_i) = \frac{\sigma^2}{W_i}$
+    $\sum_i W_i(Y-(A+B_{x_0})$
+    \subsection{Regressione lineare multipla}\label{sec:regressione-lineare-multipla}\[
+    Y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 \ldots + \beta_k x_k +e
+    \]\[
+     \min\sum_i(Y_i -(\beta_0+\beta_1x_{i1} + \beta_2x_{i2} \ldots + \beta_kx_{ik})) 
+    \]\subsection{Regressione (lineare) polinomiali}\label{sec:regressione-lineare-polinomiali}
+    Nel caso in cui il nostro modello non può essere approssimato con un modelli lineari, si possono utilizzare relazioni polinomiali:
+    \[
+     Y = \beta_0 + \beta_1x+\beta_2x^2 +\ldots+\beta_kx^k + e
+    \]
+    Dobbiamo minimizzare:
+    \[
+     \sum_i^n (Y_i-B_0-B_1x_1-\ldots-B_rx_i^r)^2 
+    \]
+    Per determinare $\beta_0, \beta_1, \ldots, \beta_r$ dobbiamo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
