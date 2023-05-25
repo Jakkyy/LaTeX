@@ -807,30 +807,20 @@
     \section{Regressione lineare}\label{sec:regressione-lineare}
     Molti problemi di statistica prevedono una singola variabile $Y$ di \emph{risposta} e un certo numero di variabili $\boldsymbol{x_1, x_2, \ldots, x_r}$ di \emph{ingresso}. La \emph{risposta} è in funzione dei dati, $Y$ è anche detta \emph{variabile dipendente}, mentre le $x_i$ sono le \emph{variabili indipendenti}.\\
     La più semplice relazione potrebbe essere quella lineare:
-    \[
-     Y = \beta_0 + \beta_1x_1 + \ldots  + \beta_rx_r 
-    \]
-    (centrare) Dove $\beta_0, \beta_1, \ldots, \beta_r$ sono costanti.
-    
+    \[ Y = \beta_0 + \beta_1x_1 + \ldots  + \beta_rx_r \]
+    \centerline{Dove $\beta_0, \beta_1, \ldots, \beta_r$ sono costanti.} \\[2ex]
     Predire esattamente le $\beta_i$ non è possibile, quindi all'equazione si aggiunge un \emph{errore casuale} denominato \emph{e}:
-    \[
-     Y = \beta_0 + \beta_1x_1 + \ldots + \beta_rx_r + e 
-    \]
+    \[ Y = \beta_0 + \beta_1x_1 + \ldots + \beta_rx_r + e \]
     La variabile $e$ ha distribuzione normale standard. $e \sim \mathcal N(0,1)$
     
     L'equazione qui sopra è chiamata \emph{equazione di regressione lineare}.
     questa esprime la regressione di \emph{Y} rispetto alle variabili indipendenti $x_1, x_2, \ldots, x_r$, mentre le costanti $\beta_0, \beta_1, \ldots, \beta_r$ sono dette \emph{coefficienti di regressione} e vanno normalmente stimate.
-    
     Un equazione di regressione si dice \emph{semplice} se $r = 1$, e quindi c'è solo una variabile indipendente, negli altri casi si dice regressione \emph{multipla}.
     Quindi la relazione diventa:
-    \[
-     Y = \alpha + \beta x + e 
-    \]
+    \[ Y = \alpha + \beta x + e \]
     Indichiamo con $A$ e $B$ (variabili aleatorie) degli stimatori di $\alpha, \beta$.
     L'equazione diventerà:
-    \[
-     Y = A + Bx + e 
-    \]
+    \[ Y = A + Bx + e \]
     Per avvicinarsi alla retta reale la quantità $(Y_i - A + Bx_i)^2$ deve risultare minima.
     (rappresenta il quadrato della differenza tra predizione e valore osservato)
     
@@ -850,23 +840,17 @@
     $B$ e $A$ anch'esse hanno distribuzione normale.
     
     $B$ è uno stimatore non distorto di $\beta$ perché il suo valore atteso è uguale a $\beta$:
-    \[E[B] = \beta\]
+    \[ E[B] = \beta \]
     Quindi la sua varianza risulta essere:
     \[\text{Var}(B) = \frac{\sigma^2}{\sum_i x^2_i -n\overline x^2}\]
     Anche $A$ è uno stimatore non distorto di $\alpha$ perché il valore atteso è $\alpha$:
     \[  E[A] = \alpha \]
     Varianza di $A$:
-    \[
-    \text{Var}(A) = \frac{\sigma^2 \sum_i x_i^2}{n(\sum_i x_i^2 - n \overline x^2)}
-    \]
+    \[ \text{Var}(A) = \frac{\sigma^2 \sum_i x_i^2}{n(\sum_i x_i^2 - n \overline x^2)} \]
     Somma dei quadrati dei residui è usata per stimare la varianza degli errori, $\sigma^2$:
-    \[
-     SS_R := \sum_i^n(Y_i - A - Bx_i)^2 
-    \]
+    \[ SS_R := \sum_i^n(Y_i - A - Bx_i)^2 \]
     La $SS_R$ ha distribuzione chi-quadro, con $n-2$ gradi di libertà:
-    \[
-     \frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2}  
-    \]
+    \[ \frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2} \]
     Il valore atteso della $SS_R$ è uguale alla varianza, quindi è uno stimatore non distorto del parametro incognito $\sigma^2$:
     \[E[\frac{SS_R}{\sigma^2}] = n - 2 \quad \Rightarrow \quad E[\frac{SS_R}{n-2}] = \sigma^2\] 
     \begin{equation*}
@@ -882,138 +866,93 @@
     Nel caso in cui $Y_i, i = 1,2,3,\ldots,n$  siano normali indipendenti con media $\alpha + \beta x_i$ e varianza $\sigma^2$, gli stimatori dei minimi quadrati per $\beta$ e $\alpha$ sono:
     \[B = \frac{S_{xY}}{S_{xx}} \quad \quad A = \overline Y - B \overline x $$ e hanno distribuzione: $$ B \sim \mathcal N(\beta,\frac{\sigma^2}{S_{xx}}) \quad \quad A \sim \mathcal N(\alpha,\frac{\sigma^2 \sum_ix_i^2}{nS_{xx}}) \]
     La somma dei quadrati dei residui è calcolata tramite:
-    \[
-     SS_R = \frac{S_{xx}S_{YY}- S_{xY}^2}{S_{xx}}
-    \]
+    \[ SS_R = \frac{S_{xx}S_{YY}- S_{xY}^2}{S_{xx}} \]
     La $SS_R$ ha distribuzione:
-    \[
-     \frac{SS_R}{\sigma^2} \sim \mathcal X^2_{n-2}
-    \]\section{Inferenza sui parametri della regressione}\label{sec:inferenza-sui-parametri-della-regressione}
+    \[ \frac{SS_R}{\sigma^2} \sim \mathcal X^2_{n-2} \]
+    \section{Inferenza sui parametri della regressione}\label{sec:inferenza-sui-parametri-della-regressione}
     Quanto sono distanti $A$ e $B$ da $\alpha$ e $\beta$?
     Dobbiamo vedere l'intervallo di confidenza
     \subsection{Inferenza su $\beta$}\label{sec:inferenza-su-beta}
     Formula dell'intervallo di confidenza di $\beta$:
-    \[
-     \beta \in B \pm \sqrt{\frac{SS_R}{(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2}, n-2}
-    \]
+    \[ \beta \in B \pm \sqrt{\frac{SS_R}{(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2}, n-2} \]
     Estesa:
-    \[
-     P\Big(B - t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}} < \beta < B + t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}}\Big) 
-    \]
-    ==Importante==: $\alpha$ ==NON== è il parametro della regressione, ma è il livello di confidenza.
+    \[ P\Big(B - t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}} < \beta < B + t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}}\Big) \]
+    \textbf{Importante}: $\alpha$ \textbf{NON} è il parametro della regressione, ma è il livello di confidenza.
     \subsection{Inferenza su $\alpha$}\label{sec:inferenza-su-alpha}
     Formula dell'intervallo di confidenza di $\alpha$:
-    \[
-     \alpha \in A \pm \frac{SS_R\sum_{i}{}x_i^2}{\sqrt{n(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2},n-2}
-    \]
+    \[ \alpha \in A \pm \frac{SS_R\sum_{i}{}x_i^2}{\sqrt{n(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2},n-2} \]
     Dove la prima $\alpha$ è il coefficiente della retta mentre $\alpha$ nella t è il livello di confidenza.
     \subsection{Inferenza su $\alpha + \beta x_0$}\label{sec:inferenza-su-alpha--beta-x_0}
     Il valore atteso di $A + B x_0$ è uguale a $\alpha + \beta x_0$  quindi è uno stimatore non distorto:
-    \[
-     E[A +B x_0] = E[A] + x_0E[B] = \alpha + \beta x_0 
-    \]
+    \[ E[A +B x_0] = E[A] + x_0E[B] = \alpha + \beta x_0 \]
     La varianza è:
-    \[
-     \text{Var}(A+Bx_0) = \sigma^2 \Big[\frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}}  \Big] 
-    \]
+    \[ \text{Var}(A+Bx_0) = \sigma^2 \Big[\frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}}  \Big] \]
     qual'è la distribuzione di $A+Bx_0$?
-    \[
-     A+Bx_0 \sim \mathcal N \Big(\alpha+\beta x_0, \sigma^2 \Big[ \frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}} \Big]\Big) 
-    \]
+    \[ A+Bx_0 \sim \mathcal N \Big(\alpha+\beta x_0, \sigma^2 \Big[ \frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}} \Big]\Big) \]
     intervallo di confidenza di $\alpha + \beta x_0$:
-    \[
-     \alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{n}, n-2}\sqrt{\frac{1}{n} + \frac{(x_0- \overline x)^2}{S_{xx}}} \cdot \sqrt{\Big(\frac{SS_R}{n-2} \Big)}
-    \]
+    \[ \alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{n}, n-2}\sqrt{\frac{1}{n} + \frac{(x_0- \overline x)^2}{S_{xx}}} \cdot \sqrt{\Big(\frac{SS_R}{n-2} \Big)} \]
     $S_{xx}$ risulta piccolo se i punti sono vicini alla media.
     \subsection{Inferenza di $Y_0 = Y(x_0) \rightarrow$ predittivo}\label{sec:inferenza-di-y_0--yx_0-rightarrow-predittivo}
     Nel caso dovessimo prevedere un nuovo elemento della retta di regressione(utilizzando i dati già a disposizione) dobbiamo utilizzare la seguente formula:
-    \[
-     A+Bx_0 \pm t_{\frac{\alpha}{2},n-2} \cdot \sqrt{\Big(1+\frac{1}{n} + \frac{(x_0-\overline x)^2}{S_{xx}}\Big)\frac{SS_R}{n-2}} 
-    \]
+    \[ A+Bx_0 \pm t_{\frac{\alpha}{2},n-2} \cdot \sqrt{\Big(1+\frac{1}{n} + \frac{(x_0-\overline x)^2}{S_{xx}}\Big)\frac{SS_R}{n-2}} \]
     \subsection{Riassunto:}\label{sec:riassunto}
     \subsection{Coefficiente di determinazione}\label{sec:coefficiente-di-determinazione}
     Come verifico i miei valori(della retta)? Tramite il coefficiente di determinazione.
-    
     Formula del coefficiente di determinazione:
-    \[
-     R^2 = \frac{S_{YY}-SS_R}{S_{YY}} = 1- \frac{SS_R}{S_{YY}} \quad  \quad 0 \leq R^2 \leq 1 
-    \]
+    \[ R^2 = \frac{S_{YY}-SS_R}{S_{YY}} = 1- \frac{SS_R}{S_{YY}} \quad  \quad 0 \leq R^2 \leq 1 \]
     Casi possibili:
     \begin{enumerate}
-    \item 
-    Se $R^2 = 1$:
-    \begin{enumerate}
-    \item 
-    la dispersione è data solo dalla retta (regressione)
-    \end{enumerate}
-    \item 
-    Se $R^2 = 0$:
-    \begin{enumerate}
-    \item 
-    la dispersione è dovuta solo dal rumore
-    \end{enumerate}
+        \item Se $R^2 = 1$:
+        \begin{enumerate}
+            \item la dispersione è data solo dalla retta (regressione)
+        \end{enumerate}
+        \item Se $R^2 = 0$:
+        \begin{enumerate}
+            \item la dispersione è dovuta solo dal rumore
+        \end{enumerate}
     \end{enumerate}
     
-    La retta è migliore più $R^2$ è vicino a 1.
-    \subsection{Coefficiente di correlazione}\label{sec:coefficiente-di-correlazione}\[
-     r = \frac{\sum_i (x_i - \overline x)(y_i - \overline y)}{\sqrt{\sum_i (x_i - \overline x)^2 \sum_i(y_i - \overline y)^2}} = \frac{S_{xY}}{\sqrt{S_{xx}S_{YY}}} 
-    \]
+    \textbf{La retta è migliore più $\boldsymbol{R^2}$ è vicino a 1}.
+    \subsection{Coefficiente di correlazione}\label{sec:coefficiente-di-correlazione}
+    \[ r = \frac{\sum_i (x_i - \overline x)(y_i - \overline y)}{\sqrt{\sum_i (x_i - \overline x)^2 \sum_i(y_i - \overline y)^2}} = \frac{S_{xY}}{\sqrt{S_{xx}S_{YY}}} \]
     Dimostrazione matematica di $R^2$:
-    \[
-     r^2 = \frac{S_{xY}^2}{S_{xx}S_{YY}} = \ldots = 1- \frac{SS_R}{S_{YY}}
-    \]
+    \[ r^2 = \frac{S_{xY}^2}{S_{xx}S_{YY}} = \ldots = 1- \frac{SS_R}{S_{YY}} \]
     Quindi:
-    \[
-     |r| = \sqrt{R^2} 
-    \]\subsection{Analisi dei residui}\label{sec:analisi-dei-residui}
+    \[ |r| = \sqrt{R^2} \]
+    \subsection{Analisi dei residui}\label{sec:analisi-dei-residui}
     Se il nostro modello non segue la forma di una "retta" non possiamo utilizzare la retta di regressione per rappresentare i nostri dati.
     \subsection{Trasformazione al lineare}\label{sec:trasformazione-al-lineare}
     Si può linearizzare tramite diverse funzioni, quella esponenziale in questo modo:
     $W(t) = ce^{-dt}$ dove $e, t$ sono parametri
-    
     Calcoliamo il log:
     $\log({W}(t)) \approx \log{(c)}-dt$
-    
-    Se ora poniamo
+    Se ora poniamo:
     \begin{itemize}
-    \item 
-    $Y = \log{W(t)}$
-    \item 
-    $\alpha = \log{c}$
-    \item 
-    $\beta = -d$
+        \item $Y = \log{W(t)}$
+        \item $\alpha = \log{c}$
+        \item $\beta = -d$
     \end{itemize}
-    
     La regressione lineare:
-    \[
-     Y = \alpha + \beta t + e 
-    \]
-    Diventa:
-    \[
-     W(t) \approx e^{A+Bt} 
-    \]\subsection{Rimedio al caso eteroschedastico}\label{sec:rimedio-al-caso-eteroschedastico}
+    \[ Y = \alpha + \beta t + e \quad \text{ diventa } \quad W(t) \approx e^{A+Bt} \]
+    \subsection{Rimedio al caso eteroschedastico}\label{sec:rimedio-al-caso-eteroschedastico}
     (da rivedere)
     
     $Y_i = \alpha + \beta x_i + e_i$
     $e_i \sim \mathcal N(0,\sigma_i^2) \rightarrow$ errore in crescita $x$
     
     $\text{Var}(e_i) = \frac{\sigma^2}{W_i}$
-    $\sum_i W_i(Y-(A+B_{x_0})$
-    \subsection{Regressione lineare multipla}\label{sec:regressione-lineare-multipla}\[
-    Y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 \ldots + \beta_k x_k +e
-    \]\[
-     \min\sum_i(Y_i -(\beta_0+\beta_1x_{i1} + \beta_2x_{i2} \ldots + \beta_kx_{ik})) 
-    \]\subsection{Regressione (lineare) polinomiali}\label{sec:regressione-lineare-polinomiali}
+    $\sum_i W_i(Y-(A+B_{x_0}))$
+    \subsection{Regressione lineare multipla}\label{sec:regressione-lineare-multipla}
+    \[ Y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 \ldots + \beta_k x_k +e \]
+    \[ \min\sum_i(Y_i -(\beta_0+\beta_1x_{i1} + \beta_2x_{i2} \ldots + \beta_kx_{ik})) \]
+    \subsection{Regressione (lineare) polinomiali}\label{sec:regressione-lineare-polinomiali}
     Nel caso in cui il nostro modello non può essere approssimato con un modelli lineari, si possono utilizzare relazioni polinomiali:
-    \[
-     Y = \beta_0 + \beta_1x+\beta_2x^2 +\ldots+\beta_kx^k + e
-    \]
+    \[ Y = \beta_0 + \beta_1x+\beta_2x^2 +\ldots+\beta_kx^k + e \]
     Dobbiamo minimizzare:
-    \[
-     \sum_i^n (Y_i-B_0-B_1x_1-\ldots-B_rx_i^r)^2 
-    \]
+    \[ \sum_i^n (Y_i-B_0-B_1x_1-\ldots-B_rx_i^r)^2 \]
     Per determinare $\beta_0, \beta_1, \ldots, \beta_r$ dobbiamo
     \section{affidabilità dei sistemi}
+    \subsection{Introduzione}
     In questa sezione prendiamo in considerazione una popolazione di oggetti i cui tempi di vita sono \textit{variabili aleatorie} con distribuzione comune. \\
     L'obiettivo di questo capitolo è quello di usare tutti i dati che abbiamo per stimare \textbf{un parametro incognito} \\
     Nella sezione \textit{14.2} viene introdotto il concetto di \textit{funzione di rischio (o intensità di rotture)}, mentre nella sezione \textit{14.3} ci concentriamo sulla \textit{legge esponenziale}
@@ -1049,4 +988,24 @@
     \[ 1 - F(t) = \exp \left\{ - \int_{0}^{t} \lambda(s) \, ds \right\} \]
     La funzione di ripartizione di una var. aleatoria continua può essere specificata tramite la \textit{corrispondente funzione di intensità di rotture}
     \subsection{Il ruolo della distribuzione esponenziale}
+    \subsubsection{Interruzione al fallimento r-esimo}
+    in questa sezione vediamo l'esame simultaneo di un campione di $n$ oggetti con \textit{tempi di vita esponenziali} e \textit{indipendenti} con media incognita $\theta$ e terminiamo il test non appena raggiungiamo un numero fissato $r \leq n$ \\
+    I dati che abbiamo sono gli \textit{r} tempi di vita registrati, nel seguente ordine:
+    \[ x_1 \leq x_2 \leq \cdots \leq x_r \]
+    Se denotiamo con $X_i$ il tempo di vita dell'oggetto possiamo riassumere la parte di sopra come segue:
+    \[ X_{i1} = x_1, X_{i2} = x_2, \ldots, X_{ir} = x_r \]
+    La \textit{densità di probabilità} delle $X_{ij}$ è
+    \[ f_{X_{i_j}} (x_j) = \frac{1}{\theta} e^{-x_j / \theta}, \qquad j = 1,2,\ldots, r \]
+    La \textit{densità congiunta} invece è la seguente:
+    \[ f_{X_{i_j}, \ldots, X_{i_r}} (x_1, \ldots, x_r) = \prod_{j=1}^{r} \frac{1}{\theta} e^{x_j / \theta} \]
+    Per verificare la probabilità che le altre $n-r$ siano tutte maggiori $x_r$ è data dall'indipendenza:
+    \[ P(X_j > x_r \text{ per } j \not = \{ i_1, i_2, \ldots, i_r \}) = (e^{-x_r / \theta})^{n-r} \]
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_12.png}
+    \end{figure}
+    Se abbiamo bisogno della verosomiglianza in \textit{funzione} solo degli $r$ tempi di rottura, la funzione di likelihood sarebbe:
+    \[ f(x_1, x_2, \ldots, x_r) = \frac{n!}{(n-r)! \theta^r} \exp \left\{ \frac{1}{\theta} \sum_{i=1}^{r} x_i - \frac{(n-r) x_r}{\theta} \right\} \]
+    Per calcolare lo stimatore di massima verosomiglianza di $\theta$ invece facciamo cosi:
+    \[ \hat{\theta} := \frac{\sum_{i=1}^{r} X_{(i)} + (n-r) X_{(r)}}{r} =: \frac{t}{r} \]
+    \centerline{Dove \textit{t} viene definito come \textbf{Total Time of Test statistic}}
 \end{document}
