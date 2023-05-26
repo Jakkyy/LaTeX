@@ -1006,6 +1006,36 @@
     Se abbiamo bisogno della verosomiglianza in \textit{funzione} solo degli $r$ tempi di rottura, la funzione di likelihood sarebbe:
     \[ f(x_1, x_2, \ldots, x_r) = \frac{n!}{(n-r)! \theta^r} \exp \left\{ \frac{1}{\theta} \sum_{i=1}^{r} x_i - \frac{(n-r) x_r}{\theta} \right\} \]
     Per calcolare lo stimatore di massima verosomiglianza di $\theta$ invece facciamo cosi:
-    \[ \hat{\theta} := \frac{\sum_{i=1}^{r} X_{(i)} + (n-r) X_{(r)}}{r} =: \frac{t}{r} \]
-    \centerline{Dove \textit{t} viene definito come \textbf{Total Time of Test statistic}}
+    \[ \hat{\theta} := \frac{\sum_{i=1}^{r} X_{(i)} + (n-r) X_{(r)}}{r} =: \frac{\tau}{r} \]
+    \centerline{Dove $\tau$ viene definito come \textbf{Total Time of Test statistic}}
+    $\tau$ rappresenta la somma delle statistiche $Y_i$ per $i=1,2,\ldots,r$ che indicano il tempo totale di funzionamento racchiuso tra la rottura dell'oggetti (i-1)-esimo e quella dell'i-esimo \\
+    Il calcolo per trovarlo è il seguente 
+    \[ \tau = \frac{j=1}{r} Y_j \]
+    Dato che la \textit{somma} di variabili aleatorie esponenziali ha distribuzione \textit{gamma} otteniamo che il nostro $\tau$ è una \textbf{gamma} con parametri $r$ e $1 / \theta$ \\
+    Sfruttando questa relazione:
+    \[ \frac{2 \tau}{\theta} \sim \mathcal{X}^2_{2r} \]
+    Notiamo subito (ensomma) che:
+    \[ P(\mathcal{X}^2_{1-\frac{\alpha}{2}, 2r} < 2 \tau / \theta < \mathcal{X}^2_{1\frac{\alpha}{2}, 2r}) = \boldsymbol{1 -\alpha} \]
+    E quindi sappiamo che abbiamo un livello di confidenza $\boldsymbol{1- \alpha}$ nell'affermare che:
+    \[ \theta \in \left( \frac{2 \tau}{\mathcal{X}^2_{\frac{\alpha}{2}, 2r}}, \quad \frac{2\tau}{\mathcal{X}^2_{1- \frac{\alpha}{2}, 2r}} \right) \]
+    \centerline{Questo per il caso \textbf{bilaterale}}
+\subsubsection{Esempio}
+50 transistor vengono messi in funzione simultaneamente. L'esperimento si conclude quando il 15-esimo(r) si rompe.
+Il Total time on test(TTT) è di 525 ore. Trovare un intervallo di confidenza del 95\% per la vita media di un componente.
+La distribuzione è esponenziale. \\
+Mediamente si rompono:
+\begin{equation*}
+    \begin{split}
+        &\hat \theta = \frac{TTT}{r} \quad \quad \text{numero medio di guasti in 525 ore} \\
+        &\hat \theta = \frac{525}{15} = 35
+    \end{split}
+\end{equation*}
+
+Per trovare il livello di confidenza (dio merda) utilizziamo:
+\begin{equation*}
+    \begin{split}
+        &\theta \in \Big(\frac{2TTT}{\mathcal{X}^2_{\frac{\alpha}{2},2r}},\frac{2TTT}{\mathcal{X}^2_{1-\frac{\alpha}{2},2r}}   \Big) \\
+        &\boldsymbol{\theta \approx (22.35, 62.54)}
+    \end{split}
+\end{equation*}
 \end{document}

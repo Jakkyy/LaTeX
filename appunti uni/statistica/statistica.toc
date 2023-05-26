@@ -97,3 +97,4 @@
 \contentsline {paragraph}{In caso di distribuzione esponenziale}{61}{section*.39}%
 \contentsline {subsection}{\numberline {12.3}Il ruolo della distribuzione esponenziale}{62}{subsection.12.3}%
 \contentsline {subsubsection}{\numberline {12.3.1}Interruzione al fallimento r-esimo}{62}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Esempio}{64}{subsubsection.12.3.2}%
