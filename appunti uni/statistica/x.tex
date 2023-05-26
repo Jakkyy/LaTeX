@@ -1,0 +1,265 @@
+
+n
+La prima legge di Newton dice che la forza con cui due corpi si attragono è direttamente proporzionale al prodotto delle due masse ed inversamente proporzionale al quadrato della loro distanza.
+\subsubsection{Legge di gravitazione di Newton}\label{sec:legge-di-gravitazione-di-newton}\[
+ F = G\frac{m_1m_2}{r^2} 
+\]
+In quest'espressione $G$ rappresenta la costante gravitazionale:
+\begin{split} 
+G &= 6.67 \cdot 10^{-11} N \cdot \frac{m^2}{kg^2} \\
+& = 6.67 \cdot 10^{-11} \frac{m^3}{kg}\cdot s^2
+
+
+\end{split}\section{Regressione lineare}\label{sec:regressione-lineare}
+Molti problemi di statistica prevedono una singola variabile $Y$ di \emph{risposta} e un certo numero di variabili $x_1, x_2, \ldots, x_r$ di \emph{ingresso}. La \emph{risposta} è in funzione dei dati, $Y$ è anche detta \emph{variabile dipendente}, mentre le $x_i$ sono le \emph{variabili indipendenti}.\\
+La più semplice relazione potrebbe essere quella lineare:
+\[
+ Y = \beta_0 + \beta_1x_1 + \ldots  + \beta_rx_r 
+\]
+(centrare) Dove $\beta_0, \beta_1, \ldots, \beta_r$ sono costanti.
+
+Predire esattamente le $\beta_i$ non è possibile, quindi all'equazione si aggiunge un \emph{errore casuale} denominato \emph{e}:
+\[
+ Y = \beta_0 + \beta_1x_1 + \ldots + \beta_rx_r + e 
+\]
+La variabile $e$ ha distribuzione normale standard. $e \sim \mathcal N(0,1)$
+
+L'equazione qui sopra è chiamata \emph{equazione di regressione lineare}.
+questa esprime la regressione di \emph{Y} rispetto alle variabili indipendenti $x_1, x_2, \ldots, x_r$, mentre le costanti $\beta_0, \beta_1, \ldots, \beta_r$ sono dette \emph{coefficienti di regressione} e vanno normalmente stimate.
+
+Un equazione di regressione si dice \emph{semplice} se $r = 1$, e quindi c'è solo una variabile indipendente, negli altri casi si dice regressione \emph{multipla}.
+Quindi la relazione diventa:
+\[
+ Y = \alpha + \beta x + e 
+\]
+Indichiamo con $A$ e $B$ (variabili aleatorie) degli stimatori di $\alpha, \beta$.
+L'equazione diventerà:
+\[
+ Y = A + Bx + e 
+\]
+Per avvicinarsi alla retta reale la quantità $(Y_i - A + Bx_i)^2$ deve risultare minima.
+(rappresenta il quadrato della differenza tra predizione e valore osservato)
+
+Quindi:
+\[
+ SS := \sum_{i = 1}^{n}(Y_i-A-Bx_i)^2  
+\]
+Ricaviamo $A$ e $B$ tale per cui la $SS$ risulta minima:
+ 
+\begin{split}
+&B = \frac{\sum_ix_iY_i - \overline{x}\sum_i Y_i }{\sum_i x_i^2 - n \overline x^2} \\ \\
+&A = \overline Y - B \overline x
+\end{split}
+La retta $Y = A + Bx + e$ è \emph{la stima della retta di regressione}.
+
+\begin{figure}
+\includegraphics{Images/Pasted image 20230524120359.png}
+\caption{undefined undefined}\n\end{figure}
+
+\section{Distribuzione degli stimatori}\label{sec:distribuzione-degli-stimatori}
+$Y_1, Y_2, \ldots, Y_n$ sono indipendenti con distribuzione normale. $Y_i \sim \mathcal N(\alpha + \beta x_i, \sigma^2)$
+$B$ e $A$ anch'esse hanno distribuzione normale.
+
+$B$ è uno stimatore non distorto di $\beta$ perché il suo valore atteso è uguale a $\beta$:
+\[
+ 
+E[B] = \beta
+\]
+Quindi la sua varianza risulta essere:
+\[
+\text{Var}(B) = \frac{\sigma^2}{\sum_i x^2_i -n\overline x^2}
+\]
+Anche $A$ è uno stimatore non distorto di $\alpha$ perché il valore atteso è $\alpha$:
+\[
+ 
+E[A] = \alpha 
+\]
+Varianza di $A$:
+\[
+\text{Var}(A) = \frac{\sigma^2 \sum_i x_i^2}{n(\sum_i x_i^2 - n \overline x^2)}
+\]
+Somma dei quadrati dei residui è usata per stimare la varianza degli errori, $\sigma^2$:
+\[
+ SS_R := \sum_i^n(Y_i - A - Bx_i)^2 
+\]
+La $SS_R$ ha distribuzione chi-quadro, con $n-2$ gradi di libertà:
+\[
+ \frac{SS_R}{\sigma^2} \sim \mathcal{X}^2_{n-2}  
+\]
+Il valore atteso della $SS_R$ è uguale alla varianza, quindi è uno stimatore non distorto del parametro incognito $\sigma^2$:
+\[
+ 
+
+E[\frac{SS_R}{\sigma^2}] = n - 2 \quad \Rightarrow \quad E[\frac{SS_R}{n-2}] = \sigma^2
+
+\] 
+\begin{split}
+
+&S_{xY} := \sum_{i=1}^n x_i Y_i - n \overline x \overline Y \quad \text{dispersione di $x$ e $Y$}\\
+&S_{xx} := \sum_{i = 1}^{n} x^2_i - n \overline x^2 \quad \text{dispersione di $x$ e $x$}\\
+&S_{YY} := \sum_{i=1}^{n} Y_i^2 - n \overline Y^2 \quad \text{dispersione di $Y$ e $Y$}
+
+\end{split}
+Possiamo riscrivere B come:
+\[
+ 
+B = \frac{\sum_ix_iY_i - \overline{x}\sum_i Y_i }{\sum_i x_i^2 - n \overline x^2} \quad \Rightarrow \quad B=\frac{S_{xY}}{S_{xx}}
+\]\subsubsection{In generale}\label{sec:in-generale}
+Nel caso in cui $Y_i, i = 1,2,3,\ldots,n$  siano normali indipendenti con media $\alpha + \beta x_i$ e varianza $\sigma^2$, gli stimatori dei minimi quadrati per $\beta$ e $\alpha$ sono:
+\[
+ B = \frac{S_{xY}}{S_{xx}} \quad \quad A = \overline Y - B \overline x $$ e hanno distribuzione: $$ B \sim \mathcal N(\beta,\frac{\sigma^2}{S_{xx}}) \quad \quad A \sim \mathcal N(\alpha,\frac{\sigma^2 \sum_ix_i^2}{nS_{xx}}) 
+\]
+La somma dei quadrati dei residui è calcolata tramite:
+\[
+ SS_R = \frac{S_{xx}S_{YY}- S_{xY}^2}{S_{xx}}
+\]
+La $SS_R$ ha distribuzione:
+\[
+ \frac{SS_R}{\sigma^2} \sim \mathcal X^2_{n-2}
+\]\section{Inferenza sui parametri della regressione}\label{sec:inferenza-sui-parametri-della-regressione}
+Quanto sono distanti $A$ e $B$ da $\alpha$ e $\beta$?
+Dobbiamo vedere l'intervallo di confidenza
+\subsection{Inferenza su $\beta$}\label{sec:inferenza-su-beta}
+Formula dell'intervallo di confidenza di $\beta$:
+\[
+ \beta \in B \pm \sqrt{\frac{SS_R}{(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2}, n-2}
+\]
+Estesa:
+\[
+ P\Big(B - t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}} < \beta < B + t_{\frac{\alpha}{2},n-2} \cdot \frac{\sqrt{SS_R}}{(n-2)S_{xx}}\Big) 
+\]
+==Importante==: $\alpha$ ==NON== è il parametro della regressione, ma è il livello di confidenza.
+\subsection{Inferenza su $\alpha$}\label{sec:inferenza-su-alpha}
+Formula dell'intervallo di confidenza di $\alpha$:
+\[
+ \alpha \in A \pm \frac{SS_R\sum_{i}{}x_i^2}{\sqrt{n(n-2)S_{xx}}} \sim t_{\frac{\alpha}{2},n-2}
+\]
+Dove la prima $\alpha$ è il coefficiente della retta mentre $\alpha$ nella t è il livello di confidenza.
+\subsection{Inferenza su $\alpha + \beta x_0$}\label{sec:inferenza-su-alpha--beta-x_0}
+Il valore atteso di $A + B x_0$ è uguale a $\alpha + \beta x_0$  quindi è uno stimatore non distorto:
+\[
+ E[A +B x_0] = E[A] + x_0E[B] = \alpha + \beta x_0 
+\]
+La varianza è:
+\[
+ \text{Var}(A+Bx_0) = \sigma^2 \Big[\frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}}  \Big] 
+\]
+qual'è la distribuzione di $A+Bx_0$?
+\[
+ A+Bx_0 \sim \mathcal N \Big(\alpha+\beta x_0, \sigma^2 \Big[ \frac{1}{n} + \frac{(\overline x - x_0)^2}{S_{xx}} \Big]\Big) 
+\]
+intervallo di confidenza di $\alpha + \beta x_0$:
+\[
+ \alpha + \beta x_0 \in A + B x_0 \pm t_{\frac{\alpha}{n}, n-2}\sqrt{\frac{1}{n} + \frac{(x_0- \overline x)^2}{S_{xx}}} \cdot \sqrt{\Big(\frac{SS_R}{n-2} \Big)}
+\]
+$S_{xx}$ risulta piccolo se i punti sono vicini alla media.
+\subsection{Inferenza di $Y_0 = Y(x_0) \rightarrow$ predittivo}\label{sec:inferenza-di-y_0--yx_0-rightarrow-predittivo}
+Nel caso dovessimo prevedere un nuovo elemento della retta di regressione(utilizzando i dati già a disposizione) dobbiamo utilizzare la seguente formula:
+\[
+ A+Bx_0 \pm t_{\frac{\alpha}{2},n-2} \cdot \sqrt{\Big(1+\frac{1}{n} + \frac{(x_0-\overline x)^2}{S_{xx}}\Big)\frac{SS_R}{n-2}} 
+\]\subsection{Riassunto:}\label{sec:riassunto}
+\begin{figure}
+\includegraphics{Images/Pasted image 20230524170143.png}
+\caption{undefined undefined}\n\end{figure}
+
+\subsection{Coefficiente di determinazione}\label{sec:coefficiente-di-determinazione}
+Come verifico i miei valori(della retta)? Tramite il coefficiente di determinazione.
+
+Formula del coefficiente di determinazione:
+\[
+ R^2 = \frac{S_{YY}-SS_R}{S_{YY}} = 1- \frac{SS_R}{S_{YY}} \quad  \quad 0 \leq R^2 \leq 1 
+\]
+Casi possibili:
+\begin{enumerate}
+\item 
+Se $R^2 = 1$:
+\begin{enumerate}
+\item 
+la dispersione è data solo dalla retta (regressione)
+\end{enumerate}
+\item 
+Se $R^2 = 0$:
+\begin{enumerate}
+\item 
+la dispersione è dovuta solo dal rumore
+\end{enumerate}
+\end{enumerate}
+
+La retta è migliore più $R^2$ è vicino a 1.
+\subsection{Coefficiente di correlazione}\label{sec:coefficiente-di-correlazione}\[
+ r = \frac{\sum_i (x_i - \overline x)(y_i - \overline y)}{\sqrt{\sum_i (x_i - \overline x)^2 \sum_i(y_i - \overline y)^2}} = \frac{S_{xY}}{\sqrt{S_{xx}S_{YY}}} 
+\]
+Dimostrazione matematica di $R^2$:
+\[
+ r^2 = \frac{S_{xY}^2}{S_{xx}S_{YY}} = \ldots = 1- \frac{SS_R}{S_{YY}} = R^2
+\]
+Quindi:
+\[
+ |r| = \sqrt{R^2} 
+\]\subsection{Analisi dei residui}\label{sec:analisi-dei-residui}
+Se il nostro modello non segue la forma di una "retta" non possiamo utilizzare la retta di regressione per rappresentare i nostri dati.
+\subsection{Trasformazione al lineare}\label{sec:trasformazione-al-lineare}
+Si può linearizzare tramite diverse funzioni, quella esponenziale in questo modo:
+$W(t) = ce^{-dt}$ dove $e, t$ sono parametri
+
+Calcoliamo il log:
+$\log({W}(t)) \approx \log{(c)}-dt$
+
+Se ora poniamo
+\begin{itemize}
+\item 
+$Y = \log{W(t)}$
+\item 
+$\alpha = \log{c}$
+\item 
+$\beta = -d$
+\end{itemize}
+
+La regressione lineare:
+\[
+ Y = \alpha + \beta t + e 
+\]
+Diventa:
+\[
+ W(t) \approx e^{A+Bt} 
+\]\subsection{Rimedio al caso eteroschedastico}\label{sec:rimedio-al-caso-eteroschedastico}
+Nel modello eterschedastico la varianza è in funzione della $x$.
+Ovvero l'errore cresce in base alle $x$.
+
+Formula della varianza degli errori:
+\[
+ \text{Var}(e_i)=\frac{\sigma^2}{W_i}
+\]
+La $W_i$ è il peso nel caso eteroschedastico:
+\[
+ W_i=\frac{1}{x_i}
+\]
+Formula della somma dei quadrati dei residui moltiplicato per il peso:
+\[
+ \sum_iW_i(Y-(A+Bx_0))^2 
+\]\subsection{Regressione lineare multipla}\label{sec:regressione-lineare-multipla}
+Nel caso in cui avessimo più variabili indipendenti, la formula diventa:
+\[
+Y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 \ldots + \beta_k x_k +e
+\]
+Per trovare i vari $B_0, B_1,\ldots,\beta_k$ cerchiamo il minimo della funzione:
+\[
+ \min\sum_i(Y_i -(\beta_0+\beta_1x_{i1} + \beta_2x_{i2} \ldots + \beta_kx_{ik})) 
+\]\subsection{Regressione (lineare) polinomiali}\label{sec:regressione-lineare-polinomiali}
+Nel caso in cui il nostro modello non può essere approssimato con un modelli lineari, si possono utilizzare relazioni polinomiali:
+\[
+ Y = \beta_0 + \beta_1x+\beta_2x^2 +\ldots+\beta_kx^k + e
+\]
+Dobbiamo minimizzare:
+\[
+ \sum_i^n (Y_i-B_0-B_1x_1-\ldots-B_rx_i^r)^2 
+\]
+Bisogna risolvere il seguente sistema per trovare le soluzioni:
+\[
+ \begin{cases}
+\displaystyle\sum_{i=1}^nY_i=B_0n+B_1\sum_{i=1}^nx_i+B_2\sum_{i=1}^nx_i^2+\ldots+B_r\sum_{i=1}^nx_i^r \\
+\displaystyle \sum_{i=1}^nx_iY_i = B_0\sum_{i=1}^nx_i+B_1\sum_{i=1}^nx_i^2+B_2\sum_{i=1}^nx_i^3+\ldots+B_r\sum_{i=1}^nx_i^{r+1} \\
+\displaystyle \ldots \\
+\displaystyle \sum_{i=1}^nx_i^rY_i = B_0\sum_{i=1}^nx_i^r+B_1\sum_{i=1}^nx_i^{r+1}+B_2\sum_{i=1}^nx_i^{r+2}+\ldots+B_r\sum_{i=1}^nx_i^{2r} \\
+\end{cases}
+\]
