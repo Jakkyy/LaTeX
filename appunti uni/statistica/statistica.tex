@@ -47,10 +47,13 @@
     \tableofcontents
     \newpage 
     \section{Introduzione}
-    In probabilità quello che facciamo noi è quello di supporre che le nostre distribuzioni siano \textbf{note} in statistica facciamo il contrario, ossia dire qualcosa (anche detto \textit{fare dell'inferenza}) su \textbf{parametri sconosciuti}. \\
+    In probabilità quello che facciamo noi è quello di supporre che le nostre distribuzioni siano \textbf{note}, in statistica facciamo il contrario, ossia dire qualcosa (anche detto \textit{fare dell'inferenza}) su \textbf{parametri sconosciuti}. \\
     Dato che i parametri sono sconosciuti il massimo che possiamo fare è quello di ottenere \textit{una stima} dei parametri \textit{incogniti}. \\[2ex]
     Questi sono chiamati \textbf{stimatori puntuali} e sono indicati con il simbolo $\boldsymbol{\hat{\theta}}$ (in questo caso stiamo parlando di uno stimatore del parametro incognito $\boldsymbol{\theta}$) \\[2ex]
     Esisono anche gli \textit{stimatori non puntuali}, noti come \textbf{intervalli di confidenza}, ossia un intervallo di valori in cui può essere contenuto il \textit{dato incognito}.
+    \begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/boh_15.jpg}
+    \end{figure}
     \paragraph{Esempio} $\hat{\theta}? \quad \text{Altezza della popolazione}$ \\[2ex]
     \begin{minipage}{0.49\textwidth}
         $X_1 = 1.7$ \\
@@ -68,13 +71,13 @@
     \centerline{Scartiamo il più \textit{piccolo} e il \textit{massimo}, calcolando poi la \textbf{media} dei rimanenti}
     \section{MLE}
     \definizione Stima a Massima Verosomiglianza (Maximum Likelihood Estimation) \\
-    Questa classe di stimatori sono molto usati in statistica, servono per determinare i migliori parametri del modello che si adattano ai dati e comparare molteplici modelli per \textit{determinare} quello che si adatta di più ai dati. \\
+    Questa classe di stimatori sono molto usati in statistica, servono per comparare molteplici modelli per \textit{determinare} quello che si adatta di più ai dati. \\
     Ad esempio la stima di massima verosomiglianza $\hat{\theta}$ è definita come il valore di $\theta$ che rende massima $\boldsymbol{f(x_1, x_2, \ldots, x_n \rvert \theta)} \rightarrow$ anche detta \textit{funziona di likelihood} \\[2ex]
     \textbf{Likelihood}: avendo dei dati quale è la probabilità che un certo modello descriva al meglio la natura dei nostri dati
     \[ \hat{\theta} = argmax L(\theta) = argmax[f(X_1 \ldots X_n / \theta )] \]
     \paragraph{Stima parametrica}(Point) Parametric Estimation \\ \\
     \underline{Ipotesi}:
-    - Esiste un parametro $\theta$ incognito $n$ dati a disposizione $\{X_1, X_2, X_n\}$ \\
+    - Esiste un parametro $\theta$ incognito e $n$ dati a disposizione $\{X_1, X_2, X_n\}$ \\
     \textbf{Legge di probabilità} che descrive il fenomeno che ha generato i dati
     \formula Bayes
     \[ P(\theta / X_1 \ldots X_n) = \frac{P(X_1 \ldots X_n / \theta) P(\theta)}{P(X_1 \ldots X_n)} \]
@@ -98,10 +101,8 @@
             &= p^{\sum_{i}^{} x_1}(1-p)^{n- \sum_{i}^{} x_1} \qquad x_1 = 0,1 \qquad i = 1, \ldots, n
         \end{split}
     \end{equation*}
-    Possiamo derivare rispetto a $p$:
-    \[ \frac{d}{dp} \log f(x_1, x_2, \ldots, x_n \rvert p) = \frac{1}{p} \sum_{i = 1}^{n} x_i - \frac{1}{1- p} \left(n-\sum_{i = 1}^{n} x_1 \right) \]
-    Da questo bro possiamo ottenere un'espressione per la stima $\boldsymbol{\hat{p}}$:
-    \[ \hat{p} = \frac{1}{n} \sum_{i = 1}^{n} x_i \]
+    Derivando rispetto a $p$ possiamo ottenere un'espressione per la stima $\boldsymbol{\hat{p}}$:
+    \[ \boldsymbol{\hat{p} = \frac{1}{n} \sum_{i = 1}^{n} x_i} \]
     \subsection{MLE di una Poisson}
     La funzione di \textit{likelihood} è data da:
     \begin{equation*}
@@ -110,19 +111,18 @@
             &= \frac{\lambda^{\sum_{i}^{} x_i} e^{-\lambda}}{x_1 ! \ldots x_n !} \\
         \end{split}
     \end{equation*}
-    Come sempre deriviamo e otteniamo:
-    \[ \frac{d}{d\lambda} \log f(x_1, x_2, \ldots, x_n \rvert \lambda) = \frac{1}{\lambda} \sum_{i = 1}^{n} x_i - n \]
-    Da questo bro possiamo ottenere un'espressione per la stima $\hat{\lambda}$:
+    Derivando possiamo ottenere un'espressione per la stima $\hat{\lambda}$:
     \[ \hat{\lambda} = \frac{1}{n} \sum_{i = 1}^{n} x_i \]
     La stessa formula può essere applicata al campione $X_1, X_2, \ldots, X_n$:
     \[ P\{X_i = 1\} = 1 - P\{X_i = 0\} \]
     \paragraph{Esempio} Numero di incidenti stradali in 10 giornate senza pioggia \\
     Dataset: \{ 4 0 6 5 2 1 2 0 4 3 \} \\
     Si vuole stimare per quell'anno la frazione di giornate senza pioggia con \textit{2 incidenti o meno}
-    \[ \overline{X} = \frac{1}{10} \sum_{i = 1}^{10} X_i = \boldsymbol{2.7} \]
-    Cosi otteniamo che la media della poissoniana è 2.7, la stima desiderata è data da:
+    \[ \overline{X} = \frac{1}{10} \sum_{i = 1}^{10} x_i = \boldsymbol{2.7} \]
+    (capire sto risultato) Cosi otteniamo che la media della poissoniana è 2.7, la stima desiderata è data da:
     \[ (1+2.7+ (2.7)^2 /2 ) e^{-2.7} \approx 0.4936 \]
     \subsection{MLE distribuzione Uniforme}
+    Per la MLE delle uniformi dobbiamo trovare i valori di limite \textit{inferiore} e \textit{superiore} che massimizzano la probabilità di ottenere i dati osservati.
     \begin{equation*}
         f(X_1, \ldots X_n \rvert \theta) =
         \begin{cases}
@@ -133,48 +133,53 @@
     La formula per la stima di $\theta$:
     \[ \hat{\theta} = \max \{ X_1, \ldots, X_n \} \]
     $$ \hat{\theta}_{\frac{\text{MLE}}{2}} = \textit{media} $$
-    \subsection{MLE distribuzione Normale} 
+    \subsection{MLE distribuzione Normale } 
     \definizione La distribuzione normale ha media $\mu$ e dev. st. $\sigma$ \textbf{incognite} \\
     La densità congiunta (la likelihood) è data da:
     \[ f(x_1, x_2, \ldots, x_n \rvert \mu, \sigma) = \prod_{i= 1}^{n} \frac{1}{\sqrt{2 \mu \sigma}} \exp \left \{ - \frac{(x_1-\mu)^2}{2 \sigma^2} \right \} \]
     La log-likelihood è data da:
     \[ \log f(x_1, x_2, \ldots, x_n \rvert \mu, \sigma) = - \frac{n}{2} \log(2\pi) - n \log \sigma - \frac{1}{2\sigma^2} \sum_{i = 1}^{n} (x_i - \mu)^2 \]
-    La risoluzione ci porta alle formule per le stime:
+    La risoluzione ci porta alle seguenti formule per le stime:
     \[ \hat{\mu} = \frac{1}{n} \sum_{i = 1}^{n} x_i \]
     \[ \hat{\sigma} = \sqrt{\frac{1}{n} \sum_{i = 1}^{n}(x_i - \hat{\mu})^2 } \]
     \section{Teorema del limite centrale}
-    \subsection{Definizione}
-    Questo teorema afferma che la somma di un numero elevato di \textbf{var. aleatorie indipendenti} tende ad avere una distribuzione approssimativamente normale.\\
-    Quindi un campione(insieme di var. aleatorie da $X_1, X_2\ldots, X_n$) può essere trasformato in una Normale Standard:
-    $$ \frac{X_1 + X_2 + \ldots + X_n - n\mu}{\sigma \sqrt{n}} $$
+    \definizione Questo teorema afferma che la somma di un numero elevato di \textbf{var. aleatorie indipendenti} tende ad avere una distribuzione approssimativamente normale.\\
+    Quindi un campione (insieme di var. aleatorie da $X_1, X_2\ldots, X_n$) può essere trasformato in una Normale Standard:
+    \[ \frac{X_1 + X_2 + \ldots + X_n - n\mu}{\sigma \sqrt{n}} \]
     \section{Intervalli di confidenza}
+    \begin{figure}[H]
+        \caption{Rappresentazione grafica}
+        \includegraphics[width=\textwidth]{images/boh_16.png}
+    \end{figure}
     \subsection{Distribuzione normale}
     \subsubsection{$\mu$ incognita e varianza  $\sigma^2$ nota}
-    Sia $\boldsymbol{X_1, X_2, \ldots, X_n}$ un campione di una popolazione normale con $\mu$ \textit{incognita} e varianza $\sigma^2$ \textit{nota}
+    \definizione Sia $\boldsymbol{X_1, X_2, \ldots, X_n}$ un campione di una popolazione normale con $\mu$ \textit{incognita} e varianza $\sigma^2$ \textit{nota}:
     \[ \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
     Intervallo di confidenza per la media:
     \[ P \left( \overline{X} - 1.96 \frac{\sigma}{\sqrt{n}} < \mu < \overline{X} + 1.96 \frac{\sigma}{\sqrt{n}}\right) = 1-\alpha \]
     Il 95\% circa delle volte $\mu$ starà a una distanza non superiore a 1.96 $\sigma / \sqrt{n}$ dalla
-    media aritmetica dei dati. Se osserviamo il campione, e registriamo che $\overline{X} = \overline{x}$, allora possiamo dire che "con il 95\% di confidenza"
+    media aritmetica dei dati. Se osserviamo il campione, e registriamo che $\boldsymbol{\overline{X} = \overline{x}}$, allora possiamo dire che "con il 95\% di confidenza"
     \[ \left( \overline{x} - 1.96 \frac{\sigma}{\sqrt{n}}, \overline{x} + 1.96 \frac{\sigma}{\sqrt{n}} \right) \]
     \centerline{Questo intervallo è detto \textit{intervallo di confidenza} ad un livello del 95\%}
     \paragraph{intervallo destro:}
     $$ (\overline{x} - z_\alpha \frac{\sigma}{\sqrt{n}},\quad  +\infty) $$
     \paragraph{intervallo sinistro:}
     $$ (-\infty,\quad \overline{x} - z_\alpha \frac{\sigma}{\sqrt{n}}) $$
-    \paragraph{Esempio} segnale elettrico di valore $\mu$ \\
-    i valori registrati sono i seguenti: 5 8.5 12 15 7 9 7.5 6.5 10.5 \\
-    Otteniamo $\boldsymbol{\overline{x}}$:
+    \paragraph{Esempio} Messagio inviato con segnale elettrico dove il valore di $\sigma = 2$ \\
+    i valori registrati sono i seguenti: \{ 5 8.5 12 15 7 9 7.5 6.5 10.5 \} \\
+    Otteniamo $\boldsymbol{\overline{x}}$ (sommando i valori e \textit{dividendo} per la media):
     \[ \overline{x} = \frac{81}{9} = 9 \]
     Un intervallo di confidenza al 95\% per $\mu$ è
     \[ \left( 9 - 1.96 \frac{2}{3}, \quad 9 + 1.96 \frac{2}{3}\right) = (7.69, 10.31) \]
     \centerline{Otteniamo quindi il 95\% di fiducia che il messaggio fosse \textbf{compreso} tra 7.69 e 10.31}
     \subsubsection{$\mu$ incognita e varianza  $\sigma^2$ incognita}
-    Dato che tutti i nostri parametri sono ignoti, non possiamo basarci sul fatto che $\sqrt{n}(\overline{X} - \mu) / \sigma$ è una \textit{normale standard}, dobbiamo quindi ricorrere a una varianza campionaria come segue:
+    Dato che tutti i nostri parametri sono ignoti, non possiamo basarci sul fatto che $\sqrt{n}(\overline{X} - \mu) / \sigma$ è una \textit{normale standard}, dobbiamo quindi ricorrere a una varianza campionaria, come segue:
     \[ S^2 := \frac{1}{n-1} \sum_{i}^{} (X_i - \overline{X})^2 \longrightarrow \frac{\overline{X} - \mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}\]
     \centerline{Alla fine otteniamo una variabile aleatoria di tipo $t$ con n-1 gradi di libertà}
-    \paragraph{Per Bilaterale}
+    \paragraph{Per caso Bilaterale}
     \[ P \left\{ \overline{X} - t_{\frac{\alpha}{2}, n-1} \frac{S}{\sqrt{n}} < \mu < \overline{X} + t_{\frac{\alpha}{2}, n_1} \frac{S}{\sqrt{n}} \right\} = 1 - \alpha \]
+    \paragraph{Per caso Unilaterale}
+    \[ P \left( \overline{X} - t_{\frac{\alpha}{2}, n-1} \frac{\sigma}{\sqrt{n}} < \mu \right) /  P \left( \mu < \overline{X} + t_{\frac{\alpha}{2}, n_1} \frac{\sigma}{\sqrt{n}}\right) = 1 - \alpha \]
     \subsection{Intervalli di confidenza per Bernoulli}
     Nel caso avessimo $n$ oggetti con una quantita $X$ di oggetti che soddisfano i requisiti, possiamo dire che $X$ ha distribuzione \textit{binomiale} di parametri $n$ e $p$
     \[ \frac{X - np}{\sqrt{np(1-p)}} \sim \mathcal{N}(0,1) \]
@@ -182,12 +187,12 @@
     \[ \frac{X - np}{\sqrt{n \hat{p}(1-\hat{p})}} \sim \mathcal{N}(0,1) \]
     Da questa formula possiamo ottenere cosi un intervallo di confidenza
     \paragraph{Per caso Bilaterale}
-    \[ 1 - \alpha = \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} < p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} \right) \]
+    \[ \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} < p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} \right) = 1 - \alpha \]
     \paragraph{Per caso Unilaterale}
     \[  \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) /n} < p \right) \quad \left(p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1-\hat{p}) / n} \right)\]
-    \paragraph{Esempio} Un campione di \textit{100} transitor viene testato. \textit{80} pezzi sono \textit{adeguati} \\
+    \paragraph{Esempio} Un campione di \textit{100} transitor ($n$) viene testato. \textit{80} pezzi sono \textit{adeguati} ($\hat{p} = 0.8$)\\
     Volendo trovare un intervallo del 95\% per la percentuale $p$ scriviamo:
-    \[ \left(0.8 - 1.96 \sqrt{0.8 \cdot 0.2 / 100}, \quad 0.8 + 1.96 \sqrt{0.8 \cdot 0.2 / 100} \right) = (0.7216, \quad 0.8784) \]
+    \[ \left(0.8 - 1.96 \sqrt{0.8 \cdot (0.2) / 100}, \quad 0.8 + 1.96 \sqrt{0.8 \cdot (0.2) / 100} \right) = (0.7216, \quad 0.8784) \]
     Possiamo dire quindi con il 95\% di confidenza che sarà \textit{accettabile} una percentuale compresa tra il \textbf{72.16\%} e il \textbf{87.84\%}
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{images/boh_3.png}
@@ -197,36 +202,39 @@
     \[ \theta := \int_{0}^{1} \int_{0}^{1} \cdots \int_{0}^{1} f(y_1, y_2, \ldots, y_n) \, dy_1 \, dy_2 \ldots \, dy_n \]
     Possiamo notare che $U_1, U_2, \ldots, U_r$ sono var. al. \textit{uniformi} su 0,1 quindi:
     \[ \ev{f(U_1, U_2, \ldots, U_r)} = \theta \]
-    Se produciamo un numero casuale distribuito come la funzione e lo ripetiamo $n$ volte, possiamo stimare $\boldsymbol{\theta}$
+    Se produciamo un numero casuale distribuito come la funzione e lo ripetiamo $n$ volte, possiamo stimare $\boldsymbol{\theta}$:
     \[ \hat{\theta} = \frac{1}{n} \sum_{i = 1}^{n} X_i \]
     \paragraph{Esempio} pensiamo alla stima di questo integrale:
     \[ \theta := \int_{0}^{1} \sqrt{1 - y^2} \, dy = \ev{\sqrt{1-U^2}} \]
-    Se $\boldsymbol{U_1, U_2, \ldots, U_{100}}$ sono variabili aleatorie con tale distribuzione e \textit{indipendenti} ponendo 
+    Se $\boldsymbol{U_1, U_2, \ldots, U_{100}}$ sono variabili aleatorie con tale distribuzione e \textit{indipendenti} ponendo:
     \[ X_i := \sqrt{1-U^2_i} \qquad i = 1,2, \ldots, 100 \]
-    Otteniamo un campione di \textbf{100} variabili aleatorie di media $\theta$. Calcoliamo ora la \textit{media campionaria}:
+    Otteniamo un campione di \textbf{100} variabili aleatorie di media $\theta$. \\ 
+    Calcoliamo ora la \textit{media campionaria}:
     \[ \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} X_1 = 0.786 \]
     e successivamente la \textit{deviazione standard campionaria}:
     \[ S = 0.23 \]
     dato che $t_{0.025, 99} \approx 1.985$ otteniamo che un intervallo di confidenza al 95\% per $\theta$ è il seguente:
     \[ 0.786 \pm 1.985 \cdot 0.023 \]
     \centerline{Quindi il valore è compreso tra 0.740 e 0.832}
+    \newpage
     \section{Intervalli di predizione}
     \subsection{Predizione di un elemento del mio campione}
-    Supponiamo che $X_1, X_2, \ldots, X_n, X_{n+1}$ sia un campione normale di media $\mu$ e varianza $\sigma^2$ entrambe \textit{incognite}, dobbiamo prevedere l'elemento $X_{n+1}$:
-    \paragraph{ha come distribuzione:}
+    Supponiamo che $X_1, X_2, \ldots, X_n, X_{n+1}$ sia un campione normale con media $\mu$ e varianza $\sigma^2$ entrambe \textit{incognite}, dobbiamo prevedere l'elemento $X_{n+1}$ \\
+    La sua distribuzione è:
     $$ \frac{X_{n+1}-\overline{X}}{\sigma\sqrt{1+\frac{1}{n}}} \sim t_{n-1} $$
-    Dato che $\sigma$ è incognita dobbiamo sostituirla col suo stimatore (scegliendo la \textit{deviazione standard campionaria} quindi poniamo:
+    Dato che $\sigma$ è incognita dobbiamo sostituirla col suo stimatore (scegliendo la \textit{deviazione standard campionaria}) quindi poniamo:
     \[ S^2_n := \frac{1}{n -1} \sum_{i= 1}^{n} (X_i - \overline{X}_n)^2 \]
     \paragraph{quindi otteniamo}
     $$ X_{n+1} \in \Big(\overline{X}_n-t_{\frac{\alpha}{2}, n-1} S_n\sqrt{1+\frac{1}{n}},\overline{X}_n+t_{\frac{\alpha}{2}, n-1} S_n\sqrt{1+\frac{1}{n}}\Big) $$
     \paragraph{Esempio} prendiamo in campione i valori rilevati da un contapassi negli ultimi 7 giorni \\
-    Dataset: 6822 5333 7420 6252 7005 6752 \\
-    Si trovi l'intervallo di predizione al 95\% di confidenza \\
-    \textbf{Risoluzione:} le statistiche del campione sono:
+    Dataset: \{ 6822 5333 7420 6252 7005 6752 \} \\
+    Si trovi l'intervallo di predizione al 95\% di confidenza
+    \paragraph{Risoluzione} cerchiamo le statistiche del campione ($X_{n+1}$):
     \[ \overline{X}_7 \approx 6716.57 \qquad \qquad S_7 \approx 733.97 \]
     Dalle tabelle ricaviamo che $t_{0.025,6} \approx 2.447$ (+ altri passaggi) concludiamo col dire che il 95\% di confidenza che $X_8$ cadrà nell'intervallo [4796, 8637]
+    \newpage
     \section{Intervalli di confidenza per la varianza} 
-    Se $X_1, X_2, \ldots, X_n$ è un campione di una distribuzione \textit{normale} con parametri $\mu$ $\sigma^2$ \textbf{incogniti} ci possiamo basare sul fatto che
+    Se $X_1, X_2, \ldots, X_n$ un campione di una distribuzione \textit{normale} con parametri $\mu$ e $\sigma^2$ \textbf{incogniti}
     \formula \[ (n-1) \frac{S^2}{\sigma^2} \sim \mathcal{X}^2_{n-1}  \]
     \paragraph{Per caso Bilaterale}:
     \begin{equation}
@@ -240,47 +248,48 @@
         \includegraphics[width=\textwidth]{images/boh_2.png}
     \end{figure}
     \subsection{Stime per la differenza tra le medie di due popolazioni normali}
-    Siano $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2, \ldots, Y_m$ due campioni normali e differenti e denotiamo con $\mu_1$ e $\sigma^2_1$ e con $\mu_2$ e $\sigma^2_2$ \\
-    $\boldsymbol{\overline{X} - \overline{Y}}$ è lo stimatore di massima verosomiglianza $\mu_1 - \mu_2$
-    Per ottenere uno \textit{stimatore non puntuale}, dobbiamo conoscere la distribuzione di $\overline{X} - \overline{Y}$ poiche:
+    Siano $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2, \ldots, Y_m$ due campioni normali e differenti, denotiamo con $\mu_1$ e $\sigma^2_1$ e con $\mu_2$ e $\sigma^2_2$ le nostri variabili\\
+    $\boldsymbol{\overline{X} - \overline{Y}}$ è lo stimatore di massima verosomiglianza $\mu_1 - \mu_2$ \\
+    Per ottenere uno \textit{stimatore non puntuale}, dobbiamo \textbf{conoscere} la distribuzione di $\overline{X} - \overline{Y}$ poiche:
     \[ \overline{X} \sim \mathcal{N} \left( \mu_1, \frac{\sigma^2_1}{n} \right)  \qquad \text{e} \qquad \overline{Y} \sim \mathcal{N}\left( \mu_2, \frac{\sigma^2_2}{m} \right) \]
     Possiamo dedurre che:
     \[ \overline{X} - \overline{Y} \sim \mathcal{N}\left( \mu_1 - \mu_2, \frac{\sigma^2_1}{n} + \frac{\sigma^2_2}{m} \right) \]
     Ipotizzando di conoscere $\sigma^2_1$ e $\sigma^2_2$ abbiamo che:
     \[ \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}{\sqrt{\sigma^2_1 / n + \sigma^2_2 / m}} \sim \mathcal{N}(0,1) \]
-    e possiamo dedurre, con i passaggi che ci sono ormai familiari, che
+    e possiamo ulteriormente dedurre che
     \paragraph{Per caso Bilaterale}
-    $$
-    \begin{aligned}
-    1-\alpha & =\left(-z_{\frac{\alpha}{2}}<\frac{\overline{X}-\overline{Y}-\left(\mu_1-\mu_2\right)}{\sqrt{\sigma_1^2 / n+\sigma_2^2 / m}}<z_{\frac{\alpha}{2}}\right) \\
-    & =\left(\overline{X}-\overline{Y}-z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_2^2}{m}}<\mu_1-\mu_2<\overline{X}-\overline{Y}+z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_2^2}{m}}\right)
-    \end{aligned}
-    $$
+    \begin{equation*}
+        \begin{aligned}
+            1-\alpha & =\left(-z_{\frac{\alpha}{2}}<\frac{\overline{X}-\overline{Y}-\left(\mu_1-\mu_2\right)}{\sqrt{\sigma_1^2 / n+\sigma_2^2 / m}}<z_{\frac{\alpha}{2}}\right) \\
+            & =\left(\overline{X}-\overline{Y}-z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_2^2}{m}}<\mu_1-\mu_2<\overline{X}-\overline{Y}+z_{\frac{\alpha}{2}} \sqrt{\frac{\sigma_1^2}{n}+\frac{\sigma_2^2}{m}}\right)
+            \end{aligned}
+    \end{equation*}
     \paragraph{Per caso Unilaterale}
-    $$
-    \begin{aligned}
-     &\left( \overline{X} - \overline{Y} - z_{\alpha} \sqrt{\frac{\sigma^2_1}{n} + \frac{\sigma^2_2}{m}}< \mu_1 - \mu_2 \right) \\
-     &\left( \mu_1 - \mu_2 < \overline{X} - \overline{Y} - z_{\alpha} \sqrt{\frac{\sigma^2_2}{n} + \frac{\sigma^2_2}{m}} \right) \\
-    \end{aligned}
-    $$
-        \begin{figure}[H]
+    \begin{equation*}
+        \begin{aligned}
+            &\left( \overline{X} - \overline{Y} - z_{\alpha} \sqrt{\frac{\sigma^2_1}{n} + \frac{\sigma^2_2}{m}}< \mu_1 - \mu_2 \right) \\
+            &\left( \mu_1 - \mu_2 < \overline{X} - \overline{Y} - z_{\alpha} \sqrt{\frac{\sigma^2_2}{n} + \frac{\sigma^2_2}{m}} \right) \\
+           \end{aligned}
+    \end{equation*}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{images/Screenshot_1.png}
     \end{figure}
     \section{Qualità ed efficienza degli stimatori}
-    Sia $X := (X_1, X_2, \ldots, X_n)$ un campionare di una distribuzione \textit{nota} tranne per il parametro $\theta$ che è incognito e $d(X)$ uno stimatore di $\theta$ \\
-    Come possiamo valutare la sua efficacia? un criterio può essere quello dell'\textit{errore quadratico medio} ossia:
+    Sia $X := (X_1, X_2, \ldots, X_n)$ un campione di una distribuzione \textit{nota} tranne per il parametro $\theta$ che è incognito e $d(X)$ uno stimatore di $\theta$ \\
+    Come possiamo valutare la sua efficacia? \\
+    un criterio può essere quello dell'\textit{errore quadratico medio} ossia:
     \[ r(d, \theta) := \ev{(d(X) - \theta)^2} \]
-    \centerline{e sarà questo il nostro indicatore del valore di $d$ come stimatore di $\theta$}
-    \subsubsection{Bias e Polarizzazione}
+    \centerline{sarà questo il nostro \textbf{indicatore} del valore di $d$ come stimatore di $\theta$}
+    \subsection{Bias e Polarizzazione}
     \definizione Sia $d= d(X)$ uno stimatore del parametro $\theta$ allora:
     \[ b_\theta (d) := \ev{d(X)} - \theta \]
-    \centerline{Questo viene detto \textit{bias} di d come stimatore di $\theta$}
-    \centerline{Se il bias è nullo(quindi $\ev{d(X)} = \theta$), si dice che è uno stimatore \textit{corretto} o \textit{non distorto} }
-    \paragraph{Esempio} Sia $X_1, \ldots, X_n$ un campione con media \textit{incognita} $\theta$ quindi:
+    \centerline{Questo viene detto \textit{bias} di d come stimatore di $\theta$} \\[2ex]
+    Se il bias è nullo(quindi $\ev{d(X)} = \theta$), si dice che è uno stimatore \textit{corretto} o \textit{non distorto}
+    \paragraph{Definizione} Sia $X_1, \ldots, X_n$ un campione con media \textit{incognita} $\theta$ quindi:
     \[ d_1 (X_1, X_2, \ldots, X_n) = X_1 \]
     \[ d_2 (X_1, X_2, \ldotp, X_n) = \frac{X_1 + X_2 + \cdots + X_n}{n} \]
     \centerline{sono entrambi \textit{stimatori non distorti di $\theta$}}
-    perchè entrambi:
+    la verifica è immediata:
     \[ \ev{X_1} = \ev{\frac{X_1 + X_2 + \cdots + X_n}{n}} = \theta \]
     \paragraph{Definizione} Se $d = d(X)$ è uno \textit{stimatore corretto}, il suo errore quadratico medio diventa:
     \begin{equation*}
@@ -290,10 +299,10 @@
             &= Var(d)
         \end{split}
     \end{equation*}
-    \centerline{Quindi l'errore quadratico medio di uno stimatore corretto è pari alla sua varianza}
-    \subsubsection{Combinazioni di stimatori corretti}
+    \centerline{Quindi l'errore quadratico medio di uno stimatore corretto è \textbf{pari alla sua varianza}}
+    \subsection{Combinazioni di stimatori corretti}
     Consideriamo due stimatori \textit{corretti} e \textit{indipendenti} di parametro $\theta$ (denotati con $d_1$ e $d_2$) con varianze rispettivamente $\sigma^2_1$ $\sigma^2_2$
-    \[ \ev{d_i} = \theta \quad Var(d_i) = \sigma^2_i \qquad i=1,2  \]
+    \[ \ev{d_i} = \theta \qquad Var(d_i) = \sigma^2_i \qquad i=1,2  \]
     uno stimatore corretto di $\theta$ è il seguente
     \[ d := \lambda d_1 + (1- \lambda) d_2 \]
     Successivamente vogliamo trovare anche il valore di $\lambda$ che produce lo stimatore $d$ con il \textit{minore errore quadratico medio}
@@ -309,7 +318,7 @@
     e belin lo studiamo sto segno o no? denotiamo con $\hat{\lambda}$ il valore di $\theta$ che produce il minimo
     \[ 2 \hat{\lambda} \sigma^2_1 - 2(1- \hat{\lambda}) \sigma^2_2 = 0 \]
     da cui otteniamo:
-    \[ \hat{\lambda} = \frac{\sigma^2_2}{\sigma^2_1 + \sigma^2_2} = \frac{1 / \sigma^2_1}{1 / \sigma^2_1 + 1 / \sigma^2_2} \]
+    \[ \boldsymbol{\hat{\lambda} = \frac{\sigma^2_2}{\sigma^2_1 + \sigma^2_2} = \frac{1 / \sigma^2_1}{1 / \sigma^2_1 + 1 / \sigma^2_2}} \]
     il peso ottimale da dare a uno stimatore deve essere \textbf{inversamente} proporzionale alla sua varianza \\
     La migliore combinazione lineare delle $d_i$ per l'errore quadratico medio è:
     \begin{equation*}
@@ -334,7 +343,7 @@
     \end{figure}
     \subsection{Stimatore della media di una distribuzione uniforme}
     Siano $X_1, X_2, \ldots, X_n$ un campione estratto da una popolazione con distribuzione \textit{uniforme} su $(0, \theta)$ dove $\theta$ è un parametro incognito. \\
-    Dato che (non si sa come) $\boldsymbol{\ev{X_i} = \theta / 2}$ è uno stimatore naturale per $\theta$ è dato da
+    Dato che $\boldsymbol{\ev{X_i} = \frac{\theta}{2}}$ è uno stimatore naturale per $\theta$ ed è dato da:
     \[ d_1 = d_1 (X) := 2 \overline{X} := \frac{2}{n} \displaystyle\sum_{i=1}^{n} X_i \]
     Siccome $\boldsymbol{\ev{d_1} = \theta}$, otteniamo che:
     \begin{equation*}
@@ -342,7 +351,7 @@
             \boldsymbol{r(d_1, \theta)} &= Var(d_1) \\
             &= \frac{4}{n} Var(X_i) \\
             &= \frac{4}{n} \cdot \frac{\theta^2}{12} \\
-            &= \frac{\theta^2}{3n}
+            &= \boldsymbol{\frac{\theta^2}{3n}}
         \end{split}
     \end{equation*}
     Un secondo stimatore che abbiamo è quello di \textbf{massima verosomiglianza} ($d_2$):
@@ -366,9 +375,10 @@
         \includegraphics[width=\textwidth]{images/boh_5.png}
     \end{figure}
     \section{Stimatori Bayesiani}
-    \definizione Quando il parametro incognito $\boldsymbol{\theta}$ possiamo considerarlo come una variabile aleatoria, questo approccio viene detto \textit{bayesiano}. \\
-    Se abbiamo delle informazioni su quelli che possono essere assunti i valori da $\theta$ ed esse assumono la forma di distribuzione di probabilità si dice che abbiamo \textbf{una distribuzione a priori per $\boldsymbol{\theta}$} \\[2ex]
-    Se i valori che osserviamo sono $X_i = x_i \qquad i=1,2, \ldots, n$ la \textit{densità di probabilità condizionale di $\theta$} è data da:
+    \definizione Quando il parametro incognito $\boldsymbol{\theta}$ possiamo considerarlo come una variabile aleatoria, questo approccio viene detto \textit{bayesiano} se abbiamo delle informazioni su quelli che possono essere assunti i valori da $\theta$ \\
+    Esse assumono la forma di distribuzione di probabilità si dice che abbiamo \textbf{una distribuzione a priori per $\boldsymbol{\theta}$} \\[2ex]
+    Se i valori che osserviamo sono $X_i = x_i \quad \text{e} \quad i=1,2, \ldots, n$ \\
+    la \textit{densità di probabilità condizionale di $\theta$} è data da:
     \begin{equation*}
         \begin{split}
             \mathcolor{ForestGreen}{\boldsymbol{f(\theta \rvert x_1, x_2, \ldots, x_n)}} &= \frac{f(x_1, x_2, \ldots, x_n, \theta)}{\mathcolor{Turquoise}{\boldsymbol{f(x_1, x_2, \ldots, x_n)}}} \\
@@ -377,7 +387,7 @@
     \end{equation*}
     Dove:
     \begin{itemize}
-        {\color{ForestGreen} \item $\boldsymbol{f(\theta \rvert x_1, x_2, \ldots, x_n)}$ Viene detta \textit{probabilità a posteriori}}
+        {\color{ForestGreen} \item $\boldsymbol{f(\theta \rvert x_1, x_2, \ldots, x_n)}$ Viene detta \textit{distribuzione a posteriori}}
         {\color{Turquoise} \item $\boldsymbol{f(x_1, x_2, \ldots, x_n)}$ è la \textit{MLE Marginale}}
         {\color{red} \item $\boldsymbol{f(x_1, x_2, \ldots, x_n \rvert \theta)}$ è la \textit{MLE}}
         {\color{blue} \item $\boldsymbol{p(\theta)}$ è la \textit{distribuzione a priori}}
@@ -408,10 +418,10 @@
         E\left[\theta \mid x_1, x_2, \ldots, x_n\right] & =\frac{(n+1) !}{x !(n-x) !} \int_0^1 \theta^{1+x}(1-\theta)^{n-x} d \theta \\
         &=\frac{(n+1) !}{x !(n-x) !} \frac{(1+x) !(n-x) !}{(n+2) !} \\
         &= \frac{x+1}{n+2} \\
-        &= \boldsymbol{\frac{1 + \sum_{i=1}^{n} X_i}{n + 2}}
+        &= \boldsymbol{\frac{1 + \sum_{i=1}^{n} x_i}{n + 2}}
         \end{aligned}
     \end{equation}
-    \paragraph{Esempio} Se raccogliamo un campione di \textit{10 bernoulliane} e trovassimo \textbf{6 successi}, lo stimatore bayesiano di $\theta$ fornirebbe un valore di \textbf{7 / 12} \\
+    \paragraph{Esempio} Se raccogliamo un campione di \textit{\textbf{10} bernoulliane} e trovassimo \textbf{6 successi}, lo stimatore bayesiano di $\theta$ fornirebbe un valore di \textbf{7 / 12} \\
     Lo stimatore di massima verosomiglianza vale invece \textbf{6 / 10}
     \subsection{Stimatore di $\theta$ per una Normale}
     Supponiamo che $X_1, X_2, \ldots, X_n$ sia una distribuzione normale con media $\theta$ \textit{incognita} e varianza $\sigma^2_0$ \textbf{nota} \\[2ex]
@@ -425,18 +435,21 @@
     Avendo una funzione di likelihood $f(x_1, x_2, \ldots, x_n \rvert \theta)$ e sapendo che la distribuzione è \textit{uniforme} \\
     $\theta \in [a,b]$ \\
     $d_b = d_{MLE}$
+    \newpage
     \section{Verifica delle ipotesi}
     Un ipotesi statistica è un'affermazione su uno o più parametri della distribuzione, si chiama ipotesi perchè non sappiamo a priori se sia vera oppure no.
     \subsection{Livelli di significatività}
-    Consideriamo una popolazione con distribuzione $F_\theta$ che dipende da $\theta$ incognito e vogliamo verificare una qualche ipotesi su $\theta$.
+    Consideriamo una popolazione con distribuzione $F_\theta$ che dipende da $\theta$ incognito e vogliamo verificare una qualche ipotesi su questo parametro.
     \begin{enumerate}
-        \item $H_0 : \theta = 1 \rightarrow$ \textit{Ipotesi nulla \textbf{semplice}}
-        \item $H_0 : \theta \leq n \rightarrow$ \textit{Ipotesi nulla \textbf{composta}}
+        \item $H_0 : \theta = 1 \longrightarrow$ \textit{Ipotesi nulla \textbf{semplice}}
+        \item $H_0 : \theta \leq n \longrightarrow$ \textit{Ipotesi nulla \textbf{composta}}
     \end{enumerate}
-    Quando la prima ipotesi è vera, caratterizza l'intera distribuzione, mentre questo non è vero per la seconda ipotesi. 
+    Quando la prima ipotesi è vera, \textbf{caratterizza} l'intera distribuzione \\
+    mentre questo non è vero per la seconda ipotesi. 
     \\[2ex]
-    Esiste una regione critica \textbf{C} per cui se il campione aleatorio vi appartiene l'ipotesi \textit{non viene accettata}. Esiste un livello di tolleranza specificato all'interno della regione critica per cui un'ipotesi può essere \textit{ancora accettata}.
-    Questa tolleranza è definita dal \textbf{livello di significatività}, ovvero viene definito $\alpha$ tale che se l'ipotesi è vera la probabilità di rifiutarla non superi $\alpha$
+    Esiste una regione critica \textbf{C} per cui se il campione aleatorio vi appartiene l'ipotesi \textit{non viene accettata}. \\
+    Esiste un livello di tolleranza specificato all'interno della regione critica per cui un'ipotesi può essere \textit{ancora accettata}.
+    Questa tolleranza è definita dal \textbf{livello di significatività}, ovvero viene definito $\alpha$ tale che se l'ipotesi è vera la probabilità di rifiutarla non superi $\alpha$:
     \[ \text{accetta } H_0 \text{ se} (X_1, X_2, \ldots, X_n) \not \in C \]
     \centerline{e}
     \[ \text{rifiuta } H_0 \text{ se} (X_1, X_2, \ldots, X_n) \in C \]
@@ -446,15 +459,13 @@
         \item \textbf{Seconda Specie}: si accetta $H_0$ anche se è falsa
     \end{enumerate}
     \subsection{Verifica di ipotesi sulla media di una popolazione normale}
-    Supponiamo di avere $X_1, X_2, \ldots, X_n$ sia un campione aleatorio di una popolazione normale di parametri $\mu$ $\sigma^2$ con \textit{varianza} nota e \textit{media} incognita, vogliamo verificare le seguenti ipotesi:
-    \[ H_0 : \mu = \mu_0 \]
-    e l'ipotesi \textit{alternativa}
-    \[ H_1 : \mu \not = \mu_0 \]
+    Supponiamo che $X_1, X_2, \ldots, X_n$ sia un campione aleatorio di una popolazione normale di parametri $\mu$ $\sigma^2$ con \textit{varianza} nota e \textit{media} incognita, vogliamo verificare le seguenti ipotesi:
+    \[ H_0 : \mu = \mu_0 \quad \text{ contro } \quad H_1 : \mu \not = \mu_0 \]
     Lo \textbf{stimatore puntuale} per $\mu$ è:
     \[ \overline{X} := \frac{1}{n} \sum_{i=1}^{n} X_i \]
     La \textbf{regione critica del test} invece è:
     \[ C := \{ (X_1, X_2, \ldots, X_n) : \rvert \overline{X} - \mu_0 \rvert > c \} \]
-    \centerline{Dove c rappresenta la \textit{tolleranza}}
+    \centerline{Dove c rappresenta la \textit{tolleranza}} \\[2ex]
     Quando $\mu = \mu_0$ sappiamo che $\overline{X}$ ha distribuzione \textbf{normale} con media $\mu_0$ e varianza $\sigma^2 / n$ allora:
     \[ \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \sim Z \]
     \centerline{Dove la relazione $\sim$ è \textbf{condizionata} all'ipotesi $H_0 : \mu = \mu_0$} \\[2ex]
@@ -536,8 +547,7 @@
     \[ \text{si rifiuta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} > z_\alpha \]
     \[ \text{si accetta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_\alpha \]
     Quella trovata è detta \textit{regione criticia \textbf{unilaterale}} o a una coda, quindi il problema di verificare le ipotesi alternative
-    \[ H_0 : \mu = \mu_0 \]
-    \[ H_1 : \mu > \mu_0 \]
+    \[ H_0 : \mu = \mu_0 \quad \text{ contro } \quad H_1 : \mu > \mu_0 \]
     \centerline{Si dice problema di \textbf{test unilaterale}} \\[2ex]
     poniamo $Z := \sqrt{n}(\overline{X} - \mu) / \sigma$ questa statistica è una \textit{normale standard} quindi:
     \begin{equation*}
@@ -560,7 +570,7 @@
     \[ \beta(\mu) \geq 1 - \alpha, \qquad \text{per ogni } \mu \leq \mu_0 \]
     \paragraph{Osservazione} è possibile verificare l'ipotesi
     \[ H_0 : \mu = \mu_0 \]
-    contro l'ipotesi \textit{alternativa}
+    \centerline{contro l'ipotesi \textit{alternativa}}
     \[ H_1 : \mu < \mu_0 \]
     ad un livello di significatività $\boldsymbol{\alpha}$, decidendo che:
     \[ \text{si rifiuta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq -z_\alpha \]
@@ -623,10 +633,9 @@
     Una situazione che accade spesso è decidere se \textit{vari approcci} portano allo stesso risultato, oppure no. \\
     Questa problematica si ricordune spesso alla verifica dell'ipotesi che due popolazioni normali \textit{abbiano la stessa media.}
     \subsubsection{Il caso in cui le varianze sono note}
-    Supponiamo di avere $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2, \ldots, Y_n$ sono due campioni di due popolazioni \textit{normali} di medie $\mu_x$ $\mu_y$ e varianze \textit{note} $\sigma^2_x$ e $\sigma^2_y$ \\
+    Supponiamo che $X_1, X_2, \ldots, X_n$ e $Y_1, Y_2, \ldots, Y_n$ siano due campioni di due popolazioni \textit{normali} di medie $\mu_x$ $\mu_y$ e varianze \textit{note} $\sigma^2_x$ e $\sigma^2_y$ \\
     Come sempre verifichiamo le due ipotesi
-    \[ H_0 : \mu_x = \mu_y \]
-    \[ H_1 : \mu_x \not = \mu_y \]
+    \[ H_0 : \mu_x = \mu_y \quad \text{ contro } \quad H_1 : \mu_x \not = \mu_y \]
     Dato che $\overline{X}$ e $\overline{Y}$ sono rispettivamente \textit{stimatori} di $\mu_x$ e $\mu_y$ \\
     Possiamo dire che $\overline{X} - \overline{Y}$ può essere \textbf{usato come stimatore} di $\mu_x - \mu_y$
     \[ \text{si rifiuta } H_0 \text{ se } \big|\overline{X} - \overline{Y} \big| > c \]
@@ -751,10 +760,8 @@
     In questo caso noi abbiamo $m$ campioni \textit{indipendenti}, formati da $n$ variabili aleatorie con media che \textbf{dipende} dal campione e varianza \textit{fissata} \\
     Denotiamo $X_{ij} \quad i = 1,\ldots, m$ con quello che indica il campione mentre con $j=1, \ldots, n$ indichiamo la posizione all'interno del campione stesso \\[2ex] 
     I parametri $\mu_1, \mu_2, \ldots, \mu_m$ e $\sigma$ sono incogniti, il nostro scopo è quello di verificare l'ipotesi nulla:
-    \[ H_0 : \mu_1 = \mu_2 = \cdots = \mu_m \]
-    e la sua controparte:
-    \[ H_1 : \mu_1 \not= \mu_2 \not= \cdots \not= \mu_m \]
-    Dato che ci sono $nm$ \textit{variabili aleatorie indipendenti} la \textit{somma dei quadrati} è una distribuzione \textit{chi-quadro} con $nm$ gradi di libertà:
+    \[ H_0 : \mu_1 = \mu_2 = \cdots = \mu_m \quad \text{ contro } \quad H_1 : \mu_1 \not= \mu_2 \not= \cdots \not= \mu_m \]
+    Dato che ci sono $\boldsymbol{nm}$ \textit{variabili aleatorie indipendenti} la \textit{somma dei quadrati} è una distribuzione \textit{chi-quadro} con $nm$ gradi di libertà:
     \[ \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(X_{ij} - \ev{X_{ij}})^2}{\sigma} = \sum_{i=1}^{m} \sum_{j=1}^{n} \frac{(X_{ij} - \mu_i)^2}{\sigma^2} \sim \mathcal{X}^2_{nm} \]
     come stimatori degli $m$ usiamo le medie campionarie dei singoli campioni di dati; in particolare $\boldsymbol{X_{i*}}$ denoterà quella del campione i-esimo:
     \[ X_{i*} := \frac{1}{n} \sum_{j=1}^{n} X_{ij} \]
@@ -769,7 +776,7 @@
     \subsubsection{Stima di $\sigma^2$ valida solo quando $\mu_i = \mu$}
     In questi casi tutti gli stimatori $X_{1*}, X_{2*}, \ldots, X_{m*}$ sono normali di media $\mu$ e varianza $\sigma^2/n$, la loro somma dei quadrati è la seguente:
     \[ \sum_{i=1}^{m} \frac{(X_{i*} - \ev{X_{i*}})^2}{Var(X_{i*})} = \sum_{i=1}^{m} \frac{(X_{i*} - \mu)^2}{\sigma^2 / n} \sim \mathcal{X}^2_m \]
-    \centerline{questa è una \textit{chi-quadro} con $m$ gradi di libertà}
+    \centerline{questa è una \textit{chi-quadro} con $m$ gradi di libertà} \\[2ex]
     Abbiamo bisogno però di uno \textit{stimatore} di $\mu$, e la loro media campionaria risulta essere la scelta migliore, quindi:
     \[ X_{**} := \frac{1}{nm} \sum_{i=1}^{m} \sum_{j=1}^{n} X_{ij} = \frac{1}{m} \sum_{i=1}^{m} X_{i*} \]
     Nell'equazione sopra ora andiamo quindi a sostituire $\mu$ con $X_{**}$ e otteniamo (quando $H_0$ è vera) 
@@ -782,15 +789,7 @@
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{images/boh_11.png}
     \end{figure}
-
-
-
-
-
-
-
-
-        \section{Regressione lineare}
+    \section{Regressione lineare}
     Molti problemi di statistica prevedono una singola variabile $Y$ di \emph{risposta} e un certo numero di variabili $\boldsymbol{x_1, x_2, \ldots, x_r}$ di \emph{ingresso}. La \emph{risposta} è in funzione dei dati, $Y$ è anche detta \emph{variabile dipendente}, mentre le $x_i$ sono le \emph{variabili indipendenti}.\\
     La più semplice relazione potrebbe essere quella lineare:
     \[ Y = \beta_0 + \beta_1x_1 + \ldots  + \beta_rx_r \]
@@ -882,7 +881,7 @@
     \subsection{Inferenza di $Y_0 = Y(x_0) \rightarrow$ predittivo}
     Nel caso dovessimo prevedere un nuovo elemento della retta di regressione (utilizzando i dati già a disposizione) dobbiamo utilizzare la seguente formula:
     \[ A+Bx_0 \pm t_{\frac{\alpha}{2},n-2} \cdot \sqrt{\Big(1+\frac{1}{n} + \frac{(x_0-\overline x)^2}{S_{xx}}\Big)\frac{SS_R}{n-2}} \]
-    \paragraph{Riassunto:} Delle distribuzioni
+    \paragraph{Riassunto} Delle distribuzioni
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{images/boh_13.png}
     \end{figure}
@@ -979,7 +978,7 @@
     Possiamo integrare sto mapazzone con i membri tra 0 e t ottenendo che:
     \[ \int_{0}^{t} \lambda(s) \, ds = - \log(1-F(t)) + \log (1-F(0)) = \boldsymbol{-\log (1-F(t))} \]
     Ottenendo alla fine che 
-    \[ 1 - F(t) = \exp \left\{ - \int_{0}^{t} \lambda(s) \, ds \right\} \]
+    \[ \boldsymbol{1 - F(t) = \exp \left\{ - \int_{0}^{t} \lambda(s) \, ds \right\}} \]
     La funzione di ripartizione di una var. aleatoria continua può essere specificata tramite la \textit{corrispondente funzione di intensità di rotture}
     \subsection{Il ruolo della distribuzione esponenziale}
     \subsubsection{Interruzione al fallimento r-esimo}
@@ -1001,7 +1000,7 @@
     \[ f(x_1, x_2, \ldots, x_r) = \frac{n!}{(n-r)! \theta^r} \exp \left\{ \frac{1}{\theta} \sum_{i=1}^{r} x_i - \frac{(n-r) x_r}{\theta} \right\} \]
     Per calcolare lo stimatore di massima verosomiglianza di $\theta$ invece facciamo cosi:
     \[ \hat{\theta} := \frac{\sum_{i=1}^{r} X_{(i)} + (n-r) X_{(r)}}{r} =: \frac{\tau}{r} \]
-    \centerline{Dove $\tau$ viene definito come \textbf{Total Time of Test statistic}}
+    \centerline{Dove $\tau$ viene definito come \textbf{Total Time of Test statistic}} \\[2ex]
     $\tau$ rappresenta la somma delle statistiche $Y_i$ per $i=1,2,\ldots,r$ che indicano il tempo totale di funzionamento racchiuso tra la rottura dell'oggetti (i-1)-esimo e quella dell'i-esimo \\
     Il calcolo per trovarlo è il seguente 
     \[ \tau = \frac{j=1}{r} Y_j \]
@@ -1013,13 +1012,13 @@
     E quindi sappiamo che abbiamo un livello di confidenza $\boldsymbol{1- \alpha}$ nell'affermare che:
     \[ \theta \in \left( \frac{2 \tau}{\mathcal{X}^2_{\frac{\alpha}{2}, 2r}}, \quad \frac{2\tau}{\mathcal{X}^2_{1- \frac{\alpha}{2}, 2r}} \right) \]
     \centerline{Questo per il caso \textbf{bilaterale}}
-    \paragraph{Esempio} 50 transistor vengono messi in funzione simultaneamente. L'esperimento si conclude quando il 15-esimo(r) si rompe.
-    Il Total time on test(TTT) è di 525 ore. Trovare un intervallo di confidenza del 95\% per la vita media di un componente.
+    \paragraph{Esempio} 50 transistor vengono messi in funzione simultaneamente. L'esperimento si conclude quando il 15-esimo ($r$) si rompe.
+    Il Total time on test è di 525 ore ($TTT$). Trovare un intervallo di confidenza del 95\% per la vita media di un componente.
     La distribuzione è esponenziale. \\
     Mediamente si rompono:
     \begin{equation*}
         \begin{split}
-            &\hat \theta = \frac{TTT}{r} \quad \quad \text{numero medio di guasti in 525 ore} \\
+            &\hat \theta = \frac{TTT}{r} \qquad \text{numero medio di guasti in 525 ore} \\
             &\hat \theta = \frac{525}{15} = 35
         \end{split}
     \end{equation*}
