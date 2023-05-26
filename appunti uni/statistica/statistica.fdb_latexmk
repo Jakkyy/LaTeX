@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1685093262 "/Users/jacopo/Desktop/Programming/LaTeX/LaTeX/appunti uni/statistica/statistica.tex" "statistica.pdf" "statistica" 1685093264 0
-  "/Users/jacopo/Desktop/Programming/LaTeX/LaTeX/appunti uni/statistica/statistica.tex" 1685093262 74658 1b032c340a37009d1a1a341849ee9e44 ""
+["pdflatex"] 1685094143 "/Users/jacopo/Desktop/Programming/LaTeX/LaTeX/appunti uni/statistica/statistica.tex" "statistica.pdf" "statistica" 1685094144 0
+  "/Users/jacopo/Desktop/Programming/LaTeX/LaTeX/appunti uni/statistica/statistica.tex" 1685094143 74649 7c7887dbe229441577b9f19c1f86730f ""
   "/Users/jacopo/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsi1000.600pk" 1681031975 24520 2ed8c16deb8acf2d1f8fc1fb4ff27e15 ""
   "/Users/jacopo/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecso1000.600pk" 1681168053 28324 03ac1b5e497466196d16fa976f25fda6 ""
   "/Users/jacopo/Library/texlive/2023basic/texmf-var/fonts/pk/ljfour/jknappen/ec/ecss1000.600pk" 1681031976 19908 ff79eba2b2b7abf27841e48536ad6337 ""
@@ -156,10 +156,10 @@
   "images/boh_7.png" 1684917284 29743 008370a593ffbfddf227ab2a76310bab ""
   "images/boh_8.png" 1684917284 8589 379fe9dfb9250c7298cffaa5da377133 ""
   "images/boh_9.png" 1684917284 39272 dd130d00a2dfcee02fd8e80343b20a58 ""
-  "statistica.aux" 1685093263 15367 899dde28a9bea13f0f28dbb733b6feb5 "pdflatex"
-  "statistica.out" 1685093263 13291 3a4571dd1bf38f8515244c84608a2c57 "pdflatex"
-  "statistica.tex" 1685093262 74658 1b032c340a37009d1a1a341849ee9e44 ""
-  "statistica.toc" 1685093263 8357 3300a273ce01925e39a10829b9cf386d "pdflatex"
+  "statistica.aux" 1685094144 15367 899dde28a9bea13f0f28dbb733b6feb5 "pdflatex"
+  "statistica.out" 1685094144 13291 3a4571dd1bf38f8515244c84608a2c57 "pdflatex"
+  "statistica.tex" 1685094143 74649 7c7887dbe229441577b9f19c1f86730f ""
+  "statistica.toc" 1685094144 8357 3300a273ce01925e39a10829b9cf386d "pdflatex"
   (generated)
   "statistica.aux"
   "statistica.log"
