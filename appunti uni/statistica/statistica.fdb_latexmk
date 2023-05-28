@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1685229611 "c:/Users/jacop/Desktop/programming/LaTeX/appunti uni/statistica/statistica.tex" "statistica.pdf" "statistica" 1685229614 0
+["pdflatex"] 1685304867 "c:/Users/jacop/Desktop/programming/LaTeX/appunti uni/statistica/statistica.tex" "statistica.pdf" "statistica" 1685304870 0
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1685222202 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi375/ecss0800.pk" 1685123282 10028 08336529c9526f1548ac52d57dcc41bb ""
   "C:/Users/jacop/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi450/ecss0800.pk" 1685222168 11964 d6b87405ce27eb25504fcac649516163 ""
@@ -152,7 +152,7 @@
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/tools/bm.sty" 1667245866 13231 b52297489a0e9d929aae403417d92a02 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/jacop/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/jacop/Desktop/programming/LaTeX/appunti uni/statistica/statistica.tex" 1685229610 90747 4e078a5c90e9068ee4868379353edbcf ""
+  "c:/Users/jacop/Desktop/programming/LaTeX/appunti uni/statistica/statistica.tex" 1685304866 91275 dbe8ecfae991dfc2a6acfc76370eca3c ""
   "images/F_table.png" 1681397818 108288 94e29502d7af6c3d2300b5b1c6dc7b03 ""
   "images/Screenshot_1.png" 1685114872 105291 a8c121e1b1142c96f734e5a374045a67 ""
   "images/boh_10.png" 1684935115 95139 b1df994f93373ca9f735d601168f6309 ""
@@ -164,6 +164,7 @@
   "images/boh_16.png" 1685134406 31703 e5903b979e3241db4bc19a55f722fb97 ""
   "images/boh_17.png" 1685189499 123418 488bac4d34d16f67310d422758f7decc ""
   "images/boh_18.png" 1685216839 14949 d3e9f21e9adcd2d46cab5e9f3f28ee72 ""
+  "images/boh_19.png" 1685281626 17493 6e715d0c4896052f2afd95a1a976ee32 ""
   "images/boh_2.png" 1684791250 47976 89906f373ae37805b8b2906e0f90cc69 ""
   "images/boh_3.png" 1684847267 60080 3e52dda1c2921a35bc9b81097b3b6614 ""
   "images/boh_4.png" 1684847267 223224 eed5787d37ba81eb125fc0640ccd375b ""
@@ -175,10 +176,10 @@
   "images/phi_table.png" 1681397768 118570 e7125c3c831dbd32ecbb7703a29683f2 ""
   "images/tan_table.png" 1681397794 111809 ca7ce73fb4034f1a162b39e2982fa561 ""
   "images/xan_table.png" 1681397780 143796 38217a8ecec83c821930a41ff841a416 ""
-  "statistica.aux" 1685229614 17958 82e0eda1765c1600b7e5c945ff469c74 "pdflatex"
-  "statistica.out" 1685229614 14060 a047e2ae6dbeb4bcd36cebd391a2656c "pdflatex"
-  "statistica.tex" 1685229610 90747 4e078a5c90e9068ee4868379353edbcf ""
-  "statistica.toc" 1685229614 10507 c4c261449e48b2b4d75c61a39972f036 "pdflatex"
+  "statistica.aux" 1685304870 18096 6748108620ab8f396d89decb5f17643d "pdflatex"
+  "statistica.out" 1685304870 14060 a047e2ae6dbeb4bcd36cebd391a2656c "pdflatex"
+  "statistica.tex" 1685304866 91275 dbe8ecfae991dfc2a6acfc76370eca3c ""
+  "statistica.toc" 1685304870 10507 5ac3054fceed9aaaff8b9bdeb832f918 "pdflatex"
   (generated)
   "statistica.aux"
   "statistica.log"

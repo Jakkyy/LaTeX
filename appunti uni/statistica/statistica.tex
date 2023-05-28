@@ -160,6 +160,11 @@
         \caption{Rappresentazione grafica}
         \includegraphics[width=\textwidth]{images/boh_16.png}
     \end{figure}
+    \begin{figure}[H]
+        \centering
+            \caption{Valori comuni di $\alpha$}
+            \includegraphics[width=0.5\textwidth]{images/boh_19.png}
+    \end{figure}
     \subsection{Distribuzione normale}
     \subsubsection{$\mu$ incognita e varianza  $\sigma^2$ nota}
     \definizione Sia $\boldsymbol{X_1, X_2, \ldots, X_n}$ un campione di una popolazione normale con $\mu$ \textit{incognita} e varianza $\sigma^2$ \textit{nota}:
@@ -193,7 +198,7 @@
     \centerline{Otteniamo quindi il 95\% di confidenza che il messaggio fosse \textbf{compreso} tra 7.69 e 10.31}
     \subsubsection{$\mu$ incognita e varianza  $\sigma^2$ incognita}
     Dato che tutti i nostri parametri sono ignoti, non possiamo basarci sul fatto che $\sqrt{n}(\overline{X} - \mu) / \sigma$ è una \textit{normale standard}, dobbiamo quindi ricorrere a una varianza campionaria, come segue:
-    \[ S^2 := \frac{1}{n-1} \sum_{i}^{} (X_i - \overline{X})^2 \longrightarrow \boldsymbol{\frac{\overline{X} - \mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}}\]
+    \[ S^2 := \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{X})^2 \longrightarrow \boldsymbol{\frac{\overline{X} - \mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}}\]
     \centerline{Alla fine otteniamo una variabile aleatoria di tipo $t$ con n-1 gradi di libertà}
     \paragraph{Per caso Bilaterale}
     \[ P \left( \overline{X} - t_{\frac{\alpha}{2}, n-1} \frac{S}{\sqrt{n}} < \mu < \overline{X} + t_{\frac{\alpha}{2}, n_1} \frac{S}{\sqrt{n}} \right) = 1 - \alpha \]
@@ -203,7 +208,7 @@
     Calcoliamo prima di tutto la \textit{varianza campionaria}:
     \[ S^2 = \frac{\sum_{i}^{} x^2_i - 9\overline{x}^2}{8} = \boldsymbol{9.5} \]
     \[ S \approx 3.082 \]
-    Dato che la nostra è una var. aleatoria di tipo t dobbiamo ricorrere alla sua tabella, troviamo che il valore $t_{0.025,8} \approx 2.306$, quindi un intervallo di confidenza al 95\% per $\mu$ è dato da:
+    Dato che la nostra è una var. aleatoria di tipo t dobbiamo ricorrere alla sua tabella, troviamo che il valore $t_{0.025,8} \approx 2.306 \quad (t_{\alpha/2, n-1})$, quindi un intervallo di confidenza al 95\% per $\mu$ è dato da:
     \[ 9 \pm 2.306 \cdot \frac{3.092}{3} \Longrightarrow (6.63, \quad 11.37) \]
     \subsection{Intervalli di confidenza per Bernoulli}
     Nel caso avessimo $n$ oggetti con una quantita $X$ di oggetti che soddisfano i requisiti, possiamo dire che $X$ ha distribuzione \textit{binomiale} di parametri $n$ e $p$
@@ -655,6 +660,9 @@
     Per cui $P(T > c) = \frac{\alpha}{2}$, e quindi deve valere $c = t_{\frac{\alpha}{2}, n-1}$, quindi in fin dei conti:
     \[ \text{si rifiuta } H_0 \text{ se } \big| \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big| > t_{\frac{\alpha}{2}, n-1} \]
     \[ \text{si accetta } H_0 \text{ se } \big| \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big| \leq t_{\frac{\alpha}{2}, n-1} \]
+    Possiamo anche invertire il segno ponendo un \textbf{-} prima del tan:
+    \[ \text{si rifiuta } H_0 \text{ se } \big| \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big| < - t_{\alpha, n-1} \]
+    \[ \text{si accetta } H_0 \text{ se } \big| \frac{\overline{X} - \mu_0}{S / \sqrt{n}} \big| \geq - t_{\alpha, n-1} \]
     \centerline{Vedere tabella sotto per tutt'e cose}
     \begin{figure}[H]
         \caption{$X_1, X_2, \ldots, X_n$ è un campionare estratto da una popolazione $\mathcal{N}(\mu, \sigma^2)$}

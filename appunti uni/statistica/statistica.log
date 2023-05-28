@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  28 MAY 2023 01:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  28 MAY 2023 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -560,464 +560,473 @@ File: images/boh_16.png Graphic file (type png)
 <use images/boh_16.png>
 Package pdftex.def Info: images/boh_16.png  used on input line 161.
 (pdftex.def)             Requested size: 341.43306pt x 173.29225pt.
- [9]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
-
-[10
+<images/boh_19.png, id=389, 243.15843pt x 244.66406pt>
+File: images/boh_19.png Graphic file (type png)
+<use images/boh_19.png>
+Package pdftex.def Info: images/boh_19.png  used on input line 166.
+(pdftex.def)             Requested size: 170.71652pt x 171.7714pt.
+ [9] [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.168 ... \sqrt{n}} < 1.96 \right) \approx 0.95 \]
-                                                   <./images/boh_16.png>] [11]
+l.168     \subsection
+                     {Distribuzione normale} <./images/boh_16.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 194.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 194.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 194.
+(hyperref)                removing `\mu' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 194.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 194.
+(hyperref)                removing `math shift' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 194.
+(hyperref)                removing `\sigma' on input line 169.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 194.
+(hyperref)                removing `superscript' on input line 169.
 
-[12] [13]
-Overfull \hbox (2.72893pt too wide) detected at line 220
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 169.
+
+[11
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.173 ... \sqrt{n}} < 1.96 \right) \approx 0.95 \]
+                                                   <./images/boh_19.png>] [12]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 199.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 199.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 199.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 199.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 199.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 199.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 199.
+
+[13] [14]
+Overfull \hbox (2.72893pt too wide) detected at line 225
 [] \OT1/cmr/m/n/10 = (0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7216\OML/cmm/m/it/10 ;  \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8784)
  []
 
-<images/boh_3.png, id=425, 659.46375pt x 197.73875pt>
+<images/boh_3.png, id=431, 659.46375pt x 197.73875pt>
 File: images/boh_3.png Graphic file (type png)
 <use images/boh_3.png>
-Package pdftex.def Info: images/boh_3.png  used on input line 223.
+Package pdftex.def Info: images/boh_3.png  used on input line 228.
 (pdftex.def)             Requested size: 341.43306pt x 102.3812pt.
-[14] [15 <./images/boh_3.png>] [16] [17] [18]
-<images/boh_17.png, id=454, 657.95813pt x 468.24937pt>
+[15] [16 <./images/boh_3.png>] [17] [18] [19]
+<images/boh_17.png, id=461, 657.95813pt x 468.24937pt>
 File: images/boh_17.png Graphic file (type png)
 <use images/boh_17.png>
-Package pdftex.def Info: images/boh_17.png  used on input line 283.
+Package pdftex.def Info: images/boh_17.png  used on input line 288.
 (pdftex.def)             Requested size: 341.43306pt x 242.99092pt.
-<images/boh_2.png, id=455, 515.67656pt x 280.04625pt>
+<images/boh_2.png, id=462, 515.67656pt x 280.04625pt>
 File: images/boh_2.png Graphic file (type png)
 <use images/boh_2.png>
-Package pdftex.def Info: images/boh_2.png  used on input line 286.
+Package pdftex.def Info: images/boh_2.png  used on input line 291.
 (pdftex.def)             Requested size: 341.43306pt x 185.42505pt.
- [19] [20 <./images/boh_17.png>] [21 <./images/boh_2.png>]
-<images/Screenshot_1.png, id=478, 629.35126pt x 456.95718pt>
+ [20] [21 <./images/boh_17.png>] [22 <./images/boh_2.png>]
+<images/Screenshot_1.png, id=484, 629.35126pt x 456.95718pt>
 File: images/Screenshot_1.png Graphic file (type png)
 <use images/Screenshot_1.png>
-Package pdftex.def Info: images/Screenshot_1.png  used on input line 313.
+Package pdftex.def Info: images/Screenshot_1.png  used on input line 318.
 (pdftex.def)             Requested size: 341.43306pt x 247.90367pt.
- [22] [23 <./images/Screenshot_1.png>] [24] [25]
-<images/boh_4.png, id=502, 1284.8pt x 166.6225pt>
+ [23] [24 <./images/Screenshot_1.png>] [25] [26]
+<images/boh_4.png, id=508, 1284.8pt x 166.6225pt>
 File: images/boh_4.png Graphic file (type png)
 <use images/boh_4.png>
-Package pdftex.def Info: images/boh_4.png  used on input line 375.
+Package pdftex.def Info: images/boh_4.png  used on input line 380.
 (pdftex.def)             Requested size: 341.43306pt x 44.27933pt.
- [26 <./images/boh_4.png>] [27]
-<images/boh_5.png, id=513, 1255.69125pt x 207.77625pt>
+ [27 <./images/boh_4.png>] [28]
+<images/boh_5.png, id=519, 1255.69125pt x 207.77625pt>
 File: images/boh_5.png Graphic file (type png)
 <use images/boh_5.png>
-Package pdftex.def Info: images/boh_5.png  used on input line 408.
+Package pdftex.def Info: images/boh_5.png  used on input line 413.
 (pdftex.def)             Requested size: 341.43306pt x 56.49345pt.
- [28 <./images/boh_5.png>]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 424.
+ [29 <./images/boh_5.png>]
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 429.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [29]
+) [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 431.
+(hyperref)                removing `math shift' on input line 436.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 431.
-
-[30]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 460.
+(hyperref)                removing `\theta' on input line 436.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 460.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 460.
+(hyperref)                removing `math shift' on input line 436.
 
 [31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 468.
+(hyperref)                removing `math shift' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 468.
+(hyperref)                removing `\theta' on input line 465.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 468.
+(hyperref)                removing `math shift' on input line 465.
+
+[32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 473.
 
 
-Overfull \hbox (0.20316pt too wide) in paragraph at lines 469--471
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\theta' on input line 473.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 473.
+
+
+Overfull \hbox (0.20316pt too wide) in paragraph at lines 474--476
 \T1/cmss/m/n/10 Avendo una fun-zione di like-li-hood $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; [] ; x[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )$ \T1/cmss/m/n/10 e sapendo che la dis-tribuzione
  []
 
-[32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 491--495
+[33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 496--500
 
  []
 
-[34] [35] [36] [37]
-<images/boh_6.png, id=574, 495.35063pt x 184.43906pt>
+[35] [36] [37] [38]
+<images/boh_6.png, id=580, 495.35063pt x 184.43906pt>
 File: images/boh_6.png Graphic file (type png)
 <use images/boh_6.png>
-Package pdftex.def Info: images/boh_6.png  used on input line 546.
+Package pdftex.def Info: images/boh_6.png  used on input line 551.
 (pdftex.def)             Requested size: 341.43306pt x 127.12799pt.
- [38
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.550 ...igma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
-                                                   <./images/boh_6.png>] [39] [40] [41] [42] [43]
-<images/boh_7.png, id=608, 528.47438pt x 222.07968pt>
-File: images/boh_7.png Graphic file (type png)
-<use images/boh_7.png>
-Package pdftex.def Info: images/boh_7.png  used on input line 661.
-(pdftex.def)             Requested size: 341.43306pt x 143.47919pt.
- [44]
-<images/boh_8.png, id=613, 341.77687pt x 45.92157pt>
-File: images/boh_8.png Graphic file (type png)
-<use images/boh_8.png>
-Package pdftex.def Info: images/boh_8.png  used on input line 666.
-(pdftex.def)             Requested size: 341.43306pt x 45.8787pt.
- [45
+ [39
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.670 ...ext{contro} \quad H_1 : \mu \not = 350 \]
-                                                   <./images/boh_7.png> <./images/boh_8.png>]
-<images/boh_9.png, id=622, 526.96875pt x 254.45062pt>
-File: images/boh_9.png Graphic file (type png)
-<use images/boh_9.png>
-Package pdftex.def Info: images/boh_9.png  used on input line 682.
-(pdftex.def)             Requested size: 341.43306pt x 164.87067pt.
- [46] [47
+l.555 ...igma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
+                                                   <./images/boh_6.png>] [40] [41] [42] [43] [44] [45]
+<images/boh_7.png, id=618, 528.47438pt x 222.07968pt>
+File: images/boh_7.png Graphic file (type png)
+<use images/boh_7.png>
+Package pdftex.def Info: images/boh_7.png  used on input line 669.
+(pdftex.def)             Requested size: 341.43306pt x 143.47919pt.
+<images/boh_8.png, id=619, 341.77687pt x 45.92157pt>
+File: images/boh_8.png Graphic file (type png)
+<use images/boh_8.png>
+Package pdftex.def Info: images/boh_8.png  used on input line 674.
+(pdftex.def)             Requested size: 341.43306pt x 45.8787pt.
+ [46
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.690 ...ontro } \quad H_1 : \mu_x \not = \mu_y \]
-                                                   <./images/boh_9.png>] [48] [49] [50]
-<images/boh_10.png, id=650, 653.44125pt x 224.84pt>
+l.676     \paragraph
+                    {Risoluzione:} <./images/boh_7.png>]
+<images/boh_9.png, id=627, 526.96875pt x 254.45062pt>
+File: images/boh_9.png Graphic file (type png)
+<use images/boh_9.png>
+Package pdftex.def Info: images/boh_9.png  used on input line 690.
+(pdftex.def)             Requested size: 341.43306pt x 164.87067pt.
+ [47 <./images/boh_8.png>] [48
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.698 ...ontro } \quad H_1 : \mu_x \not = \mu_y \]
+                                                   <./images/boh_9.png>] [49] [50] [51]
+<images/boh_10.png, id=656, 653.44125pt x 224.84pt>
 File: images/boh_10.png Graphic file (type png)
 <use images/boh_10.png>
-Package pdftex.def Info: images/boh_10.png  used on input line 742.
+Package pdftex.def Info: images/boh_10.png  used on input line 750.
 (pdftex.def)             Requested size: 341.43306pt x 117.48012pt.
- [51 <./images/boh_10.png>] [52] [53] [54] [55] [56] [57] [58] [59]
-<images/boh_18.png, id=695, 578.91281pt x 60.97781pt>
+ [52 <./images/boh_10.png>] [53] [54] [55] [56] [57] [58] [59] [60]
+<images/boh_18.png, id=701, 578.91281pt x 60.97781pt>
 File: images/boh_18.png Graphic file (type png)
 <use images/boh_18.png>
-Package pdftex.def Info: images/boh_18.png  used on input line 884.
+Package pdftex.def Info: images/boh_18.png  used on input line 892.
 (pdftex.def)             Requested size: 341.43306pt x 35.96355pt.
- [60 <./images/boh_18.png>]
+ [61 <./images/boh_18.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 900.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 900.
+(hyperref)                removing `math shift' on input line 908.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 900.
-
-[61]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 913.
+(hyperref)                removing `\beta' on input line 908.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 913.
+(hyperref)                removing `math shift' on input line 908.
+
+[62]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 921.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 913.
+(hyperref)                removing `\alpha' on input line 921.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 918.
+(hyperref)                removing `math shift' on input line 921.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 918.
+(hyperref)                removing `math shift' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 918.
+(hyperref)                removing `\alpha' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 918.
+(hyperref)                removing `\beta' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 918.
+(hyperref)                removing `subscript' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 918.
+(hyperref)                removing `math shift' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@overline' on input line 918.
+(hyperref)                removing `math shift' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 918.
-
-[62] [63]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 930.
+(hyperref)                removing `\@@overline' on input line 926.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 930.
+(hyperref)                removing `math shift' on input line 926.
+
+[63] [64]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 938.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 930.
+(hyperref)                removing `subscript' on input line 938.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 930.
+(hyperref)                removing `subscript' on input line 938.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 930.
+(hyperref)                removing `\rightarrow' on input line 938.
 
-<images/boh_13.png, id=721, 945.5325pt x 583.17876pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 938.
+
+<images/boh_13.png, id=727, 945.5325pt x 583.17876pt>
 File: images/boh_13.png Graphic file (type png)
 <use images/boh_13.png>
-Package pdftex.def Info: images/boh_13.png  used on input line 935.
+Package pdftex.def Info: images/boh_13.png  used on input line 943.
 (pdftex.def)             Requested size: 341.43306pt x 210.58488pt.
-[64 <./images/boh_13.png>]
-<images/boh_14.png, id=728, 1180.41pt x 243.15843pt>
+[65 <./images/boh_13.png>]
+<images/boh_14.png, id=734, 1180.41pt x 243.15843pt>
 File: images/boh_14.png Graphic file (type png)
 <use images/boh_14.png>
-Package pdftex.def Info: images/boh_14.png  used on input line 954.
+Package pdftex.def Info: images/boh_14.png  used on input line 962.
 (pdftex.def)             Requested size: 341.43306pt x 70.33232pt.
- [65 <./images/boh_14.png>] [66] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 1004--1006
+ [66 <./images/boh_14.png>] [67] [68] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1014
 
  []
 
-[69]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 1026.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1026.
-
 [70]
-<images/boh_11.png, id=760, 633.36626pt x 179.67125pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 1034.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1034.
+
+[71]
+<images/boh_11.png, id=766, 633.36626pt x 179.67125pt>
 File: images/boh_11.png Graphic file (type png)
 <use images/boh_11.png>
-Package pdftex.def Info: images/boh_11.png  used on input line 1040.
+Package pdftex.def Info: images/boh_11.png  used on input line 1048.
 (pdftex.def)             Requested size: 341.43306pt x 96.85927pt.
- [71] [72 <./images/boh_11.png>] [73] [74]
-<images/boh_12.png, id=781, 411.03563pt x 149.8097pt>
+ [72] [73 <./images/boh_11.png>] [74] [75]
+<images/boh_12.png, id=787, 411.03563pt x 149.8097pt>
 File: images/boh_12.png Graphic file (type png)
 <use images/boh_12.png>
-Package pdftex.def Info: images/boh_12.png  used on input line 1091.
+Package pdftex.def Info: images/boh_12.png  used on input line 1099.
 (pdftex.def)             Requested size: 341.43306pt x 124.44258pt.
- [75] [76 <./images/boh_12.png>]
-Overfull \hbox (3.17632pt too wide) in paragraph at lines 1109--1113
+ [76] [77 <./images/boh_12.png>]
+Overfull \hbox (3.17632pt too wide) in paragraph at lines 1117--1121
  []\T1/cmss/bx/n/10 Esempio[] \T1/cmss/m/n/10 50 tran-sis-tor ven-gono messi in fun-zione si-mul-tane-a-mente. L'esperimento
  []
 
-[77] [78]
-<images/phi_table.png, id=802, 398.99063pt x 539.01375pt>
+[78] [79]
+<images/phi_table.png, id=809, 398.99063pt x 539.01375pt>
 File: images/phi_table.png Graphic file (type png)
 <use images/phi_table.png>
-Package pdftex.def Info: images/phi_table.png  used on input line 1137.
+Package pdftex.def Info: images/phi_table.png  used on input line 1145.
 (pdftex.def)             Requested size: 201.44424pt x 272.13809pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1140--1146
+Underfull \hbox (badness 10000) in paragraph at lines 1148--1154
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1140--1146
+Underfull \hbox (badness 10000) in paragraph at lines 1148--1154
 
  []
 
-<images/xan_table.png, id=803, 414.79968pt x 452.4403pt>
+<images/xan_table.png, id=810, 414.79968pt x 452.4403pt>
 File: images/xan_table.png Graphic file (type png)
 <use images/xan_table.png>
-Package pdftex.def Info: images/xan_table.png  used on input line 1151.
+Package pdftex.def Info: images/xan_table.png  used on input line 1159.
 (pdftex.def)             Requested size: 201.44424pt x 219.72324pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1155--1163
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1155--1163
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1155--1163
+Underfull \hbox (badness 10000) in paragraph at lines 1163--1171
 
  []
 
-<images/tan_table.png, id=804, 414.04688pt x 511.15968pt>
+<images/tan_table.png, id=811, 414.04688pt x 511.15968pt>
 File: images/tan_table.png Graphic file (type png)
 <use images/tan_table.png>
-Package pdftex.def Info: images/tan_table.png  used on input line 1168.
+Package pdftex.def Info: images/tan_table.png  used on input line 1176.
 (pdftex.def)             Requested size: 201.44424pt x 248.6999pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1186
  []\T1/cmss/bx/n/10 Esempio:[] \T1/cmss/m/n/10 per trovare un
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1186
 \T1/cmss/m/n/10 val-ore se dob-bi-amo trovare
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1178
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1186
 
  []
 
-[79
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1179     \end{figure}
-                        <./images/phi_table.png>]
-<images/F_table.png, id=813, 414.04688pt x 471.26062pt>
-File: images/F_table.png Graphic file (type png)
-<use images/F_table.png>
-Package pdftex.def Info: images/F_table.png  used on input line 1183.
-(pdftex.def)             Requested size: 201.44424pt x 229.2874pt.
- [80
+[80
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1187     \end{figure}
-                        <./images/xan_table.png>] [81
+                        <./images/phi_table.png>]
+<images/F_table.png, id=819, 414.04688pt x 471.26062pt>
+File: images/F_table.png Graphic file (type png)
+<use images/F_table.png>
+Package pdftex.def Info: images/F_table.png  used on input line 1191.
+(pdftex.def)             Requested size: 201.44424pt x 229.2874pt.
+ [81
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1188     \footnote{
-                     Padre nostro, che sei nei cieli, sia santificato il tuo... <./images/tan_table.png>] [82
+l.1195     \end{figure}
+                        <./images/xan_table.png>] [82
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1189 \end{document}
+l.1196     \footnote{
+                     Padre nostro, che sei nei cieli, sia santificato il tuo... <./images/tan_table.png>] [83
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1197 \end{document}
                       <./images/F_table.png>] (statistica.aux)
 Package rerunfilecheck Info: File `statistica.out' has not changed.
 (rerunfilecheck)             Checksum: A047E2AE6DBEB4BCD36CEBD391A2656C;14060.
  ) 
 Here is how much of TeX's memory you used:
- 12899 strings out of 476334
- 196299 string characters out of 5787972
+ 12908 strings out of 476334
+ 196457 string characters out of 5787972
  1862382 words of memory out of 5000000
- 32823 multiletter control sequences out of 15000+600000
+ 32829 multiletter control sequences out of 15000+600000
  536157 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,21n,67p,569b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi450\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi375\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on statistica.pdf (82 pages, 1722976 bytes).
+Output written on statistica.pdf (83 pages, 1738328 bytes).
 PDF statistics:
- 1361 PDF objects out of 1440 (max. 8388607)
- 242 named destinations out of 1000 (max. 500000)
- 623 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1367 PDF objects out of 1440 (max. 8388607)
+ 244 named destinations out of 1000 (max. 500000)
+ 628 words of extra memory for PDF output out of 10000 (max. 10000000)
 
