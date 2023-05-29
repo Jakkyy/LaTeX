@@ -4,7 +4,6 @@
 \usepackage[skip=20pt plus1pt, indent=40pt]{parskip}
 
 \usepackage{hyperref}
-\usepackage{CJKutf8}
 
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
@@ -210,42 +209,6 @@
     \[ S \approx 3.082 \]
     Dato che la nostra è una var. aleatoria di tipo t dobbiamo ricorrere alla sua tabella, troviamo che il valore $t_{0.025,8} \approx 2.306 \quad (t_{\alpha/2, n-1})$, quindi un intervallo di confidenza al 95\% per $\mu$ è dato da:
     \[ 9 \pm 2.306 \cdot \frac{3.092}{3} \Longrightarrow (6.63, \quad 11.37) \]
-    \subsection{Intervalli di confidenza per Bernoulli}
-    Nel caso avessimo $n$ oggetti con una quantita $X$ di oggetti che soddisfano i requisiti, possiamo dire che $X$ ha distribuzione \textit{binomiale} di parametri $n$ e $p$
-    \[ \frac{X - np}{\sqrt{np(1-p)}} \sim \mathcal{N}(0,1) \]
-    Per ottenere un intervallo per p denotiamo con $\hat{p} := X / n$ la frazione degli oggetti del campione che soddisfano i requisiti, quindi:
-    \[ \frac{X - np}{\sqrt{n \hat{p}(1-\hat{p})}} \sim \mathcal{N}(0,1) \]
-    Da questa formula possiamo ottenere cosi un intervallo di confidenza
-    \paragraph{Per caso Bilaterale}
-    \[ \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} < p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) / n} \right) = 1 - \alpha \]
-    \paragraph{Per caso Unilaterale}
-    \[  \left(\hat{p} - z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1- \hat{p}) /n} < p \right) \quad \left(p < \hat{p} + z_{\frac{\alpha}{2}} \sqrt{\hat{p} (1-\hat{p}) / n} \right)\]
-    \paragraph{Esempio} Un campione di \textit{100} transitor ($n$) viene testato. \textit{80} pezzi sono \textit{adeguati} ($\hat{p} = 0.8$)\\
-    Volendo trovare un intervallo del 95\% per la percentuale $p$ scriviamo:
-    \[ \left(0.8 - 1.96 \sqrt{0.8 \cdot (0.2) / 100}, \quad 0.8 + 1.96 \sqrt{0.8 \cdot (0.2) / 100} \right) = (0.7216, \quad 0.8784) \]
-    Possiamo dire quindi con il 95\% di confidenza che sarà \textit{accettabile} una percentuale compresa tra il \textbf{72.16\%} e il \textbf{87.84\%}
-    \begin{figure}[H]
-        \includegraphics[width=\textwidth]{images/boh_3.png}
-    \end{figure}
-    \subsection{Metodo Montecarlo}
-    supponendo di avere una funzione $f$ da $\mathbb{R}^r$ in $\mathbb{R}$ e vogliamo stimare la quantità $\theta$:
-    \[ \theta := \int_{0}^{1} \int_{0}^{1} \cdots \int_{0}^{1} f(y_1, y_2, \ldots, y_n) \, dy_1 \, dy_2 \ldots \, dy_n \]
-    Possiamo notare che $U_1, U_2, \ldots, U_r$ sono var. al. \textit{uniformi} su 0,1 quindi:
-    \[ \ev{f(U_1, U_2, \ldots, U_r)} = \theta \]
-    Se produciamo un numero casuale distribuito come la funzione e lo ripetiamo $n$ volte, possiamo stimare $\boldsymbol{\theta}$:
-    \[ \hat{\theta} = \frac{1}{n} \sum_{i = 1}^{n} X_i \]
-    \paragraph{Esempio} pensiamo alla stima di questo integrale:
-    \[ \theta := \int_{0}^{1} \sqrt{1 - y^2} \, dy = \ev{\sqrt{1-U^2}} \]
-    Se $\boldsymbol{U_1, U_2, \ldots, U_{100}}$ sono variabili aleatorie con tale distribuzione e \textit{indipendenti} ponendo:
-    \[ X_i := \sqrt{1-U^2_i} \qquad i = 1,2, \ldots, 100 \]
-    Otteniamo un campione di \textbf{100} variabili aleatorie di media $\theta$. \\ 
-    Calcoliamo ora la \textit{media campionaria}:
-    \[ \hat{\theta} = \frac{1}{n} \sum_{i=1}^{n} X_1 = 0.786 \]
-    e successivamente la \textit{deviazione standard campionaria}:
-    \[ S = 0.23 \]
-    dato che $t_{0.025, 99} \approx 1.985$ otteniamo che un intervallo di confidenza al 95\% per $\theta$ è il seguente:
-    \[ 0.786 \pm 1.985 \cdot 0.023 \]
-    \centerline{Quindi il valore è compreso tra 0.740 e 0.832}
     \newpage
     \section{Intervalli di predizione}
     \subsection{Predizione di un elemento del mio campione}
@@ -433,35 +396,6 @@
     \end{itemize}
     Una buona stima per $\theta$ può essere la \textbf{media} della distribuzione a posteriori perciò:
     \[ \ev{\theta \rvert X_1 = x_1, \ldots, X_n = x_n} = \int_{-\infty}^{\infty} \theta f(\theta \rvert x_1, x_2, \ldots, x_n) \, d\theta \quad \text{\textit{nel caso continuo}} \]
-    \subsection{Stimatore di $\theta$ per Bernoulli}
-    Se abbiamo $X_1, X_2, \ldots, X_n$ Bernoulliane, con massa di probabilità:
-    \[ f(x \rvert \theta) = \theta^x (1-\theta)^{1-x}, \qquad x = 0,1 \]
-    \centerline{Dove $\theta$ è un parametro sconosciuto} \\[2ex]
-    Supponiamo quindi che la \textit{distribuzioni a priori} di $\theta$ sia uniforme su (0,1), denotiamo con $p$ la densità a propri di $\theta$
-    \[ p(\theta)=1 \qquad 0 < \theta < 1 \]
-    La densità condizionale di $\theta$ date $x_1, x_2, \ldots, x_n$ è 
-    \begin{equation}
-        \begin{aligned}
-        f\left(\theta \mid x_1, x_2, \ldots, x_n\right) & =\frac{f\left(x_1, x_2, \ldots, x_n, \theta\right)}{f\left(x_1, x_2, \ldots, x_n\right)} \\
-        & =\frac{f\left(x_1, x_2, \ldots, x_n \mid \theta\right) p(\theta)}{\int_0^1 f\left(x_1, x_2, \ldots, x_n \mid \vartheta\right) p(\vartheta) d \vartheta} \\
-        & =\frac{\theta^{\sum_i x_i}(1-\theta)^{n-\sum_i x_i}}{\int_0^1 \vartheta^{\sum_i x_i}(1-\vartheta)^{n-\sum_i x_i} d \vartheta}
-        \end{aligned}
-    \end{equation}
-    Non è difficile provare (e invece lo è) integrando per parti un certo numero di volte che per ogni valore di $m$ e $r$:
-    \[ \int_{0}^{1} \theta^m (1-\theta)^r \, d\theta = \frac{m! r!}{(m+r+1)!} \]
-    ponendo $\boldsymbol{x := \sum_{i=1}^{n} x_i}$
-    \[ f(\theta \rvert x_1, x_2, \ldots, x_n) = \frac{(n+1)!}{x! (n-x)!} \theta^x (1-\theta)^{n-x} \qquad 0 < \theta < 1 \]
-    Siamo in grado di calcolare \textit{la stima bayesiana}
-    \begin{equation}
-        \begin{aligned}
-        \ev{\theta \mid x_1, x_2, \ldots, x_n} & =\frac{(n+1) !}{x !(n-x) !} \int_0^1 \theta^{1+x}(1-\theta)^{n-x} d \theta \\
-        &=\frac{(n+1) !}{x !(n-x) !} \frac{(1+x) !(n-x) !}{(n+2) !} \\
-        &= \frac{x+1}{n+2} \\
-        &= \boldsymbol{\frac{1 + \sum_{i=1}^{n} x_i}{n + 2}} \qquad \text{stimatore \textit{bayesiano}}
-        \end{aligned}
-    \end{equation}
-    \paragraph{Esempio} Se raccogliamo un campione di \textit{\textbf{10} bernoulliane} e trovassimo \textbf{6 successi}, lo stimatore bayesiano di $\theta$ fornirebbe un valore di \textbf{7 / 12} \\
-    Lo stimatore di massima verosomiglianza vale invece \textbf{6 / 10}
     \subsection{Stimatore di $\theta$ per una Normale}
     Supponiamo che $X_1, X_2, \ldots, X_n$ sia una distribuzione normale con media $\theta$ \textit{incognita} e varianza $\sigma^2_0$ \textbf{nota} \\[2ex]
     Calcoliamo la \textit{densità condizionale} di $\theta$:
@@ -543,51 +477,6 @@
     Se avessimo ottenuto che $\overline{X} = 11.5$ il valore del \textit{p-dei-dati} sarebbe:
     \[ P \left( |Z| > \frac{\sqrt{5}}{2} \cdot 3.5 \right) \approx 2P(Z > 3.913) \approx 0.00005 \]
     Con un valore così piccolo, l'ipotesi che il messaggio fosse stato 8, \textbf{va rifiutata}. \\[3ex]
-    Riprendendo il discorso degli errori di specie andiamo a vedere ora \textit{gli errori di \textbf{seconda specie}}. \\
-    Rinfreschiamo la memoria, l'errore di seconda specie è quando \textit{si accetta $H_0$ anche se è falsa}, quindi:
-    \[ \boldsymbol{\beta(\mu)} := P_\mu (\text{accettare } H_0) = \boldsymbol{P_\mu \left( -z_{\frac{\alpha}{2}} \leq \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_{\frac{\alpha}{2}}\right)}\]
-    La funzione $\beta(\mu)$ è detta \textbf{curva OC} (\textit{curva operativa caratteristica}) e rappresenta la probabilità di accettare $H_0$ quando la media reale è $\mu$.
-    \begin{figure}[H]
-        \includegraphics[width=\textwidth]{images/boh_6.png}
-        \caption{Curva OC di un test \textit{bilaterale} per la media di una popolazione normale, con $\alpha = 0.05$}
-    \end{figure}
-    Per calcolare la probabilità ricordiamoci il fatto che $\overline{X} \sim \mathcal{N}(\mu, \sigma^2 / n)$:
-    \[ Z := \frac{\overline{X} - \mu}{\sigma / \sqrt{n}} \sim \mathcal{N}(0,1) \]
-    Quindi:
-    \begin{equation*}
-        \begin{split}
-            \beta(\mu) &= P_\mu \left( -z_{\frac{\alpha}{2}} \leq \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_{\frac{\alpha}{2}} \right) \\
-            &= \boldsymbol{\Phi \left( \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} + z_{\frac{\alpha}{2}}\right) - \Phi \left( \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} - z_{\frac{\alpha}{2}} \right) = 1 - \alpha}
-        \end{split}
-    \end{equation*}
-    \centerline{Dove $\Phi$ indica la \textit{funzione di ripartizione} della distribuzione normale standard}
-    \paragraph{Esempio} quanto vale la probabilità di accettare $\mu = 8$ quando in realtà $\mu = 10$ (con una varianza $\sigma^2 = 4$):
-    \[ \frac{\sqrt{n}}{\sigma} (\mu_0 - \mu) = \frac{\sqrt{5}}{2} (-2) = - \sqrt{5} \]
-    Dato che $\boldsymbol{z_{0.025} \approx 1.96}$ ricaviamo la probabilità cercata:
-    \begin{equation*}
-        \begin{split}
-            \beta(10) &\approx \Phi(- \sqrt{5} + 1.96) - \Phi(- \sqrt{5} - 1.96) \\
-            &= 1 - \Phi(0.276) - 1 + \Phi(4.196) \\
-            &\approx -0.609 + 1 = \boldsymbol{0.391}
-        \end{split}
-    \end{equation*}
-    Riprendendo il discorso della curva OC, ci permette di dimensionare il campione in modo che \textit{l'errore di seconda specie} soddisfi le condizioni specifiche. \\[2ex]
-    Come facciamo a trovare $n$ tale che la probabilità di \textit{accettare} $H_0 : \mu = \mu_0$ quando il vero valore è $\mu_1$ sia un valore fissato $\beta$ per $n$ tale che $\boldsymbol{\beta(\mu_1) \approx \beta}$
-    \[ n \approx \left[ \frac{(z_{\frac{\alpha}{2}} + z_\beta) \sigma}{\mu_1 - \mu_0} \right]^2 \]
-    \centerline{Notiamo che anche nel caso in cui $\boldsymbol{\mu_1 < \mu_0}$ troviamo sempre la stessa formula}
-    \paragraph{Esempio} Quante volte è necessario inviare il segnale con verifica dell'ipotesi $H_0 : \mu = 8$ con livello di significatività 0.05 con almeno il 75\% di probabilità di rifiutare l'ipotesi nulla quando $\boldsymbol{\mu = 9.2}$
-    \paragraph{Risoluzione:} Dato che $z_{0.025 \approx 1.96}$ e $z_{0.25} \boldsymbol{\approx 0.67}$ 
-    \[ n \approx \left( \frac{1.96 + 0.67}{1.2} \right)^2 \cdot 4 \approx 19.21 \]
-    Come vediamo per il risultato è necessario un \textit{campione di 20 segnali}, quindi con $n=20$
-    \begin{equation*}
-        \begin{split}
-            \beta(9.2) &\approx \Phi \left( - \frac{1.2 \sqrt{20}}{2} + 1.96 \right) - \Phi \left( - \frac{1.2 \sqrt{20}}{2} - 1.96 \right) \\
-            &\approx \Phi(-0.723) - \Phi(-4.643) \\
-            &\approx 1 - \Phi(0.723) \approx \boldsymbol{0.235}
-        \end{split}
-    \end{equation*}
-    Quindi ricapitolando, se il segnale viene trasmesso 20 volte c'è il 76.5\% di probabilità che l'ipotesi nulla $\mu = 8$ sia \textbf{rifiutata} se la media reale è \textbf{9.2}
-
     \subsection{Test unilaterali}
     Fino ad ora abbiamo verificato l'ipotesi nulla di $\mu = \mu_0$, però cosa succede quando $\mu$ può essere \textbf{solo} maggiore a $\mu_0$? \\
     Verifichiamo queste due ipotesi:
@@ -600,28 +489,10 @@
     \[ \text{si rifiuta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} > z_\alpha \]
     \[ \text{si accetta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_\alpha \]
     Quella trovata è detta \textit{regione critica \textbf{unilaterale}} o a una coda, quindi il problema di verificare le ipotesi alternative
-    \paragraph{Risoluzione}
-    \[ H_0 : \mu = \mu_0 \quad \text{ contro } \quad H_1 : \mu > \mu_0 \]
-    \centerline{Si dice problema di \textbf{test unilaterale}} \\[2ex]
-    poniamo $Z := \sqrt{n}(\overline{X} - \mu) / \sigma$ questa statistica è una \textit{normale standard} quindi:
-    \begin{equation*}
-        \begin{split}
-            \beta(\mu) &:= P_\mu(\text{accettare } H_0) \\
-            &= P_\mu \left( Z \leq \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} + z_\alpha \right) \\
-            &= \boldsymbol{\Phi \left( \frac{\mu_0 - \mu}{\sigma / \sqrt{n}} + z_\alpha \right) = 1 - \alpha}
-        \end{split}
-    \end{equation*}
-    Dato che $\Phi$ in quanto \textit{funzione di ripartizione è \textbf{crescente}} però $\beta(\mu)$ è una funzione \textbf{decrescente} \\
     L'ipotesi \textit{unilaterale}
     \[ H_0 : \mu \leq \mu_0 \]
     contro l'alternativa
     \[ H_1 : \mu > \mu_0 \]
-    Per accertarci che il \textit{livello di significatività} sia rimasto $\alpha$ \\
-    Al variare di $\mu$ la probabilità di rifiuto è data da $\boldsymbol{1 - \beta(\mu)}$ \\
-    Dobbiamo verificare che per ogni $\mu$ compatibile con $H_0$ per ogni $\boldsymbol{\mu \leq \mu_0}$ 
-    \[ 1 - \beta(\mu) \leq \alpha, \qquad \text{per ogni } \mu \leq \mu_0 \]
-    Quindi:
-    \[ \beta(\mu) \geq 1 - \alpha, \qquad \text{per ogni } \mu \leq \mu_0 \]
     \paragraph{Osservazione} è possibile verificare l'ipotesi
     \[ H_0 : \mu = \mu_0 \]
     \centerline{contro l'ipotesi \textit{alternativa}}
@@ -795,31 +666,6 @@
     Quindi ora calcoliamo il \textit{p-dei-dati}
     \[ p-dei-dati \approx 2 \min(0.154, \space 0.846) = 0.308 \]
     \centerline{L'ipotesi nulla \textbf{deve essere accettata. }}
-    \subsection{La verifica di ipotesi su una popolazione di Bernoulli}
-    Come abbiamo visto anche negli scorsi capitoli un ipotesi molto usata con una bernoulliana è quello di verificare che ogni oggetti preso in considerazione sia \textit{difettoso} in maniera \textit{indipendente} da tutti gli altri con una probabilità di $p$
-    Il numero di difetti in un campione di $n$ pezzi ha una distribuzione \textit{binomiale} di parametri $(n, p)$, le verifiche dell'ipotesi sono le seguenti:
-    \[ H_0 : p \leq p_0 \quad \text{ contro l'alternativa } \quad H_1 : p > p_0 \]
-    \centerline{$p_0$ è un \textit{valore assegnato}} \\[2ex]
-    Quando il nostro campione è grande, possiamo ottenere un test \textit{approssimato} con significatività $\alpha$ utilizzando una distribuzione normale. \\
-    Infatti quando $n$ è molto grande la $X$ diventa \textit{approssimativamente} normale con la seguente media e varianza:
-    \[ \ev{X} = np \qquad \qquad Var(X) = np (1-p) \]
-    Ne segue che:
-    \[ \frac{X - np}{\sqrt{np_0 (1- p_0)}} \sim \mathcal{N}(0,1) \]
-    \centerline{approssimativamente normale standard} \\[2ex]
-    Per ottenere quindi un test che confronti le ipotesi $H_0 : p \leq p_0$ e $H_1 : p > p_0$ dobbiamo \textbf{rifiutare} l'ipotesi quando:
-    \[ \text{si accetta } H_0 \text{ se } \frac{X - np_0}{\sqrt{np_0 (1- p_0)}} \leq z_\alpha \]
-    \[ \text{si rifiuta } H_0 \text{ se } \frac{X - np_0}{\sqrt{np_0 (1- p_0)}} > z_\alpha \]
-    \paragraph{Esempio} Un produttore afferma che \textbf{non} più del 2\% dei pezzi da lui venduti sono \textit{difettosi}, per verificare questa tesi vengono provati \textit{300} pezzi e ne vengono trovati \textit{10} difettosi, questo risultato è tale da \textit{negare} quanto annunciato dal produttore?
-    \paragraph{Risoluzione:} Prima di tutto dobbiamo verificare l'ipotesi nulla $p \leq 0.02$ ad un livello di significatività del 5\%. \\ 
-    Ipotizziamo che $p$ sia $0.02$ e calcoliamo la probabilità che in un campione di 300 pezzi ce ne siano 10 o più \textit{difettosi}, quindi:
-    \begin{equation*}
-        \begin{split}
-            P_{0.02}(X \geq 10) &= 1 - P_{0.02}(X < 10) \\
-            &= 1 - \sum_{i=0}^{9} \binom{300}{i} (0.02)^i (0.98)^{n-1} \\
-            &\approx \boldsymbol{0.0818}
-        \end{split}
-    \end{equation*}
-    \centerline{Quanto detto dal produttore \textbf{non} può essere rifiutato con il 5\% di significatività}
     \newpage
     \section{Regressione lineare}
     Molti problemi di statistica prevedono una singola variabile $Y$ di \emph{risposta} e un certo numero di variabili $\boldsymbol{x_1, x_2, \ldots, x_r}$ di \emph{ingresso}. La \emph{risposta} è in funzione dei dati, $Y$ è anche detta \emph{variabile dipendente}, mentre le $x_i$ sono le \emph{variabili indipendenti}.\\
@@ -990,16 +836,6 @@
     \[ W_i=\frac{1}{x_i} \]
     Formula della somma dei quadrati dei residui moltiplicato per il peso:
     \[ \sum_iW_i(Y-(A+Bx_0))^2 \]
-    \subsection{Regressione (lineare) polinomiali}
-    Nel caso in cui il nostro modello non può essere approssimato con un modelli lineari, si possono utilizzare le relazioni polinomiali:
-    \[ Y = \beta_0 + \beta_1x+\beta_2x^2 +\ldots+\beta_kx^k + e \]
-    \centerline{Dove $\beta_0, \beta_1, \ldots, \beta_r$ sono i \textit{coefficienti di regressione} che dobbiamo stimare}
-    Dobbiamo minimizzare:
-    \[ \sum_i^n (Y_i-B_0-B_1x_1-\ldots-B_rx_i^r)^2 \]
-    \subsection{Regressione lineare multipla}
-    Nella maggior parte degli esperimenti è più accurato basarsi su più variabili, ad esempio studiamo il caso in cui ci sono $k$ variabili independenti e sono legate dalla seguente relazione lineare:
-    \[ Y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 \ldots + \beta_k x_k +e \]
-    \[ \min\sum_i(Y_i -(\beta_0+\beta_1x_{i1} + \beta_2x_{i2} \ldots + \beta_kx_{ik})) \]
     \section{AN.O.VA} 
     \definizione Analysis of variance, ci serve per confrontare più gruppi diversi per esempio per capire se hanno \textit{medie uguali}
     \[ Z_i := \frac{X_i - \mu_i}{\sigma^2} \sim \mathcal{N}(0,1) \]
