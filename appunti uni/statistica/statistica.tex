@@ -160,6 +160,7 @@
         \includegraphics[width=\textwidth]{images/boh_16.png}
     \end{figure}
     \begin{figure}[H]
+        \subsection{Tabella valori alpha}
         \centering
             \caption{Valori comuni di $\alpha$}
             \includegraphics[width=0.5\textwidth]{images/boh_19.png}
@@ -176,6 +177,13 @@
     media aritmetica dei dati. Se osserviamo il campione, e registriamo che $\boldsymbol{\overline{X} = \overline{x}}$, allora possiamo dire che "con il 95\% di confidenza" la media \textbf{vera} della distribuzione appartiene al seguente intervallo:
     \[ \left( \overline{x} - 1.96 \frac{\sigma}{\sqrt{n}}, \quad \overline{x} + 1.96 \frac{\sigma}{\sqrt{n}} \right) \]
     \centerline{Questo intervallo è detto \textit{intervallo di confidenza} ad un livello del 95\%}
+    \paragraph{Esempio} (Bilaterale) Messagio inviato da sorgente A a ricevente B con segnale elettrico con il valore di $\mu$ e la varianza $\sigma^2 = 4 \rightarrow \boldsymbol{\sigma = 2}$ \\
+    i valori registrati sono i seguenti: \{ 5, 8.5, 12, 15, 7, 9, 7.5, 6.5, 10.5 \} ($n = 9$)
+    \paragraph{Risoluzione} Otteniamo $\boldsymbol{\overline{x}}$ (sommando i valori e \textit{dividendo} per la media):
+    \[ \overline{x} = \frac{81}{9} = 9 \]
+    Un intervallo di confidenza al 95\% per $\mu$ è
+    \[ \left( 9 - 1.96 \cdot \frac{2}{3}, \quad 9 + 1.96 \cdot \frac{2}{3}\right) = (7.69, \quad 10.31) \]
+    \centerline{Otteniamo quindi il 95\% di confidenza che il messaggio fosse \textbf{compreso} tra 7.69 e 10.31}
     \paragraph{Per caso Unilaterale} noi in questo caso fino ad ora abbiamo visto degli intervalli di confidenza \textit{bilaterali}, può capitare però di essere interessati solo ad un singolo valore che ci permette di affermare con il \textit{95\%} di confidenza che $\mu$ gli è superiore \\
     Le formule quindi per i due intervalli (sinistro e destro) sono i seguenti:
     \paragraph{intervallo destro:}
@@ -188,13 +196,6 @@
     \[ (9-1.097, \infty) = (7.903, \infty) \]
     Intervallo sinistro:
     \[ (-\infty, 9+1.097) = (-\infty, 10.097) \]
-    \paragraph{Esempio} (Bilaterale) Messagio inviato da sorgente A a ricevente B con segnale elettrico con il valore di $\mu$ e la varianza $\sigma^2 = 4 \rightarrow \sigma = 2$ \\
-    i valori registrati sono i seguenti: \{ 5, 8.5, 12, 15, 7, 9, 7.5, 6.5, 10.5 \} ($n = 9$)
-    \paragraph{Risoluzione} Otteniamo $\boldsymbol{\overline{x}}$ (sommando i valori e \textit{dividendo} per la media):
-    \[ \overline{x} = \frac{81}{9} = 9 \]
-    Un intervallo di confidenza al 95\% per $\mu$ è
-    \[ \left( 9 - 1.96 \cdot \frac{2}{3}, \quad 9 + 1.96 \cdot \frac{2}{3}\right) = (7.69, \quad 10.31) \]
-    \centerline{Otteniamo quindi il 95\% di confidenza che il messaggio fosse \textbf{compreso} tra 7.69 e 10.31}
     \subsubsection{$\mu$ incognita e varianza  $\sigma^2$ incognita}
     Dato che tutti i nostri parametri sono ignoti, non possiamo basarci sul fatto che $\sqrt{n}(\overline{X} - \mu) / \sigma$ è una \textit{normale standard}, dobbiamo quindi ricorrere a una varianza campionaria, come segue:
     \[ S^2 := \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \overline{X})^2 \longrightarrow \boldsymbol{\frac{\overline{X} - \mu}{\frac{S}{\sqrt{n}}} \sim t_{n-1}}\]
@@ -477,30 +478,7 @@
     Se avessimo ottenuto che $\overline{X} = 11.5$ il valore del \textit{p-dei-dati} sarebbe:
     \[ P \left( |Z| > \frac{\sqrt{5}}{2} \cdot 3.5 \right) \approx 2P(Z > 3.913) \approx 0.00005 \]
     Con un valore così piccolo, l'ipotesi che il messaggio fosse stato 8, \textbf{va rifiutata}. \\[3ex]
-    \subsection{Test unilaterali}
-    Fino ad ora abbiamo verificato l'ipotesi nulla di $\mu = \mu_0$, però cosa succede quando $\mu$ può essere \textbf{solo} maggiore a $\mu_0$? \\
-    Verifichiamo queste due ipotesi:
-    \[ H_0 : \mu = \mu_0 \quad \text{ contro } \quad H_1 : \mu > \mu_0 \]
-    Dovremmo rifiutare l'ipotesi nulla quando lo stimatore di $\mu$ è molto più grande di $\mu_0$, la regione critica è quindi:
-    \[ C := \{ (X_1, X_2, \ldots, X_n) : \overline{X} - \mu_0 > c \} \]
-    la probabilità di rifiuto dovrebbe essere $\alpha$ quando $H_0$ è vera, occorre però che \textit{c} soddisfi la relazione:
-    \[ P_{\mu_0} (\overline{X} - \mu_0 > c) = \alpha \]
-    Il test \textit{con livello di significatività} $\alpha$ dovrà rifiutare $\boldsymbol{H_0 \text{ se } \overline{X} - \mu_0 > z_\alpha \cdot \sigma / \sqrt{n}}$
-    \[ \text{si rifiuta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} > z_\alpha \]
-    \[ \text{si accetta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_\alpha \]
-    Quella trovata è detta \textit{regione critica \textbf{unilaterale}} o a una coda, quindi il problema di verificare le ipotesi alternative
-    L'ipotesi \textit{unilaterale}
-    \[ H_0 : \mu \leq \mu_0 \]
-    contro l'alternativa
-    \[ H_1 : \mu > \mu_0 \]
-    \paragraph{Osservazione} è possibile verificare l'ipotesi
-    \[ H_0 : \mu = \mu_0 \]
-    \centerline{contro l'ipotesi \textit{alternativa}}
-    \[ H_1 : \mu < \mu_0 \]
-    ad un livello di significatività $\boldsymbol{\alpha}$, decidendo che:
-    \[ \text{si rifiuta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq -z_\alpha \]
-    \[ \text{si accetta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \geq -z_\alpha \]
-    \subsection{Il test t}
+    \subsubsection{Quando la varianza non è nota: il test t}
     Fino ad ora abbiamo supposto che l'unico parametro incognito fosse la \textit{media}, in questo caso anche la nostra varianza $\boldsymbol{\sigma^2}$ \textbf{non è nota} \\
     In questa situazione consideriamo che si possa verificare l'ipotesi nulla che $\mu$ sia uguale ad un valore assegnato $\mu_0$ contro l'ipotesi alternativa $\mu \not= \mu_0$
     \[ H_0 : \mu = \mu_0 \]
@@ -539,6 +517,10 @@
         \caption{$X_1, X_2, \ldots, X_n$ è un campionare estratto da una popolazione $\mathcal{N}(\mu, \sigma^2)$}
         \includegraphics[width=\textwidth]{images/boh_7.png}
     \end{figure}
+    \begin{figure}[H]
+        \caption{$X_1, X_2, \ldots, X_n$ è un campionare estratto da una popolazione $\mathcal{N}(\mu, \sigma^2)$ e $\sigma^2$ non è nota}
+        \includegraphics[width=\textwidth]{images/boh_9.png}
+    \end{figure}
     \paragraph{Esempio} Vogliamo verificare l'ipotesi che il consumo \textit{medio} di acqua sia \textit{350} galloni al giorno. \\
     Si misurano i consumi medi di un campione di \textit{20 campioni} che seguono:
     \begin{figure}[H]
@@ -556,10 +538,29 @@
     \[ p-dei-dati \approx P(|T_{19}| > 0.778) = 2 P(T_{19} > 0.778) \approx 0.446 \]
     \centerline{L'ipotesi nulla viene \textbf{accettata} a qualsiasi livello di significatività} \\[3ex]
     I dati \textbf{non} sono in disaccordo che il consumo medio per abitazione sia di \textit{350} galloni al giorno
-    \begin{figure}[H]
-        \caption{$X_1, X_2, \ldots, X_n$ è un campionare estratto da una popolazione $\mathcal{N}(\mu, \sigma^2)$ e $\sigma^2$ non è nota}
-        \includegraphics[width=\textwidth]{images/boh_9.png}
-    \end{figure}
+    \subsection{Test unilaterali}
+    Fino ad ora abbiamo verificato l'ipotesi nulla di $\mu = \mu_0$, però cosa succede quando $\mu$ può essere \textbf{solo} maggiore a $\mu_0$? \\
+    Verifichiamo queste due ipotesi:
+    \[ H_0 : \mu = \mu_0 \quad \text{ contro } \quad H_1 : \mu > \mu_0 \]
+    Dovremmo rifiutare l'ipotesi nulla quando lo stimatore di $\mu$ è molto più grande di $\mu_0$, la regione critica è quindi:
+    \[ C := \{ (X_1, X_2, \ldots, X_n) : \overline{X} - \mu_0 > c \} \]
+    la probabilità di rifiuto dovrebbe essere $\alpha$ quando $H_0$ è vera, occorre però che \textit{c} soddisfi la relazione:
+    \[ P_{\mu_0} (\overline{X} - \mu_0 > c) = \alpha \]
+    Il test \textit{con livello di significatività} $\alpha$ dovrà rifiutare $\boldsymbol{H_0 \text{ se } \overline{X} - \mu_0 > z_\alpha \cdot \sigma / \sqrt{n}}$
+    \[ \text{si rifiuta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} > z_\alpha \]
+    \[ \text{si accetta } H_0 \text{ se} \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq z_\alpha \]
+    Quella trovata è detta \textit{regione critica \textbf{unilaterale}} o a una coda, quindi il problema di verificare le ipotesi alternative
+    L'ipotesi \textit{unilaterale}
+    \[ H_0 : \mu \leq \mu_0 \]
+    contro l'alternativa
+    \[ H_1 : \mu > \mu_0 \]
+    \paragraph{Osservazione} è possibile verificare l'ipotesi
+    \[ H_0 : \mu = \mu_0 \]
+    \centerline{contro l'ipotesi \textit{alternativa}}
+    \[ H_1 : \mu < \mu_0 \]
+    ad un livello di significatività $\boldsymbol{\alpha}$, decidendo che:
+    \[ \text{si rifiuta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \leq -z_\alpha \]
+    \[ \text{si accetta } H_0 \text{ se } \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}} \geq -z_\alpha \]
     \subsection{Verifica se due popolazioni hanno la stessa media}
     Una situazione che accade spesso è decidere se \textit{vari approcci} portano allo stesso risultato, oppure no. \\
     Questa problematica si ricordune spesso alla verifica dell'ipotesi che due popolazioni normali \textit{abbiano la stessa media.}

@@ -1,6 +1,7 @@
 const dataset = [1, 3, 5, 6, 7, 7, 9, 9, 10, 11]
 const fixed_position = 4;
 var mean;
+
 function calculateMean(data) {
     const n = data.length;
     let sum = 0;
@@ -8,9 +9,8 @@ function calculateMean(data) {
     for (let i = 0; i < n; i++) {
       sum += data[i];
     }
-	console.log(`Passaggi per la risoluzione: (${sum}) / ${n}`)
-    mean = sum / n;
-    return mean.toFixed(fixed_position);
+  	mean = sum / n;
+  	return `[media] (${sum}) / ${n} = ${mean.toFixed(fixed_position)}`;
 }
 
 function calculateStandardDeviation(data) {
@@ -23,8 +23,9 @@ function calculateStandardDeviation(data) {
     }
   
     const variance = sumSquaredDifferences / n;
+	
     const standardDeviation = Math.sqrt(variance);
-    return standardDeviation;
+    return `\n[dev st.] √(${sumSquaredDifferences.toFixed(fixed_position)} / ${n}) = √${variance} =  ${standardDeviation.toFixed(fixed_position)}`;
 }
 
 function calculateSampleVariance(data) {
@@ -37,11 +38,7 @@ function calculateSampleVariance(data) {
     }
   
     const sampleVariance = sumSquaredDifferences.toFixed(fixed_position) / (n - 1);
-    return sampleVariance.toFixed(fixed_position);
+    return `\n[S^2] (${sumSquaredDifferences.toFixed(fixed_position)}) / ${data.length - 1} = ${sampleVariance.toFixed(fixed_position)}\n[S] √(S^2) = √${sampleVariance.toFixed(fixed_position)} = ${Math.sqrt(sampleVariance.toFixed(fixed_position))}`;
 }
 
-console.log(`- Media campionaria: ${calculateMean(dataset)} \n
-Dev. st: ${calculateStandardDeviation(dataset)} \n
-S^2: ${calculateSampleVariance(dataset)} \n
-S: ${Math.sqrt(calculateSampleVariance(dataset)).toFixed(fixed_position)}
-`)
+console.log(calculateMean(dataset), calculateStandardDeviation(dataset), calculateSampleVariance(dataset))
