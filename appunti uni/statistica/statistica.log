@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  29 MAY 2023 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.4)  23 JUN 2023 15:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -251,6 +251,17 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+\f@nch@headwidth=\skip54
+\f@nch@O@elh=\skip55
+\f@nch@O@erh=\skip56
+\f@nch@O@olh=\skip57
+\f@nch@O@orh=\skip58
+\f@nch@O@elf=\skip59
+\f@nch@O@erf=\skip60
+\f@nch@O@olf=\skip61
+\f@nch@O@orf=\skip62
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -292,7 +303,7 @@ Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
 )
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 46.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 50.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmss.fd
 File: t1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -302,24 +313,24 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 ) (statistica.aux)
 \openout1 = `statistica.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -355,7 +366,7 @@ LaTeX Font Info:    ... okay on input line 46.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 50.
 (statistica.out) (statistica.out)
 \@outlinefile=\write3
 \openout3 = `statistica.out'.
@@ -386,471 +397,597 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) [1{C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
-{C:/Users/jacop/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2])
+] [2])
 \tf@toc=\write4
 \openout4 = `statistica.toc'.
 
  [3]
-<images/boh_15.jpg, id=321, 1267.73625pt x 773.89125pt>
+<images/boh_15.jpg, id=323, 1267.73625pt x 773.89125pt>
 File: images/boh_15.jpg Graphic file (type jpg)
 <use images/boh_15.jpg>
-Package pdftex.def Info: images/boh_15.jpg  used on input line 57.
+Package pdftex.def Info: images/boh_15.jpg  used on input line 61.
 (pdftex.def)             Requested size: 170.71652pt x 104.21101pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--68
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
  []
 
 [4 <./images/boh_15.jpg>] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 83--87
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
 
  []
 
 [6] [7] [8]
-<images/boh_16.png, id=362, 550.30594pt x 279.29344pt>
+<images/boh_16.png, id=363, 550.30594pt x 279.29344pt>
 File: images/boh_16.png Graphic file (type png)
 <use images/boh_16.png>
-Package pdftex.def Info: images/boh_16.png  used on input line 160.
+Package pdftex.def Info: images/boh_16.png  used on input line 164.
 (pdftex.def)             Requested size: 341.43306pt x 173.29225pt.
-<images/boh_19.png, id=364, 243.15843pt x 244.66406pt>
+<images/boh_19.png, id=365, 243.15843pt x 244.66406pt>
 File: images/boh_19.png Graphic file (type png)
 <use images/boh_19.png>
-Package pdftex.def Info: images/boh_19.png  used on input line 166.
+Package pdftex.def Info: images/boh_19.png  used on input line 170.
 (pdftex.def)             Requested size: 170.71652pt x 171.7714pt.
  [9] [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.168     \subsection
+l.172     \subsection
                      {Distribuzione normale} <./images/boh_16.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 169.
+(hyperref)                removing `math shift' on input line 173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 169.
+(hyperref)                removing `\mu' on input line 173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 169.
+(hyperref)                removing `math shift' on input line 173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 169.
+(hyperref)                removing `math shift' on input line 173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 169.
+(hyperref)                removing `\sigma' on input line 173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 169.
+(hyperref)                removing `superscript' on input line 173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 169.
+(hyperref)                removing `math shift' on input line 173.
 
 [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.173 ... \sqrt{n}} < 1.96 \right) \approx 0.95 \]
+l.177 ... \sqrt{n}} < 1.96 \right) \approx 0.95 \]
                                                    <./images/boh_19.png>] [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 203.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 199.
+(hyperref)                removing `\mu' on input line 203.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 203.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 203.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 199.
+(hyperref)                removing `\sigma' on input line 203.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 199.
+(hyperref)                removing `superscript' on input line 203.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 199.
+(hyperref)                removing `math shift' on input line 203.
 
 [13] [14] [15] [16]
-<images/boh_17.png, id=416, 657.95813pt x 468.24937pt>
+<images/boh_17.png, id=417, 657.95813pt x 468.24937pt>
 File: images/boh_17.png Graphic file (type png)
 <use images/boh_17.png>
-Package pdftex.def Info: images/boh_17.png  used on input line 252.
+Package pdftex.def Info: images/boh_17.png  used on input line 256.
 (pdftex.def)             Requested size: 341.43306pt x 242.99092pt.
-<images/boh_2.png, id=417, 515.67656pt x 280.04625pt>
+<images/boh_2.png, id=418, 515.67656pt x 280.04625pt>
 File: images/boh_2.png Graphic file (type png)
 <use images/boh_2.png>
-Package pdftex.def Info: images/boh_2.png  used on input line 255.
+Package pdftex.def Info: images/boh_2.png  used on input line 259.
 (pdftex.def)             Requested size: 341.43306pt x 185.42505pt.
  [17] [18 <./images/boh_17.png>] [19 <./images/boh_2.png>]
-<images/Screenshot_1.png, id=440, 629.35126pt x 456.95718pt>
+<images/Screenshot_1.png, id=441, 629.35126pt x 456.95718pt>
 File: images/Screenshot_1.png Graphic file (type png)
 <use images/Screenshot_1.png>
-Package pdftex.def Info: images/Screenshot_1.png  used on input line 282.
+Package pdftex.def Info: images/Screenshot_1.png  used on input line 286.
 (pdftex.def)             Requested size: 341.43306pt x 247.90367pt.
- [20] [21 <./images/Screenshot_1.png>] [22] [23]
-<images/boh_4.png, id=464, 1284.8pt x 166.6225pt>
+ [20] [21 <./images/Screenshot_1.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[22]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[23]
+<images/boh_4.png, id=465, 1284.8pt x 166.6225pt>
 File: images/boh_4.png Graphic file (type png)
 <use images/boh_4.png>
-Package pdftex.def Info: images/boh_4.png  used on input line 344.
+Package pdftex.def Info: images/boh_4.png  used on input line 348.
 (pdftex.def)             Requested size: 341.43306pt x 44.27933pt.
- [24 <./images/boh_4.png>] [25]
-<images/boh_5.png, id=476, 1255.69125pt x 207.77625pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[24 <./images/boh_4.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[25]
+<images/boh_5.png, id=477, 1255.69125pt x 207.77625pt>
 File: images/boh_5.png Graphic file (type png)
 <use images/boh_5.png>
-Package pdftex.def Info: images/boh_5.png  used on input line 377.
+Package pdftex.def Info: images/boh_5.png  used on input line 381.
 (pdftex.def)             Requested size: 341.43306pt x 56.49345pt.
- [26 <./images/boh_5.png>]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 393.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[26 <./images/boh_5.png>]
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 397.
  (C:\Users\jacop\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) [27]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 400.
+(hyperref)                removing `math shift' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 400.
+(hyperref)                removing `\theta' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 400.
+(hyperref)                removing `math shift' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 408.
+(hyperref)                removing `math shift' on input line 412.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 408.
+(hyperref)                removing `\theta' on input line 412.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 408.
+(hyperref)                removing `math shift' on input line 412.
 
 
-Overfull \hbox (0.20316pt too wide) in paragraph at lines 409--411
+Overfull \hbox (0.20316pt too wide) in paragraph at lines 413--415
 \T1/cmss/m/n/10 Avendo una fun-zione di like-li-hood $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; [] ; x[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 )$ \T1/cmss/m/n/10 e sapendo che la dis-tribuzione
  []
 
 [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 431--435
+Underfull \hbox (badness 10000) in paragraph at lines 435--439
 
  []
 
 [30] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 479--481
+Underfull \hbox (badness 10000) in paragraph at lines 483--485
 
  []
 
 [33] [34]
-<images/boh_7.png, id=529, 528.47438pt x 222.07968pt>
+<images/boh_7.png, id=530, 528.47438pt x 222.07968pt>
 File: images/boh_7.png Graphic file (type png)
 <use images/boh_7.png>
-Package pdftex.def Info: images/boh_7.png  used on input line 518.
+Package pdftex.def Info: images/boh_7.png  used on input line 522.
 (pdftex.def)             Requested size: 341.43306pt x 143.47919pt.
-<images/boh_9.png, id=530, 526.96875pt x 254.45062pt>
+<images/boh_9.png, id=531, 526.96875pt x 254.45062pt>
 File: images/boh_9.png Graphic file (type png)
 <use images/boh_9.png>
-Package pdftex.def Info: images/boh_9.png  used on input line 522.
+Package pdftex.def Info: images/boh_9.png  used on input line 526.
 (pdftex.def)             Requested size: 341.43306pt x 164.87067pt.
  [35] [36
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.524     \paragraph
+l.528     \paragraph
                     {Esempio} Vogliamo verificare l'ipotesi che il consumo \... <./images/boh_7.png>]
-<images/boh_8.png, id=541, 341.77687pt x 45.92157pt>
+<images/boh_8.png, id=542, 341.77687pt x 45.92157pt>
 File: images/boh_8.png Graphic file (type png)
 <use images/boh_8.png>
-Package pdftex.def Info: images/boh_8.png  used on input line 527.
+Package pdftex.def Info: images/boh_8.png  used on input line 531.
 (pdftex.def)             Requested size: 341.43306pt x 45.8787pt.
  [37
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.531 ...ext{contro} \quad H_1 : \mu \not = 350 \]
+l.535 ...ext{contro} \quad H_1 : \mu \not = 350 \]
                                                    <./images/boh_9.png> <./images/boh_8.png>] [38] [39] [40] [41] [42]
-<images/boh_10.png, id=573, 653.44125pt x 224.84pt>
+<images/boh_10.png, id=574, 653.44125pt x 224.84pt>
 File: images/boh_10.png Graphic file (type png)
 <use images/boh_10.png>
-Package pdftex.def Info: images/boh_10.png  used on input line 622.
+Package pdftex.def Info: images/boh_10.png  used on input line 626.
 (pdftex.def)             Requested size: 341.43306pt x 117.48012pt.
  [43] [44 <./images/boh_10.png>] [45] [46] [47] [48] [49] [50]
-<images/boh_18.png, id=616, 578.91281pt x 60.97781pt>
+<images/boh_18.png, id=617, 578.91281pt x 60.97781pt>
 File: images/boh_18.png Graphic file (type png)
 <use images/boh_18.png>
-Package pdftex.def Info: images/boh_18.png  used on input line 739.
+Package pdftex.def Info: images/boh_18.png  used on input line 743.
 (pdftex.def)             Requested size: 341.43306pt x 35.96355pt.
  [51 <./images/boh_18.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 755.
+(hyperref)                removing `math shift' on input line 759.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 755.
+(hyperref)                removing `\beta' on input line 759.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 755.
+(hyperref)                removing `math shift' on input line 759.
 
 [52]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 768.
+(hyperref)                removing `math shift' on input line 772.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 768.
+(hyperref)                removing `\alpha' on input line 772.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 768.
+(hyperref)                removing `math shift' on input line 772.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 773.
+(hyperref)                removing `math shift' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 773.
+(hyperref)                removing `\alpha' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\beta' on input line 773.
+(hyperref)                removing `\beta' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 773.
+(hyperref)                removing `subscript' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 773.
+(hyperref)                removing `math shift' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 773.
+(hyperref)                removing `math shift' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@overline' on input line 773.
+(hyperref)                removing `\@@overline' on input line 777.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 773.
+(hyperref)                removing `math shift' on input line 777.
 
-[53] [54]
+[53]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 785.
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.43324pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.43324pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.43324pt}.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 785.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 785.
-
+[54]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 785.
+(hyperref)                removing `math shift' on input line 789.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 785.
+(hyperref)                removing `subscript' on input line 789.
 
-<images/boh_13.png, id=641, 945.5325pt x 583.17876pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 789.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\rightarrow' on input line 789.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 789.
+
+<images/boh_13.png, id=642, 945.5325pt x 583.17876pt>
 File: images/boh_13.png Graphic file (type png)
 <use images/boh_13.png>
-Package pdftex.def Info: images/boh_13.png  used on input line 790.
+Package pdftex.def Info: images/boh_13.png  used on input line 794.
 (pdftex.def)             Requested size: 341.43306pt x 210.58488pt.
 [55 <./images/boh_13.png>]
-<images/boh_14.png, id=649, 1180.41pt x 243.15843pt>
+<images/boh_14.png, id=650, 1180.41pt x 243.15843pt>
 File: images/boh_14.png Graphic file (type png)
 <use images/boh_14.png>
-Package pdftex.def Info: images/boh_14.png  used on input line 809.
+Package pdftex.def Info: images/boh_14.png  used on input line 813.
 (pdftex.def)             Requested size: 341.43306pt x 70.33232pt.
  [56 <./images/boh_14.png>] [57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 849--851
+Underfull \hbox (badness 10000) in paragraph at lines 853--855
 
  []
 
 [59] [60]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 871.
+(hyperref)                removing `math shift' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 871.
+(hyperref)                removing `\sigma' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 871.
+(hyperref)                removing `superscript' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 871.
+(hyperref)                removing `math shift' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 871.
+(hyperref)                removing `math shift' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 871.
+(hyperref)                removing `\mu' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 871.
+(hyperref)                removing `subscript' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 871.
+(hyperref)                removing `\mu' on input line 875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 871.
+(hyperref)                removing `math shift' on input line 875.
 
 [61]
-<images/boh_11.png, id=681, 633.36626pt x 179.67125pt>
+<images/boh_11.png, id=682, 633.36626pt x 179.67125pt>
 File: images/boh_11.png Graphic file (type png)
 <use images/boh_11.png>
-Package pdftex.def Info: images/boh_11.png  used on input line 885.
+Package pdftex.def Info: images/boh_11.png  used on input line 889.
 (pdftex.def)             Requested size: 341.43306pt x 96.85927pt.
- [62 <./images/boh_11.png>] [63] [64]
-<images/boh_12.png, id=697, 411.03563pt x 149.8097pt>
+ [62 <./images/boh_11.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[63]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[64]
+<images/boh_12.png, id=698, 411.03563pt x 149.8097pt>
 File: images/boh_12.png Graphic file (type png)
 <use images/boh_12.png>
-Package pdftex.def Info: images/boh_12.png  used on input line 936.
+Package pdftex.def Info: images/boh_12.png  used on input line 940.
 (pdftex.def)             Requested size: 341.43306pt x 124.44258pt.
- [65] [66 <./images/boh_12.png>]
-Overfull \hbox (3.17632pt too wide) in paragraph at lines 954--958
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[65]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[66 <./images/boh_12.png>]
+Overfull \hbox (3.17632pt too wide) in paragraph at lines 958--962
  []\T1/cmss/bx/n/10 Esempio[] \T1/cmss/m/n/10 50 tran-sis-tor ven-gono messi in fun-zione si-mul-tane-a-mente. L'esperimento
  []
 
-[67] [68]
-<images/phi_table.png, id=719, 398.99063pt x 539.01375pt>
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[67]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[68]
+<images/phi_table.png, id=720, 398.99063pt x 539.01375pt>
 File: images/phi_table.png Graphic file (type png)
 <use images/phi_table.png>
-Package pdftex.def Info: images/phi_table.png  used on input line 982.
+Package pdftex.def Info: images/phi_table.png  used on input line 986.
 (pdftex.def)             Requested size: 201.44424pt x 272.13809pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 985--991
+Underfull \hbox (badness 10000) in paragraph at lines 989--995
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 985--991
+Underfull \hbox (badness 10000) in paragraph at lines 989--995
 
  []
 
-<images/xan_table.png, id=720, 414.79968pt x 452.4403pt>
+<images/xan_table.png, id=721, 414.79968pt x 452.4403pt>
 File: images/xan_table.png Graphic file (type png)
 <use images/xan_table.png>
-Package pdftex.def Info: images/xan_table.png  used on input line 996.
+Package pdftex.def Info: images/xan_table.png  used on input line 1000.
 (pdftex.def)             Requested size: 201.44424pt x 219.72324pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1000--1008
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1012
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1000--1008
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1012
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1000--1008
+Underfull \hbox (badness 10000) in paragraph at lines 1004--1012
 
  []
 
-<images/tan_table.png, id=721, 414.04688pt x 511.15968pt>
+<images/tan_table.png, id=722, 414.04688pt x 511.15968pt>
 File: images/tan_table.png Graphic file (type png)
 <use images/tan_table.png>
-Package pdftex.def Info: images/tan_table.png  used on input line 1013.
+Package pdftex.def Info: images/tan_table.png  used on input line 1017.
 (pdftex.def)             Requested size: 201.44424pt x 248.6999pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1027
  []\T1/cmss/bx/n/10 Esempio:[] \T1/cmss/m/n/10 per trovare un
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1027
 \T1/cmss/m/n/10 val-ore se dob-bi-amo trovare
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1027
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1016--1023
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1027
 
  []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
 
 [69
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1024     \end{figure}
+l.1028     \end{figure}
                         <./images/phi_table.png>]
-<images/F_table.png, id=729, 414.04688pt x 471.26062pt>
+<images/F_table.png, id=730, 414.04688pt x 471.26062pt>
 File: images/F_table.png Graphic file (type png)
 <use images/F_table.png>
-Package pdftex.def Info: images/F_table.png  used on input line 1028.
+Package pdftex.def Info: images/F_table.png  used on input line 1032.
 (pdftex.def)             Requested size: 201.44424pt x 229.2874pt.
- [70
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[70
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1032     \end{figure}
-                        <./images/xan_table.png>] [71
+l.1036     \end{figure}
+                        <./images/xan_table.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[71
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1033     \footnote{
-                     Padre nostro, che sei nei cieli, sia santificato il tuo... <./images/tan_table.png>] [72
+l.1037     \footnote{
+                     Padre nostro, che sei nei cieli, sia santificato il tuo... <./images/tan_table.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 12.10873pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.10873pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-0.10873pt}.
+
+[72
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1034 \end{document}
+l.1038 \end{document}
                       <./images/F_table.png>] (statistica.aux)
 Package rerunfilecheck Info: File `statistica.out' has not changed.
 (rerunfilecheck)             Checksum: 99C7F4DC96806B8762DF3D5ADC6B5E19;13002.
  ) 
 Here is how much of TeX's memory you used:
- 11756 strings out of 476334
- 181868 string characters out of 5787972
- 1863382 words of memory out of 5000000
- 31762 multiletter control sequences out of 15000+600000
+ 11944 strings out of 476334
+ 184610 string characters out of 5787972
+ 1864382 words of memory out of 5000000
+ 31946 multiletter control sequences out of 15000+600000
  536157 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,21n,67p,569b,530s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi450\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi375\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on statistica.pdf (72 pages, 1612027 bytes).
+ 63i,21n,68p,569b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi450\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi525\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecso1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi375\ecss0800.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecss1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1000.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk> <C:\Users\jacop\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsi1000.pk><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/jacop/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on statistica.pdf (72 pages, 1631945 bytes).
 PDF statistics:
- 1259 PDF objects out of 1440 (max. 8388607)
+ 1291 PDF objects out of 1440 (max. 8388607)
  214 named destinations out of 1000 (max. 500000)
  578 words of extra memory for PDF output out of 10000 (max. 10000000)
 
